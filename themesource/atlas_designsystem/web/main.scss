@@ -1,0 +1,48 @@
+@import "../../atlas_core/web/variables";
+
+.card-preview{
+    > .card-body{
+        min-height: 280px;
+        > .mx-dataview, > .mx-datagrid{
+            background-color: #fff;
+            border-radius: $border-radius-default;
+            padding: $spacing-medium;
+        }
+    }
+}
+
+.grid-variation{
+    > .row{
+        margin-left: 0;
+        margin-right: 0;
+        > [class*="col-"]{
+            border: 0.5px solid $bg-color ;
+            padding-left: 0;
+            padding-right: 0;
+            background: $bg-color-secondary ;
+        }
+    }
+}
+
+.demo-area{
+    padding: $spacing-medium;
+    flex: 0 0 50%;
+}
+
+.has-focus{
+    input, textarea, select{
+        border-color: $form-input-border-focus-color;
+    }
+}
+.demo-grid{
+    > .row > .col{
+        padding: $spacing-large;
+        background-color: $color-danger-light;
+        border-top: $spacing-small solid #fff;
+        border-bottom: $spacing-small solid #fff;
+        border-right: $spacing-small solid #fff;
+        &:first-child{
+            border-left: $spacing-small solid #fff;
+        }
+    }
+}
