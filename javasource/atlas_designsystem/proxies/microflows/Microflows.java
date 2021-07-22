@@ -51,11 +51,6 @@ public class Microflows
 		Map<java.lang.String, Object> params = new HashMap<>();
 		Core.microflowCall("Atlas_DesignSystem.ACT_SaveScreenshotsWidgetsToFile").withParams(params).execute(context);
 	}
-	public static void aSu_CleanTakePictureEntities(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_CleanTakePictureEntities").withParams(params).execute(context);
-	}
 	public static void aSu_RestockAtlasGenericObjectEntities(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();

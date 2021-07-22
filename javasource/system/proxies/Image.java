@@ -83,9 +83,6 @@ public class Image extends system.proxies.FileDocument
 		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.ScreenshotsWidget", mendixObject.getType()))
 			return atlas_designsystem.proxies.ScreenshotsWidget.initialize(context, mendixObject);
 
-		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.TakePicture", mendixObject.getType()))
-			return atlas_designsystem.proxies.TakePicture.initialize(context, mendixObject);
-
 		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.TaskInboxImage", mendixObject.getType()))
 			return atlas_designsystem.proxies.TaskInboxImage.initialize(context, mendixObject);
 
