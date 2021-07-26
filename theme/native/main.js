@@ -25,6 +25,29 @@ const com_mendix_widget_native_linechart_LineChart = {
     }
 }
 
+const com_mendix_widget_native_barchart_BarChart = {
+    grid: {
+        paddingTop: 30,
+        paddingRight: 25
+    },
+    bars: {
+        barsOffset: 15,
+        customBarStyles: {
+            barone: {
+                bar: {
+                    barColor: "#887bb0",
+                }
+            },
+            bartwo: {
+                bar: {
+                    barColor: "#85d2d0",
+                }
+            }
+        }
+    }
+}
+
 export {
-    com_mendix_widget_native_linechart_LineChart
+    com_mendix_widget_native_linechart_LineChart,
+    com_mendix_widget_native_barchart_BarChart
 };
