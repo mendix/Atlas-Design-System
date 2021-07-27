@@ -25,7 +25,8 @@ public class BottomSheet
 		ModalCustom("ModalCustom"),
 		ModalCustomHeader("ModalCustomHeader"),
 		ModalCustomHeaderLarge("ModalCustomHeaderLarge"),
-		ModalCustomHeaderScroll("ModalCustomHeaderScroll");
+		ModalCustomHeaderScroll("ModalCustomHeaderScroll"),
+		GalleryNative("GalleryNative");
 
 		private java.lang.String metaName;
 
@@ -326,6 +327,42 @@ public class BottomSheet
 	public final void setModalCustomHeaderScroll(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean modalcustomheaderscroll)
 	{
 		getMendixObject().setValue(context, MemberNames.ModalCustomHeaderScroll.toString(), modalcustomheaderscroll);
+	}
+
+	/**
+	 * @return value of GalleryNative
+	 */
+	public final java.lang.Boolean getGalleryNative()
+	{
+		return getGalleryNative(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of GalleryNative
+	 */
+	public final java.lang.Boolean getGalleryNative(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.GalleryNative.toString());
+	}
+
+	/**
+	 * Set value of GalleryNative
+	 * @param gallerynative
+	 */
+	public final void setGalleryNative(java.lang.Boolean gallerynative)
+	{
+		setGalleryNative(getContext(), gallerynative);
+	}
+
+	/**
+	 * Set value of GalleryNative
+	 * @param context
+	 * @param gallerynative
+	 */
+	public final void setGalleryNative(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean gallerynative)
+	{
+		getMendixObject().setValue(context, MemberNames.GalleryNative.toString(), gallerynative);
 	}
 
 	/**
