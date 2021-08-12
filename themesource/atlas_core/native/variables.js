@@ -606,4 +606,4 @@ let slider = {
 slider = merge(slider, custom.slider || {});
 //
 export * from "../../../theme/native/custom-variables";
-export { brand, backgroundDefaults, background, border, button, contrast, fontDefaults, font, input, image, layoutGrid, listView, navigation, spacing, container, tabContainer, badge, floatingActionButton, introScreen, listViewSwipe, progressBar, progressCircle, slider, rating };
+export { accordion, brand, backgroundDefaults, background, border, button, contrast, fontDefaults, font, input, image, layoutGrid, listView, navigation, spacing, container, tabContainer, badge, floatingActionButton, introScreen, listViewSwipe, progressBar, progressCircle, slider, rating };
