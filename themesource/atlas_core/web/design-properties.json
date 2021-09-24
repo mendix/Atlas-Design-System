@@ -1161,74 +1161,75 @@
             "class": "widget-accordion-compact"
         }
     ],
-    "com.mendix.widget.web.gallery.Gallery": [
+    "com.mendix.widget.web.image.Image": [
         {
-            "name": "Borders",
+            "name": "Image style",
             "type": "Dropdown",
-            "description": "Add either a horizontal, vertical separator or both to the items.",
+            "description": "Change the image style.",
             "options": [
                 {
-                    "name": "Both",
-                    "class": "widget-gallery-bordered-all"
+                    "name": "Rounded",
+                    "class": "img-rounded"
                 },
                 {
-                    "name": "Vertical",
-                    "class": "widget-gallery-bordered-vertical"
+                    "name": "Circle",
+                    "class": "img-circle"
                 },
                 {
-                    "name": "Horizontal",
-                    "class": "widget-gallery-bordered-horizontal"
+                    "name": "Square",
+                    "class": "img-square"
                 }
             ]
         },
         {
-            "name": "Hover",
+            "name": "Center image",
             "type": "Toggle",
-            "description": "Highlight an item when hovering over it. Only useful when the item is clickable.",
-            "class": "widget-gallery-hover"
+            "description": "Center the image.",
+            "class": "img-center"
         },
         {
-            "name": "Striped",
-            "type": "Toggle",
-            "description": "Add alternating background colors to items.",
-            "class": "widget-gallery-striped"
-        },
-        {
-            "name": "Grid spacing",
+            "name": "Image fit",
             "type": "Dropdown",
-            "description": "Change the gap between grid items.",
+            "description": "Change the fit of the image.",
             "options": [
-
                 {
-                    "name": "None",
-                    "class": "widget-gallery-gridgap-none"
+                    "name": "Fill",
+                    "class": "img-fill"
                 },
                 {
-                    "name": "Small",
-                    "class": "widget-gallery-gridgap-small"
+                    "name": "Contain",
+                    "class": "img-contain"
+                },
+                {
+                    "name": "Cover",
+                    "class": "img-cover"
+                },
+                {
+                    "name": "Scale-down",
+                    "class": "img-scale-down"
+                },
+                {
+                    "name": "Auto",
+                    "class": "img-auto"
+                }
+            ]
+        },
+        {
+            "name": "Opacity",
+            "type": "Dropdown",
+            "description": "Change the opacity of the image.",
+            "options": [
+                {
+                    "name": "Low",
+                    "class": "img-opacity-low"
                 },
                 {
                     "name": "Medium",
-                    "class": "widget-gallery-gridgap-medium"
+                    "class": "img-opacity-medium"
                 },
                 {
-                    "name": "Large",
-                    "class": "widget-gallery-gridgap-large"
-                }
-            ]
-        },
-        {
-            "name": "Pagination",
-            "type": "Dropdown",
-            "description": "Change the alignment of the pagination.",
-            "options": [
-                {
-                    "name": "Left",
-                    "class": "widget-gallery-pagination-left"
-                },
-                {
-                    "name": "Center",
-                    "class": "widget-gallery-pagination-center"
+                    "name": "High",
+                    "class": "img-opacity-high"
                 }
             ]
         }
