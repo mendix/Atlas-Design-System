@@ -110,4 +110,17 @@ public class Microflows
 		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.DS_Slider").withParams(params).execute(context);
 		return result == null ? null : atlas_designsystem.proxies.Slider.initialize(context, result);
 	}
+	public static java.util.List<atlas_ui_data.proxies.AtlasGenericObject> dS_Treenode(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_Treenode").withParams(params).execute(context);
+		java.util.List<atlas_ui_data.proxies.AtlasGenericObject> result = null;
+		if (objs != null)
+		{
+			result = new java.util.ArrayList<>();
+			for (IMendixObject obj : objs)
+				result.add(atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj));
+		}
+		return result;
+	}
 }

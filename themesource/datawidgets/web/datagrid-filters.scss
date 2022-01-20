@@ -10,10 +10,8 @@ $arrow: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='
     font-family: "datagrid-filters";
     src: url("./fonts/datagrid-filters.eot");
     src: url("./fonts/datagrid-filters.eot") format("embedded-opentype"),
-        url("./fonts/datagrid-filters.woff2") format("woff2"),
-        url("./fonts/datagrid-filters.woff") format("woff"),
-        url("./fonts/datagrid-filters.ttf") format("truetype"),
-        url("./fonts/datagrid-filters.svg") format("svg");
+        url("./fonts/datagrid-filters.woff2") format("woff2"), url("./fonts/datagrid-filters.woff") format("woff"),
+        url("./fonts/datagrid-filters.ttf") format("truetype"), url("./fonts/datagrid-filters.svg") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -29,7 +27,7 @@ $arrow: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='
     }
 
     .btn-calendar {
-      margin-left: 5px; //Review in atlas, the current date picker is also 5px
+        margin-left: 5px; //Review in atlas, the current date picker is also 5px
     }
 }
 
@@ -63,7 +61,7 @@ $arrow: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='
             margin: 0 $spacing-small;
             padding: 0;
             background: $background-color;
-            z-index: 99;
+            z-index: 102;
             border-radius: 8px;
             list-style-type: none;
             box-shadow: 0 2px 20px 1px rgba(5, 15, 129, 0.05), 0 2px 16px 0 rgba(33, 43, 54, 0.08);
@@ -101,6 +99,7 @@ $arrow: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='
     list-style-type: none;
     box-shadow: 0 2px 20px 1px rgba(5, 15, 129, 0.05), 0 2px 16px 0 rgba(33, 43, 54, 0.08);
     overflow: hidden;
+    z-index: 102;
 
     li {
         display: flex;
@@ -126,48 +125,49 @@ $arrow: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='
 }
 
 .dropdown-list {
-        padding: 0;
-        background: $background-color;
-        border-radius: 8px;
-        list-style-type: none;
-        box-shadow: 0 2px 20px 1px rgba(5, 15, 129, 0.05), 0 2px 16px 0 rgba(33, 43, 54, 0.08);
-        overflow-x: hidden;
-        max-height: 40vh;
+    padding: 0;
+    background: $background-color;
+    border-radius: 8px;
+    list-style-type: none;
+    box-shadow: 0 2px 20px 1px rgba(5, 15, 129, 0.05), 0 2px 16px 0 rgba(33, 43, 54, 0.08);
+    overflow-x: hidden;
+    max-height: 40vh;
+    z-index: 102;
 
-        li {
-            display: flex;
-            align-items: center;
+    li {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        min-height: 32px;
+        cursor: pointer;
+        padding: 0 $spacing-small;
+
+        .filter-label {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        &.filter-selected {
+            background-color: $hover-color;
+            color: $brand-primary;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $hover-color;
+        }
+
+        label {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 8px;
             font-weight: normal;
-            min-height: 32px;
-            cursor: pointer;
-            padding: 0 $spacing-small;
-
-            .filter-label {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-
-            &.filter-selected {
-                background-color: $hover-color;
-                color: $brand-primary;
-            }
-
-            &:hover,
-            &:focus {
-                background-color: $hover-color;
-            }
-
-            label {
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                margin: 8px;
-                font-weight: normal;
-                width: calc(100% - 32px);
-            }
+            width: calc(100% - 32px);
         }
     }
+}
 
 .dropdown-container {
     flex: 1;
@@ -193,7 +193,7 @@ $arrow: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='
         margin: 0 $spacing-small;
         padding: 0;
         background: $background-color;
-        z-index: 99;
+        z-index: 102;
         border-radius: 8px;
         list-style-type: none;
         box-shadow: 0 2px 20px 1px rgba(5, 15, 129, 0.05), 0 2px 16px 0 rgba(33, 43, 54, 0.08);
@@ -236,6 +236,9 @@ $arrow: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='
     }
 }
 
+.date-filter-container {
+    z-index: 102;
+}
 
 /**
 Icons
