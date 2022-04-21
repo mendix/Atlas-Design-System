@@ -123,4 +123,31 @@ public class Microflows
 		}
 		return result;
 	}
+	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> mF_ChartData(IContext context, atlas_designsystem.proxies.ChartsDataMap _chartsDataMap)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("ChartsDataMap", _chartsDataMap == null ? null : _chartsDataMap.getMendixObject());
+		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.MF_ChartData").withParams(params).execute(context);
+		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
+		if (objs != null)
+		{
+			result = new java.util.ArrayList<>();
+			for (IMendixObject obj : objs)
+				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
+		}
+		return result;
+	}
+	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> mF_ChartData_StaticSet1(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.MF_ChartData_StaticSet1").withParams(params).execute(context);
+		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
+		if (objs != null)
+		{
+			result = new java.util.ArrayList<>();
+			for (IMendixObject obj : objs)
+				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
+		}
+		return result;
+	}
 }
