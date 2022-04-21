@@ -15,10 +15,9 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 public class Microflows
 {
 	// These are the microflows for the Atlas_UI_Data module
-	public static java.util.List<atlas_ui_data.proxies.AtlasChartData> dS_CreateAtlasChartData(IContext context, atlas_ui_data.proxies.AtlasStatistics _atlasStatistics)
+	public static java.util.List<atlas_ui_data.proxies.AtlasChartData> dS_CreateAtlasChartData(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasStatistics", _atlasStatistics == null ? null : _atlasStatistics.getMendixObject());
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.DS_CreateAtlasChartData").withParams(params).execute(context);
 		java.util.List<atlas_ui_data.proxies.AtlasChartData> result = null;
 		if (objs != null)
