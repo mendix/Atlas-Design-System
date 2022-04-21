@@ -86,6 +86,32 @@ public class Microflows
 		Map<java.lang.String, Object> params = new HashMap<>();
 		return (java.lang.Boolean) Core.microflowCall("Atlas_DesignSystem.ASu_RunModuleSpecificMFs").withParams(params).execute(context);
 	}
+	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> dS_ChartData_StaticSet1(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet1").withParams(params).execute(context);
+		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
+		if (objs != null)
+		{
+			result = new java.util.ArrayList<>();
+			for (IMendixObject obj : objs)
+				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
+		}
+		return result;
+	}
+	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> dS_ChartData_StaticSet2(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet2").withParams(params).execute(context);
+		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
+		if (objs != null)
+		{
+			result = new java.util.ArrayList<>();
+			for (IMendixObject obj : objs)
+				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
+		}
+		return result;
+	}
 	public static atlas_ui_data.proxies.AtlasGenericObject dS_EmptyRating(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
@@ -120,6 +146,20 @@ public class Microflows
 			result = new java.util.ArrayList<>();
 			for (IMendixObject obj : objs)
 				result.add(atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj));
+		}
+		return result;
+	}
+	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> mF_DataString_to_ChartsDataMapList(IContext context, java.lang.String _dataString)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("DataString", _dataString);
+		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.MF_DataString_to_ChartsDataMapList").withParams(params).execute(context);
+		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
+		if (objs != null)
+		{
+			result = new java.util.ArrayList<>();
+			for (IMendixObject obj : objs)
+				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
 		}
 		return result;
 	}
