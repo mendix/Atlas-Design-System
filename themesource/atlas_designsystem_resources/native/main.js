@@ -103,12 +103,29 @@ export const barChartStyleStacked = {
 	  customBarStyles: {
 			barOne: {
 				bar: {
-					barColor: 'yellow'
+					barColor: 'red'
 				}
 			},
 			barTwo: {
 				bar: {
 					barColor: 'orange'
+				}
+			}			  
+		  }
+	  }
+ };
+ 
+ export const lineChartStyle = {
+  lines: {
+	  customLineStyles: {
+			lineOne: {
+				line: {
+					lineColor: 'red'
+				}
+			},
+			lineTwo: {
+				line: {
+					lineColor: 'orange'
 				}
 			}			  
 		  }
