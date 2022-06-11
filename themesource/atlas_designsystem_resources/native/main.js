@@ -84,3 +84,50 @@ export const maxes = {
   },
 
 };
+
+export const barChartStyleGrouped = {
+  domain: {
+    padding: {
+		y: 20
+	}
+  }
+};
+
+export const barChartStyleStacked = {
+  domain: {
+    padding: {
+		y: 10
+	}
+  },
+  bars: {
+	  customBarStyles: {
+			barOne: {
+				bar: {
+					barColor: 'red'
+				}
+			},
+			barTwo: {
+				bar: {
+					barColor: 'orange'
+				}
+			}			  
+		  }
+	  }
+ };
+ 
+ export const lineChartStyle = {
+  lines: {
+	  customLineStyles: {
+			lineOne: {
+				line: {
+					lineColor: 'red'
+				}
+			},
+			lineTwo: {
+				line: {
+					lineColor: 'orange'
+				}
+			}			  
+		  }
+	  }
+ };
