@@ -1,5 +1,5 @@
 var _a, _b, _c, _d;
-import { columnChart } from "./../../../../../theme/native/custom-variables";
+import { columnChart } from "../../variables";
 /*
 
 DISCLAIMER:
