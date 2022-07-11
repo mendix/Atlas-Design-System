@@ -673,7 +673,9 @@ radioButtons = merge(radioButtons, custom.radioButtons || {});
 //
 // Background Gradient
 let backgroundGradient = {
-    container: {}
+    container: {},
+    angle: 0,
+    opacity: 100
 };
 backgroundGradient = merge(backgroundGradient, custom.backgroundGradient || {});
 // column chart styles

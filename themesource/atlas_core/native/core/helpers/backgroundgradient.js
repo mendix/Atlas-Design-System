@@ -10,3 +10,24 @@ To customize any core styling, copy the part you want to customize to styles/nat
 export const backgroundGradient = {
     container: {}
 };
+export const opacity25 = {
+    opacity: 25
+};
+export const opacity50 = {
+    opacity: 50
+};
+export const opacity75 = {
+    opacity: 75
+};
+export const opacity100 = {
+    opacity: 100
+};
+export const angle0 = {
+    angle: 0
+};
+export const angle45 = {
+    angle: 45
+};
+export const angle90 = {
+    angle: 90
+};
