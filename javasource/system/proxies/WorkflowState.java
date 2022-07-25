@@ -6,11 +6,12 @@ package system.proxies;
 
 public enum WorkflowState
 {
-	Paused(new java.lang.String[][] { new java.lang.String[] { "en_US", "Paused" } }),
 	InProgress(new java.lang.String[][] { new java.lang.String[] { "en_US", "In Progress" } }),
+	Paused(new java.lang.String[][] { new java.lang.String[] { "en_US", "Paused" } }),
 	Completed(new java.lang.String[][] { new java.lang.String[] { "en_US", "Completed" } }),
 	Aborted(new java.lang.String[][] { new java.lang.String[] { "en_US", "Aborted" } }),
-	Incompatible(new java.lang.String[][] { new java.lang.String[] { "en_US", "Incompatible" } });
+	Incompatible(new java.lang.String[][] { new java.lang.String[] { "en_US", "Incompatible" } }),
+	Failed(new java.lang.String[][] { new java.lang.String[] { "en_US", "Failed" } });
 
 	private java.util.Map<java.lang.String, java.lang.String> captions;
 
