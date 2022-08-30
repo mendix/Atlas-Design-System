@@ -4,6 +4,9 @@
 
 package system.proxies;
 
+/**
+ * Represents a scheduled or running task in a task queue.
+ */
 public class QueuedTask
 {
 	private final com.mendix.systemwideinterfaces.core.IMendixObject queuedTaskMendixObject;
@@ -32,8 +35,10 @@ public class QueuedTask
 		XASId("XASId"),
 		ThreadId("ThreadId"),
 		Created("Created"),
+		StartAt("StartAt"),
 		Started("Started"),
-		Retried("Retried");
+		Retried("Retried"),
+		Retry("Retry");
 
 		private java.lang.String metaName;
 
@@ -577,6 +582,42 @@ public class QueuedTask
 	}
 
 	/**
+	 * @return value of StartAt
+	 */
+	public final java.util.Date getStartAt()
+	{
+		return getStartAt(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of StartAt
+	 */
+	public final java.util.Date getStartAt(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.util.Date) getMendixObject().getValue(context, MemberNames.StartAt.toString());
+	}
+
+	/**
+	 * Set value of StartAt
+	 * @param startat
+	 */
+	public final void setStartAt(java.util.Date startat)
+	{
+		setStartAt(getContext(), startat);
+	}
+
+	/**
+	 * Set value of StartAt
+	 * @param context
+	 * @param startat
+	 */
+	public final void setStartAt(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date startat)
+	{
+		getMendixObject().setValue(context, MemberNames.StartAt.toString(), startat);
+	}
+
+	/**
 	 * @return value of Started
 	 */
 	public final java.util.Date getStarted()
@@ -646,6 +687,42 @@ public class QueuedTask
 	public final void setRetried(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long retried)
 	{
 		getMendixObject().setValue(context, MemberNames.Retried.toString(), retried);
+	}
+
+	/**
+	 * @return value of Retry
+	 */
+	public final java.lang.String getRetry()
+	{
+		return getRetry(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Retry
+	 */
+	public final java.lang.String getRetry(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Retry.toString());
+	}
+
+	/**
+	 * Set value of Retry
+	 * @param retry
+	 */
+	public final void setRetry(java.lang.String retry)
+	{
+		setRetry(getContext(), retry);
+	}
+
+	/**
+	 * Set value of Retry
+	 * @param context
+	 * @param retry
+	 */
+	public final void setRetry(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String retry)
+	{
+		getMendixObject().setValue(context, MemberNames.Retry.toString(), retry);
 	}
 
 	/**
