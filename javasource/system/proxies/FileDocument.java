@@ -82,6 +82,9 @@ public class FileDocument
 		if (com.mendix.core.Core.isSubClassOf("System.SynchronizationErrorFile", mendixObject.getType()))
 			return system.proxies.SynchronizationErrorFile.initialize(context, mendixObject);
 
+		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.WhitePaper", mendixObject.getType()))
+			return atlas_designsystem.proxies.WhitePaper.initialize(context, mendixObject);
+
 		return new system.proxies.FileDocument(context, mendixObject);
 	}
 
