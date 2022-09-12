@@ -24,7 +24,7 @@ public class ScreenshotTaker
 		Base64("Base64"),
 		Content("Content");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -40,15 +40,17 @@ public class ScreenshotTaker
 
 	public ScreenshotTaker(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.ScreenshotTaker"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected ScreenshotTaker(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject screenshotTakerMendixObject)
 	{
-		if (screenshotTakerMendixObject == null)
+		if (screenshotTakerMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.ScreenshotTaker", screenshotTakerMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.ScreenshotTaker");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, screenshotTakerMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.screenshotTakerMendixObject = screenshotTakerMendixObject;
 		this.context = context;
@@ -66,6 +68,9 @@ public class ScreenshotTaker
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.ScreenshotTaker initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -80,6 +85,7 @@ public class ScreenshotTaker
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -88,6 +94,7 @@ public class ScreenshotTaker
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -197,9 +204,9 @@ public class ScreenshotTaker
 	public final atlas_designsystem.proxies.Enum_ScreenshotContent getContent(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Content.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_designsystem.proxies.Enum_ScreenshotContent.valueOf((java.lang.String) obj);
 	}
 
@@ -219,10 +226,11 @@ public class ScreenshotTaker
 	 */
 	public final void setContent(com.mendix.systemwideinterfaces.core.IContext context, atlas_designsystem.proxies.Enum_ScreenshotContent content)
 	{
-		if (content != null)
+		if (content != null) {
 			getMendixObject().setValue(context, MemberNames.Content.toString(), content.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.Content.toString(), null);
+		}
 	}
 
 	/**
@@ -244,9 +252,9 @@ public class ScreenshotTaker
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.ScreenshotTaker that = (atlas_designsystem.proxies.ScreenshotTaker) obj;
@@ -266,7 +274,7 @@ public class ScreenshotTaker
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.ScreenshotTaker";
+		return entityName;
 	}
 
 	/**

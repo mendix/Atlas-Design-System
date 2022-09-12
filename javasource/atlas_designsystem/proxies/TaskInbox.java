@@ -25,7 +25,7 @@ public class TaskInbox
 		Subtitle("Subtitle"),
 		TaskInbox_TaskInboxImage("Atlas_DesignSystem.TaskInbox_TaskInboxImage");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -41,15 +41,17 @@ public class TaskInbox
 
 	public TaskInbox(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.TaskInbox"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected TaskInbox(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject taskInboxMendixObject)
 	{
-		if (taskInboxMendixObject == null)
+		if (taskInboxMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.TaskInbox", taskInboxMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.TaskInbox");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, taskInboxMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.taskInboxMendixObject = taskInboxMendixObject;
 		this.context = context;
@@ -67,6 +69,9 @@ public class TaskInbox
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.TaskInbox initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -81,14 +86,16 @@ public class TaskInbox
 
 	public static java.util.List<atlas_designsystem.proxies.TaskInbox> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<atlas_designsystem.proxies.TaskInbox> result = new java.util.ArrayList<atlas_designsystem.proxies.TaskInbox>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//Atlas_DesignSystem.TaskInbox" + xpathConstraint))
-			result.add(atlas_designsystem.proxies.TaskInbox.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> atlas_designsystem.proxies.TaskInbox.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -97,6 +104,7 @@ public class TaskInbox
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -227,6 +235,7 @@ public class TaskInbox
 	}
 
 	/**
+	 * @throws com.mendix.core.CoreException
 	 * @return value of TaskInbox_TaskInboxImage
 	 */
 	public final atlas_designsystem.proxies.TaskInboxImage getTaskInbox_TaskInboxImage() throws com.mendix.core.CoreException
@@ -237,13 +246,15 @@ public class TaskInbox
 	/**
 	 * @param context
 	 * @return value of TaskInbox_TaskInboxImage
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final atlas_designsystem.proxies.TaskInboxImage getTaskInbox_TaskInboxImage(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		atlas_designsystem.proxies.TaskInboxImage result = null;
 		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.TaskInbox_TaskInboxImage.toString());
-		if (identifier != null)
+		if (identifier != null) {
 			result = atlas_designsystem.proxies.TaskInboxImage.load(context, identifier);
+		}
 		return result;
 	}
 
@@ -263,10 +274,11 @@ public class TaskInbox
 	 */
 	public final void setTaskInbox_TaskInboxImage(com.mendix.systemwideinterfaces.core.IContext context, atlas_designsystem.proxies.TaskInboxImage taskinbox_taskinboximage)
 	{
-		if (taskinbox_taskinboximage == null)
+		if (taskinbox_taskinboximage == null) {
 			getMendixObject().setValue(context, MemberNames.TaskInbox_TaskInboxImage.toString(), null);
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.TaskInbox_TaskInboxImage.toString(), taskinbox_taskinboximage.getMendixObject().getId());
+		}
 	}
 
 	/**
@@ -288,9 +300,9 @@ public class TaskInbox
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.TaskInbox that = (atlas_designsystem.proxies.TaskInbox) obj;
@@ -310,7 +322,7 @@ public class TaskInbox
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.TaskInbox";
+		return entityName;
 	}
 
 	/**

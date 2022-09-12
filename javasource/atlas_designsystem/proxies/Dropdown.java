@@ -23,7 +23,7 @@ public class Dropdown
 		ValueSet("ValueSet"),
 		NoValue("NoValue");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -39,15 +39,17 @@ public class Dropdown
 
 	public Dropdown(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.Dropdown"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected Dropdown(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject dropdownMendixObject)
 	{
-		if (dropdownMendixObject == null)
+		if (dropdownMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.Dropdown", dropdownMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.Dropdown");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, dropdownMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.dropdownMendixObject = dropdownMendixObject;
 		this.context = context;
@@ -65,6 +67,9 @@ public class Dropdown
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.Dropdown initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -79,6 +84,7 @@ public class Dropdown
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -87,6 +93,7 @@ public class Dropdown
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -124,9 +131,9 @@ public class Dropdown
 	public final atlas_designsystem.proxies.DropdownEnum getValueSet(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.ValueSet.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_designsystem.proxies.DropdownEnum.valueOf((java.lang.String) obj);
 	}
 
@@ -146,10 +153,11 @@ public class Dropdown
 	 */
 	public final void setValueSet(com.mendix.systemwideinterfaces.core.IContext context, atlas_designsystem.proxies.DropdownEnum valueset)
 	{
-		if (valueset != null)
+		if (valueset != null) {
 			getMendixObject().setValue(context, MemberNames.ValueSet.toString(), valueset.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.ValueSet.toString(), null);
+		}
 	}
 
 	/**
@@ -168,9 +176,9 @@ public class Dropdown
 	public final atlas_designsystem.proxies.DropdownEnum getNoValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.NoValue.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_designsystem.proxies.DropdownEnum.valueOf((java.lang.String) obj);
 	}
 
@@ -190,10 +198,11 @@ public class Dropdown
 	 */
 	public final void setNoValue(com.mendix.systemwideinterfaces.core.IContext context, atlas_designsystem.proxies.DropdownEnum novalue)
 	{
-		if (novalue != null)
+		if (novalue != null) {
 			getMendixObject().setValue(context, MemberNames.NoValue.toString(), novalue.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.NoValue.toString(), null);
+		}
 	}
 
 	/**
@@ -215,9 +224,9 @@ public class Dropdown
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.Dropdown that = (atlas_designsystem.proxies.Dropdown) obj;
@@ -237,7 +246,7 @@ public class Dropdown
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.Dropdown";
+		return entityName;
 	}
 
 	/**

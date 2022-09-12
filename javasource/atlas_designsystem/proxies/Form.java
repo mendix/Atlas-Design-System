@@ -29,7 +29,7 @@ public class Form
 		City("City"),
 		Country("Country");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -45,15 +45,17 @@ public class Form
 
 	public Form(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.Form"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected Form(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject formMendixObject)
 	{
-		if (formMendixObject == null)
+		if (formMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.Form", formMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.Form");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, formMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.formMendixObject = formMendixObject;
 		this.context = context;
@@ -71,6 +73,9 @@ public class Form
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.Form initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -85,6 +90,7 @@ public class Form
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -93,6 +99,7 @@ public class Form
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -274,9 +281,9 @@ public class Form
 	public final atlas_designsystem.proxies.Contact getContact(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Contact.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_designsystem.proxies.Contact.valueOf((java.lang.String) obj);
 	}
 
@@ -296,10 +303,11 @@ public class Form
 	 */
 	public final void setContact(com.mendix.systemwideinterfaces.core.IContext context, atlas_designsystem.proxies.Contact contact)
 	{
-		if (contact != null)
+		if (contact != null) {
 			getMendixObject().setValue(context, MemberNames.Contact.toString(), contact.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.Contact.toString(), null);
+		}
 	}
 
 	/**
@@ -429,9 +437,9 @@ public class Form
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.Form that = (atlas_designsystem.proxies.Form) obj;
@@ -451,7 +459,7 @@ public class Form
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.Form";
+		return entityName;
 	}
 
 	/**

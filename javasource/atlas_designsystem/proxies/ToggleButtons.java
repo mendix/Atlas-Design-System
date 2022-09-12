@@ -22,7 +22,7 @@ public class ToggleButtons
 	{
 		MapType("MapType");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -38,15 +38,17 @@ public class ToggleButtons
 
 	public ToggleButtons(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.ToggleButtons"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected ToggleButtons(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject toggleButtonsMendixObject)
 	{
-		if (toggleButtonsMendixObject == null)
+		if (toggleButtonsMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.ToggleButtons", toggleButtonsMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.ToggleButtons");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, toggleButtonsMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.toggleButtonsMendixObject = toggleButtonsMendixObject;
 		this.context = context;
@@ -64,6 +66,9 @@ public class ToggleButtons
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.ToggleButtons initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -78,6 +83,7 @@ public class ToggleButtons
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -86,6 +92,7 @@ public class ToggleButtons
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -123,9 +130,9 @@ public class ToggleButtons
 	public final atlas_designsystem.proxies.Enumeration_2 getMapType(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.MapType.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_designsystem.proxies.Enumeration_2.valueOf((java.lang.String) obj);
 	}
 
@@ -145,10 +152,11 @@ public class ToggleButtons
 	 */
 	public final void setMapType(com.mendix.systemwideinterfaces.core.IContext context, atlas_designsystem.proxies.Enumeration_2 maptype)
 	{
-		if (maptype != null)
+		if (maptype != null) {
 			getMendixObject().setValue(context, MemberNames.MapType.toString(), maptype.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.MapType.toString(), null);
+		}
 	}
 
 	/**
@@ -170,9 +178,9 @@ public class ToggleButtons
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.ToggleButtons that = (atlas_designsystem.proxies.ToggleButtons) obj;
@@ -192,7 +200,7 @@ public class ToggleButtons
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.ToggleButtons";
+		return entityName;
 	}
 
 	/**

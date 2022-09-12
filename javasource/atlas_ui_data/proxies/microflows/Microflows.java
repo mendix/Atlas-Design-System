@@ -7,27 +7,32 @@ package atlas_ui_data.proxies.microflows;
 import java.util.HashMap;
 import java.util.Map;
 import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.MendixRuntimeException;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 public class Microflows
 {
+	/**
+	 * @deprecated
+	 * The default constructor of the Microflows class should not be used.
+	 * Use the static microflow invocation methods instead.
+	 */
+	@java.lang.Deprecated(since = "9.12", forRemoval = true)
+	public Microflows() {}
+
 	// These are the microflows for the Atlas_UI_Data module
 	public static java.util.List<atlas_ui_data.proxies.AtlasChartData> dS_CreateAtlasChartData(IContext context, atlas_ui_data.proxies.AtlasStatistics _atlasStatistics)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("AtlasStatistics", _atlasStatistics == null ? null : _atlasStatistics.getMendixObject());
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.DS_CreateAtlasChartData").withParams(params).execute(context);
-		java.util.List<atlas_ui_data.proxies.AtlasChartData> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_ui_data.proxies.AtlasChartData.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_ui_data.proxies.AtlasChartData.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 	public static atlas_ui_data.proxies.AtlasGenericObject dS_DuplicateGenericObject(IContext context, atlas_ui_data.proxies.AtlasGenericObject _defaultObject)
 	{
@@ -91,40 +96,37 @@ public class Microflows
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllLocationDateObjects").withParams(params).execute(context);
-		java.util.List<atlas_ui_data.proxies.AtlasLocationDate> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_ui_data.proxies.AtlasLocationDate.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_ui_data.proxies.AtlasLocationDate.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 	public static java.util.List<atlas_ui_data.proxies.AtlasPeople> iVK_RetrieveAllPeopleObjects(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllPeopleObjects").withParams(params).execute(context);
-		java.util.List<atlas_ui_data.proxies.AtlasPeople> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_ui_data.proxies.AtlasPeople.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_ui_data.proxies.AtlasPeople.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 	public static java.util.List<atlas_ui_data.proxies.AtlasStatistics> iVK_RetrieveAllStatisticObjects(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllStatisticObjects").withParams(params).execute(context);
-		java.util.List<atlas_ui_data.proxies.AtlasStatistics> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_ui_data.proxies.AtlasStatistics.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_ui_data.proxies.AtlasStatistics.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 	public static java.math.BigDecimal mF_Parse_Decimal(IContext context, java.lang.String _atlasString)
 	{

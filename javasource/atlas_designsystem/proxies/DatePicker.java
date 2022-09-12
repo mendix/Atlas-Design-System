@@ -23,7 +23,7 @@ public class DatePicker
 		ValueSet("ValueSet"),
 		NoValue("NoValue");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -39,15 +39,17 @@ public class DatePicker
 
 	public DatePicker(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.DatePicker"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected DatePicker(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject datePickerMendixObject)
 	{
-		if (datePickerMendixObject == null)
+		if (datePickerMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.DatePicker", datePickerMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.DatePicker");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, datePickerMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.datePickerMendixObject = datePickerMendixObject;
 		this.context = context;
@@ -65,6 +67,9 @@ public class DatePicker
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.DatePicker initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -79,6 +84,7 @@ public class DatePicker
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -87,6 +93,7 @@ public class DatePicker
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -199,9 +206,9 @@ public class DatePicker
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.DatePicker that = (atlas_designsystem.proxies.DatePicker) obj;
@@ -221,7 +228,7 @@ public class DatePicker
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.DatePicker";
+		return entityName;
 	}
 
 	/**

@@ -22,7 +22,7 @@ public class ColorPciker
 	{
 		Value("Value");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -38,15 +38,17 @@ public class ColorPciker
 
 	public ColorPciker(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.ColorPciker"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected ColorPciker(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject colorPcikerMendixObject)
 	{
-		if (colorPcikerMendixObject == null)
+		if (colorPcikerMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.ColorPciker", colorPcikerMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.ColorPciker");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, colorPcikerMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.colorPcikerMendixObject = colorPcikerMendixObject;
 		this.context = context;
@@ -64,6 +66,9 @@ public class ColorPciker
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.ColorPciker initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -78,6 +83,7 @@ public class ColorPciker
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -86,6 +92,7 @@ public class ColorPciker
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -162,9 +169,9 @@ public class ColorPciker
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.ColorPciker that = (atlas_designsystem.proxies.ColorPciker) obj;
@@ -184,7 +191,7 @@ public class ColorPciker
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.ColorPciker";
+		return entityName;
 	}
 
 	/**

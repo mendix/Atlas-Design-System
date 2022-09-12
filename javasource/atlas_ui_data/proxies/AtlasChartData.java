@@ -25,7 +25,7 @@ public class AtlasChartData
 		bubbleSize("bubbleSize"),
 		AtlasChartData_AtlasChartSeriesInfo("Atlas_UI_Data.AtlasChartData_AtlasChartSeriesInfo");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -41,15 +41,17 @@ public class AtlasChartData
 
 	public AtlasChartData(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_UI_Data.AtlasChartData"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected AtlasChartData(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject atlasChartDataMendixObject)
 	{
-		if (atlasChartDataMendixObject == null)
+		if (atlasChartDataMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_UI_Data.AtlasChartData", atlasChartDataMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_UI_Data.AtlasChartData");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, atlasChartDataMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.atlasChartDataMendixObject = atlasChartDataMendixObject;
 		this.context = context;
@@ -67,6 +69,9 @@ public class AtlasChartData
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_ui_data.proxies.AtlasChartData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -81,6 +86,7 @@ public class AtlasChartData
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -89,6 +95,7 @@ public class AtlasChartData
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -219,6 +226,7 @@ public class AtlasChartData
 	}
 
 	/**
+	 * @throws com.mendix.core.CoreException
 	 * @return value of AtlasChartData_AtlasChartSeriesInfo
 	 */
 	public final atlas_ui_data.proxies.AtlasChartSeriesInfo getAtlasChartData_AtlasChartSeriesInfo() throws com.mendix.core.CoreException
@@ -229,13 +237,15 @@ public class AtlasChartData
 	/**
 	 * @param context
 	 * @return value of AtlasChartData_AtlasChartSeriesInfo
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final atlas_ui_data.proxies.AtlasChartSeriesInfo getAtlasChartData_AtlasChartSeriesInfo(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		atlas_ui_data.proxies.AtlasChartSeriesInfo result = null;
 		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.AtlasChartData_AtlasChartSeriesInfo.toString());
-		if (identifier != null)
+		if (identifier != null) {
 			result = atlas_ui_data.proxies.AtlasChartSeriesInfo.load(context, identifier);
+		}
 		return result;
 	}
 
@@ -255,10 +265,11 @@ public class AtlasChartData
 	 */
 	public final void setAtlasChartData_AtlasChartSeriesInfo(com.mendix.systemwideinterfaces.core.IContext context, atlas_ui_data.proxies.AtlasChartSeriesInfo atlaschartdata_atlaschartseriesinfo)
 	{
-		if (atlaschartdata_atlaschartseriesinfo == null)
+		if (atlaschartdata_atlaschartseriesinfo == null) {
 			getMendixObject().setValue(context, MemberNames.AtlasChartData_AtlasChartSeriesInfo.toString(), null);
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.AtlasChartData_AtlasChartSeriesInfo.toString(), atlaschartdata_atlaschartseriesinfo.getMendixObject().getId());
+		}
 	}
 
 	/**
@@ -280,9 +291,9 @@ public class AtlasChartData
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_ui_data.proxies.AtlasChartData that = (atlas_ui_data.proxies.AtlasChartData) obj;
@@ -302,7 +313,7 @@ public class AtlasChartData
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_UI_Data.AtlasChartData";
+		return entityName;
 	}
 
 	/**
