@@ -31,7 +31,7 @@ public class AtlasLocationDate
 		Latitude("Latitude"),
 		NoAttending("NoAttending");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -47,15 +47,17 @@ public class AtlasLocationDate
 
 	public AtlasLocationDate(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_UI_Data.AtlasLocationDate"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected AtlasLocationDate(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject atlasLocationDateMendixObject)
 	{
-		if (atlasLocationDateMendixObject == null)
+		if (atlasLocationDateMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_UI_Data.AtlasLocationDate", atlasLocationDateMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_UI_Data.AtlasLocationDate");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, atlasLocationDateMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.atlasLocationDateMendixObject = atlasLocationDateMendixObject;
 		this.context = context;
@@ -73,6 +75,9 @@ public class AtlasLocationDate
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_ui_data.proxies.AtlasLocationDate initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -87,14 +92,16 @@ public class AtlasLocationDate
 
 	public static java.util.List<atlas_ui_data.proxies.AtlasLocationDate> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<atlas_ui_data.proxies.AtlasLocationDate> result = new java.util.ArrayList<atlas_ui_data.proxies.AtlasLocationDate>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//Atlas_UI_Data.AtlasLocationDate" + xpathConstraint))
-			result.add(atlas_ui_data.proxies.AtlasLocationDate.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> atlas_ui_data.proxies.AtlasLocationDate.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -103,6 +110,7 @@ public class AtlasLocationDate
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -464,9 +472,9 @@ public class AtlasLocationDate
 	public final atlas_ui_data.proxies.PeopleAttending getNoAttending(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.NoAttending.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_ui_data.proxies.PeopleAttending.valueOf((java.lang.String) obj);
 	}
 
@@ -486,10 +494,11 @@ public class AtlasLocationDate
 	 */
 	public final void setNoAttending(com.mendix.systemwideinterfaces.core.IContext context, atlas_ui_data.proxies.PeopleAttending noattending)
 	{
-		if (noattending != null)
+		if (noattending != null) {
 			getMendixObject().setValue(context, MemberNames.NoAttending.toString(), noattending.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.NoAttending.toString(), null);
+		}
 	}
 
 	/**
@@ -511,9 +520,9 @@ public class AtlasLocationDate
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_ui_data.proxies.AtlasLocationDate that = (atlas_ui_data.proxies.AtlasLocationDate) obj;
@@ -533,7 +542,7 @@ public class AtlasLocationDate
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_UI_Data.AtlasLocationDate";
+		return entityName;
 	}
 
 	/**

@@ -42,10 +42,11 @@ public class ZipDocuments extends CustomJavaAction<IMendixObject>
 	@java.lang.Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.ListOfDocument = new java.util.ArrayList<system.proxies.FileDocument>();
-		if (__ListOfDocument != null)
-			for (IMendixObject __ListOfDocumentElement : __ListOfDocument)
-				this.ListOfDocument.add(system.proxies.FileDocument.initialize(getContext(), __ListOfDocumentElement));
+		this.ListOfDocument = java.util.Optional.ofNullable(this.__ListOfDocument)
+			.orElse(java.util.Collections.emptyList())
+			.stream()
+			.map(__ListOfDocumentElement -> system.proxies.FileDocument.initialize(getContext(), __ListOfDocumentElement))
+			.collect(java.util.stream.Collectors.toList());
 
 		// BEGIN USER CODE
 
@@ -95,6 +96,7 @@ public class ZipDocuments extends CustomJavaAction<IMendixObject>
 
 	/**
 	 * Returns a string representation of this action
+	 * @return a string representation of this action
 	 */
 	@java.lang.Override
 	public java.lang.String toString()

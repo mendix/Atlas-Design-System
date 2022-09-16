@@ -35,7 +35,7 @@ public class AtlasGenericObject
 		AtlasChecked("AtlasChecked"),
 		AtlasSimpleEnum("AtlasSimpleEnum");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -51,15 +51,17 @@ public class AtlasGenericObject
 
 	public AtlasGenericObject(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_UI_Data.AtlasGenericObject"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected AtlasGenericObject(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject atlasGenericObjectMendixObject)
 	{
-		if (atlasGenericObjectMendixObject == null)
+		if (atlasGenericObjectMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_UI_Data.AtlasGenericObject", atlasGenericObjectMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_UI_Data.AtlasGenericObject");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, atlasGenericObjectMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.atlasGenericObjectMendixObject = atlasGenericObjectMendixObject;
 		this.context = context;
@@ -77,6 +79,9 @@ public class AtlasGenericObject
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_ui_data.proxies.AtlasGenericObject initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -91,14 +96,16 @@ public class AtlasGenericObject
 
 	public static java.util.List<atlas_ui_data.proxies.AtlasGenericObject> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<atlas_ui_data.proxies.AtlasGenericObject> result = new java.util.ArrayList<atlas_ui_data.proxies.AtlasGenericObject>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//Atlas_UI_Data.AtlasGenericObject" + xpathConstraint))
-			result.add(atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -107,6 +114,7 @@ public class AtlasGenericObject
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -189,8 +197,9 @@ public class AtlasGenericObject
 	  */
 	public final void setAtlasBinary(com.mendix.systemwideinterfaces.core.IContext context, java.io.InputStream inputStream, long length)
 	{
-		if (getMendixObject().getState() == com.mendix.systemwideinterfaces.core.IMendixObject.ObjectState.INSTANTIATED)
+		if (getMendixObject().getState() == com.mendix.systemwideinterfaces.core.IMendixObject.ObjectState.INSTANTIATED) {
 			try { commit(); } catch (com.mendix.core.CoreException ex) { }
+		}
 		com.mendix.core.objectmanagement.member.MendixBinary binary = (com.mendix.core.objectmanagement.member.MendixBinary) getMendixObject().getMember(context, MemberNames.AtlasBinary.toString());
 		binary.storeValue(context, inputStream, length);
 	}
@@ -355,9 +364,9 @@ public class AtlasGenericObject
 	public final atlas_ui_data.proxies.DefaultEnumeration getAtlasEnumeration(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.AtlasEnumeration.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_ui_data.proxies.DefaultEnumeration.valueOf((java.lang.String) obj);
 	}
 
@@ -377,10 +386,11 @@ public class AtlasGenericObject
 	 */
 	public final void setAtlasEnumeration(com.mendix.systemwideinterfaces.core.IContext context, atlas_ui_data.proxies.DefaultEnumeration atlasenumeration)
 	{
-		if (atlasenumeration != null)
+		if (atlasenumeration != null) {
 			getMendixObject().setValue(context, MemberNames.AtlasEnumeration.toString(), atlasenumeration.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.AtlasEnumeration.toString(), null);
+		}
 	}
 
 	/**
@@ -598,9 +608,9 @@ public class AtlasGenericObject
 	public final atlas_ui_data.proxies.SimpleEnum getAtlasSimpleEnum(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.AtlasSimpleEnum.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_ui_data.proxies.SimpleEnum.valueOf((java.lang.String) obj);
 	}
 
@@ -620,10 +630,11 @@ public class AtlasGenericObject
 	 */
 	public final void setAtlasSimpleEnum(com.mendix.systemwideinterfaces.core.IContext context, atlas_ui_data.proxies.SimpleEnum atlassimpleenum)
 	{
-		if (atlassimpleenum != null)
+		if (atlassimpleenum != null) {
 			getMendixObject().setValue(context, MemberNames.AtlasSimpleEnum.toString(), atlassimpleenum.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.AtlasSimpleEnum.toString(), null);
+		}
 	}
 
 	/**
@@ -645,9 +656,9 @@ public class AtlasGenericObject
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_ui_data.proxies.AtlasGenericObject that = (atlas_ui_data.proxies.AtlasGenericObject) obj;
@@ -667,7 +678,7 @@ public class AtlasGenericObject
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_UI_Data.AtlasGenericObject";
+		return entityName;
 	}
 
 	/**

@@ -7,13 +7,19 @@ package atlas_designsystem.proxies.microflows;
 import java.util.HashMap;
 import java.util.Map;
 import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.MendixRuntimeException;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 public class Microflows
 {
+	/**
+	 * @deprecated
+	 * The default constructor of the Microflows class should not be used.
+	 * Use the static microflow invocation methods instead.
+	 */
+	@java.lang.Deprecated(since = "9.12", forRemoval = true)
+	public Microflows() {}
+
 	// These are the microflows for the Atlas_DesignSystem module
 	public static boolean aCT_ConvertBase64ToImage(IContext context, atlas_designsystem.proxies.ScreenshotTaker _screenShotTaker)
 	{
@@ -90,27 +96,25 @@ public class Microflows
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet1").withParams(params).execute(context);
-		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> dS_ChartData_StaticSet2(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet2").withParams(params).execute(context);
-		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 	public static atlas_ui_data.proxies.AtlasGenericObject dS_EmptyRating(IContext context)
 	{
@@ -140,27 +144,25 @@ public class Microflows
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_Treenode").withParams(params).execute(context);
-		java.util.List<atlas_ui_data.proxies.AtlasGenericObject> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> mF_DataString_to_ChartsDataMapList(IContext context, java.lang.String _dataString)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("DataString", _dataString);
 		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.MF_DataString_to_ChartsDataMapList").withParams(params).execute(context);
-		java.util.List<atlas_designsystem.proxies.ChartsDataMap> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
+		if (objs == null) {
+			return null;
+		} else {
+			return objs.stream()
+				.map(obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj))
+				.collect(java.util.stream.Collectors.toList());
 		}
-		return result;
 	}
 }

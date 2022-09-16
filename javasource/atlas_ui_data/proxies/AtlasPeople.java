@@ -42,7 +42,7 @@ public class AtlasPeople extends system.proxies.Image
 		HasContents("HasContents"),
 		Size("Size");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -58,14 +58,15 @@ public class AtlasPeople extends system.proxies.Image
 
 	public AtlasPeople(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_UI_Data.AtlasPeople"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected AtlasPeople(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject atlasPeopleMendixObject)
 	{
 		super(context, atlasPeopleMendixObject);
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_UI_Data.AtlasPeople", atlasPeopleMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_UI_Data.AtlasPeople");
+		if (!com.mendix.core.Core.isSubClassOf(entityName, atlasPeopleMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 	}
 
 	/**
@@ -80,6 +81,9 @@ public class AtlasPeople extends system.proxies.Image
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_ui_data.proxies.AtlasPeople initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -94,10 +98,11 @@ public class AtlasPeople extends system.proxies.Image
 
 	public static java.util.List<atlas_ui_data.proxies.AtlasPeople> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<atlas_ui_data.proxies.AtlasPeople> result = new java.util.ArrayList<atlas_ui_data.proxies.AtlasPeople>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//Atlas_UI_Data.AtlasPeople" + xpathConstraint))
-			result.add(atlas_ui_data.proxies.AtlasPeople.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> atlas_ui_data.proxies.AtlasPeople.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
@@ -404,9 +409,9 @@ public class AtlasPeople extends system.proxies.Image
 	public final atlas_ui_data.proxies.Departments getDepartment(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Department.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_ui_data.proxies.Departments.valueOf((java.lang.String) obj);
 	}
 
@@ -426,10 +431,11 @@ public class AtlasPeople extends system.proxies.Image
 	 */
 	public final void setDepartment(com.mendix.systemwideinterfaces.core.IContext context, atlas_ui_data.proxies.Departments department)
 	{
-		if (department != null)
+		if (department != null) {
 			getMendixObject().setValue(context, MemberNames.Department.toString(), department.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.Department.toString(), null);
+		}
 	}
 
 	/**
@@ -736,9 +742,9 @@ public class AtlasPeople extends system.proxies.Image
 	public final atlas_ui_data.proxies.Status getStatus(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Status.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return atlas_ui_data.proxies.Status.valueOf((java.lang.String) obj);
 	}
 
@@ -758,18 +764,19 @@ public class AtlasPeople extends system.proxies.Image
 	 */
 	public final void setStatus(com.mendix.systemwideinterfaces.core.IContext context, atlas_ui_data.proxies.Status status)
 	{
-		if (status != null)
+		if (status != null) {
 			getMendixObject().setValue(context, MemberNames.Status.toString(), status.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.Status.toString(), null);
+		}
 	}
 
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_ui_data.proxies.AtlasPeople that = (atlas_ui_data.proxies.AtlasPeople) obj;
@@ -789,7 +796,7 @@ public class AtlasPeople extends system.proxies.Image
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_UI_Data.AtlasPeople";
+		return entityName;
 	}
 
 	/**

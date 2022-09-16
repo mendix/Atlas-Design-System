@@ -39,7 +39,7 @@ public class UnZipDocument extends CustomJavaAction<java.util.List<IMendixObject
 	@java.lang.Override
 	public java.util.List<IMendixObject> executeAction() throws Exception
 	{
-		this.ZipFile = __ZipFile == null ? null : system.proxies.FileDocument.initialize(getContext(), __ZipFile);
+		this.ZipFile = this.__ZipFile == null ? null : system.proxies.FileDocument.initialize(getContext(), __ZipFile);
 
 		// BEGIN USER CODE
 		
@@ -97,6 +97,7 @@ public class UnZipDocument extends CustomJavaAction<java.util.List<IMendixObject
 
 	/**
 	 * Returns a string representation of this action
+	 * @return a string representation of this action
 	 */
 	@java.lang.Override
 	public java.lang.String toString()

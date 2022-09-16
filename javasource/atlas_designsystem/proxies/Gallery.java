@@ -26,7 +26,7 @@ public class Gallery extends system.proxies.Image
 		HasContents("HasContents"),
 		Size("Size");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -42,14 +42,15 @@ public class Gallery extends system.proxies.Image
 
 	public Gallery(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "Atlas_DesignSystem.Gallery"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected Gallery(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject galleryMendixObject)
 	{
 		super(context, galleryMendixObject);
-		if (!com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.Gallery", galleryMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a Atlas_DesignSystem.Gallery");
+		if (!com.mendix.core.Core.isSubClassOf(entityName, galleryMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 	}
 
 	/**
@@ -64,6 +65,9 @@ public class Gallery extends system.proxies.Image
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static atlas_designsystem.proxies.Gallery initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -78,10 +82,11 @@ public class Gallery extends system.proxies.Image
 
 	public static java.util.List<atlas_designsystem.proxies.Gallery> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<atlas_designsystem.proxies.Gallery> result = new java.util.ArrayList<atlas_designsystem.proxies.Gallery>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//Atlas_DesignSystem.Gallery" + xpathConstraint))
-			result.add(atlas_designsystem.proxies.Gallery.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> atlas_designsystem.proxies.Gallery.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
@@ -159,9 +164,9 @@ public class Gallery extends system.proxies.Image
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final atlas_designsystem.proxies.Gallery that = (atlas_designsystem.proxies.Gallery) obj;
@@ -181,7 +186,7 @@ public class Gallery extends system.proxies.Image
 	 */
 	public static java.lang.String getType()
 	{
-		return "Atlas_DesignSystem.Gallery";
+		return entityName;
 	}
 
 	/**
