@@ -17,3 +17,4 @@ theme-cache/
 /**/node_modules/
 !/javascriptsource/**/node_modules/
 /nativemobile/builds/
+**/.DS_Store
