@@ -128,18 +128,6 @@ public class Microflows
 		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.DS_MaxRating").withParams(params).execute(context);
 		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, result);
 	}
-	public static java.util.List<atlas_designsystem.proxies.Product> dS_ProductList(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ProductList").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_designsystem.proxies.Product.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
-	}
 	public static atlas_designsystem.proxies.RangeSlider dS_RangeSlider(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
