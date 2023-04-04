@@ -81,15 +81,6 @@ public class Image extends system.proxies.FileDocument
 		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.MapWithImages", mendixObject.getType())) {
 			return atlas_designsystem.proxies.MapWithImages.initialize(context, mendixObject);
 		}
-		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.ScreenshotsBuildingBlock", mendixObject.getType())) {
-			return atlas_designsystem.proxies.ScreenshotsBuildingBlock.initialize(context, mendixObject);
-		}
-		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.ScreenshotsPageTemplate", mendixObject.getType())) {
-			return atlas_designsystem.proxies.ScreenshotsPageTemplate.initialize(context, mendixObject);
-		}
-		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.ScreenshotsWidget", mendixObject.getType())) {
-			return atlas_designsystem.proxies.ScreenshotsWidget.initialize(context, mendixObject);
-		}
 		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.TakePicture", mendixObject.getType())) {
 			return atlas_designsystem.proxies.TakePicture.initialize(context, mendixObject);
 		}

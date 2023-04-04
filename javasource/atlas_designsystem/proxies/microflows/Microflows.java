@@ -21,42 +21,6 @@ public class Microflows
 	public Microflows() {}
 
 	// These are the microflows for the Atlas_DesignSystem module
-	public static boolean aCT_ConvertBase64ToImage(IContext context, atlas_designsystem.proxies.ScreenshotTaker _screenShotTaker)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("ScreenShotTaker", _screenShotTaker == null ? null : _screenShotTaker.getMendixObject());
-		return (java.lang.Boolean) Core.microflowCall("Atlas_DesignSystem.ACT_ConvertBase64ToImage").withParams(params).execute(context);
-	}
-	public static void aCT_DeleteScreenshotsBuildingBlocks(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ACT_DeleteScreenshotsBuildingBlocks").withParams(params).execute(context);
-	}
-	public static void aCT_DeleteScreenshotsPageTemplates(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ACT_DeleteScreenshotsPageTemplates").withParams(params).execute(context);
-	}
-	public static void aCT_DeleteScreenshotsWidgets(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ACT_DeleteScreenshotsWidgets").withParams(params).execute(context);
-	}
-	public static void aCT_SaveScreenshotsBuildingBlocksToFile(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ACT_SaveScreenshotsBuildingBlocksToFile").withParams(params).execute(context);
-	}
-	public static void aCT_SaveScreenshotsPageTemplatesToFile(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ACT_SaveScreenshotsPageTemplatesToFile").withParams(params).execute(context);
-	}
-	public static void aCT_SaveScreenshotsWidgetsToFile(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ACT_SaveScreenshotsWidgetsToFile").withParams(params).execute(context);
-	}
 	public static void aSu_CleanTakePictureEntities(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
