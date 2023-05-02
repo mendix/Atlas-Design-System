@@ -61,6 +61,8 @@ export const excludeMaps = false;
 export const excludeMapsHelpers = false;
 // Page Title
 export const excludePageTitle = false;
+// Pie Doughnut Chart
+export const excludePieDoughnutChart = false;
 // Progress Bar
 export const excludeProgressBar = false;
 export const excludeProgressBarHelpers = false;
@@ -83,6 +85,9 @@ export const excludeSafeAreaView = false;
 // Slider
 export const excludeSlider = false;
 export const excludeSliderHelpers = false;
+// Switch
+export const excludeSwitch = false;
+export const excludeSwitchHelpers = false;
 // Tab Container
 export const excludeTabContainer = false;
 export const excludeTabContainerHelpers = false;
@@ -102,3 +107,18 @@ export const excludeVideoPlayer = false;
 export const excludeWebView = false;
 // Helper Classes
 export const excludeHelpers = false;
+// Radio Buttons
+export const excludeRadioButtons = false;
+export const excludeRadioButtonsHelper = false;
+// Background Gradient
+export const excludeBackgroundGradient = false;
+export const excludeBackgroundGradientHelper = false;
+// Column Chart
+export const excludeColumnChart = false;
+export const excludeColumnChartHelper = false;
+// Gallery
+export const excludeGallery = false;
+export const excludeGalleryHelper = false;
+// Gallery Text Filter
+export const excludeGalleryTextFilter = false;
+export const excludeGalleryTextFilterHelper = false;

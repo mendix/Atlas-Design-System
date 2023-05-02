@@ -140,7 +140,9 @@
                         white-space: nowrap;
                         overflow: hidden;
                         // Glyph icon
-                        .glyphicon {
+                        .glyphicon,
+                        .mx-icon-lined,
+                        .mx-icon-filled {
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -163,6 +165,12 @@
                 border-color: transparent;
                 border-radius: 0;
                 background: transparent;
+                display: flex;
+            }
+
+            .mx-icon-filled,
+            .mx-icon-lined {
+                font-size: 20px;
             }
         }
     }
