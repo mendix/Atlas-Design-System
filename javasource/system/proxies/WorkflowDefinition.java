@@ -22,7 +22,8 @@ public class WorkflowDefinition
 	{
 		Name("Name"),
 		Title("Title"),
-		IsObsolete("IsObsolete");
+		IsObsolete("IsObsolete"),
+		IsLocked("IsLocked");
 
 		private final java.lang.String metaName;
 
@@ -231,6 +232,42 @@ public class WorkflowDefinition
 	public final void setIsObsolete(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean isobsolete)
 	{
 		getMendixObject().setValue(context, MemberNames.IsObsolete.toString(), isobsolete);
+	}
+
+	/**
+	 * @return value of IsLocked
+	 */
+	public final java.lang.Boolean getIsLocked()
+	{
+		return getIsLocked(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of IsLocked
+	 */
+	public final java.lang.Boolean getIsLocked(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.IsLocked.toString());
+	}
+
+	/**
+	 * Set value of IsLocked
+	 * @param islocked
+	 */
+	public final void setIsLocked(java.lang.Boolean islocked)
+	{
+		setIsLocked(getContext(), islocked);
+	}
+
+	/**
+	 * Set value of IsLocked
+	 * @param context
+	 * @param islocked
+	 */
+	public final void setIsLocked(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean islocked)
+	{
+		getMendixObject().setValue(context, MemberNames.IsLocked.toString(), islocked);
 	}
 
 	/**

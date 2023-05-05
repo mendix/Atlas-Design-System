@@ -27,6 +27,7 @@ public class WorkflowUserTask
 		EndTime("EndTime"),
 		Outcome("Outcome"),
 		State("State"),
+		CompletionType("CompletionType"),
 		WorkflowUserTask_TargetUsers("System.WorkflowUserTask_TargetUsers"),
 		WorkflowUserTask_Assignee("System.WorkflowUserTask_Assignee"),
 		WorkflowUserTask_Workflow("System.WorkflowUserTask_Workflow"),
@@ -391,6 +392,51 @@ public class WorkflowUserTask
 			getMendixObject().setValue(context, MemberNames.State.toString(), state.toString());
 		} else {
 			getMendixObject().setValue(context, MemberNames.State.toString(), null);
+		}
+	}
+
+	/**
+	 * Set value of CompletionType
+	 * @param completiontype
+	 */
+	public final system.proxies.WorkflowUserTaskCompletionType getCompletionType()
+	{
+		return getCompletionType(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of CompletionType
+	 */
+	public final system.proxies.WorkflowUserTaskCompletionType getCompletionType(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		Object obj = getMendixObject().getValue(context, MemberNames.CompletionType.toString());
+		if (obj == null) {
+			return null;
+		}
+		return system.proxies.WorkflowUserTaskCompletionType.valueOf((java.lang.String) obj);
+	}
+
+	/**
+	 * Set value of CompletionType
+	 * @param completiontype
+	 */
+	public final void setCompletionType(system.proxies.WorkflowUserTaskCompletionType completiontype)
+	{
+		setCompletionType(getContext(), completiontype);
+	}
+
+	/**
+	 * Set value of CompletionType
+	 * @param context
+	 * @param completiontype
+	 */
+	public final void setCompletionType(com.mendix.systemwideinterfaces.core.IContext context, system.proxies.WorkflowUserTaskCompletionType completiontype)
+	{
+		if (completiontype != null) {
+			getMendixObject().setValue(context, MemberNames.CompletionType.toString(), completiontype.toString());
+		} else {
+			getMendixObject().setValue(context, MemberNames.CompletionType.toString(), null);
 		}
 	}
 
