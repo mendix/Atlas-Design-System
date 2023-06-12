@@ -28,7 +28,9 @@
                             border-bottom-color: $navtopbar-color;
                         }
 
-                        .glyphicon {
+                        .glyphicon,
+                        .mx-icon-lined,
+                        .mx-icon-filled {
                             font-size: $navtopbar-glyph-size;
                         }
                     }
@@ -151,7 +153,9 @@
             a {
                 flex-direction: column;
                 justify-content: center;
-                .glyphicon {
+                .glyphicon,
+                .mx-icon-lined,
+                .mx-icon-filled {
                     margin: 0 0 5px 0;
                 }
             }
@@ -168,7 +172,9 @@
     }
 
     .hide-icons.mx-navigationtree {
-        .glyphicon {
+        .glyphicon,
+        .mx-icon-lined,
+        .mx-icon-filled {
             display: none;
         }
     }

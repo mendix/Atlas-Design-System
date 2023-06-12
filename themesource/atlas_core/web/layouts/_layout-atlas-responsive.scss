@@ -15,7 +15,7 @@
             .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .region-sidebar {
                 width: $navsidebar-width-closed !important;
 
-                .mx-scrollcontainer-wrapper > .mx-navigationtree ul li {
+                .mx-scrollcontainer-wrapper .mx-navigationtree ul li {
                     &.mx-navigationtree-has-items a {
                         white-space: nowrap;
                     }
@@ -133,7 +133,7 @@
                     font-weight: bold;
                 }
 
-                & > .mx-navigationtree .navbar-inner > ul > li {
+                .mx-navigationtree .navbar-inner > ul > li {
                     & > a {
                         height: $sidebar-icon-height;
                         padding: $spacing-small 0;
