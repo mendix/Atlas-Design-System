@@ -1,0 +1,51 @@
+.screenshots-wrapper {
+    position: absolute;
+    z-index: 4;
+    width: 45vw;
+    height: 50vh;
+    right: 0;
+    top: 20vh;
+    left: 50vw;
+
+    .screenshot {
+        &--cacti {
+            position: absolute;
+            width: 70%;
+            z-index: 5;
+        }
+
+        &--nova {
+            width: 20%;
+            position: absolute;
+            z-index: 6;
+            top: 20%;
+            right: 21%;
+        }
+        
+        &--new-garden {
+            width: 18%;
+            position: absolute;
+            z-index: 6;
+            top: -21%;
+            left: -5%;
+        }
+    }
+}
+
+.landing-page-wrapper {
+    margin-top: 15vh !important;
+}
+
+.figma-link {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        transform: scale(.95);
+    }
+
+    img {
+        height: 40px !important;
+        width: auto;
+        margin-right: 0;
+    }
+}

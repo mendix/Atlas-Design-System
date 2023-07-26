@@ -1,0 +1,13 @@
+.card {
+    &.card-with-image,
+    &--action {
+        border: 1px solid transparent;
+        transition: all .2s ease-in-out;
+
+        &:hover,
+        &:focus {
+            border-color: $brand-primary;
+            transform: scale(.98);
+        }
+    }
+}

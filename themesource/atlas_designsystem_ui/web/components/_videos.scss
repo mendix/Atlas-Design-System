@@ -1,0 +1,150 @@
+.video-wrapper {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000000, .3);
+    }
+
+    .text-wrapper {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10%;
+        margin: auto;
+        height: 17vh;
+        max-width: 25vw;
+        z-index: 3;
+
+        h1 {
+            margin-bottom: 2vh;
+            font-size: 5vh;
+            font-weight: bold;
+            max-width: 20vw;
+            line-height: 5vh;
+            text-shadow: 1px 1px 3px #000000;
+        }
+
+        h2 {            
+            text-shadow: 1px 1px 3px #000000;
+        }
+
+        span {
+            display: block;
+            text-shadow: 1px 1px 3px #000000;
+            max-width: 25vw;
+        }
+    }
+
+    @media (max-width: $screen-xl) {
+        .text-wrapper {
+            max-width: 50vw;
+            height: 58vh;
+            width: 50vw;
+
+            h1 {
+                max-width: 30vw;
+            }
+
+            span {
+                max-width: 40vw;
+            }
+        }
+
+        .credit-card-wrapper {
+            right: 15vw;
+            left: auto;
+        }
+    }
+
+    @media (max-width: $screen-md-max) {
+        .text-wrapper {
+            max-width: 100vw;
+            height: 62vh;
+            width: 100vw;
+
+            h1 {
+                max-width: 30vw;
+            }
+
+            span {
+                max-width: 80vw;
+            }
+        }
+
+        .credit-card-wrapper {
+            right: 5vw;
+            left: auto;
+            top: 16vh;
+            bottom: auto;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        height: calc(100vh - 30px);
+
+        .text-wrapper {
+            padding: 2vh 0;
+            height: 62vh;
+            width: calc(100% - 40px);
+            left: 20px;
+            text-align: center;
+
+            h1 {
+                max-width: 100%;
+                font-size: 6vh;
+                line-height: 6vh;
+            }
+
+            span {
+                max-width: 100%;
+            }
+
+            h4 {
+                font-size: 4vh;
+            }
+
+            h6 {
+                max-width: inherit;
+                text-align: left;
+                white-space: pre;
+            }
+
+            .col-12 {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .border-right {
+            border-right: none !important;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+
+            &::after {
+                content: '';
+                width: 30vw;
+                position: absolute;
+                height: 1px;
+                background-color: #fff;
+                left: 0;
+                right: 0;
+                bottom: 15px;
+                margin: auto;
+            }
+        }
+
+        .device-screenshot,
+        .credit-card-wrapper {
+            display: none;
+        }
+    }
+}
