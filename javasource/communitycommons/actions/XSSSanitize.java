@@ -9,7 +9,6 @@
 
 package communitycommons.actions;
 
-import com.google.common.collect.Lists;
 import com.mendix.systemwideinterfaces.MendixRuntimeException;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
@@ -17,15 +16,16 @@ import communitycommons.proxies.SanitizerPolicy;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Removes all potiential dangerous HTML from a string so that it can be safely displayed in a browser. 
+ * Removes all potential dangerous HTML from a string so that it can be safely displayed in a browser. 
  * 
  * This function should be applied to all HTML which is displayed in the browser, and can be entered by (untrusted) users.
  * 
  * - HTML: The html to sanitize
- * - policy1... policy6: one or more values of SanitizerPolicy. You may leave these poliy parameters empty if you don't want to allow additional elements.
+ * - policy1... policy6: one or more values of SanitizerPolicy. You may leave these policy parameters empty if you don't want to allow additional elements.
  * 
  * BLOCKS: Allows common block elements including <p>, <h1>, etc.
  * FORMATTING: Allows common formatting elements including <b>, <i>, etc.
@@ -68,8 +68,7 @@ public class XSSSanitize extends CustomJavaAction<java.lang.String>
 			return "";
 		}
 
-		List<SanitizerPolicy> policyParams = Lists.newArrayList(policy1, policy2, policy3, policy4, policy5, policy6)
-			.stream()
+		List<SanitizerPolicy> policyParams = Stream.of(policy1, policy2, policy3, policy4, policy5, policy6)
 			.filter(Objects::nonNull)
 			.collect(Collectors.toList());
 
