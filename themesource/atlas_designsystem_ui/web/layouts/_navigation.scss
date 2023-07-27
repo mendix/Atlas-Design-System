@@ -15,6 +15,30 @@ $navigation-background : #0a1325;
 
             .mx-navigationtree {
                 background-color: $navigation-background;
+
+                .navbar-inner {
+                    > ul {
+                        > li {
+                            > a {
+                                border: none;
+                                background-color: $navigation-background;
+                                
+                                &:hover,
+                                &:focus,
+                                &.active {
+                                    background-color: $gray-dark;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .tab-custom-pills {
+            &.mx-tabcontainer > .mx-tabcontainer-tabs > li {
+                flex: auto;
+                text-align: center;
             }
         }
     }
@@ -38,6 +62,22 @@ $navigation-background : #0a1325;
 
         .mx-navbar {
             background-color: transparent;
+
+            ul {
+                &.nav {
+                    > li {
+                        &.mx-navbar-item {
+                            > a {
+                                &:hover,
+                                &:focus,
+                                &.active {
+                                    background-color: $gray-dark;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         a {
