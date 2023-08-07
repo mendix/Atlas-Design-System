@@ -1,0 +1,16 @@
+.fill-width-tab-pills {
+    &.tab-pills {
+        &.mx-tabcontainer {
+            > .mx-tabcontainer-tabs {
+                > li {
+                    flex: 1;
+                    text-align: center;
+
+                    a {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
