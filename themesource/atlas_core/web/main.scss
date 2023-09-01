@@ -214,6 +214,9 @@
     @include radio-button();
 }
 
+@import "core/widgets/scroll-container";
+@include scroll-container();
+
 @import "core/widgets/tab-container";
 @if not $exclude-tab-container {
     @include tab-container();
