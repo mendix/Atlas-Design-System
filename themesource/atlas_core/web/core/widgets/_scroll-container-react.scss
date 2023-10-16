@@ -132,6 +132,7 @@
     .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable {
         flex-basis: var(--closed-sidebar-width, 0px);
+        overflow: clip;
     }
 
     // For open sidebar - full width
