@@ -201,4 +201,16 @@
     .mx-scrollcontainer-slide.mx-scrollcontainer-open > .mx-scrollcontainer-toggleable {
         pointer-events: auto;
     }
+
+    .mx-scrollcontainer-center {
+        .mx-layoutgrid,
+        .mx-layoutgrid-fluid {
+            @include layout-spacing($type: padding, $direction: all, $device: responsive);
+
+            .mx-layoutgrid,
+            .mx-layoutgrid-fluid {
+                padding: 0;
+            }
+        }
+    }
 }
