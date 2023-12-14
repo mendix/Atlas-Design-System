@@ -21,6 +21,12 @@ public class Microflows
 	public Microflows() {}
 
 	// These are the microflows for the Atlas_UI_Data module
+	public static atlas_ui_data.proxies.AtlasCountry dS_AtlasCountry(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.DS_AtlasCountry").withParams(params).execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasCountry.initialize(context, result);
+	}
 	public static java.util.List<atlas_ui_data.proxies.AtlasChartData> dS_CreateAtlasChartData(IContext context, atlas_ui_data.proxies.AtlasStatistics _atlasStatistics)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();

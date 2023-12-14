@@ -26,6 +26,11 @@ public class Microflows
 		Map<java.lang.String, Object> params = new HashMap<>();
 		Core.microflowCall("Atlas_DesignSystem.ASu_CleanTakePictureEntities").withParams(params).execute(context);
 	}
+	public static void aSu_RestockAtlasContinentObjectEntities(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasContinentObjectEntities").withParams(params).execute(context);
+	}
 	public static void aSu_RestockAtlasGenericObjectEntities(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
@@ -55,6 +60,12 @@ public class Microflows
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		return (java.lang.Boolean) Core.microflowCall("Atlas_DesignSystem.ASu_RunModuleSpecificMFs").withParams(params).execute(context);
+	}
+	public static atlas_designsystem.proxies.UserList comboBox_Default(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.ComboBox_Default").withParams(params).execute(context);
+		return result == null ? null : atlas_designsystem.proxies.UserList.initialize(context, result);
 	}
 	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> dS_ChartData_StaticSet1(IContext context)
 	{

@@ -75,6 +75,9 @@ public class Image extends system.proxies.FileDocument
 		if (com.mendix.core.Core.isSubClassOf("Atlas_UI_Data.AtlasPeople", mendixObject.getType())) {
 			return atlas_ui_data.proxies.AtlasPeople.initialize(context, mendixObject);
 		}
+		if (com.mendix.core.Core.isSubClassOf("Atlas_UI_Data.Flag", mendixObject.getType())) {
+			return atlas_ui_data.proxies.Flag.initialize(context, mendixObject);
+		}
 		if (com.mendix.core.Core.isSubClassOf("Atlas_DesignSystem.Gallery", mendixObject.getType())) {
 			return atlas_designsystem.proxies.Gallery.initialize(context, mendixObject);
 		}
