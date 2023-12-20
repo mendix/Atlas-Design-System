@@ -879,13 +879,12 @@
                     "class": "text-lowercase"
                 },
                 {
-                    "name": "Upper",
+                    "name": "UPPER",
                     "oldNames": ["Uppercase"],
                     "class": "text-uppercase"
                 },
                 {
-                    "name": "CAPITALIZE",
-                    "oldNames": ["Capitalize"],
+                    "name": "Capitalize",
                     "class": "text-capitalize"
                 }
             ]
