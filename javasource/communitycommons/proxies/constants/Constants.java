@@ -6,15 +6,12 @@ package communitycommons.proxies.constants;
 
 import com.mendix.core.Core;
 
-public class Constants
+public final class Constants
 {
 	/**
-	 * @deprecated
-	 * The default constructor of the Constants class should not be used.
-	 * Use the static get methods instead.
+	 * Private constructor to prevent instantiation of this class. 
 	 */
-	@java.lang.Deprecated(since = "9.12", forRemoval = true)
-	public Constants() {}
+	private Constants() {}
 
 	// These are the constants for the CommunityCommons module
 

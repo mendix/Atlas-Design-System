@@ -4,159 +4,295 @@
 
 package atlas_ui_data.proxies.microflows;
 
-import java.util.HashMap;
-import java.util.Map;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
-public class Microflows
+public final class Microflows
 {
 	/**
-	 * @deprecated
-	 * The default constructor of the Microflows class should not be used.
-	 * Use the static microflow invocation methods instead.
+	 * Private constructor to prevent instantiation of this class. 
 	 */
-	@java.lang.Deprecated(since = "9.12", forRemoval = true)
-	public Microflows() {}
+	private Microflows() {}
 
 	// These are the microflows for the Atlas_UI_Data module
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_AtlasCountryBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.DS_AtlasCountry");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasCountry dS_AtlasCountry(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.DS_AtlasCountry").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasCountry.initialize(context, result);
+		Object result = dS_AtlasCountryBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasCountry.initialize(context, (IMendixObject) result);
 	}
-	public static java.util.List<atlas_ui_data.proxies.AtlasChartData> dS_CreateAtlasChartData(IContext context, atlas_ui_data.proxies.AtlasStatistics _atlasStatistics)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_CreateAtlasChartDataBuilder(
+		atlas_ui_data.proxies.AtlasStatistics _atlasStatistics
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasStatistics", _atlasStatistics == null ? null : _atlasStatistics.getMendixObject());
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.DS_CreateAtlasChartData").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_ui_data.proxies.AtlasChartData.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.DS_CreateAtlasChartData");
+		builder = builder.withParam("AtlasStatistics", _atlasStatistics);
+		return builder;
 	}
-	public static atlas_ui_data.proxies.AtlasGenericObject dS_DuplicateGenericObject(IContext context, atlas_ui_data.proxies.AtlasGenericObject _defaultObject)
+
+	public static java.util.List<atlas_ui_data.proxies.AtlasChartData> dS_CreateAtlasChartData(
+		IContext context,
+		atlas_ui_data.proxies.AtlasStatistics _atlasStatistics
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("DefaultObject", _defaultObject == null ? null : _defaultObject.getMendixObject());
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.DS_DuplicateGenericObject").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, result);
+		Object result = dS_CreateAtlasChartDataBuilder(
+				_atlasStatistics
+			)
+			.execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_ui_data.proxies.AtlasChartData.initialize(context, obj));
 	}
-	public static atlas_ui_data.proxies.AtlasLocationDate dS_DuplicateLocationDate(IContext context, atlas_ui_data.proxies.AtlasLocationDate _locationDateObjectParam)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_DuplicateGenericObjectBuilder(
+		atlas_ui_data.proxies.AtlasGenericObject _defaultObject
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("LocationDateObjectParam", _locationDateObjectParam == null ? null : _locationDateObjectParam.getMendixObject());
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.DS_DuplicateLocationDate").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasLocationDate.initialize(context, result);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.DS_DuplicateGenericObject");
+		builder = builder.withParam("DefaultObject", _defaultObject);
+		return builder;
 	}
-	public static atlas_ui_data.proxies.AtlasPeople dS_DuplicatePeople(IContext context, atlas_ui_data.proxies.AtlasPeople _atlasUserParam)
+
+	public static atlas_ui_data.proxies.AtlasGenericObject dS_DuplicateGenericObject(
+		IContext context,
+		atlas_ui_data.proxies.AtlasGenericObject _defaultObject
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasUserParam", _atlasUserParam == null ? null : _atlasUserParam.getMendixObject());
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.DS_DuplicatePeople").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasPeople.initialize(context, result);
+		Object result = dS_DuplicateGenericObjectBuilder(
+				_defaultObject
+			)
+			.execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, (IMendixObject) result);
 	}
-	public static atlas_ui_data.proxies.AtlasStatistics dS_DuplicateStatistic(IContext context, atlas_ui_data.proxies.AtlasStatistics _atlasStatisticsParam)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_DuplicateLocationDateBuilder(
+		atlas_ui_data.proxies.AtlasLocationDate _locationDateObjectParam
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasStatisticsParam", _atlasStatisticsParam == null ? null : _atlasStatisticsParam.getMendixObject());
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.DS_DuplicateStatistic").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasStatistics.initialize(context, result);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.DS_DuplicateLocationDate");
+		builder = builder.withParam("LocationDateObjectParam", _locationDateObjectParam);
+		return builder;
 	}
+
+	public static atlas_ui_data.proxies.AtlasLocationDate dS_DuplicateLocationDate(
+		IContext context,
+		atlas_ui_data.proxies.AtlasLocationDate _locationDateObjectParam
+	)
+	{
+		Object result = dS_DuplicateLocationDateBuilder(
+				_locationDateObjectParam
+			)
+			.execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasLocationDate.initialize(context, (IMendixObject) result);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_DuplicatePeopleBuilder(
+		atlas_ui_data.proxies.AtlasPeople _atlasUserParam
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.DS_DuplicatePeople");
+		builder = builder.withParam("AtlasUserParam", _atlasUserParam);
+		return builder;
+	}
+
+	public static atlas_ui_data.proxies.AtlasPeople dS_DuplicatePeople(
+		IContext context,
+		atlas_ui_data.proxies.AtlasPeople _atlasUserParam
+	)
+	{
+		Object result = dS_DuplicatePeopleBuilder(
+				_atlasUserParam
+			)
+			.execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasPeople.initialize(context, (IMendixObject) result);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_DuplicateStatisticBuilder(
+		atlas_ui_data.proxies.AtlasStatistics _atlasStatisticsParam
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.DS_DuplicateStatistic");
+		builder = builder.withParam("AtlasStatisticsParam", _atlasStatisticsParam);
+		return builder;
+	}
+
+	public static atlas_ui_data.proxies.AtlasStatistics dS_DuplicateStatistic(
+		IContext context,
+		atlas_ui_data.proxies.AtlasStatistics _atlasStatisticsParam
+	)
+	{
+		Object result = dS_DuplicateStatisticBuilder(
+				_atlasStatisticsParam
+			)
+			.execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasStatistics.initialize(context, (IMendixObject) result);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_EmptyGenericObjectBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.DS_EmptyGenericObject");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasGenericObject dS_EmptyGenericObject(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.DS_EmptyGenericObject").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, result);
+		Object result = dS_EmptyGenericObjectBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder iVK_GetFirstGenericObjectBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.IVK_GetFirstGenericObject");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasGenericObject iVK_GetFirstGenericObject(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.IVK_GetFirstGenericObject").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, result);
+		Object result = iVK_GetFirstGenericObjectBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder iVK_GetFirstLocationDateObjectBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.IVK_GetFirstLocationDateObject");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasLocationDate iVK_GetFirstLocationDateObject(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.IVK_GetFirstLocationDateObject").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasLocationDate.initialize(context, result);
+		Object result = iVK_GetFirstLocationDateObjectBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasLocationDate.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder iVK_GetFirstPeopleObjectBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.IVK_GetFirstPeopleObject");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasPeople iVK_GetFirstPeopleObject(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.IVK_GetFirstPeopleObject").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasPeople.initialize(context, result);
+		Object result = iVK_GetFirstPeopleObjectBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasPeople.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder iVK_GetFirstStatisticObjectBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.IVK_GetFirstStatisticObject");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasStatistics iVK_GetFirstStatisticObject(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_UI_Data.IVK_GetFirstStatisticObject").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasStatistics.initialize(context, result);
+		Object result = iVK_GetFirstStatisticObjectBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasStatistics.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder iVK_RetrieveAllLocationDateObjectsBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllLocationDateObjects");
+		return builder;
+	}
+
 	public static java.util.List<atlas_ui_data.proxies.AtlasLocationDate> iVK_RetrieveAllLocationDateObjects(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllLocationDateObjects").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_ui_data.proxies.AtlasLocationDate.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = iVK_RetrieveAllLocationDateObjectsBuilder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_ui_data.proxies.AtlasLocationDate.initialize(context, obj));
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder iVK_RetrieveAllPeopleObjectsBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllPeopleObjects");
+		return builder;
+	}
+
 	public static java.util.List<atlas_ui_data.proxies.AtlasPeople> iVK_RetrieveAllPeopleObjects(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllPeopleObjects").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_ui_data.proxies.AtlasPeople.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = iVK_RetrieveAllPeopleObjectsBuilder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_ui_data.proxies.AtlasPeople.initialize(context, obj));
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder iVK_RetrieveAllStatisticObjectsBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllStatisticObjects");
+		return builder;
+	}
+
 	public static java.util.List<atlas_ui_data.proxies.AtlasStatistics> iVK_RetrieveAllStatisticObjects(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_UI_Data.IVK_RetrieveAllStatisticObjects").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_ui_data.proxies.AtlasStatistics.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = iVK_RetrieveAllStatisticObjectsBuilder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_ui_data.proxies.AtlasStatistics.initialize(context, obj));
 	}
-	public static java.math.BigDecimal mF_Parse_Decimal(IContext context, java.lang.String _atlasString)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder mF_Parse_DecimalBuilder(
+		java.lang.String _atlasString
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasString", _atlasString);
-		return (java.math.BigDecimal) Core.microflowCall("Atlas_UI_Data.MF_Parse_Decimal").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.MF_Parse_Decimal");
+		builder = builder.withParam("AtlasString", _atlasString);
+		return builder;
 	}
-	public static java.util.Date mF_Parse_DT(IContext context, java.lang.Long _atlasDateTime)
+
+	public static java.math.BigDecimal mF_Parse_Decimal(
+		IContext context,
+		java.lang.String _atlasString
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasDateTime", _atlasDateTime);
-		return (java.util.Date) Core.microflowCall("Atlas_UI_Data.MF_Parse_DT").withParams(params).execute(context);
+		Object result = mF_Parse_DecimalBuilder(
+				_atlasString
+			)
+			.execute(context);
+		return (java.math.BigDecimal) result;
 	}
-	public static atlas_ui_data.proxies.DefaultEnumeration mF_Parse_Enum(IContext context, java.lang.String _atlasEnumeration)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder mF_Parse_DTBuilder(
+		java.lang.Long _atlasDateTime
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasEnumeration", _atlasEnumeration);
-		java.lang.String result = (java.lang.String) Core.microflowCall("Atlas_UI_Data.MF_Parse_Enum").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.DefaultEnumeration.valueOf(result);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.MF_Parse_DT");
+		builder = builder.withParam("AtlasDateTime", _atlasDateTime);
+		return builder;
 	}
-	public static java.lang.Long mF_Parse_Interger(IContext context, java.lang.String _atlasInteger)
+
+	public static java.util.Date mF_Parse_DT(
+		IContext context,
+		java.lang.Long _atlasDateTime
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AtlasInteger", _atlasInteger);
-		return (java.lang.Long) Core.microflowCall("Atlas_UI_Data.MF_Parse_Interger").withParams(params).execute(context);
+		Object result = mF_Parse_DTBuilder(
+				_atlasDateTime
+			)
+			.execute(context);
+		return (java.util.Date) result;
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder mF_Parse_EnumBuilder(
+		java.lang.String _atlasEnumeration
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.MF_Parse_Enum");
+		builder = builder.withParam("AtlasEnumeration", _atlasEnumeration);
+		return builder;
+	}
+
+	public static atlas_ui_data.proxies.DefaultEnumeration mF_Parse_Enum(
+		IContext context,
+		java.lang.String _atlasEnumeration
+	)
+	{
+		Object result = mF_Parse_EnumBuilder(
+				_atlasEnumeration
+			)
+			.execute(context);
+		return result == null ? null : atlas_ui_data.proxies.DefaultEnumeration.valueOf((java.lang.String) result);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder mF_Parse_IntergerBuilder(
+		java.lang.String _atlasInteger
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_UI_Data.MF_Parse_Interger");
+		builder = builder.withParam("AtlasInteger", _atlasInteger);
+		return builder;
+	}
+
+	public static java.lang.Long mF_Parse_Interger(
+		IContext context,
+		java.lang.String _atlasInteger
+	)
+	{
+		Object result = mF_Parse_IntergerBuilder(
+				_atlasInteger
+			)
+			.execute(context);
+		return (java.lang.Long) result;
 	}
 }

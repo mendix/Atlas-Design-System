@@ -4,152 +4,216 @@
 
 package atlas_designsystem.proxies.microflows;
 
-import java.util.HashMap;
-import java.util.Map;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
-public class Microflows
+public final class Microflows
 {
 	/**
-	 * @deprecated
-	 * The default constructor of the Microflows class should not be used.
-	 * Use the static microflow invocation methods instead.
+	 * Private constructor to prevent instantiation of this class. 
 	 */
-	@java.lang.Deprecated(since = "9.12", forRemoval = true)
-	public Microflows() {}
+	private Microflows() {}
 
 	// These are the microflows for the Atlas_DesignSystem module
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_CleanTakePictureEntitiesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_CleanTakePictureEntities");
+		return builder;
+	}
+
 	public static void aSu_CleanTakePictureEntities(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_CleanTakePictureEntities").withParams(params).execute(context);
+		aSu_CleanTakePictureEntitiesBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_RestockAtlasContinentObjectEntitiesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasContinentObjectEntities");
+		return builder;
+	}
+
 	public static void aSu_RestockAtlasContinentObjectEntities(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasContinentObjectEntities").withParams(params).execute(context);
+		aSu_RestockAtlasContinentObjectEntitiesBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_RestockAtlasGenericObjectEntitiesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasGenericObjectEntities");
+		return builder;
+	}
+
 	public static void aSu_RestockAtlasGenericObjectEntities(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasGenericObjectEntities").withParams(params).execute(context);
+		aSu_RestockAtlasGenericObjectEntitiesBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_RestockAtlasLocationDateEntitiesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasLocationDateEntities");
+		return builder;
+	}
+
 	public static void aSu_RestockAtlasLocationDateEntities(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasLocationDateEntities").withParams(params).execute(context);
+		aSu_RestockAtlasLocationDateEntitiesBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_RestockAtlasPeopleEntitiesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasPeopleEntities");
+		return builder;
+	}
+
 	public static void aSu_RestockAtlasPeopleEntities(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasPeopleEntities").withParams(params).execute(context);
+		aSu_RestockAtlasPeopleEntitiesBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_RestockAtlasStatisticsEntitiesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasStatisticsEntities");
+		return builder;
+	}
+
 	public static void aSu_RestockAtlasStatisticsEntities(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_RestockAtlasStatisticsEntities").withParams(params).execute(context);
+		aSu_RestockAtlasStatisticsEntitiesBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_RestockTaskInboxEntitiesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_RestockTaskInboxEntities");
+		return builder;
+	}
+
 	public static void aSu_RestockTaskInboxEntities(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Atlas_DesignSystem.ASu_RestockTaskInboxEntities").withParams(params).execute(context);
+		aSu_RestockTaskInboxEntitiesBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aSu_RunModuleSpecificMFsBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ASu_RunModuleSpecificMFs");
+		return builder;
+	}
+
 	public static boolean aSu_RunModuleSpecificMFs(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		return (java.lang.Boolean) Core.microflowCall("Atlas_DesignSystem.ASu_RunModuleSpecificMFs").withParams(params).execute(context);
+		Object result = aSu_RunModuleSpecificMFsBuilder().execute(context);
+		return (boolean) result;
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder comboBox_DefaultBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.ComboBox_Default");
+		return builder;
+	}
+
 	public static atlas_designsystem.proxies.UserList comboBox_Default(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.ComboBox_Default").withParams(params).execute(context);
-		return result == null ? null : atlas_designsystem.proxies.UserList.initialize(context, result);
+		Object result = comboBox_DefaultBuilder().execute(context);
+		return result == null ? null : atlas_designsystem.proxies.UserList.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_ChartData_StaticSet1Builder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet1");
+		return builder;
+	}
+
 	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> dS_ChartData_StaticSet1(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet1").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = dS_ChartData_StaticSet1Builder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_ChartData_StaticSet2Builder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet2");
+		return builder;
+	}
+
 	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> dS_ChartData_StaticSet2(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ChartData_StaticSet2").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = dS_ChartData_StaticSet2Builder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_EmptyRatingBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_EmptyRating");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasGenericObject dS_EmptyRating(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.DS_EmptyRating").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, result);
+		Object result = dS_EmptyRatingBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_MaxRatingBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_MaxRating");
+		return builder;
+	}
+
 	public static atlas_ui_data.proxies.AtlasGenericObject dS_MaxRating(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.DS_MaxRating").withParams(params).execute(context);
-		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, result);
+		Object result = dS_MaxRatingBuilder().execute(context);
+		return result == null ? null : atlas_ui_data.proxies.AtlasGenericObject.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_ProductListBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_ProductList");
+		return builder;
+	}
+
 	public static java.util.List<atlas_designsystem.proxies.Product> dS_ProductList(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_ProductList").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_designsystem.proxies.Product.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = dS_ProductListBuilder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_designsystem.proxies.Product.initialize(context, obj));
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_RangeSliderBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_RangeSlider");
+		return builder;
+	}
+
 	public static atlas_designsystem.proxies.RangeSlider dS_RangeSlider(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.DS_RangeSlider").withParams(params).execute(context);
-		return result == null ? null : atlas_designsystem.proxies.RangeSlider.initialize(context, result);
+		Object result = dS_RangeSliderBuilder().execute(context);
+		return result == null ? null : atlas_designsystem.proxies.RangeSlider.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_SliderBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_Slider");
+		return builder;
+	}
+
 	public static atlas_designsystem.proxies.Slider dS_Slider(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("Atlas_DesignSystem.DS_Slider").withParams(params).execute(context);
-		return result == null ? null : atlas_designsystem.proxies.Slider.initialize(context, result);
+		Object result = dS_SliderBuilder().execute(context);
+		return result == null ? null : atlas_designsystem.proxies.Slider.initialize(context, (IMendixObject) result);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_TreenodeBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.DS_Treenode");
+		return builder;
+	}
+
 	public static java.util.List<atlas_ui_data.proxies.AtlasGenericObject> dS_Treenode(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.DS_Treenode").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = dS_TreenodeBuilder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_ui_data.proxies.AtlasGenericObject.initialize(context, obj));
 	}
-	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> mF_DataString_to_ChartsDataMapList(IContext context, java.lang.String _dataString)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder mF_DataString_to_ChartsDataMapListBuilder(
+		java.lang.String _dataString
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("DataString", _dataString);
-		java.util.List<IMendixObject> objs = Core.microflowCall("Atlas_DesignSystem.MF_DataString_to_ChartsDataMapList").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Atlas_DesignSystem.MF_DataString_to_ChartsDataMapList");
+		builder = builder.withParam("DataString", _dataString);
+		return builder;
+	}
+
+	public static java.util.List<atlas_designsystem.proxies.ChartsDataMap> mF_DataString_to_ChartsDataMapList(
+		IContext context,
+		java.lang.String _dataString
+	)
+	{
+		Object result = mF_DataString_to_ChartsDataMapListBuilder(
+				_dataString
+			)
+			.execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> atlas_designsystem.proxies.ChartsDataMap.initialize(context, obj));
 	}
 }

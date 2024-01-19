@@ -4,82 +4,160 @@
 
 package administration.proxies.microflows;
 
-import java.util.HashMap;
-import java.util.Map;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
-public class Microflows
+public final class Microflows
 {
 	/**
-	 * @deprecated
-	 * The default constructor of the Microflows class should not be used.
-	 * Use the static microflow invocation methods instead.
+	 * Private constructor to prevent instantiation of this class. 
 	 */
-	@java.lang.Deprecated(since = "9.12", forRemoval = true)
-	public Microflows() {}
+	private Microflows() {}
 
 	// These are the microflows for the Administration module
-	public static void changeMyPassword(IContext context, administration.proxies.AccountPasswordData _accountPasswordData)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder changeMyPasswordBuilder(
+		administration.proxies.AccountPasswordData _accountPasswordData
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AccountPasswordData", _accountPasswordData == null ? null : _accountPasswordData.getMendixObject());
-		Core.microflowCall("Administration.ChangeMyPassword").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.ChangeMyPassword");
+		builder = builder.withParam("AccountPasswordData", _accountPasswordData);
+		return builder;
 	}
-	public static void changePassword(IContext context, administration.proxies.AccountPasswordData _accountPasswordData)
+
+	public static void changeMyPassword(
+		IContext context,
+		administration.proxies.AccountPasswordData _accountPasswordData
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AccountPasswordData", _accountPasswordData == null ? null : _accountPasswordData.getMendixObject());
-		Core.microflowCall("Administration.ChangePassword").withParams(params).execute(context);
+		changeMyPasswordBuilder(
+				_accountPasswordData
+			)
+			.execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder changePasswordBuilder(
+		administration.proxies.AccountPasswordData _accountPasswordData
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.ChangePassword");
+		builder = builder.withParam("AccountPasswordData", _accountPasswordData);
+		return builder;
+	}
+
+	public static void changePassword(
+		IContext context,
+		administration.proxies.AccountPasswordData _accountPasswordData
+	)
+	{
+		changePasswordBuilder(
+				_accountPasswordData
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder manageMyAccountBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.ManageMyAccount");
+		return builder;
+	}
+
 	public static void manageMyAccount(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Administration.ManageMyAccount").withParams(params).execute(context);
+		manageMyAccountBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder newAccountBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.NewAccount");
+		return builder;
+	}
+
 	public static void newAccount(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Administration.NewAccount").withParams(params).execute(context);
+		newAccountBuilder().execute(context);
 	}
+	/**
+	 * Create a new user object and change the default attribute values so the user will be handled as a webservice user.
+	 * Finally open the User_NewEdit form so all remaing user information can be set.
+	 */
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder newWebServiceAccountBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.NewWebServiceAccount");
+		return builder;
+	}
+
 	/**
 	 * Create a new user object and change the default attribute values so the user will be handled as a webservice user.
 	 * Finally open the User_NewEdit form so all remaing user information can be set.
 	 */
 	public static void newWebServiceAccount(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Administration.NewWebServiceAccount").withParams(params).execute(context);
+		newWebServiceAccountBuilder().execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder retrieveTimeZonesBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.RetrieveTimeZones");
+		return builder;
+	}
+
 	public static java.util.List<system.proxies.TimeZone> retrieveTimeZones(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		java.util.List<IMendixObject> objs = Core.microflowCall("Administration.RetrieveTimeZones").withParams(params).execute(context);
-		if (objs == null) {
-			return null;
-		} else {
-			return objs.stream()
-				.map(obj -> system.proxies.TimeZone.initialize(context, obj))
-				.collect(java.util.stream.Collectors.toList());
-		}
+		Object result = retrieveTimeZonesBuilder().execute(context);
+		return result == null ? null : com.mendix.utils.ListUtils.map((java.util.List<IMendixObject>) result, obj -> system.proxies.TimeZone.initialize(context, obj));
 	}
-	public static void saveNewAccount(IContext context, administration.proxies.AccountPasswordData _accountPasswordData)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder saveNewAccountBuilder(
+		administration.proxies.AccountPasswordData _accountPasswordData
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("AccountPasswordData", _accountPasswordData == null ? null : _accountPasswordData.getMendixObject());
-		Core.microflowCall("Administration.SaveNewAccount").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.SaveNewAccount");
+		builder = builder.withParam("AccountPasswordData", _accountPasswordData);
+		return builder;
 	}
-	public static void showMyPasswordForm(IContext context, administration.proxies.Account _account)
+
+	public static void saveNewAccount(
+		IContext context,
+		administration.proxies.AccountPasswordData _accountPasswordData
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Account", _account == null ? null : _account.getMendixObject());
-		Core.microflowCall("Administration.ShowMyPasswordForm").withParams(params).execute(context);
+		saveNewAccountBuilder(
+				_accountPasswordData
+			)
+			.execute(context);
 	}
-	public static void showPasswordForm(IContext context, administration.proxies.Account _account)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder showMyPasswordFormBuilder(
+		administration.proxies.Account _account
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Account", _account == null ? null : _account.getMendixObject());
-		Core.microflowCall("Administration.ShowPasswordForm").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.ShowMyPasswordForm");
+		builder = builder.withParam("Account", _account);
+		return builder;
+	}
+
+	public static void showMyPasswordForm(
+		IContext context,
+		administration.proxies.Account _account
+	)
+	{
+		showMyPasswordFormBuilder(
+				_account
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder showPasswordFormBuilder(
+		administration.proxies.Account _account
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("Administration.ShowPasswordForm");
+		builder = builder.withParam("Account", _account);
+		return builder;
+	}
+
+	public static void showPasswordForm(
+		IContext context,
+		administration.proxies.Account _account
+	)
+	{
+		showPasswordFormBuilder(
+				_account
+			)
+			.execute(context);
 	}
 }

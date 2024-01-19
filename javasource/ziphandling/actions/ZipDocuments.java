@@ -30,24 +30,28 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class ZipDocuments extends CustomJavaAction<IMendixObject>
 {
-	private java.util.List<IMendixObject> __ListOfDocument;
-	private java.util.List<system.proxies.FileDocument> ListOfDocument;
+	/** @deprecated use com.mendix.utils.ListUtils.map(ListOfDocument, com.mendix.systemwideinterfaces.core.IEntityProxy::getMendixObject) instead. */
+	@java.lang.Deprecated(forRemoval = true)
+	private final java.util.List<IMendixObject> __ListOfDocument;
+	private final java.util.List<system.proxies.FileDocument> ListOfDocument;
 
-	public ZipDocuments(IContext context, java.util.List<IMendixObject> ListOfDocument)
+	public ZipDocuments(
+		IContext context,
+		java.util.List<IMendixObject> _listOfDocument
+	)
 	{
 		super(context);
-		this.__ListOfDocument = ListOfDocument;
+		this.__ListOfDocument = _listOfDocument;
+		this.ListOfDocument = java.util.Optional.ofNullable(_listOfDocument)
+			.orElse(java.util.Collections.emptyList())
+			.stream()
+			.map(listOfDocumentElement -> system.proxies.FileDocument.initialize(getContext(), listOfDocumentElement))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	@java.lang.Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.ListOfDocument = java.util.Optional.ofNullable(this.__ListOfDocument)
-			.orElse(java.util.Collections.emptyList())
-			.stream()
-			.map(__ListOfDocumentElement -> system.proxies.FileDocument.initialize(getContext(), __ListOfDocumentElement))
-			.collect(java.util.stream.Collectors.toList());
-
 		// BEGIN USER CODE
 
 		File tempZipFile = File.createTempFile("zipfile", "temp");

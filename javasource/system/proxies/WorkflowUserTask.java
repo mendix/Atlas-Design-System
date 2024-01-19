@@ -4,7 +4,7 @@
 
 package system.proxies;
 
-public class WorkflowUserTask
+public class WorkflowUserTask implements com.mendix.systemwideinterfaces.core.IEntityProxy
 {
 	private final com.mendix.systemwideinterfaces.core.IMendixObject workflowUserTaskMendixObject;
 
@@ -29,7 +29,7 @@ public class WorkflowUserTask
 		State("State"),
 		CompletionType("CompletionType"),
 		WorkflowUserTask_TargetUsers("System.WorkflowUserTask_TargetUsers"),
-		WorkflowUserTask_Assignee("System.WorkflowUserTask_Assignee"),
+		WorkflowUserTask_Assignees("System.WorkflowUserTask_Assignees"),
 		WorkflowUserTask_Workflow("System.WorkflowUserTask_Workflow"),
 		WorkflowUserTask_WorkflowUserTaskDefinition("System.WorkflowUserTask_WorkflowUserTaskDefinition");
 
@@ -66,15 +66,6 @@ public class WorkflowUserTask
 	}
 
 	/**
-	 * @deprecated Use 'WorkflowUserTask.load(IContext, IMendixIdentifier)' instead.
-	 */
-	@java.lang.Deprecated
-	public static system.proxies.WorkflowUserTask initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
-	{
-		return system.proxies.WorkflowUserTask.load(context, mendixIdentifier);
-	}
-
-	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
 	 * @param context The context to be used
@@ -101,39 +92,6 @@ public class WorkflowUserTask
 			.collect(java.util.stream.Collectors.toList());
 	}
 
-	/**
-	 * Commit the changes made on this proxy object.
-	 * @throws com.mendix.core.CoreException
-	 */
-	public final void commit() throws com.mendix.core.CoreException
-	{
-		com.mendix.core.Core.commit(context, getMendixObject());
-	}
-
-	/**
-	 * Commit the changes made on this proxy object using the specified context.
-	 * @throws com.mendix.core.CoreException
-	 */
-	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
-	{
-		com.mendix.core.Core.commit(context, getMendixObject());
-	}
-
-	/**
-	 * Delete the object.
-	 */
-	public final void delete()
-	{
-		com.mendix.core.Core.delete(context, getMendixObject());
-	}
-
-	/**
-	 * Delete the object using the specified context.
-	 */
-	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		com.mendix.core.Core.delete(context, getMendixObject());
-	}
 	/**
 	 * @return value of Name
 	 */
@@ -351,7 +309,7 @@ public class WorkflowUserTask
 	}
 
 	/**
-	 * Set value of State
+	 * Get value of State
 	 * @param state
 	 */
 	public final system.proxies.WorkflowUserTaskState getState()
@@ -396,7 +354,7 @@ public class WorkflowUserTask
 	}
 
 	/**
-	 * Set value of CompletionType
+	 * Get value of CompletionType
 	 * @param completiontype
 	 */
 	public final system.proxies.WorkflowUserTaskCompletionType getCompletionType()
@@ -494,49 +452,54 @@ public class WorkflowUserTask
 
 	/**
 	 * @throws com.mendix.core.CoreException
-	 * @return value of WorkflowUserTask_Assignee
+	 * @return value of WorkflowUserTask_Assignees
 	 */
-	public final system.proxies.User getWorkflowUserTask_Assignee() throws com.mendix.core.CoreException
+	public final java.util.List<system.proxies.User> getWorkflowUserTask_Assignees() throws com.mendix.core.CoreException
 	{
-		return getWorkflowUserTask_Assignee(getContext());
+		return getWorkflowUserTask_Assignees(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of WorkflowUserTask_Assignee
+	 * @return value of WorkflowUserTask_Assignees
 	 * @throws com.mendix.core.CoreException
 	 */
-	public final system.proxies.User getWorkflowUserTask_Assignee(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	@SuppressWarnings("unchecked")
+	public final java.util.List<system.proxies.User> getWorkflowUserTask_Assignees(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		system.proxies.User result = null;
-		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.WorkflowUserTask_Assignee.toString());
-		if (identifier != null) {
-			result = system.proxies.User.load(context, identifier);
+		java.util.List<system.proxies.User> result = new java.util.ArrayList<>();
+		Object valueObject = getMendixObject().getValue(context, MemberNames.WorkflowUserTask_Assignees.toString());
+		if (valueObject == null) {
+			return result;
+		}
+		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject)) {
+			result.add(system.proxies.User.initialize(context, mendixObject));
 		}
 		return result;
 	}
 
 	/**
-	 * Set value of WorkflowUserTask_Assignee
-	 * @param workflowusertask_assignee
+	 * Set value of WorkflowUserTask_Assignees
+	 * @param workflowusertask_assignees
 	 */
-	public final void setWorkflowUserTask_Assignee(system.proxies.User workflowusertask_assignee)
+	public final void setWorkflowUserTask_Assignees(java.util.List<system.proxies.User> workflowusertask_assignees)
 	{
-		setWorkflowUserTask_Assignee(getContext(), workflowusertask_assignee);
+		setWorkflowUserTask_Assignees(getContext(), workflowusertask_assignees);
 	}
 
 	/**
-	 * Set value of WorkflowUserTask_Assignee
+	 * Set value of WorkflowUserTask_Assignees
 	 * @param context
-	 * @param workflowusertask_assignee
+	 * @param workflowusertask_assignees
 	 */
-	public final void setWorkflowUserTask_Assignee(com.mendix.systemwideinterfaces.core.IContext context, system.proxies.User workflowusertask_assignee)
+	public final void setWorkflowUserTask_Assignees(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<system.proxies.User> workflowusertask_assignees)
 	{
-		if (workflowusertask_assignee == null) {
-			getMendixObject().setValue(context, MemberNames.WorkflowUserTask_Assignee.toString(), null);
-		} else {
-			getMendixObject().setValue(context, MemberNames.WorkflowUserTask_Assignee.toString(), workflowusertask_assignee.getMendixObject().getId());
-		}
+		var identifiers = workflowusertask_assignees
+			.stream()
+			.map(proxyObject -> proxyObject.getMendixObject().getId())
+			.collect(java.util.stream.Collectors.toList());
+		
+		getMendixObject().setValue(context, MemberNames.WorkflowUserTask_Assignees.toString(), identifiers);
 	}
 
 	/**
@@ -633,17 +596,13 @@ public class WorkflowUserTask
 		}
 	}
 
-	/**
-	 * @return the IMendixObject instance of this proxy for use in the Core interface.
-	 */
+	@Override
 	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return workflowUserTaskMendixObject;
 	}
 
-	/**
-	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
-	 */
+	@Override
 	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
@@ -669,21 +628,13 @@ public class WorkflowUserTask
 		return getMendixObject().hashCode();
 	}
 
-	/**
-	 * @return String name of this class
-	 */
+  /**
+   * Gives full name ("Module.Entity" name) of the type of the entity.
+   *
+   * @return the name
+   */
 	public static java.lang.String getType()
 	{
 		return entityName;
-	}
-
-	/**
-	 * @return String GUID from this object, format: ID_0000000000
-	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
-	 */
-	@java.lang.Deprecated
-	public java.lang.String getGUID()
-	{
-		return "ID_" + getMendixObject().getId().toLong();
 	}
 }

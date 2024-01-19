@@ -18,3 +18,4 @@ theme-cache/
 !/javascriptsource/**/node_modules/
 /nativemobile/builds/
 **/.DS_Store
+/vendorlib/temp/

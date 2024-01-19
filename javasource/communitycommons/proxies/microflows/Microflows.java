@@ -4,52 +4,123 @@
 
 package communitycommons.proxies.microflows;
 
-import java.util.HashMap;
-import java.util.Map;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 
-public class Microflows
+public final class Microflows
 {
 	/**
-	 * @deprecated
-	 * The default constructor of the Microflows class should not be used.
-	 * Use the static microflow invocation methods instead.
+	 * Private constructor to prevent instantiation of this class. 
 	 */
-	@java.lang.Deprecated(since = "9.12", forRemoval = true)
-	public Microflows() {}
+	private Microflows() {}
 
 	// These are the microflows for the CommunityCommons module
-	public static void assertTrue(IContext context, boolean _valueToAssert)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder assertTrueBuilder(
+		boolean _valueToAssert
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("valueToAssert", _valueToAssert);
-		Core.microflowCall("CommunityCommons.AssertTrue").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("CommunityCommons.AssertTrue");
+		builder = builder.withParam("valueToAssert", _valueToAssert);
+		return builder;
 	}
-	public static void assertTrue_2(IContext context, boolean _valueToAssert, java.lang.String _message)
+
+	public static void assertTrue(
+		IContext context,
+		boolean _valueToAssert
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("valueToAssert", _valueToAssert);
-		params.put("message", _message);
-		Core.microflowCall("CommunityCommons.AssertTrue_2").withParams(params).execute(context);
+		assertTrueBuilder(
+				_valueToAssert
+			)
+			.execute(context);
 	}
-	public static void createUserIfNotExists(IContext context, java.lang.String _username, java.lang.String _role, java.lang.String _password, boolean _webserviceUser)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder assertTrue_2Builder(
+		boolean _valueToAssert,
+		java.lang.String _message
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Username", _username);
-		params.put("Role", _role);
-		params.put("Password", _password);
-		params.put("WebserviceUser", _webserviceUser);
-		Core.microflowCall("CommunityCommons.CreateUserIfNotExists").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("CommunityCommons.AssertTrue_2");
+		builder = builder.withParam("valueToAssert", _valueToAssert);
+		builder = builder.withParam("message", _message);
+		return builder;
 	}
-	public static void updateUserHelper(IContext context, java.lang.String _username, java.lang.String _role, java.lang.String _password, boolean _webserviceUser, system.proxies.User _user)
+
+	public static void assertTrue_2(
+		IContext context,
+		boolean _valueToAssert,
+		java.lang.String _message
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Username", _username);
-		params.put("Role", _role);
-		params.put("Password", _password);
-		params.put("WebserviceUser", _webserviceUser);
-		params.put("User", _user == null ? null : _user.getMendixObject());
-		Core.microflowCall("CommunityCommons.UpdateUserHelper").withParams(params).execute(context);
+		assertTrue_2Builder(
+				_valueToAssert,
+				_message
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder createUserIfNotExistsBuilder(
+		java.lang.String _username,
+		java.lang.String _role,
+		java.lang.String _password,
+		boolean _webserviceUser
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("CommunityCommons.CreateUserIfNotExists");
+		builder = builder.withParam("Username", _username);
+		builder = builder.withParam("Role", _role);
+		builder = builder.withParam("Password", _password);
+		builder = builder.withParam("WebserviceUser", _webserviceUser);
+		return builder;
+	}
+
+	public static void createUserIfNotExists(
+		IContext context,
+		java.lang.String _username,
+		java.lang.String _role,
+		java.lang.String _password,
+		boolean _webserviceUser
+	)
+	{
+		createUserIfNotExistsBuilder(
+				_username,
+				_role,
+				_password,
+				_webserviceUser
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder updateUserHelperBuilder(
+		java.lang.String _username,
+		java.lang.String _role,
+		java.lang.String _password,
+		boolean _webserviceUser,
+		system.proxies.User _user
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("CommunityCommons.UpdateUserHelper");
+		builder = builder.withParam("Username", _username);
+		builder = builder.withParam("Role", _role);
+		builder = builder.withParam("Password", _password);
+		builder = builder.withParam("WebserviceUser", _webserviceUser);
+		builder = builder.withParam("User", _user);
+		return builder;
+	}
+
+	public static void updateUserHelper(
+		IContext context,
+		java.lang.String _username,
+		java.lang.String _role,
+		java.lang.String _password,
+		boolean _webserviceUser,
+		system.proxies.User _user
+	)
+	{
+		updateUserHelperBuilder(
+				_username,
+				_role,
+				_password,
+				_webserviceUser,
+				_user
+			)
+			.execute(context);
 	}
 }

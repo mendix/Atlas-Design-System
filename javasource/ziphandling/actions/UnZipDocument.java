@@ -27,20 +27,24 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class UnZipDocument extends CustomJavaAction<java.util.List<IMendixObject>>
 {
-	private IMendixObject __ZipFile;
-	private system.proxies.FileDocument ZipFile;
+	/** @deprecated use ZipFile.getMendixObject() instead. */
+	@java.lang.Deprecated(forRemoval = true)
+	private final IMendixObject __ZipFile;
+	private final system.proxies.FileDocument ZipFile;
 
-	public UnZipDocument(IContext context, IMendixObject ZipFile)
+	public UnZipDocument(
+		IContext context,
+		IMendixObject _zipFile
+	)
 	{
 		super(context);
-		this.__ZipFile = ZipFile;
+		this.__ZipFile = _zipFile;
+		this.ZipFile = _zipFile == null ? null : system.proxies.FileDocument.initialize(getContext(), _zipFile);
 	}
 
 	@java.lang.Override
 	public java.util.List<IMendixObject> executeAction() throws Exception
 	{
-		this.ZipFile = this.__ZipFile == null ? null : system.proxies.FileDocument.initialize(getContext(), __ZipFile);
-
 		// BEGIN USER CODE
 		
 		InputStream zipInputStream = Core.getFileDocumentContent(getContext(), ZipFile.getMendixObject());
