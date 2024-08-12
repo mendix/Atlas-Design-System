@@ -299,6 +299,36 @@
             ]
         },
         {
+            "name": "Border radius",
+            "type": "ToggleButtonGroup",
+            "description": "Set a border radius for rounded borders",
+            "property": "border-radius",
+            "options": [
+                {
+                    "name": "None",
+                    "variable": "--none"
+                },
+                {
+                    "name": "Small",
+                    "variable": "--border-radius-s"
+                },
+                {
+                    "name": "Medium",
+                    "variable": "--border-radius-m"
+                },
+                {
+                    "name": "Large",
+                    "variable": "--border-radius-l"
+                }
+            ]
+        },
+        {
+            "name": "Card",
+            "type": "Toggle",
+            "description": "Render container as card",
+            "class": "card"
+        },
+        {
             "name": "Shade",
             "type": "ToggleButtonGroup",
             "description": "Apply a shade to your background color",
@@ -366,6 +396,17 @@
                     "name": "Top",
                     "icon": "Atlas_Core.Atlas.align-top",
                     "class": "btn-icon-top"
+                }
+            ]
+        },
+        {
+            "name": "Style",
+            "type": "ToggleButtonGroup",
+            "description": "Set button style",
+            "options": [
+                {
+                    "name": "Icon button",
+                    "class": "btn-style-icon"
                 }
             ]
         },
