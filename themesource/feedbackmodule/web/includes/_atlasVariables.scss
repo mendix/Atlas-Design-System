@@ -30,7 +30,7 @@ $font-weight-semibold: 600;
 $font-weight-bold: bold;
 
 $btn-primary-bg: $brand-primary;
-$btn-primary-bg-hover: mix($btn-primary-bg, black, 80%);
+$btn-primary-bg-hover: color-mix(in srgb, $btn-primary-bg, black 20%);
 $btn-primary-color: #fff;
 
 $label-primary-color: #fff;

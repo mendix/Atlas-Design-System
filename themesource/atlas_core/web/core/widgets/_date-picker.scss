@@ -79,7 +79,7 @@
 
         .mx-calendar-day-month-next,
         .mx-calendar-day-month-previous {
-            color: lighten($font-color-default, 45%);
+            color: color-mix(in srgb, $font-color-default, white 45%);
         }
 
         .mx-calendar-day-selected,
@@ -94,7 +94,7 @@
         .mx-calendar-year-switcher {
             text-align: center;
             margin-top: 10px;
-            color: lighten($brand-primary, 30%);
+            color: color-mix(in srgb, $brand-primary, white 30%);
 
             span.mx-calendar-year-selected {
                 color: $brand-primary;

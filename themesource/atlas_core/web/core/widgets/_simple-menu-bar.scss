@@ -131,7 +131,7 @@
     // When used in topbar
     .region-topbar {
         .mx-menubar {
-            background-color: $navtopbar-bg;
+            background: $navtopbar-bg;
 
             ul.mx-menubar-list {
                 li.mx-menubar-item {
@@ -152,12 +152,12 @@
                     &:focus a,
                     &.active a {
                         color: $navtopbar-color-hover;
-                        background-color: $navtopbar-bg-hover;
+                        background: $navtopbar-bg-hover;
                     }
 
                     &.active a {
                         color: $navtopbar-color-active;
-                        background-color: $navtopbar-bg-active;
+                        background: $navtopbar-bg-active;
                     }
                 }
             }
@@ -165,7 +165,7 @@
 
         // Vertical variation specifics
         .mx-menubar-vertical {
-            background-color: $navtopbar-bg;
+            background: $navtopbar-bg;
 
             ul.mx-menubar-list {
                 li.mx-menubar-item {

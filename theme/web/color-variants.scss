@@ -1,0 +1,42 @@
+// Color variations
+// @for $i from 1 through 9 {
+//     --color-default-light-#{$i}: mix(white, $brand-default, $i * 10%);
+//     --color-default-dark-#{$i}: mix(black, $brand-default, $i * 10%);
+//     --color-primary-light-#{$i}: mix(white, $brand-primary, $i * 10%);
+//     --color-primary-dark-#{$i}: mix(black, $brand-primary, $i * 10%);
+//     --color-success-light-#{$i}: mix(white, $brand-success, $i * 10%);
+//     --color-success-dark-#{$i}: mix(black, $brand-success, $i * 10%);
+//     --color-warning-light-#{$i}: mix(white, $brand-warning, $i * 10%);
+//     --color-warning-dark-#{$i}: mix(black, $brand-warning, $i * 10%);
+//     --color-warning-danger-#{$i}: mix(white, $brand-danger, $i * 10%);
+//     --color-default-danger-#{$i}: mix(black, $brand-danger, $i * 10%);
+// }
+
+$color-default-darker: color-mix(in srgb, $brand-default, black 40%);
+$color-default-dark: color-mix(in srgb, $brand-default, black 30%);
+$color-default-light: color-mix(in srgb, $brand-default, white 60%);
+$color-default-lighter: color-mix(in srgb, $brand-default, white 80%);
+
+$color-primary-darkest: color-mix(in srgb, $brand-primary, black 80%);
+$color-primary-darker: color-mix(in srgb, $brand-primary, black 60%);
+$color-primary-dark: color-mix(in srgb, $brand-primary, black 30%);
+$color-primary-light: color-mix(in srgb, $brand-primary, white 60%);
+$color-primary-lighter: color-mix(in srgb, $brand-primary, white 80%);
+$color-primary-lightest: color-mix(in srgb, $brand-primary, white 92%);
+
+$color-success-darker: color-mix(in srgb, $brand-success, black 40%);
+$color-success-dark: color-mix(in srgb, $brand-success, black 30%);
+$color-success-light: color-mix(in srgb, $brand-success, white 60%);
+$color-success-lighter: color-mix(in srgb, $brand-success, white 80%);
+
+$color-warning-darker: color-mix(in srgb, $brand-warning, black 40%);
+$color-warning-dark: color-mix(in srgb, $brand-warning, black 30%);
+$color-warning-light: color-mix(in srgb, $brand-warning, white 60%);
+$color-warning-lighter: color-mix(in srgb, $brand-warning, white 80%);
+
+$color-danger-darker: color-mix(in srgb, $brand-danger, black 40%);
+$color-danger-dark: color-mix(in srgb, $brand-danger, black 30%);
+$color-danger-light: color-mix(in srgb, $brand-danger, white 60%);
+$color-danger-lighter: color-mix(in srgb, $brand-danger, white 80%);
+
+$brand-gradient: linear-gradient(to bottom, $color-primary-dark, $brand-primary);

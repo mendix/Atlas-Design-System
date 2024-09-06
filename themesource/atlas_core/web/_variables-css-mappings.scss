@@ -43,6 +43,9 @@
 
     /* Global Border Color */
     --border-color-default: #{$border-color-default};
+    --border-radius-s: #{$border-radius-s};
+    --border-radius-m: #{$border-radius-m};
+    --border-radius-l: #{$border-radius-l};
     --border-radius-default: #{$border-radius-default};
 
     /* Topbar */
@@ -292,10 +295,12 @@
     --color-default-light: #{$color-default-light};
     --color-default-lighter: #{$color-default-lighter};
 
+    --color-primary-darkest: #{$color-primary-darkest};
     --color-primary-darker: #{$color-primary-darker};
     --color-primary-dark: #{$color-primary-dark};
     --color-primary-light: #{$color-primary-light};
     --color-primary-lighter: #{$color-primary-lighter};
+    --color-primary-lightest: #{$color-primary-lightest};
 
     --color-success-darker: #{$color-success-darker};
     --color-success-dark: #{$color-success-dark};
@@ -766,4 +771,7 @@
 
     /* Background Color */
     --callout-info-bg: #{$callout-info-bg};
+
+    /* Helper variables */
+    --none: 0;
 }

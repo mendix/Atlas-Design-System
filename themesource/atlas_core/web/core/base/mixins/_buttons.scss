@@ -38,6 +38,22 @@
                 background-color: $background;
             }
         }
+        &.btn-style-icon {
+            @if $color != $btn-default-color {
+                color: $border;
+                background: mix($border, white, 15%);
+            }
+
+            &:hover,
+            &:focus,
+            &:active,
+            &.active,
+            .open > &.dropdown-toggle {
+                color: $color;
+                border-color: $border;
+                background-color: $border;
+            }
+        }
         // Button bordered
         &.btn-bordered {
             background-color: transparent;

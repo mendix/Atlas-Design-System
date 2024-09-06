@@ -30,7 +30,7 @@
 
         // Sidebar
         .region-sidebar {
-            background-color: $navsidebar-bg;
+            background: $navsidebar-bg;
             @if not $use-modern-client {
                 z-index: 101;
             }
@@ -70,7 +70,7 @@
             position: relative;
             z-index: 60; // Show dropshadow
             min-height: $topbar-minimalheight;
-            background-color: $navtopbar-bg;
+            background: $navtopbar-bg;
 
             // Topbar Content
             .topbar-content {

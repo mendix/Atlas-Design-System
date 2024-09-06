@@ -15,7 +15,7 @@
         margin: 0;
         border-style: none;
         border-radius: 0;
-        background-color: $navigation-bg;
+        background: $navigation-bg;
 
         ul.nav {
             margin: 0; // weird -margin if screen gets small (bootstrap)
@@ -42,7 +42,7 @@
                 &.active {
                     text-decoration: none;
                     color: $navigation-color-hover;
-                    background-color: $navigation-bg-hover;
+                    background: $navigation-bg-hover;
 
                     .caret {
                         border-top-color: $navigation-color-active;
@@ -52,7 +52,7 @@
 
                 &.active {
                     color: $navigation-color-active;
-                    background-color: $navigation-bg-active;
+                    background: $navigation-bg-active;
                     opacity: 1;
                 }
 
@@ -99,7 +99,7 @@
             & > .mx-navbar-item.open > a:focus {
                 text-decoration: none;
                 color: $navigation-color-hover;
-                background-color: $navigation-bg-hover;
+                background: $navigation-bg-hover;
 
                 .caret {
                     border-top-color: $navigation-color-hover;
@@ -109,7 +109,7 @@
 
             & > .mx-navbar-item.open .dropdown-menu > li.mx-navbar-subitem.active a {
                 color: $navigation-sub-color-active;
-                background-color: $navigation-sub-bg-active;
+                background: $navigation-sub-bg-active;
 
                 .caret {
                     border-top-color: $navigation-sub-color-active;
@@ -124,7 +124,7 @@
             .mx-navbar-item.open .dropdown-menu {
                 padding: 0;
                 border-radius: 0;
-                background-color: $navigation-sub-bg;
+                background: $navigation-sub-bg;
 
                 & > li.mx-navbar-subitem > a {
                     padding: 10px 24px;
@@ -136,12 +136,12 @@
                     &:hover,
                     &:focus {
                         color: $navigation-sub-color-hover;
-                        background-color: $navigation-sub-bg-hover;
+                        background: $navigation-sub-bg-hover;
                     }
 
                     &.active {
                         color: $navigation-sub-color-active;
-                        background-color: $navigation-sub-bg-active;
+                        background: $navigation-sub-bg-active;
                     }
                 }
             }

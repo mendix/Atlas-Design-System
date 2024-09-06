@@ -1,0 +1,30 @@
+//== Color variations
+//## These variations are used to support several other variables and components
+$color-default-darker: color-mix(in srgb, $brand-default, black 40%) !default;
+$color-default-dark: color-mix(in srgb, $brand-default, black 30%) !default;
+$color-default-light: color-mix(in srgb, $brand-default, white 60%) !default;
+$color-default-lighter: color-mix(in srgb, $brand-default, white 80%) !default;
+
+$color-primary-darkest: color-mix(in srgb, $brand-primary, black 80%) !default;
+$color-primary-darker: color-mix(in srgb, $brand-primary, black 60%) !default;
+$color-primary-dark: color-mix(in srgb, $brand-primary, black 30%) !default;
+$color-primary-light: color-mix(in srgb, $brand-primary, white 60%) !default;
+$color-primary-lighter: color-mix(in srgb, $brand-primary, white 80%) !default;
+$color-primary-lightest: color-mix(in srgb, $brand-primary, white 97%) !default;
+
+$color-success-darker: color-mix(in srgb, $brand-success, black 40%) !default;
+$color-success-dark: color-mix(in srgb, $brand-success, black 30%) !default;
+$color-success-light: color-mix(in srgb, $brand-success, white 60%) !default;
+$color-success-lighter: color-mix(in srgb, $brand-success, white 80%) !default;
+
+$color-warning-darker: color-mix(in srgb, $brand-warning, black 40%) !default;
+$color-warning-dark: color-mix(in srgb, $brand-warning, black 30%) !default;
+$color-warning-light: color-mix(in srgb, $brand-warning, white 60%) !default;
+$color-warning-lighter: color-mix(in srgb, $brand-warning, white 80%) !default;
+
+$color-danger-darker: color-mix(in srgb, $brand-danger, black 40%) !default;
+$color-danger-dark: color-mix(in srgb, $brand-danger, black 30%) !default;
+$color-danger-light: color-mix(in srgb, $brand-danger, white 60%) !default;
+$color-danger-lighter: color-mix(in srgb, $brand-danger, white 80%) !default;
+
+$brand-gradient: linear-gradient(to bottom, $color-primary-dark, $brand-primary) !default;
