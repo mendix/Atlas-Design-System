@@ -20,7 +20,7 @@
         flex-direction: row;
 
         .flexitem {
-            margin-right: $gutter-size;
+            margin-right: var(--gutter-size);
 
             &:last-child {
                 margin-right: 0;

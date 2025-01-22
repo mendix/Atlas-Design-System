@@ -1,0 +1,43 @@
+// Color variations
+// Define your primary colors
+$colors: (
+    'primary': var(--brand-primary),
+    'default': var(--brand-default),
+    'info': var(--brand-info),
+    'inverse': var(--brand-inverse),
+    'success': var(--brand-success),
+    'warning': var(--brand-warning),
+    'danger': var(--brand-danger)
+);
+
+// Function to generate shades
+@function generateShades($color) {
+    $shades: ();
+
+    @for $i from 1 through 19 {
+        $shade-step: $i * 5;
+        $shade: $color;
+        @if $shade-step < 50 {
+            $shade: color-mix(in srgb, white, $color ($shade-step * 2%));
+        } @else if $shade-step > 50 {
+            $shade: color-mix(in srgb, $color, black (($shade-step - 50) * 2%));
+        } @else {
+            $shade: $color;
+        }
+
+        $shades: map-merge($shades, ($shade-step: $shade));
+    }
+
+    @return $shades;
+}
+
+// Create CSS variables for each color and its shades
+:root {
+    @each $name, $color in $colors {
+        $shades: generateShades($color);
+        --brand-#{$name}-50: #{$color};
+        @each $i, $shade in $shades {
+            --brand-#{$name}-#{$i}: #{$shade};
+        }
+    }
+}

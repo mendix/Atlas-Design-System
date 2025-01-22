@@ -1,10 +1,13 @@
+@import "../../../theme/web/custom-variables";
+
+$use-legacy-variables: true !default;
+
 :root {
-    /*
+  /*
    DISCLAIMER:
-   This is a mapping file which will be used to help moving towards CSS variables over time.
+   This mapping file provides backwards compatibility for projects which were still using SASS variables.
    Do not change this file because it is core styling.
    Customizing core files will make updating Atlas much more difficult in the future.
-   To customize any core styling, copy the part you want to customize to styles/web/sass/app/ so the core styling is overwritten.
   
   
    ██████╗  █████╗ ███████╗██╗ ██████╗
@@ -14,7 +17,7 @@
    ██████╔╝██║  ██║███████║██║╚██████╗
    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝
   */
-
+  @if $use-legacy-variables {
     /*== Gray Shades*/
     /*## Different gray shades to be used for our variables and components */
     --gray-darker: #{$gray-darker};
@@ -33,7 +36,8 @@
 
     --brand-logo: #{$brand-logo};
     --brand-logo-height: #{$brand-logo-height};
-    --brand-logo-width: #{$brand-logo-width}; /* Only used for CSS brand logo */
+    --brand-logo-width: #{$brand-logo-width};
+    /* Only used for CSS brand logo */
 
     /*== Step 2: UI Customization */
 
@@ -70,13 +74,13 @@
     --link-hover-color: #{$link-hover-color};
 
     /*
-    █████╗ ██████╗ ██╗   ██╗ █████╗ ███╗   ██╗ ██████╗███████╗██████╗
-   ██╔══██╗██╔══██╗██║   ██║██╔══██╗████╗  ██║██╔════╝██╔════╝██╔══██╗
-   ███████║██║  ██║██║   ██║███████║██╔██╗ ██║██║     █████╗  ██║  ██║
-   ██╔══██║██║  ██║╚██╗ ██╔╝██╔══██║██║╚██╗██║██║     ██╔══╝  ██║  ██║
-   ██║  ██║██████╔╝ ╚████╔╝ ██║  ██║██║ ╚████║╚██████╗███████╗██████╔╝
-   ╚═╝  ╚═╝╚═════╝   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═════╝
-  */
+      █████╗ ██████╗ ██╗   ██╗ █████╗ ███╗   ██╗ ██████╗███████╗██████╗
+    ██╔══██╗██╔══██╗██║   ██║██╔══██╗████╗  ██║██╔════╝██╔════╝██╔══██╗
+    ███████║██║  ██║██║   ██║███████║██╔██╗ ██║██║     █████╗  ██║  ██║
+    ██╔══██║██║  ██║╚██╗ ██╔╝██╔══██║██║╚██╗██║██║     ██╔══╝  ██║  ██║
+    ██║  ██║██████╔╝ ╚████╔╝ ██║  ██║██║ ╚████║╚██████╗███████╗██████╔╝
+    ╚═╝  ╚═╝╚═════╝   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═════╝
+    */
 
     /*== Typography */
     /*## Change your font family, weight, line-height, headings and more (used in components/typography) */
@@ -120,14 +124,15 @@
 
     /*== Navigation */
     /*## Used in components/navigation
-  
-  /* Default Navigation styling */
+    
+    /* Default Navigation styling */
     --navigation-item-height: #{$navigation-item-height};
     --navigation-item-padding: #{$navigation-item-padding};
 
     --navigation-font-size: #{$navigation-font-size};
     --navigation-sub-font-size: #{$navigation-sub-font-size};
-    --navigation-glyph-size: #{$navigation-glyph-size}; /* For glyphicons that you can select in the Mendix Modeler */
+    --navigation-glyph-size: #{$navigation-glyph-size};
+    /* For glyphicons that you can select in the Mendix Modeler */
 
     --navigation-color: #{$navigation-color};
     --navigation-color-hover: #{$navigation-color-hover};
@@ -140,7 +145,8 @@
     /* Navigation Sidebar */
     --navsidebar-font-size: #{$navsidebar-font-size};
     --navsidebar-sub-font-size: #{$navsidebar-sub-font-size};
-    --navsidebar-glyph-size: #{$navsidebar-glyph-size}; /* For glyphicons that you can select in the Mendix Modeler */
+    --navsidebar-glyph-size: #{$navsidebar-glyph-size};
+    /* For glyphicons that you can select in the Mendix Modeler */
 
     --navsidebar-color: #{$navsidebar-color};
     --navsidebar-color-hover: #{$navsidebar-color-hover};
@@ -230,7 +236,8 @@
 
     /* Default button style */
     --btn-font-size: #{$btn-font-size};
-    --btn-bordered: #{$btn-bordered}; /* Default value false, set to true if you want this effect */
+    --btn-bordered: #{$btn-bordered};
+    /* Default value false, set to true if you want this effect */
     --btn-border-radius: #{$btn-border-radius};
 
     /* Button Background Color */
@@ -275,42 +282,42 @@
     --header-text-color-detail: #{$header-text-color-detail};
 
     /*
-   ███████╗██╗  ██╗██████╗ ███████╗██████╗ ████████╗
-   ██╔════╝╚██╗██╔╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝
-   █████╗   ╚███╔╝ ██████╔╝█████╗  ██████╔╝   ██║
-   ██╔══╝   ██╔██╗ ██╔═══╝ ██╔══╝  ██╔══██╗   ██║
-   ███████╗██╔╝ ██╗██║     ███████╗██║  ██║   ██║
-   ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝
-  */
+    ███████╗██╗  ██╗██████╗ ███████╗██████╗ ████████╗
+    ██╔════╝╚██╗██╔╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝
+    █████╗   ╚███╔╝ ██████╔╝█████╗  ██████╔╝   ██║
+    ██╔══╝   ██╔██╗ ██╔═══╝ ██╔══╝  ██╔══██╗   ██║
+    ███████╗██╔╝ ██╗██║     ███████╗██║  ██║   ██║
+    ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝
+    */
 
     /*== Color variations */
     /*## These variations are used to support several other variables and components */
 
     /* Color variations */
-    --color-default-darker: #{$color-default-darker};
-    --color-default-dark: #{$color-default-dark};
-    --color-default-light: #{$color-default-light};
-    --color-default-lighter: #{$color-default-lighter};
+    --brand-default-70: #{$color-default-darker};
+    --brand-default-65: #{$color-default-dark};
+    --brand-default-20: #{$color-default-light};
+    --brand-default-10: #{$color-default-lighter};
 
-    --color-primary-darker: #{$color-primary-darker};
-    --color-primary-dark: #{$color-primary-dark};
-    --color-primary-light: #{$color-primary-light};
-    --color-primary-lighter: #{$color-primary-lighter};
+    --brand-primary-75: #{$color-primary-darker};
+    --brand-primary-70: #{$color-primary-dark};
+    --brand-primary-20: #{$color-primary-light};
+    --brand-primary-10: #{$color-primary-lighter};
 
-    --color-success-darker: #{$color-success-darker};
-    --color-success-dark: #{$color-success-dark};
-    --color-success-light: #{$color-success-light};
-    --color-success-lighter: #{$color-success-lighter};
+    --brand-success-70: #{$color-success-darker};
+    --brand-success-65: #{$color-success-dark};
+    --brand-success-20: #{$color-success-light};
+    --brand-success-10: #{$color-success-lighter};
 
-    --color-warning-darker: #{$color-warning-darker};
-    --color-warning-dark: #{$color-warning-dark};
-    --color-warning-light: #{$color-warning-light};
-    --color-warning-lighter: #{$color-warning-lighter};
+    --brand-warning-70: #{$color-warning-darker};
+    --brand-warning-65: #{$color-warning-dark};
+    --brand-warning-20: #{$color-warning-light};
+    --brand-warning-10: #{$color-warning-lighter};
 
-    --color-danger-darker: #{$color-danger-darker};
-    --color-danger-dark: #{$color-danger-dark};
-    --color-danger-light: #{$color-danger-light};
-    --color-danger-lighter: #{$color-danger-lighter};
+    --brand-danger-70: #{$color-danger-darker};
+    --brand-danger-65: #{$color-danger-dark};
+    --brand-danger-20: #{$color-danger-light};
+    --brand-danger-10: #{$color-danger-lighter};
 
     --brand-gradient: #{$brand-gradient};
 
@@ -626,21 +633,6 @@
     --padding-table-cell-left: #{$padding-table-cell-left};
     --padding-table-cell-right: #{$padding-table-cell-right};
 
-    /*== Media queries breakpoints */
-    /*## Define the breakpoints at which your layout will change, adapting to different screen sizes. */
-
-    --screen-xs: #{$screen-xs};
-    --screen-sm: #{$screen-sm};
-    --screen-md: #{$screen-md};
-    --screen-lg: #{$screen-lg};
-    --screen-xl: #{$screen-xl};
-
-    /* So media queries don't overlap when required, provide a maximum (used for max-width) */
-    --screen-xs-max: #{$screen-xs-max};
-    --screen-sm-max: #{$screen-sm-max};
-    --screen-md-max: #{$screen-md-max};
-    --screen-lg-max: #{$screen-lg-max};
-
     /*== Settings */
     /*## Enable or disable your desired framework features */
     /* Use of !important */
@@ -712,15 +704,15 @@
     /*## These variations are used to support several other variables and components */
 
     /* Color variations */
-    --color-inverse-darker: #{$color-inverse-darker};
-    --color-inverse-dark: #{$color-inverse-dark};
-    --color-inverse-light: #{$color-inverse-light};
-    --color-inverse-lighter: #{$color-inverse-lighter};
+    --brand-inverse-90: #{$color-inverse-darker};
+    --brand-inverse-70: #{$color-inverse-dark};
+    --brand-inverse-20: #{$color-inverse-light};
+    --brand-inverse-15: #{$color-inverse-lighter};
 
-    --color-info-darker: #{$color-info-darker};
-    --color-info-dark: #{$color-info-dark};
-    --color-info-light: #{$color-info-light};
-    --color-info-lighter: #{$color-info-lighter};
+    --brand-info-90: #{$color-info-darker};
+    --brand-info-70: #{$color-info-dark};
+    --brand-info-20: #{$color-info-light};
+    --brand-info-15: #{$color-info-lighter};
 
     /*== Alerts */
     /*## Default Bootstrap alerts, not a widget in the Modeler (used in components/alerts) */
@@ -766,4 +758,5 @@
 
     /* Background Color */
     --callout-info-bg: #{$callout-info-bg};
+  }
 }

@@ -2724,7 +2724,6 @@ Main class hierarchy:
     .mx-navigationtree a.active {
         color: #fff;
         text-shadow: none;
-        background: #3498db;
         border-radius: 3px;
     }
     .mx-navigationtree .mx-navigationtree-collapsed ul {
@@ -3071,7 +3070,6 @@ Main class hierarchy:
     .mx-navigationlist li:focus,
     .mx-navigationlist li.active {
         color: #fff;
-        background-color: #3498db;
     }
     .mx-navigationlist * {
         cursor: pointer;

@@ -167,26 +167,26 @@
     }
 
     .shadow-small {
-        box-shadow: $shadow-small $shadow-color;
+        box-shadow: var(--shadow-small) var(--shadow-color);
         margin-bottom: 5px;
         border-width: 1px #{$important-helpers-value};
         border-style: solid;
-        border-color: $shadow-color-border;
+        border-color: var(--shadow-color-border);
     }
     .shadow-medium {
-        box-shadow: $shadow-medium $shadow-color;
+        box-shadow: var(--shadow-medium) var(--shadow-color);
         margin-bottom: 15px;
         border-width: 1px #{$important-helpers-value};
         border-style: solid;
-        border-color: $shadow-color-border;
+        border-color: var(--shadow-color-border);
     }
 
     .shadow-large {
-        box-shadow: $shadow-large $shadow-color;
+        box-shadow: var(--shadow-large) var(--shadow-color);
         margin-bottom: 25px;
         border-width: 1px #{$important-helpers-value};
         border-style: solid;
-        border-color: $shadow-color-border;
+        border-color: var(--shadow-color-border);
     }
 
     // Media
@@ -412,26 +412,26 @@
 
     //Border helpers
     .border {
-        border: 1px solid $border-color-default #{$important-helpers-value};
+        border: var(--border-default) #{$important-helpers-value};
     }
 
     .border-top {
-        border-top: 1px solid $border-color-default #{$important-helpers-value};
+        border-top: var(--border-default) #{$important-helpers-value};
     }
 
     .border-bottom {
-        border-bottom: 1px solid $border-color-default #{$important-helpers-value};
+        border-bottom: var(--border-default) #{$important-helpers-value};
     }
 
     .border-left {
-        border-left: 1px solid $border-color-default #{$important-helpers-value};
+        border-left: var(--border-default) #{$important-helpers-value};
     }
 
     .border-right {
-        border-right: 1px solid $border-color-default #{$important-helpers-value};
+        border-right: var(--border-default) #{$important-helpers-value};
     }
 
     .border-rounded {
-        border-radius: $border-radius-default #{$important-helpers-value};
+        border-radius: var(--border-radius-default) #{$important-helpers-value};
     }
 }

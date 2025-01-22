@@ -10,12 +10,12 @@
     .layout-atlas-responsive,
     .layout-atlas-responsive-default {
         @media (min-width: $screen-md) {
-            --closed-sidebar-width: #{$navsidebar-width-closed};
+            --closed-sidebar-width: var(--navsidebar-width-closed);
             .mx-scrollcontainer-shrink:not(.mx-scrollcontainer-open) > .region-sidebar,
             .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .region-sidebar,
             .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .region-sidebar {
                 @if (not $use-modern-client) {
-                    width: $navsidebar-width-closed !important;
+                    width: var(--navsidebar-width-closed) !important;
                 }
 
                 .mx-scrollcontainer-wrapper .mx-navigationtree ul li {
@@ -31,7 +31,7 @@
                         left: $sidebar-icon-width;
                         display: block;
                         min-width: auto;
-                        padding: $spacing-small 0;
+                        padding: var(--spacing-small) 0;
 
                         & > li.mx-navigationtree-has-items:hover > ul {
                             left: 100%;
@@ -59,7 +59,7 @@
                             display: block;
                             overflow-y: auto;
                             min-width: auto;
-                            padding: $spacing-small 0;
+                            padding: var(--spacing-small) 0;
                         }
                     }
 
@@ -80,7 +80,7 @@
                 }
 
                 &.mx-scrollcontainer-open > .region-sidebar {
-                    width: $navsidebar-width-closed !important;
+                    width: var(--navsidebar-width-closed) !important;
 
                     & > .mx-scrollcontainer-wrapper {
                         position: relative;
@@ -89,7 +89,7 @@
 
                 .region-sidebar > .mx-scrollcontainer-wrapper {
                     z-index: 2;
-                    left: -$navsidebar-width-closed;
+                    left: calc(-1 * var(--navsidebar-width-closed));
                     background-color: inherit;
                 }
             }
@@ -118,14 +118,14 @@
             .mx-scrollcontainer-wrapper {
                 .toggle-btn-wrapper {
                     display: flex;
-                    padding: $spacing-small;
+                    padding: var(--spacing-small);
                     align-items: center;
-                    min-height: calc(#{$topbar-minimalheight} + 4px);
-                    background: $navsidebar-sub-bg;
+                    min-height: calc(var(--topbar-minimalheight) + 4px);
+                    background: var(--navsidebar-sub-bg);
                 }
 
                 .toggle-btn {
-                    padding: $spacing-medium;
+                    padding: var(--spacing-medium);
 
                     img {
                         width: 24px;
@@ -140,8 +140,8 @@
 
                 .mx-navigationtree .navbar-inner > ul > li {
                     & > a {
-                        height: $sidebar-icon-height;
-                        padding: $spacing-small 0;
+                        height: var(--sidebar-icon-height);
+                        padding: var(--spacing-small) 0;
                         white-space: nowrap;
                         overflow: hidden;
                         // Glyph icon
@@ -151,10 +151,10 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            width: $sidebar-icon-width;
-                            height: $sidebar-icon-height;
-                            padding: $spacing-small $spacing-medium;
-                            border-radius: $border-radius-default;
+                            width: var(--sidebar-icon-width);
+                            height: var(--sidebar-icon-height);
+                            padding: var(--spacing-small) var(--spacing-medium);
+                            border-radius: var(--border-radius-default);
                         }
                     }
                 }
@@ -163,7 +163,7 @@
 
         // Topbar
         .region-topbar {
-            padding: 0 $spacing-small;
+            padding: 0 var(--spacing-small);
 
             .toggle-btn {
                 padding: 0;
@@ -183,9 +183,9 @@
     // Topbar variant
     .layout-atlas-responsive-topbar {
         .region-topbar {
-            padding: 0 $spacing-medium;
+            padding: 0 var(--spacing-medium);
             @media (max-width: $screen-sm-max) {
-                padding: 0 $spacing-small;
+                padding: 0 var(--spacing-small);
             }
         }
     }

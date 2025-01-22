@@ -1,14 +1,12 @@
 @import "../../datawidgets/web/datagrid.scss";
-@import "../../../theme/web/custom-variables.scss";
-@import "../../atlas_core/web/variables";
 
 .card-preview{
     > .card-body{
         min-height: 280px;
         > .mx-dataview, > .mx-datagrid{
             background-color: #fff;
-            border-radius: $border-radius-default;
-            padding: $spacing-medium;
+            border-radius: var(--border-radius-default);
+            padding: var(--spacing-medium);
         }
     }
 }
@@ -18,10 +16,10 @@
         margin-left: 0;
         margin-right: 0;
         > [class*="col-"]{
-            border: 0.5px solid $bg-color ;
+            border: 0.5px solid var(--bg-color) ;
             padding-left: 0;
             padding-right: 0;
-            background: $bg-color-secondary ;
+            background: var(--bg-color-secondary) ;
         }
     }
 }
@@ -32,39 +30,39 @@
         margin-right: 0;
         > [class*="col-"] {
             &:not(:last-of-type) {
-                border-right: 0.5px solid $bg-color ;
+                border-right: 0.5px solid var(--bg-color) ;
             }
             padding-left: 0;
             padding-right: 0;
-            background: $bg-color-secondary ;
+            background: var(--bg-color-secondary) ;
         }
     }
 }
 
 .preview {
     // height: 100%;
-    border-radius: $border-radius-default;
+    border-radius: var(--border-radius-default);
 }
 
 .demo-area{
-    padding: $spacing-medium;
+    padding: var(--spacing-medium);
     flex: 0 0 50%;
 }
 
 .has-focus{
     input, textarea, select{
-        border-color: $form-input-border-focus-color;
+        border-color: var(--form-input-border-focus-color);
     }
 }
 .demo-grid{
     > .row > .col{
-        padding: $spacing-large;
-        background-color: $color-danger-light;
-        border-top: $spacing-small solid #fff;
-        border-bottom: $spacing-small solid #fff;
-        border-right: $spacing-small solid #fff;
+        padding: var(--spacing-large);
+        background-color: var(--brand-danger-20);
+        border-top: var(--spacing-small) solid #fff;
+        border-bottom: var(--spacing-small) solid #fff;
+        border-right: var(--spacing-small) solid #fff;
         &:first-child{
-            border-left: $spacing-small solid #fff;
+            border-left: var(--spacing-small) solid #fff;
         }
     }
 }
