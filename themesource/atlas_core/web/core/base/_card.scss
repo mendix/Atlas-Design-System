@@ -1,0 +1,22 @@
+//
+// DISCLAIMER:
+// Do not change this file because it is core styling.
+// Customizing core files will make updating Atlas much more difficult in the future.
+// To customize any core styling, copy the part you want to customize to styles/web/sass/app/ so the core styling is overwritten.
+//
+@mixin card() {
+
+    /* ==========================================================================
+        Cards
+    ========================================================================== */
+    .card {
+        border: var(--border-default);
+        border-radius: var(--border-card-default, var(--border-radius-default));
+        background-color: var(--bg-color-secondary);
+        overflow: hidden;
+        position: relative;
+        padding: var(--spacing-large);
+        margin: var(--spacing-medium) 0 var(--spacing-medium) 0;
+        box-shadow: var(--shadow-medium) var(--shadow-color);
+    }
+}

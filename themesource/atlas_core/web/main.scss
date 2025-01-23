@@ -53,6 +53,10 @@
 @if not $exclude-login {
     @include login();
 }
+@import "core/base/card";
+@if not $exclude-card {
+    @include card();
+}
 
 // Widgets
 @import "core/widgets/input";
