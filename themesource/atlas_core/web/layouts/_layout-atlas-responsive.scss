@@ -8,7 +8,8 @@
     $sidebar-icon-width: 52px;
 
     .layout-atlas-responsive,
-    .layout-atlas-responsive-default {
+    .layout-atlas-responsive-default,
+    .layout-atlas-responsive-sidebar {
         @media (min-width: $screen-md) {
             --closed-sidebar-width: var(--navsidebar-width-closed);
             .mx-scrollcontainer-shrink:not(.mx-scrollcontainer-open) > .region-sidebar,
@@ -142,8 +143,10 @@
                     & > a {
                         height: var(--sidebar-icon-height);
                         padding: var(--spacing-small) 0;
+                        margin: var(--spacing-small) 0;
                         white-space: nowrap;
                         overflow: hidden;
+                        border-radius: var(--border-radius-default);
                         // Glyph icon
                         .glyphicon,
                         .mx-icon-lined,
@@ -175,7 +178,7 @@
 
             .mx-icon-filled,
             .mx-icon-lined {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
@@ -186,6 +189,44 @@
             padding: 0 var(--spacing-medium);
             @media (max-width: $screen-sm-max) {
                 padding: 0 var(--spacing-small);
+            }
+        }
+    }
+
+    .layout-atlas-responsive-sidebar {
+        .sidebar-wrapper {
+            padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-medium) 0;
+            transition: all 0.25s ease-in-out;
+        }
+        .toggle-btn-sidebar {
+            display: none;
+        }
+
+        .mx-scrollcontainer-shrink {
+            .region-sidebar:hover {
+                .toggle-btn-sidebar {
+                    display: block;
+                    position: absolute;
+                    left: calc(var(--navsidebar-width-closed) - 32px / 2);
+                    top: 50px;
+                    background: var(--white);
+                    color: var(--brand-primary-80);
+                    border-radius: 100%;
+                    width: 38px;
+                    height: 38px;
+                }
+            }
+            &.mx-scrollcontainer-open {
+                .region-sidebar:hover {
+                    .toggle-btn-sidebar {
+                        left: calc(var(--navsidebar-width-open) - 32px / 2);
+                        rotate: 180deg;
+                    }
+                }
+                .sidebar-wrapper {
+                    padding-left: var(--spacing-medium);
+                    transition: all 0.25s ease-in-out;
+                }
             }
         }
     }

@@ -100,6 +100,7 @@
     --navsidebar-sub-bg-active: var(--navsidebar-bg-active);
 
     --navsidebar-border-color: var(--border-color-default);
+    --navsidebar-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
 
     --navsidebar-font-size: var(--font-size-default);
     --navsidebar-sub-font-size: var(--font-size-small);
@@ -416,10 +417,6 @@
     --padding-table-cell-bottom: 8px;
     --padding-table-cell-left: 8px;
     --padding-table-cell-right: 8px;
-
-    --important-flex: true;
-    --important-spacing: true;
-    --important-helpers: true;
 
     --brand-inverse: color-mix(in srgb, var(--brand-primary), black 20%);
     --brand-info: color-mix(in srgb, var(--brand-primary), white 30%);

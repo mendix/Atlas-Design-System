@@ -34,7 +34,7 @@
             @if not $use-modern-client {
                 z-index: 101;
             }
-            box-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
+            box-shadow: var(--navsidebar-shadow);
 
             .mx-scrollcontainer-wrapper {
                 display: flex;
