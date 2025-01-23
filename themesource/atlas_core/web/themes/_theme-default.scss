@@ -83,17 +83,17 @@
     --navigation-sub-font-size: var(--font-size-small);
     --navigation-glyph-size: 20px;
 
-    --navigation-color: var(--white);
-    --navigation-color-hover: var(--white);
-    --navigation-color-active: var(--white);
+    --navigation-color: white;
+    --navigation-color-hover: white;
+    --navigation-color-active: white;
 
-    --navigation-sub-color: var(--white);
-    --navigation-sub-color-hover: var(--white);
-    --navigation-sub-color-active: var(--white);
+    --navigation-sub-color: white;
+    --navigation-sub-color-hover: white;
+    --navigation-sub-color-active: white;
 
     --navsidebar-bg: var(--sidebar-bg);
-    --navsidebar-bg-hover: rgba(0, 0, 0, 0.2);
-    --navsidebar-bg-active: rgba(0, 0, 0, 0.3);
+    --navsidebar-bg-hover: rgba(var(--black), 0.2);
+    --navsidebar-bg-active: rgba(var(--black), 0.3);
 
     --navsidebar-sub-bg: var(--brand-primary-75);
     --navsidebar-sub-bg-hover: var(--navsidebar-bg-hover);
@@ -106,13 +106,13 @@
     --navsidebar-sub-font-size: var(--font-size-small);
     --navsidebar-glyph-size: 20px;
 
-    --navsidebar-color: var(--white);
-    --navsidebar-color-hover: var(--white);
-    --navsidebar-color-active: var(--white);
+    --navsidebar-color: var(--navigation-color);
+    --navsidebar-color-hover: var(--navigation-color);
+    --navsidebar-color-active: var(--navigation-color);
 
-    --navsidebar-sub-color: var(--white);
-    --navsidebar-sub-color-hover: var(--white);
-    --navsidebar-sub-color-active: var(--white);
+    --navsidebar-sub-color: var(--navigation-color);
+    --navsidebar-sub-color-hover: var(--navigation-color);
+    --navsidebar-sub-color-active: var(--navigation-color);
 
     --navsidebar-width-closed: 52px;
     --navsidebar-width-open: 232px;
@@ -193,18 +193,18 @@
     --btn-danger-border-color: var(--brand-danger);
 
     --btn-default-color: var(--brand-primary);
-    --btn-primary-color: var(--white);
-    --btn-success-color: var(--white);
-    --btn-warning-color: var(--white);
-    --btn-danger-color: var(--white);
+    --btn-primary-color: white;
+    --btn-success-color: white;
+    --btn-warning-color: white;
+    --btn-danger-color: white;
 
     --btn-default-icon-color: var(--gray);
 
     --btn-default-bg-hover: var(--btn-default-border-color);
-    --btn-primary-bg-hover: color-mix(in srgb, var(--btn-primary-bg), black 20%);
-    --btn-success-bg-hover: color-mix(in srgb, var(--btn-success-bg), black 20%);
-    --btn-warning-bg-hover: color-mix(in srgb, var(--btn-warning-bg), black 20%);
-    --btn-danger-bg-hover: color-mix(in srgb, var(--btn-danger-bg), black 20%);
+    --btn-primary-bg-hover: color-mix(in srgb, var(--btn-primary-bg), var(--black) 20%);
+    --btn-success-bg-hover: color-mix(in srgb, var(--btn-success-bg), var(--black) 20%);
+    --btn-warning-bg-hover: color-mix(in srgb, var(--btn-warning-bg), var(--black) 20%);
+    --btn-danger-bg-hover: color-mix(in srgb, var(--btn-danger-bg), var(--black) 20%);
     --btn-link-bg-hover: var(--gray-lighter);
 
     --header-min-height: 240px;
@@ -251,7 +251,7 @@
     --tabs-lined-border-color: var(--brand-primary);
     --tabs-bg: transparent;
     --tabs-bg-pills: #e7e7e9;
-    --tabs-bg-hover: color-mix(in srgb, var(--tabs-border-color) 50%, white);
+    --tabs-bg-hover: color-mix(in srgb, var(--tabs-border-color) 50%, var(--white));
     --tabs-bg-active: var(--brand-primary);
 
     --modal-header-bg: transparent;
@@ -264,17 +264,17 @@
     --dataview-emptymessage-bg: var(--bg-color);
     --dataview-emptymessage-color: var(--font-color-default);
 
-    --alert-success-bg: var(--brand-success-light);
-    --alert-warning-bg: var(--brand-warning-light);
-    --alert-danger-bg: var(--brand-danger-light);
+    --alert-success-bg: var(--brand-success-20);
+    --alert-warning-bg: var(--brand-warning-20);
+    --alert-danger-bg: var(--brand-danger-20);
 
-    --alert-success-color: var(--brand-success-dark);
-    --alert-warning-color: var(--brand-warning-dark);
-    --alert-danger-color: var(--brand-danger-dark);
+    --alert-success-color: var(--brand-success-65);
+    --alert-warning-color: var(--brand-warning-65);
+    --alert-danger-color: var(--brand-danger-65);
 
-    --alert-success-border-color: var(--brand-success-dark);
-    --alert-warning-border-color: var(--brand-warning-dark);
-    --alert-danger-border-color: var(--brand-danger-dark);
+    --alert-success-border-color: var(--brand-success-65);
+    --alert-warning-border-color: var(--brand-warning-65);
+    --alert-danger-border-color: var(--brand-danger-65);
 
     --wizard-step-height: 48px;
     --wizard-step-number-size: 64px;
@@ -285,15 +285,15 @@
     --wizard-default-step-color: var(--font-color-default);
     --wizard-default-border-color: var(--border-color-default);
 
-    --wizard-active-bg: var(--brand-primary-light);
-    --wizard-active-color: var(--brand-primary-dark);
-    --wizard-active-step-color: var(--brand-primary-dark);
-    --wizard-active-border-color: var(--brand-primary-dark);
+    --wizard-active-bg: var(--brand-primary-20);
+    --wizard-active-color: var(--brand-primary-65);
+    --wizard-active-step-color: var(--brand-primary-65);
+    --wizard-active-border-color: var(--brand-primary-65);
 
-    --wizard-visited-bg: var(--brand-success-light);
-    --wizard-visited-color: var(--brand-success-dark);
-    --wizard-visited-step-color: var(--brand-success-dark);
-    --wizard-visited-border-color: var(--brand-success-dark);
+    --wizard-visited-bg: var(--brand-success-20);
+    --wizard-visited-color: var(--brand-success-65);
+    --wizard-visited-step-color: var(--brand-success-65);
+    --wizard-visited-border-color: var(--brand-success-65);
 
     --label-default-bg: var(--brand-default);
     --label-primary-bg: var(--brand-primary);
@@ -308,10 +308,10 @@
     --label-danger-border-color: var(--brand-danger);
 
     --label-default-color: var(--font-color-default);
-    --label-primary-color: var(--white);
-    --label-success-color: var(--white);
-    --label-warning-color: var(--white);
-    --label-danger-color: var(--white);
+    --label-primary-color: #fff;
+    --label-success-color: #fff;
+    --label-warning-color: #fff;
+    --label-danger-color: #fff;
 
     --groupbox-default-bg: var(--gray-primary);
     --groupbox-primary-bg: var(--brand-primary);
@@ -333,9 +333,9 @@
     --callout-danger-color: var(--brand-danger);
 
     --callout-default-bg: var(--gray-primary-light);
-    --callout-success-bg: var(--brand-success-light);
-    --callout-warning-bg: var(--brand-warning-light);
-    --callout-danger-bg: var(--brand-danger-light);
+    --callout-success-bg: var(--brand-success-20);
+    --callout-warning-bg: var(--brand-warning-20);
+    --callout-danger-bg: var(--brand-danger-20);
 
     --timeline-icon-color: var(--brand-primary);
     --timeline-border-color: var(--border-color-default);
@@ -418,7 +418,7 @@
     --padding-table-cell-left: 8px;
     --padding-table-cell-right: 8px;
 
-    --brand-inverse: color-mix(in srgb, var(--brand-primary), black 20%);
+    --brand-inverse: color-mix(in srgb, var(--brand-primary), var(--white) 20%);
     --brand-info: color-mix(in srgb, var(--brand-primary), white 30%);
 
     --btn-inverse-bg: var(--brand-inverse);
@@ -431,11 +431,11 @@
     --btn-info-color: var(--white);
 
     --btn-inverse-bg-hover: color-mix(in srgb, var(--btn-inverse-bg), white 20%);
-    --btn-info-bg-hover: color-mix(in srgb, var(--btn-info-bg), black 20%);
+    --btn-info-bg-hover: color-mix(in srgb, var(--btn-info-bg), white 20%);
 
-    --alert-info-bg: var(--color-info-lighter);
-    --alert-info-color: var(--color-info-darker);
-    --alert-info-border-color: var(--color-info-dark);
+    --alert-info-bg: var(--color-info-10);
+    --alert-info-color: var(--color-info-70);
+    --alert-info-border-color: var(--color-info-65);
 
     --label-info-bg: var(--brand-info);
     --label-inverse-bg: var(--brand-inverse);
@@ -453,5 +453,5 @@
     --groupbox-info-color: var(--white);
 
     --callout-info-color: var(--brand-info);
-    --callout-info-bg: var(--color-info-lighter);
+    --callout-info-bg: var(--color-info-10);
 }
