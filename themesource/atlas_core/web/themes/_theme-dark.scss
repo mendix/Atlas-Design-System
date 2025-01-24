@@ -1,0 +1,50 @@
+:root.theme-dark {
+    --gray-darker: #f8f8f8;
+    --gray-dark: #8B8D92;
+    --gray: #B8BABF;
+    --gray-light: #C1C3C8;
+    --gray-primary: #8B8D92;
+    --gray-lighter: #212225;
+
+    --brand-primary: color-mix(in srgb, #264ae5, var(--white) 25%);
+    --brand-success: color-mix(in srgb, #1AC61A, var(--white) 25%);
+    --brand-warning: color-mix(in srgb, #f0b000, var(--white) 25%);
+    --brand-danger: color-mix(in srgb, #EA3337, var(--white) 25%);
+
+    --white: rgb(30, 30, 30);
+    --black: #ffffff;
+
+    --border-color-default: #6c757d;
+
+    --bg-color: brand-primary-75;
+    --bg-color-secondary: brand-primary-85;
+
+    --topbar-bg: linear-gradient(to bottom, var(--brand-primary-40), var(--brand-primary-30));
+    --sidebar-bg: linear-gradient(to bottom, var(--brand-primary-30), var(--brand-primary-25));
+
+    --link-color: var(--brand-primary-75);
+
+    --navsidebar-sub-bg: var(--brand-primary-80);
+
+    --navtopbar-bg: var(--topbar-bg);
+    --navtopbar-bg-hover: rgba(255, 255, 255, 0.1);
+    --navtopbar-bg-active: rgba(255, 255, 255, 0.2);
+    --navtopbar-color: var(--black);
+    --navtopbar-color-hover: color-mix(in srgb, var(--navtopbar-color) 85%, var(--white));
+    --navtopbar-color-active: color-mix(in srgb, var(--navtopbar-color) 85%, var(--white));
+
+    --navtopbar-sub-color: var(--navigation-color);
+    --navtopbar-sub-color-hover: var(--navigation-color);
+    --navtopbar-sub-color-active: var(--navigation-color);
+
+    --form-input-border-focus-color: var(--brand-primary-60);
+
+    --btn-default-bg: var(--gray-lighter);
+    --btn-default-color: var(--brand-primary-95);
+    --btn-link-bg-hover: var(--gray-darker);
+
+    --header-text-color: var(--font-color-default);
+    --header-text-color-detail: rgba(255, 255, 255, 0.2);
+
+    --tabs-bg-pills: #343a40;
+}
