@@ -35,5 +35,5 @@ $important-spacing: true; // ./base/spacing.scss
 $important-helpers: true; // ./helpers/helperclasses.scss
 
 // == Legacy
-// ## Enable if your theme uses Sass variables (Atlas 3 standard)
-$use-legacy-variables: false;
+// ## Disable if your theme uses Sass variables (Atlas 3 standard)
+$use-css-variables: true;
