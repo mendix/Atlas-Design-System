@@ -18,19 +18,7 @@
         overflow: hidden;
         flex: 1;
         flex-direction: row;
-
-        .flexitem {
-            margin-right: var(--gutter-size);
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
-        .flexitem-main {
-            overflow: hidden;
-            flex: 1;
-        }
+        column-gap: var(--gutter-size);
     }
 
     // These classes define the order of the children

@@ -25,7 +25,7 @@
         vertical-align: middle;
         white-space: nowrap;
         color: var(--btn-default-color);
-        border: 1px solid var(--btn-default-border-color);
+        border: var(--border-width-default) solid var(--btn-default-border-color);
         border-radius: var(--btn-border-radius);
         background-color: var(--btn-default-bg);
         background-image: none;

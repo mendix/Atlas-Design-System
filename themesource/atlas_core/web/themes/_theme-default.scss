@@ -24,11 +24,15 @@
     --font-color-default: var(--gray-darker);
 
     --border-color-default: #e6e6e6;
-    --border-default: 1px solid var(--border-color-default);
+    --border-default: var(--border-width-default) solid var(--border-color-default);
     --border-radius-s: 4px;
     --border-radius-m: 8px;
     --border-radius-l: 12px;
     --border-radius-default: var(--border-radius-m);
+    --border-width-default: var(--border-width-thin);
+    --border-width-thin: 1px;
+    --border-width-medium: 2px;
+    --border-width-thick: 3px;
 
     --topbar-bg: linear-gradient(to bottom, var(--brand-primary-50), var(--brand-primary-60));
     --topbar-minimalheight: 48px;
@@ -91,13 +95,17 @@
     --navigation-sub-color-hover: white;
     --navigation-sub-color-active: white;
 
+    --navigation-bg: var(--topbar-bg);
+    --navigation-bg-hover: rgba(0, 0, 0, 0.2);
+    --navigation-bg-active: rgba(0, 0, 0, 0.3);
+
     --navsidebar-bg: var(--sidebar-bg);
-    --navsidebar-bg-hover: rgba(var(--black), 0.2);
-    --navsidebar-bg-active: rgba(var(--black), 0.3);
+    --navsidebar-bg-hover: var(--navigation-bg-hover);
+    --navsidebar-bg-active: var(--navigation-bg-active);
 
     --navsidebar-sub-bg: var(--brand-primary-75);
-    --navsidebar-sub-bg-hover: var(--navsidebar-bg-hover);
-    --navsidebar-sub-bg-active: var(--navsidebar-bg-active);
+    --navsidebar-sub-bg-hover: var(--navigation-bg-hover);
+    --navsidebar-sub-bg-active: var(--navigation-bg-active);
 
     --navsidebar-border-color: var(--border-color-default);
     --navsidebar-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
@@ -122,8 +130,8 @@
     --navtopbar-glyph-size: 1.2em;
 
     --navtopbar-bg: var(--topbar-bg);
-    --navtopbar-bg-hover: rgba(0, 0, 0, 0.1);
-    --navtopbar-bg-active: rgba(0, 0, 0, 0.2);
+    --navtopbar-bg-hover: var(--navigation-bg-hover);
+    --navtopbar-bg-active: var(--navigation-bg-active);
     --navtopbar-color: var(--white);
     --navtopbar-color-hover: color-mix(in srgb, var(--navtopbar-color) 85%, white);
     --navtopbar-color-active: color-mix(in srgb, var(--navtopbar-color) 85%, white);
@@ -260,6 +268,7 @@
 
     --dataview-controls-bg: transparent;
     --dataview-controls-border-color: var(--border-color-default);
+    --dataview-controls-alignment: left;
 
     --dataview-emptymessage-bg: var(--bg-color);
     --dataview-emptymessage-color: var(--font-color-default);
@@ -411,7 +420,7 @@
     --m-layout-spacing: var(--m-layout-spacing-top) var(--m-layout-spacing-right) var(--m-layout-spacing-bottom) var(--m-layout-spacing-left);
     --t-layout-spacing: var(--t-layout-spacing-top) var(--t-layout-spacing-right) var(--t-layout-spacing-bottom) var(--t-layout-spacing-left);
 
-    --gutter-size: 8px;
+    --gutter-size: var(--spacing-medium);
 
     --padding-table-cell-top: 8px;
     --padding-table-cell-bottom: 8px;

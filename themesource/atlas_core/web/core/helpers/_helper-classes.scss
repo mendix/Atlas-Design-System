@@ -20,6 +20,7 @@
 
     .d-flex {
         display: flex #{$important-helpers-value};
+        gap: var(--gutter-size);
     }
 
     .d-inline-flex {
@@ -332,6 +333,38 @@
             display: table-row #{$important-helpers-value};
         }
         .d-lg-table-cell {
+            display: table-cell #{$important-helpers-value};
+        }
+    }
+
+    @media (min-width: $screen-xl) and (max-width: $screen-xxl) {
+        .hide-xl,
+        .hidden-xl,
+        .d-xl-none {
+            display: none #{$important-helpers-value};
+        }
+        .d-xl-flex {
+            display: flex #{$important-helpers-value};
+        }
+        .d-xl-inline-flex {
+            display: inline-flex #{$important-helpers-value};
+        }
+        .d-xl-inline {
+            display: inline #{$important-helpers-value};
+        }
+        .d-xl-inline-block {
+            display: inline-block #{$important-helpers-value};
+        }
+        .d-xl-block {
+            display: block #{$important-helpers-value};
+        }
+        .d-xl-table {
+            display: table #{$important-helpers-value};
+        }
+        .d-xl-table-row {
+            display: table-row #{$important-helpers-value};
+        }
+        .d-xl-table-cell {
             display: table-cell #{$important-helpers-value};
         }
     }

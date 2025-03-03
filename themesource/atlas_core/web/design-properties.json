@@ -9,10 +9,34 @@
                 {
                     "name": "S",
                     "variable": "--spacing-small"
-                },{
+                },
+                {
                     "name": "M",
                     "variable": "--spacing-medium"
-                },{
+                },
+                {
+                    "name": "L",
+                    "variable": "--spacing-large"
+                }
+            ]
+        }
+    ],
+    "PageTemplate": [
+        {
+            "name": "Default gutter size",
+            "type": "ToggleButtonGroup",
+            "description": "Sets a default spacing between items",
+            "property": "--gutter-size",
+            "options": [
+                {
+                    "name": "S",
+                    "variable": "--spacing-small"
+                },
+                {
+                    "name": "M",
+                    "variable": "--spacing-medium"
+                },
+                {
                     "name": "L",
                     "variable": "--spacing-large"
                 }
@@ -368,49 +392,69 @@
             ]
         },
         {
+            "name": "Stretch",
+            "type": "Toggle",
+            "class": "div-stretch"
+        },
+        {
             "name": "Background color",
             "type": "ColorPicker",
             "description": "Change the background color of the container.",
             "options": [
                 {
                     "name": "Background Primary",
-                    "oldNames": ["Background Default"],
+                    "oldNames": [
+                        "Background Default"
+                    ],
                     "preview": "--bg-color",
                     "class": "background-main"
                 },
                 {
                     "name": "Background Secondary",
-                    "oldNames": ["Background Dashboard"],
+                    "oldNames": [
+                        "Background Dashboard"
+                    ],
                     "preview": "--bg-color-secondary",
                     "class": "background-secondary"
                 },
                 {
                     "name": "Brand Primary",
-                    "oldNames": ["Primary"],
+                    "oldNames": [
+                        "Primary"
+                    ],
                     "preview": "--brand-primary",
                     "class": "background-primary"
                 },
                 {
                     "name": "Brand Secondary",
-                    "oldNames": ["Default", "Brand Default"],
+                    "oldNames": [
+                        "Default",
+                        "Brand Default"
+                    ],
                     "class": "background-default",
                     "preview": "--brand-default"
                 },
                 {
                     "name": "Brand Success",
-                    "oldNames": ["Success"],
+                    "oldNames": [
+                        "Success"
+                    ],
                     "preview": "--brand-success",
                     "class": "background-success"
                 },
                 {
                     "name": "Brand Warning",
-                    "oldNames": ["Warning"],
+                    "oldNames": [
+                        "Warning"
+                    ],
                     "preview": "--brand-warning",
                     "class": "background-warning"
                 },
                 {
                     "name": "Brand Danger",
-                    "oldNames": ["Danger"],
+                    "oldNames": [
+                        "Danger"
+                    ],
                     "preview": "--brand-danger",
                     "class": "background-danger"
                 },
@@ -418,6 +462,110 @@
                     "name": "Brand Gradient",
                     "preview": "--brand-gradient",
                     "class": "background-brand-gradient"
+                }
+            ]
+        },
+        {
+            "name": "Borders",
+            "type": "Toggle",
+            "description": "Show borders",
+            "class": "div-borders"
+        },
+        {
+            "name": "Border sides",
+            "type": "ToggleButtonGroup",
+            "multiSelect": true,
+            "description": "Show a border on specific sides only",
+            "options": [
+                {
+                    "name": "Top",
+                    "class": "div-border-toggle-top"
+                },
+                {
+                    "name": "Right",
+                    "class": "div-border-toggle-right"
+                },
+                {
+                    "name": "Left",
+                    "class": "div-border-toggle-left"
+                },
+                {
+                    "name": "Bottom",
+                    "class": "div-border-toggle-bottom"
+                }
+            ]
+        },
+        {
+            "name": "Border style",
+            "property": "--div-border-style",
+            "type": "ToggleButtonGroup",
+            "options": [
+                {
+                    "name": "None",
+                    "variable": "--border-style-none"
+                },
+                {
+                    "name": "Solid",
+                    "variable": "--border-style-solid"
+                },
+                {
+                    "name": "Dashed",
+                    "variable": "--border-style-dashed"
+                },
+                {
+                    "name": "Dotted",
+                    "variable": "--border-style-dotted"
+                }
+            ]
+        },
+        {
+            "name": "Border width",
+            "type": "ToggleButtonGroup",
+            "property": "border-width",
+            "options": [
+                {
+                    "name": "Thin",
+                    "variable": "--border-width-thin"
+                },
+                {
+                    "name": "Medium",
+                    "variable": "--border-width-medium"
+                },
+                {
+                    "name": "Thick",
+                    "variable": "--border-width-thick"
+                }
+            ]
+        },
+        {
+            "name": "Border color",
+            "type": "ColorPicker",
+            "property": "border-color",
+            "options": [
+                {
+                    "name": "Default",
+                    "variable": "--border-color-default",
+                    "preview": "--brand-color-default"
+                },
+                {
+                    "name": "Primary",
+                    "variable": "--brand-primary",
+                    "preview": "--brand-primary"
+                },
+                {
+                    "name": "Success",
+                    "variable": "--brand-success",
+                    "preview": "--brand-success"
+                },
+                {
+                    "name": "Warning",
+                    "variable": "--brand-warning",
+                    "preview": "--brand-warning"
+                },
+                {
+                    "name": "Danger",
+                    "variable": "--brand-danger",
+                    "preview": "--brand-danger"
                 }
             ]
         },
@@ -504,6 +652,76 @@
                 {
                     "name": "Flex",
                     "class": "d-flex"
+                }
+            ]
+        },
+        {
+            "name": "Flex gap",
+            "type": "ToggleButtonGroup",
+            "property": "gap",
+            "description": "Sets a gap between the items in the container",
+            "options": [
+                {
+                    "name": "None",
+                    "variable": "--none"
+                },
+                {
+                    "name": "Small",
+                    "variable": "--spacing-small"
+                },
+                {
+                    "name": "Medium",
+                    "variable": "--spacing-medium"
+                },
+                {
+                    "name": "Large",
+                    "variable": "--spacing-large"
+                }
+            ]
+        },
+        {
+            "name": "Trigger",
+            "type": "Dropdown",
+            "options": [
+                {
+                    "name": "On Appear",
+                    "class": "scrollcontainer-animation-onappear"
+                },
+                {
+                    "name": "On Scroll",
+                    "class": "scrollcontainer-animation-onscroll"
+                }
+            ]
+        },
+        {
+            "name": "Type",
+            "type": "Dropdown",
+            "options": [
+                {
+                    "name": "Slide in/out",
+                    "class": "scrollcontainer-animation-slide"
+                },
+                {
+                    "name": "Fade in/out",
+                    "class": "scrollcontainer-animation-fade"
+                }
+            ]
+        },
+        {
+            "name": "Effect",
+            "type": "ToggleButtonGroup",
+            "options": [
+                {
+                    "name": "Slow",
+                    "class": "scrollcontainer-animation-slow"
+                },
+                {
+                    "name": "Medium",
+                    "class": "scrollcontainer-animation-medium"
+                },
+                {
+                    "name": "Fast",
+                    "class": "scrollcontainer-animation-fast"
                 }
             ]
         }
@@ -754,26 +972,73 @@
             ]
         },
         {
-            "name": "Border radius",
-            "property": "--layoutgrid-column-border-radius",
+            "name": "Align",
             "type": "ToggleButtonGroup",
-            "description": "Sets the border radius.",
+            "description": "Align content of the whole layout grid vertically.",
             "options": [
                 {
-                    "name": "None",
-                    "variable": "--none"
+                    "name": "Top",
+                    "class": "layoutgrid-align-top"
                 },
                 {
-                    "name": "Small",
-                    "variable": "--border-radius-s"
+                    "name": "Center",
+                    "class": "layoutgrid-align-center"
+                },
+                {
+                    "name": "Bottom",
+                    "class": "layoutgrid-align-bottom"
+                },
+                {
+                    "name": "Stretch",
+                    "class": "layoutgrid-align-stretch"
+                }
+            ]
+        }
+    ],
+    "ScrollContainer": [
+        {
+            "name": "Trigger",
+            "type": "Dropdown",
+            "options": [
+                {
+                    "name": "On Appear",
+                    "class": "scrollcontainer-animation-onappear"
+                },
+                {
+                    "name": "On Scroll",
+                    "class": "scrollcontainer-animation-onscroll"
+                }
+            ]
+        },
+        {
+            "name": "Type",
+            "type": "Dropdown",
+            "options": [
+                {
+                    "name": "Slide in/out",
+                    "class": "scrollcontainer-animation-slide"
+                },
+                {
+                    "name": "Fade in/out",
+                    "class": "scrollcontainer-animation-fade"
+                }
+            ]
+        },
+        {
+            "name": "Effect",
+            "type": "ToggleButtonGroup",
+            "options": [
+                {
+                    "name": "Slow",
+                    "class": "scrollcontainer-animation-slow"
                 },
                 {
                     "name": "Medium",
-                    "variable": "--border-radius-m"
+                    "class": "scrollcontainer-animation-medium"
                 },
                 {
-                    "name": "Large",
-                    "variable": "--border-radius-l"
+                    "name": "Fast",
+                    "class": "scrollcontainer-animation-fast"
                 }
             ]
         }
@@ -1746,6 +2011,39 @@
                 {
                     "name": "High",
                     "class": "img-opacity-high"
+                }
+            ]
+        },
+        {
+            "name": "Icon color",
+            "type": "ColorPicker",
+            "property": "color",
+            "description": "Sets the color of icons.",
+            "options": [
+                {
+                    "name": "Brand Primary",
+                    "variable": "--brand-primary",
+                    "preview": "--brand-primary"
+                },
+                {
+                    "name": "Brand Success",
+                    "variable": "--brand-success",
+                    "preview": "--brand-success"
+                },
+                {
+                    "name": "Brand Warning",
+                    "variable": "--brand-warning",
+                    "preview": "--brand-warning"
+                },
+                {
+                    "name": "Brand Danger",
+                    "variable": "--brand-danger",
+                    "preview": "--brand-danger"
+                },
+                {
+                    "name": "Link color",
+                    "variable": "--link-color",
+                    "preview": "--link-color"
                 }
             ]
         }

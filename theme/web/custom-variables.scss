@@ -12,6 +12,7 @@ $screen-sm: 576px;
 $screen-md: 768px;
 $screen-lg: 992px;
 $screen-xl: 1200px;
+$screen-xxl: 1400px;
 
 // So media queries don't overlap when required, provide a maximum (used for max-width)
 $screen-xs-max: (
@@ -25,6 +26,9 @@ $screen-md-max: (
 );
 $screen-lg-max: (
     $screen-xl - 1
+);
+$screen-xl-max: (
+    $screen-xxl - 1
 );
 
 //== Settings

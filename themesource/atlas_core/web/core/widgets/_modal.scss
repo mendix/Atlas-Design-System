@@ -14,7 +14,7 @@
     ========================================================================== */
     .modal-dialog {
         .modal-content {
-            border: 1px solid var(--modal-header-border-color);
+            border: var(--border-width-default) solid var(--modal-header-border-color);
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 

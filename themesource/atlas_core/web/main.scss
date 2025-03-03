@@ -137,6 +137,16 @@
     @include date-picker();
 }
 
+@import "core/widgets/demo-user-switcher";
+@if not $exclude-demo-user-switcher {
+    @include demo-user-switcher();
+}
+
+@import "core/widgets/div-container";
+@if not $exclude-div-container {
+    @include div-container();
+}
+
 @import "core/widgets/header";
 @if not $exclude-header {
     @include header();

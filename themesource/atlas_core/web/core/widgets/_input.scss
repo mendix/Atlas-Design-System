@@ -19,7 +19,7 @@
         padding: var(--form-input-padding-y) var(--form-input-padding-x);
         transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
         color: var(--form-input-color);
-        border: 1px solid var(--form-input-border-color);
+        border: var(--border-width-default) solid var(--form-input-border-color);
         border-radius: var(--form-input-border-radius);
         background-color: var(--form-input-bg);
         background-image: none;
@@ -63,7 +63,7 @@
     // Lined
     .form-control-lined {
         border: 0;
-        border-bottom: 1px solid var(--form-input-border-color);
+        border-bottom: var(--border-width-default) solid var(--form-input-border-color);
         border-radius: 0;
         background-color: transparent;
 

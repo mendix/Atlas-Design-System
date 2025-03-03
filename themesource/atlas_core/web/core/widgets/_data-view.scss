@@ -34,16 +34,11 @@
         border-top: 1px solid var(--dataview-controls-border-color);
         border-radius: 0;
         background-color: var(--dataview-controls-bg);
-        /* Buttons */
-        .mx-button {
-            margin-right: var(--spacing-small);
-            margin-bottom: 0;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
+        display: flex;
+        gap: var(--gutter-size);
+        margin-bottom: 0;
+        
         background-color: inherit;
+        text-align: var(--dataview-controls-alignment);
     }
 }

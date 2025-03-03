@@ -14,7 +14,7 @@
 .alert {
     margin-top: 0;
     padding: var(--spacing-medium);
-    border: 1px solid;
+    border: var(--border-width-default) solid;
     border-radius: var(--border-radius-default);
     padding: var(--spacing-medium);
 }
