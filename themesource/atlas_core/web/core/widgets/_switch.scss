@@ -56,7 +56,7 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-info {
-                @include bootstrap-style-ios(var(--brand-info));
+                @include bootstrap-style-ios(var(--brand-primary-350));
             }
 
             &.widget-switch-btn-wrapper-primary {
@@ -72,7 +72,7 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-inverse {
-                @include bootstrap-style-ios(var(--brand-inverse));
+                @include bootstrap-style-ios(var(--brand-primary-600));
             }
         }
     }
@@ -99,10 +99,10 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-info {
-                @include bootstrap-style-android(var(--brand-info));
+                @include bootstrap-style-android(var(--brand-primary-350));
 
                 .widget-switch-btn {
-                    background: var(--brand-info);
+                    background: var(--brand-primary-350);
                 }
             }
 
@@ -131,10 +131,10 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-inverse {
-                @include bootstrap-style-android(var(--brand-inverse));
+                @include bootstrap-style-android(var(--brand-primary-600));
 
                 .widget-switch-btn {
-                    background: var(--brand-inverse);
+                    background: var(--brand-primary-600);
                 }
             }
         }

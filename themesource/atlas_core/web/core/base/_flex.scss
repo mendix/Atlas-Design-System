@@ -14,16 +14,30 @@
 
     // Flex layout
     .flexcontainer {
-        display: flex;
-        overflow: hidden;
-        flex: 1;
-        flex-direction: row;
-        column-gap: var(--gutter-size);
+        display: flex #{$important-flex-value};
+        overflow: hidden #{$important-flex-value};
+        flex: 1 #{$important-flex-value};
+        gap: var(--gutter-size) #{$important-flex-value};
+    }
+
+    .flex-align-left {
+        align-items: center #{$important-flex-value};
+        justify-content: flex-start #{$important-flex-value};
+    }
+
+    .flex-align-center {
+        align-items: center #{$important-flex-value};
+        justify-content: flex-start #{$important-flex-value};
+    }
+
+    .flex-align-right {
+        align-items: center #{$important-flex-value};
+        justify-content: flex-start #{$important-flex-value};
     }
 
     // These classes define the order of the children
     .flex-row {
-        flex-direction: row #{$important-flex-value};
+        flex-flow: row #{$important-flex-value};
     }
 
     .flex-column {
@@ -57,32 +71,32 @@
     }
 
     // These classes define the alignment of the children
-    .justify-content-start {
+    .justify-start {
         justify-content: flex-start #{$important-flex-value};
     }
 
-    .justify-content-end {
+    .justify-end {
         justify-content: flex-end #{$important-flex-value};
     }
 
-    .justify-content-center {
+    .justify-center {
         justify-content: center #{$important-flex-value};
     }
 
-    .justify-content-between {
+    .justify-between {
         justify-content: space-between #{$important-flex-value};
     }
 
-    .justify-content-around {
+    .justify-around {
         justify-content: space-around #{$important-flex-value};
     }
 
-    .justify-content-evenly {
+    .justify-evenly {
         // Not Supported in IE11
         justify-content: space-evenly #{$important-flex-value};
     }
 
-    .justify-content-stretch {
+    .justify-stretch {
         justify-content: stretch #{$important-flex-value};
     }
 
@@ -118,6 +132,10 @@
 
     .align-content-center {
         align-content: center #{$important-flex-value};
+    }
+
+    .align-content-baseline {
+        align-content: baseline #{$important-flex-value};
     }
 
     .align-content-between {

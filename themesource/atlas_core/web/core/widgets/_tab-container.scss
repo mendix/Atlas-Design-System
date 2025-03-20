@@ -41,7 +41,7 @@
             & > li.active > a:focus {
                 color: var(--tabs-color-active);
                 border: 1px solid var(--tabs-border-color);
-                border-bottom-color: var(--white);
+                border-bottom-color: var(--bg-color-secondary);
                 background-color: var(--tabs-bg);
             }
         }
@@ -67,7 +67,7 @@
                 a {
                     padding: 16px;
                     text-transform: uppercase;
-                    color: var(--white);
+                    color: var(--font-color-contrast);
                     border-width: 0 1px 0 0;
                     border-style: solid;
                     border-color: rgba(255, 255, 255, 0.3);
@@ -91,7 +91,7 @@
                     color: #ffffff;
                     border-style: none;
                     border-radius: 0;
-                    background-color: var(--brand-primary-90);
+                    background-color: var(--brand-primary-900);
                 }
             }
         }
@@ -105,6 +105,6 @@
         font-size: var(--font-size-small);
         font-weight: var(--font-weight-bold);
         line-height: 1;
-        padding: var(--spacing-small)/2 var(--spacing-small);
+        padding: calc(var(--spacing-small)/2) var(--spacing-small);
     }
 }

@@ -19,27 +19,39 @@
         --div-border-width: var(--border-width-default);
         --div-border-color: var(--border-color-default);
         --div-border-style: solid;
+        --overflow-auto: auto;
+        --overflow-hidden: hidden;
+        --overflow-visible: visible;
     }
 
-    .div-borders {
-        &.div-border-toggle-top {
-            border-top: var(--div-border-width) var(--div-border-style) var(--div-border-color);
-        }
-        &.div-border-toggle-left {
-            border-left: var(--div-border-width) var(--div-border-style) var(--div-border-color);
-        }
-        &.div-border-toggle-right {
-            border-right: var(--div-border-width) var(--div-border-style) var(--div-border-color);
-        }
-        &.div-border-toggle-bottom {
-            border-bottom: var(--div-border-width) var(--div-border-style) var(--div-border-color);
-        }
-        &:not(.div-border-toggle-top, .div-border-toggle-left, .div-border-toggle-right, .div-border-toggle-bottom) {
-            border: var(--div-border-width) var(--div-border-style) var(--div-border-color);
-        }
+    .div-overflow-auto {
+        overflow: auto;
+    }
+    .div-overflow-hidden {
+        overflow: hidden;
+    }
+    .div-overflow-visible {
+        overflow: visible;
+    }
+
+    .div-border-toggle-all {
+        border: var(--div-border-width) var(--div-border-style) var(--div-border-color);
+    }
+    .div-border-toggle-top {
+        border-top: var(--div-border-width) var(--div-border-style) var(--div-border-color);
+    }
+    .div-border-toggle-left {
+        border-left: var(--div-border-width) var(--div-border-style) var(--div-border-color);
+    }
+    .div-border-toggle-right {
+        border-right: var(--div-border-width) var(--div-border-style) var(--div-border-color);
+    }
+    .div-border-toggle-bottom {
+        border-bottom: var(--div-border-width) var(--div-border-style) var(--div-border-color);
     }
 
     .div-stretch {
         height: 100%;
+        flex: 1;
     }
 }

@@ -6,41 +6,41 @@
     --gray-primary: #8B8D92;
     --gray-lighter: #212225;
 
-    --brand-primary: color-mix(in srgb, #264ae5, var(--white) 25%);
-    --brand-success: color-mix(in srgb, #1AC61A, var(--white) 25%);
-    --brand-warning: color-mix(in srgb, #f0b000, var(--white) 25%);
-    --brand-danger: color-mix(in srgb, #EA3337, var(--white) 25%);
+    --brand-primary: color-mix(in srgb, #264ae5, var(--color-base) 25%);
+    --brand-success: color-mix(in srgb, #1AC61A, var(--color-base) 25%);
+    --brand-warning: color-mix(in srgb, #f0b000, var(--color-base) 25%);
+    --brand-danger: color-mix(in srgb, #EA3337, var(--color-base) 25%);
 
-    --white: rgb(30, 30, 30);
-    --black: #ffffff;
+    --color-base: rgb(30, 30, 30);
+    --color-contrast: #ffffff;
 
     --border-color-default: #6c757d;
 
-    --bg-color: brand-primary-75;
-    --bg-color-secondary: brand-primary-85;
+    --bg-color: brand-primary-750;
+    --bg-color-secondary: brand-primary-850;
 
-    --topbar-bg: linear-gradient(to bottom, var(--brand-primary-40), var(--brand-primary-30));
-    --sidebar-bg: linear-gradient(to bottom, var(--brand-primary-30), var(--brand-primary-25));
+    --topbar-bg: linear-gradient(to bottom, var(--brand-primary-400), var(--brand-primary-300));
+    --sidebar-bg: linear-gradient(to bottom, var(--brand-primary-300), var(--brand-primary-250));
 
-    --link-color: var(--brand-primary-75);
+    --link-color: var(--brand-primary-750);
 
-    --navsidebar-sub-bg: var(--brand-primary-80);
+    --navsidebar-sub-bg: var(--brand-primary-800);
 
     --navtopbar-bg: var(--topbar-bg);
     --navtopbar-bg-hover: rgba(255, 255, 255, 0.1);
     --navtopbar-bg-active: rgba(255, 255, 255, 0.2);
     --navtopbar-color: var(--black);
-    --navtopbar-color-hover: color-mix(in srgb, var(--navtopbar-color) 85%, var(--white));
-    --navtopbar-color-active: color-mix(in srgb, var(--navtopbar-color) 85%, var(--white));
+    --navtopbar-color-hover: color-mix(in srgb, var(--navtopbar-color) 85%, var(--color-base));
+    --navtopbar-color-active: color-mix(in srgb, var(--navtopbar-color) 85%, var(--color-base));
 
     --navtopbar-sub-color: var(--navigation-color);
     --navtopbar-sub-color-hover: var(--navigation-color);
     --navtopbar-sub-color-active: var(--navigation-color);
 
-    --form-input-border-focus-color: var(--brand-primary-60);
+    --form-input-border-focus-color: var(--brand-primary-600);
 
     --btn-default-bg: var(--gray-lighter);
-    --btn-default-color: var(--brand-primary-95);
+    --btn-default-color: var(--brand-primary-950);
     --btn-link-bg-hover: var(--gray-darker);
 
     --header-text-color: var(--font-color-default);

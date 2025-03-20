@@ -29,7 +29,6 @@
     }
 
     .mx-dataview-controls {
-        margin-top: var(--spacing-medium);
         padding: var(--spacing-medium) 0 0;
         border-top: 1px solid var(--dataview-controls-border-color);
         border-radius: 0;
@@ -37,8 +36,6 @@
         display: flex;
         gap: var(--gutter-size);
         margin-bottom: 0;
-        
-        background-color: inherit;
         text-align: var(--dataview-controls-alignment);
     }
 }

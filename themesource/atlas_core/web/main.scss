@@ -1,11 +1,8 @@
 // Default variables
 @import "exclusion-variables";
-@import "themes/theme-default";
-@import "themes/theme-dark";
-@import "color-variants";
 @import "../../../theme/web/exclusion-variables";
+@import "variables";
 @import "../../../theme/web/custom-variables";
-@import "themes/legacy-variables/variables"; // support for modules using sass variables
 @import "themes/legacy-variables/css-variables-mappings"; // support for custom sass variable
 
 // Font Family Import

@@ -1,48 +1,4 @@
 {
-    "Page": [
-        {
-            "name": "Default gutter size",
-            "type": "ToggleButtonGroup",
-            "description": "Sets a default spacing between items",
-            "property": "--gutter-size",
-            "options": [
-                {
-                    "name": "S",
-                    "variable": "--spacing-small"
-                },
-                {
-                    "name": "M",
-                    "variable": "--spacing-medium"
-                },
-                {
-                    "name": "L",
-                    "variable": "--spacing-large"
-                }
-            ]
-        }
-    ],
-    "PageTemplate": [
-        {
-            "name": "Default gutter size",
-            "type": "ToggleButtonGroup",
-            "description": "Sets a default spacing between items",
-            "property": "--gutter-size",
-            "options": [
-                {
-                    "name": "S",
-                    "variable": "--spacing-small"
-                },
-                {
-                    "name": "M",
-                    "variable": "--spacing-medium"
-                },
-                {
-                    "name": "L",
-                    "variable": "--spacing-large"
-                }
-            ]
-        }
-    ],
     "Widget": [
         {
             "name": "Spacing",
@@ -343,56 +299,7 @@
     ],
     "DivContainer": [
         {
-            "name": "Align content",
-            "type": "Dropdown",
-            "description": "Align content of this element left, right or center it. Align elements inside the container as a row or as a column.",
-            "options": [
-                {
-                    "name": "Left align as a row",
-                    "oldNames": [
-                        "Left align as row"
-                    ],
-                    "class": "row-left"
-                },
-                {
-                    "name": "Center align as a row",
-                    "oldNames": [
-                        "Center align as row"
-                    ],
-                    "class": "row-center"
-                },
-                {
-                    "name": "Right align as a row",
-                    "oldNames": [
-                        "Right align as row"
-                    ],
-                    "class": "row-right"
-                },
-                {
-                    "name": "Left align as a column",
-                    "oldNames": [
-                        "Left align as column"
-                    ],
-                    "class": "col-left"
-                },
-                {
-                    "name": "Center align as a column",
-                    "oldNames": [
-                        "Center align as column"
-                    ],
-                    "class": "col-center"
-                },
-                {
-                    "name": "Right align as a column",
-                    "oldNames": [
-                        "Right align as column"
-                    ],
-                    "class": "col-right"
-                }
-            ]
-        },
-        {
-            "name": "Stretch",
+            "name": "Stretch horizontally",
             "type": "Toggle",
             "class": "div-stretch"
         },
@@ -457,26 +364,126 @@
                     ],
                     "preview": "--brand-danger",
                     "class": "background-danger"
+                }
+            ]
+        },
+        {
+            "name": "Shade",
+            "type": "ColorPicker",
+            "options": [
+                {
+                    "name": "50 (lightest)",
+                    "class": "shade-50",
+                    "preview": "--gray-50"
                 },
                 {
-                    "name": "Brand Gradient",
-                    "preview": "--brand-gradient",
-                    "class": "background-brand-gradient"
+                    "name": "100",
+                    "class": "shade-100",
+                    "preview": "--gray-100"
+                },
+                {
+                    "name": "150",
+                    "class": "shade-150",
+                    "preview": "--gray-150"
+                },
+                {
+                    "name": "200",
+                    "class": "shade-200",
+                    "oldNames": [
+                        "Light"
+                    ],
+                    "preview": "--gray-200"
+                },
+                {
+                    "name": "250",
+                    "class": "shade-250",
+                    "preview": "--gray-250"
+                },
+                {
+                    "name": "300",
+                    "class": "shade-300",
+                    "preview": "--gray-300"
+                },
+                {
+                    "name": "350",
+                    "class": "shade-350",
+                    "preview": "--gray-350"
+                },
+                {
+                    "name": "400",
+                    "class": "shade-400",
+                    "preview": "--gray-400"
+                },
+                {
+                    "name": "450",
+                    "class": "shade-450",
+                    "preview": "--gray-450"
+                },
+                {
+                    "name": "500 (medium)",
+                    "class": "shade-500",
+                    "preview": "--gray-500"
+                },
+                {
+                    "name": "550",
+                    "class": "shade-550",
+                    "preview": "--gray-550"
+                },
+                {
+                    "name": "600",
+                    "class": "shade-600",
+                    "oldNames": [
+                        "Dark"
+                    ],
+                    "preview": "--gray-600"
+                },
+                {
+                    "name": "650",
+                    "class": "shade-650",
+                    "preview": "--gray-650"
+                },
+                {
+                    "name": "700",
+                    "class": "shade-700",
+                    "preview": "--gray-700"
+                },
+                {
+                    "name": "750",
+                    "class": "shade-750",
+                    "preview": "--gray-750"
+                },
+                {
+                    "name": "800",
+                    "class": "shade-800",
+                    "preview": "--gray-800"
+                },
+                {
+                    "name": "850",
+                    "class": "shade-850",
+                    "preview": "--gray-850"
+                },
+                {
+                    "name": "900",
+                    "class": "shade-900",
+                    "preview": "--gray-900"
+                },
+                {
+                    "name": "950 (darkest)",
+                    "class": "shade-950",
+                    "preview": "--gray-950"
                 }
             ]
         },
         {
             "name": "Borders",
-            "type": "Toggle",
-            "description": "Show borders",
-            "class": "div-borders"
-        },
-        {
-            "name": "Border sides",
             "type": "ToggleButtonGroup",
             "multiSelect": true,
             "description": "Show a border on specific sides only",
             "options": [
+                {
+                    "name": "All",
+                    "class": "div-border-toggle-all"
+                },
                 {
                     "name": "Top",
                     "class": "div-border-toggle-top"
@@ -600,21 +607,6 @@
             "class": "card"
         },
         {
-            "name": "Shade",
-            "type": "ToggleButtonGroup",
-            "description": "Apply a shade to your background color",
-            "options": [
-                {
-                    "name": "Light",
-                    "class": "background-light"
-                },
-                {
-                    "name": "Dark",
-                    "class": "background-dark"
-                }
-            ]
-        },
-        {
             "name": "Shadow",
             "oldNames": [
                 "Add shadow"
@@ -637,21 +629,126 @@
             ]
         },
         {
-            "name": "Display",
+            "name": "Layout direction",
             "type": "ToggleButtonGroup",
-            "description": "Sets the display type of the container. Choose from:\n\n- Block: Stacks child elements vertically.\n- Inline Block: Displays the container as an inline-level block.\n- Flex: Aligns and distributes child elements within a flexible container.",
+            "description": "Sets the display type of the container to flex to align and distributes child elements within a flexible container.",
             "options": [
                 {
-                    "name": "Block",
-                    "class": "d-block"
+                    "name": "Horizontal",
+                    "oldNames": [
+                        "Row"
+                    ],
+                    "class": "flexcontainer flex-row"
                 },
                 {
-                    "name": "Inline Block",
-                    "class": "d-inline-block"
+                    "name": "Vertical",
+                    "oldNames": [
+                        "Column"
+                    ],
+                    "class": "flexcontainer flex-column"
+                }
+            ]
+        },
+        {
+            "name": "Align (main)",
+            "type": "ToggleButtonGroup",
+            "description": "Distributes space between and around content items along the main axis.",
+            "options": [
+                {
+                    "name": "Start",
+                    "class": "flexcontainer justify-start"
                 },
                 {
-                    "name": "Flex",
-                    "class": "d-flex"
+                    "name": "Center",
+                    "class": "flexcontainer justify-center"
+                },
+                {
+                    "name": "End",
+                    "class": "flexcontainer justify-end"
+                },
+                {
+                    "name": "Space between",
+                    "class": "flexcontainer justify-between"
+                },
+                {
+                    "name": "Space around",
+                    "class": "flexcontainer justify-around"
+                }
+            ]
+        },
+        {
+            "name": "Align (cross)",
+            "type": "ToggleButtonGroup",
+            "description": "Align elements on the cross axis.",
+            "options": [
+                {
+                    "name": "Start",
+                    "class": "flexcontainer align-content-start"
+                },
+                {
+                    "name": "Center",
+                    "class": "flexcontainer align-content-center"
+                },
+                {
+                    "name": "End",
+                    "class": "flexcontainer align-content-end"
+                },
+                {
+                    "name": "Baseline",
+                    "class": "flexcontainer align-content-baseline"
+                },
+                {
+                    "name": "Stretch",
+                    "class": "flexcontainer align-content-stretch"
+                }
+            ]
+        },
+        {
+            "name": "Align content",
+            "type": "Dropdown",
+            "description": "Align content of this element left, right or center it. Align elements inside the container as a row or as a column.",
+            "options": [
+                {
+                    "name": "Left align as a row",
+                    "oldNames": [
+                        "Left align as row"
+                    ],
+                    "class": "row-left"
+                },
+                {
+                    "name": "Center align as a row",
+                    "oldNames": [
+                        "Center align as row"
+                    ],
+                    "class": "row-center"
+                },
+                {
+                    "name": "Right align as a row",
+                    "oldNames": [
+                        "Right align as row"
+                    ],
+                    "class": "row-right"
+                },
+                {
+                    "name": "Left align as a column",
+                    "oldNames": [
+                        "Left align as column"
+                    ],
+                    "class": "col-left"
+                },
+                {
+                    "name": "Center align as a column",
+                    "oldNames": [
+                        "Center align as column"
+                    ],
+                    "class": "col-center"
+                },
+                {
+                    "name": "Right align as a column",
+                    "oldNames": [
+                        "Right align as column"
+                    ],
+                    "class": "col-right"
                 }
             ]
         },
@@ -659,7 +756,7 @@
             "name": "Flex gap",
             "type": "ToggleButtonGroup",
             "property": "gap",
-            "description": "Sets a gap between the items in the container",
+            "description": "Adjust the space between items inside the flex container.",
             "options": [
                 {
                     "name": "None",
@@ -680,48 +777,20 @@
             ]
         },
         {
-            "name": "Trigger",
-            "type": "Dropdown",
-            "options": [
-                {
-                    "name": "On Appear",
-                    "class": "scrollcontainer-animation-onappear"
-                },
-                {
-                    "name": "On Scroll",
-                    "class": "scrollcontainer-animation-onscroll"
-                }
-            ]
-        },
-        {
-            "name": "Type",
-            "type": "Dropdown",
-            "options": [
-                {
-                    "name": "Slide in/out",
-                    "class": "scrollcontainer-animation-slide"
-                },
-                {
-                    "name": "Fade in/out",
-                    "class": "scrollcontainer-animation-fade"
-                }
-            ]
-        },
-        {
-            "name": "Effect",
+            "name": "Overflow",
             "type": "ToggleButtonGroup",
             "options": [
                 {
-                    "name": "Slow",
-                    "class": "scrollcontainer-animation-slow"
+                    "name": "Visible",
+                    "class": "div-overflow-visible"
                 },
                 {
-                    "name": "Medium",
-                    "class": "scrollcontainer-animation-medium"
+                    "name": "Hidden",
+                    "class": "div-overflow-hidden"
                 },
                 {
-                    "name": "Fast",
-                    "class": "scrollcontainer-animation-fast"
+                    "name": "Auto",
+                    "class": "div-overflow-auto"
                 }
             ]
         }
@@ -876,7 +945,7 @@
             "class": "cards"
         },
         {
-            "name": "Background color",
+            "name": "Column background",
             "type": "ColorPicker",
             "property": "--layoutgrid-column-bg",
             "description": "Change the background color of the columns.",
@@ -915,11 +984,6 @@
                     "name": "Brand Danger",
                     "preview": "--brand-danger",
                     "variable": "--brand-danger"
-                },
-                {
-                    "name": "Brand Gradient",
-                    "preview": "--brand-gradient",
-                    "variable": "--brand-gradient"
                 }
             ]
         },
@@ -995,50 +1059,243 @@
             ]
         }
     ],
-    "ScrollContainer": [
+    "DataView": [
         {
-            "name": "Trigger",
-            "type": "Dropdown",
+            "name": "Background color",
+            "type": "ColorPicker",
+            "description": "Change the background color of the main container.",
             "options": [
                 {
-                    "name": "On Appear",
-                    "class": "scrollcontainer-animation-onappear"
+                    "name": "Background Primary",
+                    "oldNames": [
+                        "Background Default"
+                    ],
+                    "preview": "--bg-color",
+                    "class": "background-main"
                 },
                 {
-                    "name": "On Scroll",
-                    "class": "scrollcontainer-animation-onscroll"
+                    "name": "Background Secondary",
+                    "oldNames": [
+                        "Background Dashboard"
+                    ],
+                    "preview": "--bg-color-secondary",
+                    "class": "background-secondary"
+                },
+                {
+                    "name": "Brand Primary",
+                    "oldNames": [
+                        "Primary"
+                    ],
+                    "preview": "--brand-primary",
+                    "class": "background-primary"
+                },
+                {
+                    "name": "Brand Secondary",
+                    "oldNames": [
+                        "Default",
+                        "Brand Default"
+                    ],
+                    "class": "background-default",
+                    "preview": "--brand-default"
+                },
+                {
+                    "name": "Brand Success",
+                    "oldNames": [
+                        "Success"
+                    ],
+                    "preview": "--brand-success",
+                    "class": "background-success"
+                },
+                {
+                    "name": "Brand Warning",
+                    "oldNames": [
+                        "Warning"
+                    ],
+                    "preview": "--brand-warning",
+                    "class": "background-warning"
+                },
+                {
+                    "name": "Brand Danger",
+                    "oldNames": [
+                        "Danger"
+                    ],
+                    "preview": "--brand-danger",
+                    "class": "background-danger"
                 }
             ]
         },
         {
-            "name": "Type",
-            "type": "Dropdown",
+            "name": "Shade",
+            "type": "ColorPicker",
             "options": [
                 {
-                    "name": "Slide in/out",
-                    "class": "scrollcontainer-animation-slide"
+                    "name": "50 (lightest)",
+                    "class": "shade-50",
+                    "preview": "--gray-50"
                 },
                 {
-                    "name": "Fade in/out",
-                    "class": "scrollcontainer-animation-fade"
+                    "name": "100",
+                    "class": "shade-100",
+                    "preview": "--gray-100"
+                },
+                {
+                    "name": "150",
+                    "class": "shade-150",
+                    "preview": "--gray-150"
+                },
+                {
+                    "name": "200",
+                    "class": "shade-200",
+                    "oldNames": [
+                        "Light"
+                    ],
+                    "preview": "--gray-200"
+                },
+                {
+                    "name": "250",
+                    "class": "shade-250",
+                    "preview": "--gray-250"
+                },
+                {
+                    "name": "300",
+                    "class": "shade-300",
+                    "preview": "--gray-300"
+                },
+                {
+                    "name": "350",
+                    "class": "shade-350",
+                    "preview": "--gray-350"
+                },
+                {
+                    "name": "400",
+                    "class": "shade-400",
+                    "preview": "--gray-400"
+                },
+                {
+                    "name": "450",
+                    "class": "shade-450",
+                    "preview": "--gray-450"
+                },
+                {
+                    "name": "500 (medium)",
+                    "class": "shade-500",
+                    "preview": "--gray-500"
+                },
+                {
+                    "name": "550",
+                    "class": "shade-550",
+                    "preview": "--gray-550"
+                },
+                {
+                    "name": "600",
+                    "class": "shade-600",
+                    "oldNames": [
+                        "Dark"
+                    ],
+                    "preview": "--gray-600"
+                },
+                {
+                    "name": "650",
+                    "class": "shade-650",
+                    "preview": "--gray-650"
+                },
+                {
+                    "name": "700",
+                    "class": "shade-700",
+                    "preview": "--gray-700"
+                },
+                {
+                    "name": "750",
+                    "class": "shade-750",
+                    "preview": "--gray-750"
+                },
+                {
+                    "name": "800",
+                    "class": "shade-800",
+                    "preview": "--gray-800"
+                },
+                {
+                    "name": "850",
+                    "class": "shade-850",
+                    "preview": "--gray-850"
+                },
+                {
+                    "name": "900",
+                    "class": "shade-900",
+                    "preview": "--gray-900"
+                },
+                {
+                    "name": "950 (darkest)",
+                    "class": "shade-950",
+                    "preview": "--gray-950"
                 }
             ]
         },
         {
-            "name": "Effect",
-            "type": "ToggleButtonGroup",
+            "name": "Background footer",
+            "type": "ColorPicker",
+            "oldNames": [
+                "Background color footer"
+            ],
+            "property": "--dataview-controls-bg",
+            "description": "Change the background color of the footer.",
             "options": [
                 {
-                    "name": "Slow",
-                    "class": "scrollcontainer-animation-slow"
+                    "name": "Background Primary",
+                    "oldNames": [
+                        "Background Default"
+                    ],
+                    "preview": "--bg-color",
+                    "variable": "--bg-color"
                 },
                 {
-                    "name": "Medium",
-                    "class": "scrollcontainer-animation-medium"
+                    "name": "Background Secondary",
+                    "oldNames": [
+                        "Background Dashboard"
+                    ],
+                    "preview": "--bg-color-secondary",
+                    "variable": "--bg-color-secondary"
                 },
                 {
-                    "name": "Fast",
-                    "class": "scrollcontainer-animation-fast"
+                    "name": "Brand Primary",
+                    "oldNames": [
+                        "Primary"
+                    ],
+                    "preview": "--brand-primary",
+                    "variable": "--brand-primary"
+                },
+                {
+                    "name": "Brand Secondary",
+                    "oldNames": [
+                        "Default",
+                        "Brand Default"
+                    ],
+                    "class": "background-default",
+                    "preview": "--background-default"
+                },
+                {
+                    "name": "Brand Success",
+                    "oldNames": [
+                        "Success"
+                    ],
+                    "preview": "--brand-success",
+                    "variable": "--brand-success"
+                },
+                {
+                    "name": "Brand Warning",
+                    "oldNames": [
+                        "Warning"
+                    ],
+                    "preview": "--brand-warning",
+                    "variable": "--brand-warning"
+                },
+                {
+                    "name": "Brand Danger",
+                    "oldNames": [
+                        "Danger"
+                    ],
+                    "preview": "--brand-danger",
+                    "variable": "--bg-danger"
                 }
             ]
         }
@@ -1453,12 +1710,13 @@
                     "preview": "--brand-primary"
                 },
                 {
-                    "name": "Brand Secondary",
+                    "name": "Default",
                     "oldNames": [
                         "Default",
-                        "Brand Default"
+                        "Brand Default",
+                        "Brand Secondary"
                     ],
-                    "class": "text-secondary",
+                    "class": "text-default",
                     "preview": "--font-color-default"
                 },
                 {
@@ -1486,9 +1744,64 @@
                     "preview": "--brand-danger"
                 },
                 {
-                    "name": "White",
+                    "name": "Contrast",
                     "class": "text-white",
-                    "preview": "white"
+                    "preview": "--font-color-contrast",
+                    "oldNames": [
+                        "White"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Color shade",
+            "type": "ColorPicker",
+            "description": "Set the shade of the brand color.",
+            "options": [
+                {
+                    "name": "100",
+                    "class": "shade-100",
+                    "preview": "--gray-100"
+                },
+                {
+                    "name": "200",
+                    "class": "shade-200",
+                    "preview": "--gray-200"
+                },
+                {
+                    "name": "300",
+                    "class": "shade-300",
+                    "preview": "--gray-300"
+                },
+                {
+                    "name": "400",
+                    "class": "shade-400",
+                    "preview": "--gray-400"
+                },
+                {
+                    "name": "500",
+                    "class": "shade-500",
+                    "preview": "--gray-500"
+                },
+                {
+                    "name": "600",
+                    "class": "shade-600",
+                    "preview": "--gray-600"
+                },
+                {
+                    "name": "700",
+                    "class": "shade-700",
+                    "preview": "--gray-700"
+                },
+                {
+                    "name": "800",
+                    "class": "shade-800",
+                    "preview": "--gray-800"
+                },
+                {
+                    "name": "900",
+                    "class": "shade-900",
+                    "preview": "--gray-900"
                 }
             ]
         },

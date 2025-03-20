@@ -122,10 +122,12 @@
     }
 
     .btn-style-icon {
+        @extend .btn-icon;
         font-size: x-large;
         border-radius: 100%;
         border: none;
-        padding: 6px 12px;
+        padding: 12px;
+        display: flex;
     }
 
     .btn-block {

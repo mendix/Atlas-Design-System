@@ -24,7 +24,7 @@
     .mx-demouserswitcher-content {
         padding: 48px 0 48px;
         height: 100%;
-        color: var(--white);
+        color: var(--font-color-contrast);
         font-size: var(--font-size-default);
         overflow: auto;
         background: var(--sidebar-bg);
@@ -39,7 +39,7 @@
     .mx-demouserswitcher a {
         display: block;
         padding: 10px 0;
-        color: var(--white);
+        color: var(--font-color-contrast);
         &:hover {
             background: var(--navsidebar-bg-hover);
             text-decoration: none;
@@ -48,13 +48,13 @@
 
     .mx-demouserswitcher h2 {
         margin: 0px 24px 5px;
-        color: var(--white);
+        color: var(--font-color-contrast);
         font-size: var(--font-size-h2);
     }
 
     .mx-demouserswitcher h3 {
         margin: 0 24px 2px;
-        color: var(--white);
+        color: var(--font-color-contrast);
         font-size: var(--font-size-default);
         font-weight: bold;
         overflow: hidden;
@@ -90,7 +90,7 @@
         background: url(resources/switcher-toggle.png) center center no-repeat var(--brand-primary);
         
         &:hover {
-            background-color: var(--brand-primary-65);
+            background-color: var(--brand-primary-650);
         }
     }
 }

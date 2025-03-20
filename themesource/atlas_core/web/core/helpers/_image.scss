@@ -24,9 +24,9 @@
         height: auto;
         padding: 4px;
         transition: all 0.2s ease-in-out;
-        border: 1px solid var(--brand-default);
+        border: var(--border-default);
         border-radius: 4px;
-        background-color: #ffffff;
+        background-color: var(--bg-color-secondary);
         line-height: var(--line-height-base);
     }
 

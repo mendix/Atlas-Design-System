@@ -34,10 +34,6 @@ $screen-xl-max: (
 //== Settings
 //## Enable or disable your desired framework features
 // Use of !important
-$important-flex: true; // ./base/flex.scss
+$important-flex: false; // ./base/flex.scss
 $important-spacing: true; // ./base/spacing.scss
-$important-helpers: true; // ./helpers/helperclasses.scss
-
-// == Legacy
-// ## Disable if your theme uses Sass variables (Atlas 3 standard)
-$use-css-variables: true;
+$important-helpers: false; // ./helpers/helperclasses.scss
