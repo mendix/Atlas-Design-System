@@ -569,6 +569,9 @@ Customizing core files will make updating Atlas much more difficult in the futur
   /*== Spacing */
   /*## Advanced layout options (used in base/mixins/default-spacing) */
 
+  /* No spacing */
+  --spacing-none: #{$spacing-none};
+  
   /* Smallest spacing */
   --spacing-smallest: #{$spacing-smallest};
 

@@ -995,7 +995,7 @@
             "options": [
                 {
                     "name": "None",
-                    "variable": "--none"
+                    "variable": "--spacing-none"
                 },
                 {
                     "name": "Small",
