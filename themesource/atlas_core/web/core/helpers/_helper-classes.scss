@@ -20,7 +20,6 @@
 
     .d-flex {
         display: flex #{$important-helpers-value};
-        gap: var(--gutter-size);
     }
 
     .d-inline-flex {
@@ -130,7 +129,6 @@
         align-items: center #{$important-helpers-value};
         flex-flow: row #{$important-helpers-value};
         justify-content: flex-start #{$important-helpers-value};
-        gap: var(--gutter-size) #{$important-helpers-value};
     }
 
     .row-center {
@@ -138,7 +136,6 @@
         align-items: center #{$important-helpers-value};
         flex-flow: row #{$important-helpers-value};
         justify-content: center #{$important-helpers-value};
-        gap: var(--gutter-size) #{$important-helpers-value};
     }
 
     .row-right {
@@ -146,7 +143,6 @@
         align-items: center #{$important-helpers-value};
         flex-flow: row #{$important-helpers-value};
         justify-content: flex-end #{$important-helpers-value};
-        gap: var(--gutter-size) #{$important-helpers-value};
     }
 
     .col-left {
@@ -154,7 +150,6 @@
         align-items: flex-start #{$important-helpers-value};
         flex-direction: column #{$important-helpers-value};
         justify-content: center #{$important-helpers-value};
-        gap: var(--gutter-size) #{$important-helpers-value};
     }
 
     .col-center {
@@ -162,7 +157,6 @@
         align-items: center #{$important-helpers-value};
         flex-direction: column #{$important-helpers-value};
         justify-content: center #{$important-helpers-value};
-        gap: var(--gutter-size) #{$important-helpers-value};
     }
 
     .col-right {
@@ -170,7 +164,6 @@
         align-items: flex-end #{$important-helpers-value};
         flex-direction: column #{$important-helpers-value};
         justify-content: center #{$important-helpers-value};
-        gap: var(--gutter-size) #{$important-helpers-value};
     }
 
     .shadow-small {
@@ -202,11 +195,17 @@
             display: none #{$important-helpers-value};
         }
     }
+    .profile-phone .hide-phone {
+        display: none #{$important-helpers-value};
+    }
 
     @media (min-width: $screen-md) and (max-width: $screen-md-max) {
         .hide-tablet {
             display: none #{$important-helpers-value};
         }
+    }
+    .profile-tablet .hide-tablet {
+        display: none #{$important-helpers-value};
     }
 
     @media (min-width: $screen-lg) {

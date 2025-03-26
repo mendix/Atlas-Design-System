@@ -15,11 +15,12 @@ import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * Set the contents of a FileDocument with the contents of a file which is a resource.
  */
-public class GetFileContentsFromResource extends CustomJavaAction<java.lang.Boolean>
+public class GetFileContentsFromResource extends UserAction<java.lang.Boolean>
 {
 	private final java.lang.String filename;
 	/** @deprecated use fileDocument.getMendixObject() instead. */

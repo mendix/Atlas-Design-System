@@ -12,7 +12,7 @@
     ========================================================================== */
     .mx-menubar {
         padding: 0;
-        background-color: var(--navigation-bg);
+        background: var(--navigation-bg);
 
         ul.mx-menubar-list {
             display: flex;
@@ -56,12 +56,12 @@
                 &.active a {
                     text-decoration: none;
                     color: var(--navigation-color-hover);
-                    background-color: var(--navigation-bg-hover);
+                    background: var(--navigation-bg-hover);
                 }
 
                 &.active a {
                     color: var(--navigation-color-active);
-                    background-color: var(--navigation-bg-active);
+                    background: var(--navigation-bg-active);
                 }
             }
         }
@@ -74,7 +74,7 @@
 
     // Vertical variation specifics
     .mx-menubar-vertical {
-        background-color: var(--navigation-bg);
+        background: var(--navigation-bg);
 
         ul.mx-menubar-list {
             display: flex;
