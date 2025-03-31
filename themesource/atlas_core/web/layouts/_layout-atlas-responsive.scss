@@ -4,12 +4,14 @@
    Extra styling for responsive layouts
 ========================================================================== */
 @mixin layout-atlas-responsive() {
-    $sidebar-icon-height: 52px;
-    $sidebar-icon-width: 52px;
+    :root {
+        --sidebar-icon-height: 52px;
+        --sidebar-icon-width: 52px;
+    }
 
     .layout-atlas-responsive,
     .layout-atlas-responsive-default,
-    .layout-atlas-responsive-sidebar{
+    .layout-atlas-responsive-sidebar {
         @media (min-width: $screen-md) {
             --closed-sidebar-width: var(--navsidebar-width-closed);
             .mx-scrollcontainer-shrink:not(.mx-scrollcontainer-open) > .region-sidebar,
@@ -29,7 +31,7 @@
                         z-index: 100;
                         top: var(--topbar-minimalheight);
                         bottom: 0;
-                        left: $sidebar-icon-width;
+                        left: var(--sidebar-icon-width);
                         display: block;
                         min-width: auto;
                         padding: var(--spacing-small) 0;
@@ -57,7 +59,7 @@
                             z-index: 100;
                             top: 0;
                             bottom: 0;
-                            left: $sidebar-icon-width;
+                            left: var(--sidebar-icon-width);
                             display: block;
                             overflow-y: auto;
                             min-width: auto;
@@ -111,7 +113,7 @@
         // Sidebar
         .region-sidebar {
             .toggle-btn {
-                width: $sidebar-icon-width;
+                width: var(--sidebar-icon-width);
                 border-color: transparent;
                 border-radius: 0;
                 background: transparent;
@@ -159,6 +161,10 @@
                             height: var(--sidebar-icon-height);
                             padding: var(--spacing-small) var(--spacing-medium);
                             border-radius: var(--border-radius-default);
+                        }
+                        img {
+                            width: var(--sidebar-icon-width);
+                            padding: var(--spacing-small) var(--spacing-medium);
                         }
                     }
                 }
@@ -253,7 +259,7 @@
             &.mx-scrollcontainer-open {
                 .region-sidebar:hover {
                     .toggle-btn-sidebar {
-                        left: calc(var(--navsidebar-width-open) - $icon-size / 2);
+                        left: calc(var(--sidebar-size, var(--navsidebar-width-open)) - $icon-size / 2);
                         rotate: 180deg;
                     }
                 }

@@ -210,7 +210,7 @@
         pointer-events: auto;
     }
 
-    .mx-scrollcontainer-center {
+    .mx-scrollcontainer-middle {
         .mx-layoutgrid,
         .mx-layoutgrid-fluid {
             @include layout-spacing($type: padding, $direction: all, $device: responsive);

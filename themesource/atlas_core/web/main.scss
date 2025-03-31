@@ -1,9 +1,10 @@
 // Default variables
-@import "exclusion-variables";
+@import "exclusion-variables-defaults";
 @import "../../../theme/web/exclusion-variables";
+@import "generated-exclusion-variables";
 @import "variables";
 @import "../../../theme/web/custom-variables";
-@import "themes/legacy-variables/css-variables-mappings"; // support for custom sass variable
+@import "themes/legacy-variables/css-variables-mappings";
 
 // Font Family Import
 @if $font-family-import != false {
