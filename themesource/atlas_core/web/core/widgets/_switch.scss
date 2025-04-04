@@ -56,7 +56,7 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-info {
-                @include bootstrap-style-ios(var(--brand-primary-350));
+                @include bootstrap-style-ios(var(--brand-primary-300));
             }
 
             &.widget-switch-btn-wrapper-primary {
@@ -99,10 +99,10 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-info {
-                @include bootstrap-style-android(var(--brand-primary-350));
+                @include bootstrap-style-android(var(--brand-primary-300));
 
                 .widget-switch-btn {
-                    background: var(--brand-primary-350);
+                    background: var(--brand-primary-300);
                 }
             }
 

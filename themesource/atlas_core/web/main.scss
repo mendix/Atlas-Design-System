@@ -2,9 +2,16 @@
 @import "exclusion-variables-defaults";
 @import "../../../theme/web/exclusion-variables";
 @import "generated-exclusion-variables";
-@import "variables";
+@import "themes/theme-default";
+@import "color-variants";
 @import "../../../theme/web/custom-variables";
-@import "themes/legacy-variables/css-variables-mappings";
+@import "themes/legacy/variables"; // support for legacy modules using sass variables
+
+// support for legacy themes using sass variables
+@import "themes/legacy/css-variables-mappings"; 
+@if not $use-css-variables {
+    @include legacy-variables();
+}
 
 // Font Family Import
 @if $font-family-import != false {

@@ -1,227 +1,58 @@
 // Color variations
 // Function to convert to HSL and adjust
 @function adjust-color-lightness($color, $adjustment) {
-    $lightness: lightness($color);
-    $new-lightness: $lightness;
-  
     @if $adjustment > 0 {
-      // Lightening
-      $new-lightness: $lightness + (100 - $lightness) * ($adjustment / 100);
+        @return color-mix(in srgb, $color, white $adjustment);
     } @else {
-      // Darkening
-      $new-lightness: $lightness + $lightness * ($adjustment / 100);
+        @return color-mix(in srgb, $color, black calc($adjustment * -1));
     }
-
-    // Return new color
-    @return hsl(hue($color), saturation($color), $new-lightness);
 }
 
-$brand-primary-50 : adjust-color-lightness($brand-primary, 90);
-$brand-primary-100: adjust-color-lightness($brand-primary, 80);
-$brand-primary-150: adjust-color-lightness($brand-primary, 70);
-$brand-primary-200: adjust-color-lightness($brand-primary, 60);
-$brand-primary-250: adjust-color-lightness($brand-primary, 50);
-$brand-primary-300: adjust-color-lightness($brand-primary, 40);
-$brand-primary-350: adjust-color-lightness($brand-primary, 30);
-$brand-primary-400: adjust-color-lightness($brand-primary, 20);
-$brand-primary-450: adjust-color-lightness($brand-primary, 10);
-$brand-primary-500: $brand-primary;
-$brand-primary-550: adjust-color-lightness($brand-primary, -10);
-$brand-primary-600: adjust-color-lightness($brand-primary, -20);
-$brand-primary-650: adjust-color-lightness($brand-primary, -30);
-$brand-primary-700: adjust-color-lightness($brand-primary, -40);
-$brand-primary-750: adjust-color-lightness($brand-primary, -50);
-$brand-primary-800: adjust-color-lightness($brand-primary, -60);
-$brand-primary-850: adjust-color-lightness($brand-primary, -70);
-$brand-primary-900: adjust-color-lightness($brand-primary, -80);
-$brand-primary-950: adjust-color-lightness($brand-primary, -90);
-
-$brand-success-50 : adjust-color-lightness($brand-success, 90);
-$brand-success-100: adjust-color-lightness($brand-success, 80);
-$brand-success-150: adjust-color-lightness($brand-success, 70);
-$brand-success-200: adjust-color-lightness($brand-success, 60);
-$brand-success-250: adjust-color-lightness($brand-success, 50);
-$brand-success-300: adjust-color-lightness($brand-success, 40);
-$brand-success-350: adjust-color-lightness($brand-success, 30);
-$brand-success-400: adjust-color-lightness($brand-success, 20);
-$brand-success-450: adjust-color-lightness($brand-success, 10);
-$brand-success-500: $brand-success;
-$brand-success-550: adjust-color-lightness($brand-success, -10);
-$brand-success-600: adjust-color-lightness($brand-success, -20);
-$brand-success-650: adjust-color-lightness($brand-success, -30);
-$brand-success-700: adjust-color-lightness($brand-success, -40);
-$brand-success-750: adjust-color-lightness($brand-success, -50);
-$brand-success-800: adjust-color-lightness($brand-success, -60);
-$brand-success-850: adjust-color-lightness($brand-success, -70);
-$brand-success-900: adjust-color-lightness($brand-success, -80);
-$brand-success-950: adjust-color-lightness($brand-success, -90);
-
-$brand-warning-50 : adjust-color-lightness($brand-warning, 90);
-$brand-warning-100: adjust-color-lightness($brand-warning, 80);
-$brand-warning-150: adjust-color-lightness($brand-warning, 70);
-$brand-warning-200: adjust-color-lightness($brand-warning, 60);
-$brand-warning-250: adjust-color-lightness($brand-warning, 50);
-$brand-warning-300: adjust-color-lightness($brand-warning, 40);
-$brand-warning-350: adjust-color-lightness($brand-warning, 30);
-$brand-warning-400: adjust-color-lightness($brand-warning, 20);
-$brand-warning-450: adjust-color-lightness($brand-warning, 10);
-$brand-warning-500: $brand-warning;
-$brand-warning-550: adjust-color-lightness($brand-warning, -10);
-$brand-warning-600: adjust-color-lightness($brand-warning, -20);
-$brand-warning-650: adjust-color-lightness($brand-warning, -30);
-$brand-warning-700: adjust-color-lightness($brand-warning, -40);
-$brand-warning-750: adjust-color-lightness($brand-warning, -50);
-$brand-warning-800: adjust-color-lightness($brand-warning, -60);
-$brand-warning-850: adjust-color-lightness($brand-warning, -70);
-$brand-warning-900: adjust-color-lightness($brand-warning, -80);
-$brand-warning-950: adjust-color-lightness($brand-warning, -90);
-
-$brand-danger-50 : adjust-color-lightness($brand-danger, 90);
-$brand-danger-100: adjust-color-lightness($brand-danger, 80);
-$brand-danger-150: adjust-color-lightness($brand-danger, 70);
-$brand-danger-200: adjust-color-lightness($brand-danger, 60);
-$brand-danger-250: adjust-color-lightness($brand-danger, 50);
-$brand-danger-300: adjust-color-lightness($brand-danger, 40);
-$brand-danger-350: adjust-color-lightness($brand-danger, 30);
-$brand-danger-400: adjust-color-lightness($brand-danger, 20);
-$brand-danger-450: adjust-color-lightness($brand-danger, 10);
-$brand-danger-500: $brand-danger;
-$brand-danger-550: adjust-color-lightness($brand-danger, -10);
-$brand-danger-600: adjust-color-lightness($brand-danger, -20);
-$brand-danger-650: adjust-color-lightness($brand-danger, -30);
-$brand-danger-700: adjust-color-lightness($brand-danger, -40);
-$brand-danger-750: adjust-color-lightness($brand-danger, -50);
-$brand-danger-800: adjust-color-lightness($brand-danger, -60);
-$brand-danger-850: adjust-color-lightness($brand-danger, -70);
-$brand-danger-900: adjust-color-lightness($brand-danger, -80);
-$brand-danger-950: adjust-color-lightness($brand-danger, -90);
-
-$brand-default-50 : adjust-color-lightness($brand-default, 90);
-$brand-default-100: adjust-color-lightness($brand-default, 80);
-$brand-default-150: adjust-color-lightness($brand-default, 70);
-$brand-default-200: adjust-color-lightness($brand-default, 60);
-$brand-default-250: adjust-color-lightness($brand-default, 50);
-$brand-default-300: adjust-color-lightness($brand-default, 40);
-$brand-default-350: adjust-color-lightness($brand-default, 30);
-$brand-default-400: adjust-color-lightness($brand-default, 20);
-$brand-default-450: adjust-color-lightness($brand-default, 10);
-$brand-default-500: $brand-default;
-$brand-default-550: adjust-color-lightness($brand-default, -10);
-$brand-default-600: adjust-color-lightness($brand-default, -20);
-$brand-default-650: adjust-color-lightness($brand-default, -30);
-$brand-default-700: adjust-color-lightness($brand-default, -40);
-$brand-default-750: adjust-color-lightness($brand-default, -50);
-$brand-default-800: adjust-color-lightness($brand-default, -60);
-$brand-default-850: adjust-color-lightness($brand-default, -70);
-$brand-default-900: adjust-color-lightness($brand-default, -80);
-$brand-default-950: adjust-color-lightness($brand-default, -90);
-
-$gray-50 : adjust-color-lightness($gray, 90);
-$gray-100: adjust-color-lightness($gray, 80);
-$gray-150: adjust-color-lightness($gray, 70);
-$gray-200: adjust-color-lightness($gray, 60);
-$gray-250: adjust-color-lightness($gray, 50);
-$gray-300: adjust-color-lightness($gray, 40);
-$gray-350: adjust-color-lightness($gray, 30);
-$gray-400: adjust-color-lightness($gray, 20);
-$gray-450: adjust-color-lightness($gray, 10);
-$gray-500: $gray;
-$gray-550: adjust-color-lightness($gray, -10);
-$gray-600: adjust-color-lightness($gray, -20);
-$gray-650: adjust-color-lightness($gray, -30);
-$gray-700: adjust-color-lightness($gray, -40);
-$gray-750: adjust-color-lightness($gray, -50);
-$gray-800: adjust-color-lightness($gray, -60);
-$gray-850: adjust-color-lightness($gray, -70);
-$gray-900: adjust-color-lightness($gray, -80);
-$gray-950: adjust-color-lightness($gray, -90);
-
 $brand-colors: (
-    "brand-primary": $brand-primary,
-    "brand-success": $brand-success,
-    "brand-warning": $brand-warning,
-    "brand-danger": $brand-danger,
-    "brand-default": $brand-default,
-    "gray": $gray
+    "brand-primary" "background-primary" "text-primary" var(--brand-primary),
+    "brand-success" "background-success" "text-success" var(--brand-success),
+    "brand-warning" "background-warning" "text-warning" var(--brand-warning),
+    "brand-danger" "background-danger" "text-danger" var(--brand-danger),
+    "brand-default" "background-default" "text-default" var(--brand-default),
+    "gray" "" "" var(--gray)
+);
+$lightness-steps: (
+    50: 90%,
+    100: 80%,
+    200: 60%,
+    300: 40%,
+    400: 20%,
+    500: 0%,
+    600: -20%,
+    700: -40%,
+    800: -60%,
+    900: -80%,
 );
 
 // generate corresponding CSS variables
 :root {
-    @each $name, $base-color in $brand-colors {
-        --#{$name}-50 : #{adjust-color-lightness($base-color,  45)};
-        --#{$name}-100: #{adjust-color-lightness($base-color,  40)};
-        --#{$name}-150: #{adjust-color-lightness($base-color,  35)};
-        --#{$name}-200: #{adjust-color-lightness($base-color,  30)};
-        --#{$name}-250: #{adjust-color-lightness($base-color,  25)};
-        --#{$name}-300: #{adjust-color-lightness($base-color,  20)};
-        --#{$name}-350: #{adjust-color-lightness($base-color,  15)};
-        --#{$name}-400: #{adjust-color-lightness($base-color,  10)};
-        --#{$name}-450: #{adjust-color-lightness($base-color,  5)};
-        --#{$name}-500: #{$base-color};
-        --#{$name}-550: #{adjust-color-lightness($base-color, -5)};
-        --#{$name}-600: #{adjust-color-lightness($base-color, -10)};
-        --#{$name}-650: #{adjust-color-lightness($base-color, -15)};
-        --#{$name}-700: #{adjust-color-lightness($base-color, -20)};
-        --#{$name}-750: #{adjust-color-lightness($base-color, -25)};
-        --#{$name}-800: #{adjust-color-lightness($base-color, -30)};
-        --#{$name}-850: #{adjust-color-lightness($base-color, -35)};
-        --#{$name}-900: #{adjust-color-lightness($base-color, -40)};
-        --#{$name}-950: #{adjust-color-lightness($base-color, -45)};
-    }
-}
+    @each $name, $bg-class, $text-class, $base-color in $brand-colors {
+        @each $shade, $adjustment in $lightness-steps {
+            --#{$name}-#{$shade} : #{adjust-color-lightness($base-color, $adjustment)};    
+        }
 
-$lightness-steps: (
-    50: 90,
-    100: 80,
-    150: 70,
-    200: 60,
-    250: 50,
-    300: 40,
-    350: 30,
-    400: 20,
-    450: 10,
-    500: 0,
-    550: -10,
-    600: -20,
-    650: -30,
-    700: -40,
-    750: -50,
-    800: -60,
-    850: -70,
-    900: -80,
-    950: -90
-);
-
-// Generate utility classes for background color shades, e.g. .background-primary &.shade-200
-$bg-classes: (
-    "background-primary": $brand-primary,
-    "background-success": $brand-success,
-    "background-warning": $brand-warning,
-    "background-danger": $brand-danger,
-    "background-default": $brand-default
-);
-@each $name, $color in $bg-classes {
-    .#{$name} {
-        @each $step, $lightness in $lightness-steps {
-            &.shade-#{$step} {
-                background-color: adjust-color-lightness($color, $lightness);
+        @if ($bg-class != '') {
+            .#{$bg-class} {
+                @each $shade, $adjustment in $lightness-steps {
+                    &.shade-#{$shade} {
+                        background-color: adjust-color-lightness($base-color, $adjustment);
+                    }
+                }
             }
         }
-    }
-}
-// Generate utility classes for text color shades, e.g. .text-primary &.shade-300
-$text-classes: (
-    "text-primary": $brand-primary,
-    "text-success": $brand-success,
-    "text-warning": $brand-warning,
-    "text-danger": $brand-danger,
-    "text-secondary": $brand-default
-);
-@each $name, $color in $text-classes {
-    .#{$name} {
-        @each $step, $lightness in $lightness-steps {
-            &.shade-#{$step} {
-                color: adjust-color-lightness($color, $lightness);
+
+        @if ($text-class != '') {
+            .#{$text-class} {
+                @each $shade, $adjustment in $lightness-steps {
+                    &.shade-#{$shade} {
+                        color: adjust-color-lightness($base-color, $adjustment);
+                    }
+                }
             }
         }
     }

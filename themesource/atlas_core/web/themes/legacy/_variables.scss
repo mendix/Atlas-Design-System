@@ -4,6 +4,8 @@ This mapping file provides defaults for sass variables to provide backwards comp
 Do not change this file because it is core styling. Customizing core files will make updating Atlas much more difficult in the future.
 */
 
+$use-css-variables: false !default;
+
 /* Brand Colors */
 $brand-primary: #264ae5 !default;
 $brand-success: #1AC61A !default;
@@ -16,21 +18,18 @@ $color-base: #fff !default;
 $color-contrast: #000 !default;
 $brand-default: mix($brand-primary, #e7e7e9, 10%) !default;
 
-@import "color-variants";
-$test: make-shades($brand-primary);
-
 $brand-logo: false !default;
 $brand-logo-height: 24px !default;
 $brand-logo-width: 32px !default;
-$brand-gradient: linear-gradient(to bottom, $brand-primary-900, $brand-primary-700) !default;
+$brand-gradient: linear-gradient(to bottom, var(--brand-primary-900), var(--brand-primary-700)) !default;
 
 /* Default Font Size & Color */
 $font-size-default: 14px !default;
-$font-color-default: $gray-900 !default;
+$font-color-default: var(--gray-900) !default;
 $font-color-contrast: $color-base !default;
 
 /* Global Border */
-$border-color-default: $gray-250 !default;
+$border-color-default: var(--gray-300) !default;
 $border-radius-s: 4px !default;
 $border-radius-m: 8px !default;
 $border-radius-l: 12px !default;
@@ -42,12 +41,12 @@ $border-width-default: $border-width-thin !default;
 $border-default: $border-width-default solid $border-color-default !default;
 
 /* Topbar */
-$topbar-bg: linear-gradient(to bottom, $brand-primary-500, $brand-primary-650) !default;
+$topbar-bg: linear-gradient(to bottom, var(--brand-primary-500), var(--brand-primary-600)) !default;
 $topbar-minimalheight: 48px !default;
 $topbar-border-color: $border-color-default !default;
 
 /* Sidebar */
-$sidebar-bg: linear-gradient(to bottom, $brand-primary-650, $brand-primary-750) !default;
+$sidebar-bg: linear-gradient(to bottom, var(--brand-primary-600), var(--brand-primary-700)) !default;
 
 /* Topbar mobile */
 $m-header-height: 45px !default;
@@ -59,12 +58,12 @@ $m-header-title-size: 16px !default;
 $navbar-brand-name: $font-color-default !default;
 
 /* Background Colors */
-$bg-color: $brand-default-100 !default;
+$bg-color: var(--brand-default-100) !default;
 $bg-color-secondary: $color-base !default;
 
 /* Default Link Color */
 $link-color: $brand-primary !default;
-$link-hover-color: $brand-primary-400 !default;
+$link-hover-color: var(--brand-primary-400) !default;
 
 /* Font Family */
 $font-family-import: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
@@ -98,8 +97,8 @@ $line-height-base: 1.428571429 !default;
 $font-header-margin: 0 0 8px 0 !default;
 
 /* Font Colors */
-$font-color-detail: $brand-primary-700 !default;
-$font-color-header: $brand-primary-750 !default;
+$font-color-detail: var(--brand-primary-700) !default;
+$font-color-header: var(--brand-primary-800) !default;
 
 /* Navigation */
 $navigation-item-height: unset !default;
@@ -132,7 +131,7 @@ $navsidebar-bg: $sidebar-bg !default;
 $navsidebar-bg-hover: $navigation-bg-hover !default;
 $navsidebar-bg-active: $navigation-bg-active !default;
 
-$navsidebar-sub-bg: $brand-primary-750 !default;
+$navsidebar-sub-bg: var(--brand-primary-800) !default;
 $navsidebar-sub-bg-hover: $navigation-bg-hover !default;
 $navsidebar-sub-bg-active: $navigation-bg-active !default;
 
@@ -177,7 +176,7 @@ $navtopbar-border-color: $topbar-border-color !default;
 
 /* Shadows */
 $shadow-color-border: $border-color-default !default;
-$shadow-color: $gray-150 !default;
+$shadow-color: var(--gray-200) !default;
 $shadow-small: 0 2px 4px 0 !default;
 $shadow-medium: 0 4px 6px 0 !default;
 $shadow-large: 0 8px 10px 0 !default;
@@ -201,17 +200,17 @@ $form-input-border-radius: 6px !default;
 
 $form-input-bg: $color-base !default;
 $form-input-bg-focus: $color-base !default;
-$form-input-bg-hover: $gray-200 !default;
+$form-input-bg-hover: var(--gray-200) !default;
 $form-input-bg-disabled: $bg-color !default;
 $form-input-color: $font-color-default !default;
 $form-input-focus-color: $form-input-color !default;
-$form-input-disabled-color: $gray-600 !default;
-$form-input-placeholder-color: $gray-550 !default;
-$form-input-border-color: $gray-200 !default;
+$form-input-disabled-color: var(--gray-700) !default;
+$form-input-placeholder-color: var(--gray-600) !default;
+$form-input-border-color: var(--gray-200) !default;
 $form-input-border-focus-color: $brand-primary !default;
 $form-input-border-hover-color: color-mix(in srgb, $form-input-border-color, $form-input-border-focus-color 50%) !default;
 
-$form-input-static-border-color: $gray-200 !default;
+$form-input-static-border-color: var(--gray-200) !default;
 
 $form-group-margin-bottom: 16px !default;
 $form-group-gutter: 16px !default;
@@ -227,7 +226,7 @@ $btn-success-bg: $brand-success !default;
 $btn-warning-bg: $brand-warning !default;
 $btn-danger-bg: $brand-danger !default;
 
-$btn-default-border-color: $gray-200 !default;
+$btn-default-border-color: var(--gray-200) !default;
 $btn-primary-border-color: $brand-primary !default;
 $btn-success-border-color: $brand-success !default;
 $btn-warning-border-color: $brand-warning !default;
@@ -241,12 +240,12 @@ $btn-danger-color: $font-color-contrast !default;
 
 $btn-default-icon-color: $gray !default;
 
-$btn-default-bg-hover: $gray-200 !default;
-$btn-primary-bg-hover: $brand-primary-600 !default;
-$btn-success-bg-hover: $brand-success-600 !default;
-$btn-warning-bg-hover: $brand-warning-600 !default;
-$btn-danger-bg-hover: $brand-danger-600 !default;
-$btn-link-bg-hover: $gray-50 !default;
+$btn-default-bg-hover: var(--gray-200) !default;
+$btn-primary-bg-hover: var(--brand-primary-600) !default;
+$btn-success-bg-hover: var(--brand-success-600) !default;
+$btn-warning-bg-hover: var(--brand-warning-600) !default;
+$btn-danger-bg-hover: var(--brand-danger-600) !default;
+$btn-link-bg-hover: var(--gray-50) !default;
 
 /* Header */
 $header-min-height: 240px !default;
@@ -260,11 +259,11 @@ $grid-border-color: $border-color-default !default;
 
 $grid-bg: transparent !default;
 $grid-bg-header: transparent !default;
-$grid-bg-hover: $gray-100 !default;
-$grid-bg-selected: $gray-150 !default;
-$grid-bg-selected-hover: $gray-200 !default;
-$grid-bg-striped: $gray-50 !default;
-$grid-footer-bg: $gray-150 !default;
+$grid-bg-hover: var(--gray-100) !default;
+$grid-bg-selected: var(--gray-200) !default;
+$grid-bg-selected-hover: var(--gray-300) !default;
+$grid-bg-striped: var(--gray-50) !default;
+$grid-footer-bg: var(--gray-200) !default;
 
 $grid-selected-color: $font-color-default !default;
 
@@ -272,7 +271,7 @@ $grid-paging-bg: transparent !default;
 $grid-paging-bg-hover: transparent !default;
 $grid-paging-border-color: transparent !default;
 $grid-paging-border-color-hover: transparent !default;
-$grid-paging-color: $gray-300 !default;
+$grid-paging-color: var(--gray-300) !default;
 $grid-paging-color-hover: $brand-primary !default;
 
 /* Tabs */
@@ -284,8 +283,8 @@ $tabs-lined-border-width: 3px !default;
 $tabs-border-color: $border-color-default !default;
 $tabs-lined-border-color: $brand-primary !default;
 $tabs-bg: transparent !default;
-$tabs-bg-pills: $gray-100 !default;
-$tabs-bg-hover: $gray-150 !default;
+$tabs-bg-pills: var(--gray-100) !default;
+$tabs-bg-hover: var(--gray-200) !default;
 $tabs-bg-active: $brand-primary !default;
 
 /* Modal */
@@ -304,20 +303,20 @@ $dataview-emptymessage-bg: $bg-color !default;
 $dataview-emptymessage-color: $font-color-default !default;
 
 /* Alerts */
-$alert-primary-bg: $brand-primary-200 !default;
-$alert-success-bg: $brand-success-200 !default;
-$alert-warning-bg: $brand-warning-200 !default;
-$alert-danger-bg: $brand-danger-200 !default;
+$alert-primary-bg: var(--brand-primary-200) !default;
+$alert-success-bg: var(--brand-success-200) !default;
+$alert-warning-bg: var(--brand-warning-200) !default;
+$alert-danger-bg: var(--brand-danger-200) !default;
 
-$alert-primary-color: $brand-primary-650 !default;
-$alert-success-color: $brand-success-650 !default;
-$alert-warning-color: $brand-warning-650 !default;
-$alert-danger-color: $brand-danger-650 !default;
+$alert-primary-color: var(--brand-primary-700) !default;
+$alert-success-color: var(--brand-success-700) !default;
+$alert-warning-color: var(--brand-warning-700) !default;
+$alert-danger-color: var(--brand-danger-700) !default;
 
-$alert-primary-border-color: $brand-primary-650 !default;
-$alert-success-border-color: $brand-success-650 !default;
-$alert-warning-border-color: $brand-warning-650 !default;
-$alert-danger-border-color: $brand-danger-650 !default;
+$alert-primary-border-color: var(--brand-primary-700) !default;
+$alert-success-border-color: var(--brand-success-700) !default;
+$alert-warning-border-color: var(--brand-warning-700) !default;
+$alert-danger-border-color: var(--brand-danger-700) !default;
 
 /* Wizard */
 $wizard-step-height: 48px !default;
@@ -329,15 +328,15 @@ $wizard-default-color: $color-base !default;
 $wizard-default-step-color: $font-color-default !default;
 $wizard-default-border-color: $border-color-default !default;
 
-$wizard-active-bg: $brand-primary-200 !default;
-$wizard-active-color: $brand-primary-650 !default;
-$wizard-active-step-color: $brand-primary-650 !default;
-$wizard-active-border-color: $brand-primary-650 !default;
+$wizard-active-bg: var(--brand-primary-200) !default;
+$wizard-active-color: var(--brand-primary-700) !default;
+$wizard-active-step-color: var(--brand-primary-700) !default;
+$wizard-active-border-color: var(--brand-primary-700) !default;
 
-$wizard-visited-bg: $brand-success-200 !default;
-$wizard-visited-color: $brand-success-650 !default;
-$wizard-visited-step-color: $brand-success-650 !default;
-$wizard-visited-border-color: $brand-success-650 !default;
+$wizard-visited-bg: var(--brand-success-200) !default;
+$wizard-visited-color: var(--brand-success-700) !default;
+$wizard-visited-step-color: var(--brand-success-700) !default;
+$wizard-visited-border-color: var(--brand-success-700) !default;
 
 /* Labels */
 $label-default-bg: $brand-default !default;
@@ -359,7 +358,7 @@ $label-warning-color: $color-base !default;
 $label-danger-color: $color-base !default;
 
 /* Groupbox */
-$groupbox-default-bg: $gray-200 !default;
+$groupbox-default-bg: var(--gray-200) !default;
 $groupbox-primary-bg: $brand-primary !default;
 $groupbox-success-bg: $brand-success !default;
 $groupbox-warning-bg: $brand-warning !default;
@@ -380,11 +379,11 @@ $callout-success-color: $brand-success !default;
 $callout-warning-color: $brand-warning !default;
 $callout-danger-color: $brand-danger !default;
 
-$callout-primary-bg: $brand-primary-200 !default;
-$callout-default-bg: $gray-50 !default;
-$callout-success-bg: $brand-success-200 !default;
-$callout-warning-bg: $brand-warning-200 !default;
-$callout-danger-bg: $brand-danger-200 !default;
+$callout-primary-bg: var(--brand-primary-200) !default;
+$callout-default-bg: var(--gray-50) !default;
+$callout-success-bg: var(--brand-success-200) !default;
+$callout-warning-bg: var(--brand-warning-200) !default;
+$callout-danger-bg: var(--brand-danger-200) !default;
 
 /* Timeline */
 $timeline-icon-color: $brand-primary !default;
@@ -410,11 +409,11 @@ $accordion-header-success-bg: $brand-success !default;
 $accordion-header-warning-bg: $brand-warning !default;
 $accordion-header-danger-bg: $brand-danger !default;
 
-$accordion-header-primary-bg-hover: $brand-primary-600 !default;
-$accordion-header-secondary-bg-hover: $gray-50 !default;
-$accordion-header-success-bg-hover: $brand-success-600 !default;
-$accordion-header-warning-bg-hover: $brand-warning-600 !default;
-$accordion-header-danger-bg-hover: $brand-danger-600 !default;
+$accordion-header-primary-bg-hover: var(--brand-primary-600) !default;
+$accordion-header-secondary-bg-hover: var(--gray-50) !default;
+$accordion-header-success-bg-hover: var(--brand-success-600) !default;
+$accordion-header-warning-bg-hover: var(--brand-warning-600) !default;
+$accordion-header-danger-bg-hover: var(--brand-danger-600) !default;
 
 $accordion-header-primary-color: $font-color-contrast !default;
 $accordion-header-secondary-color: $brand-primary !default;
@@ -423,7 +422,7 @@ $accordion-header-warning-color: $font-color-contrast !default;
 $accordion-header-danger-color: $font-color-contrast !default;
 
 $accordion-primary-border-color: $brand-primary !default;
-$accordion-secondary-border-color: $gray-200 !default;
+$accordion-secondary-border-color: var(--gray-200) !default;
 $accordion-success-border-color: $brand-success !default;
 $accordion-warning-border-color: $brand-warning !default;
 $accordion-danger-border-color: $brand-danger !default;
@@ -472,75 +471,75 @@ $padding-table-cell-left: 8px !default;
 $padding-table-cell-right: 8px !default;
 
 /* Brand Variants */
-$btn-inverse-bg: $brand-primary-400 !default;
-$btn-info-bg: $brand-primary-350 !default;
-$btn-inverse-border-color: $brand-primary-400 !default;
-$btn-info-border-color: $brand-primary-350 !default;
+$btn-inverse-bg: var(--brand-primary-400) !default;
+$btn-info-bg: var(--brand-primary-300) !default;
+$btn-inverse-border-color: var(--brand-primary-400) !default;
+$btn-info-border-color: var(--brand-primary-300) !default;
 
 $btn-inverse-color: $color-base !default;
 $btn-info-color: $color-base !default;
 
-$btn-inverse-bg-hover: $brand-primary-300 !default;
-$btn-info-bg-hover: $brand-primary-250 !default;
+$btn-inverse-bg-hover: var(--brand-primary-300) !default;
+$btn-info-bg-hover: var(--brand-primary-300) !default;
 
 /* Alerts */
-$alert-info-bg: $brand-primary-50 !default;
-$alert-info-color: $brand-primary-600 !default;
+$alert-info-bg: var(--brand-primary-50) !default;
+$alert-info-color: var(--brand-primary-600) !default;
 $alert-info-border-color: $brand-primary !default;
 
 /* Labels */
-$label-info-bg: $brand-primary-350 !default;
-$label-inverse-bg: $brand-primary-600 !default;
+$label-info-bg: var(--brand-primary-300) !default;
+$label-inverse-bg: var(--brand-primary-600) !default;
 
-$label-info-border-color: $brand-primary-350 !default;
-$label-inverse-border-color: $brand-primary-600 !default;
+$label-info-border-color: var(--brand-primary-300) !default;
+$label-inverse-border-color: var(--brand-primary-600) !default;
 
 $label-info-color: $color-base !default;
 $label-inverse-color: $color-base !default;
 
 /* Groupbox */
-$groupbox-inverse-bg: $brand-primary-600 !default;
-$groupbox-info-bg: $brand-primary-350 !default;
+$groupbox-inverse-bg: var(--brand-primary-600) !default;
+$groupbox-info-bg: var(--brand-primary-300) !default;
 
 $groupbox-inverse-color: $color-base !default;
 $groupbox-info-color: $color-base !default;
 
 /* Callouts */
-$callout-info-color: $brand-primary-350 !default;
-$callout-info-bg: $brand-primary-50 !default;
+$callout-info-color: var(--brand-primary-300) !default;
+$callout-info-bg: var(--brand-primary-50) !default;
 
 //== Legacy variables
-$gray-lighter: $gray-50;
-$gray-light: $gray-300;
-$gray-primary: $gray-200;
-$gray-dark: $gray-650;
-$gray-darker: $gray-900;
+$gray-lighter: var(--gray-50);
+$gray-light: var(--gray-300);
+$gray-primary: var(--gray-200);
+$gray-dark: var(--gray-700);
+$gray-darker: var(--gray-800);
 
 // Color variations
-$color-default-darker: $gray-700 !default;
-$color-default-dark: $gray-600 !default;
-$color-default-light: $gray-100 !default;
-$color-default-lighter: $gray-50 !default;
+$color-default-darker: var(--gray-700) !default;
+$color-default-dark: var(--gray-600) !default;
+$color-default-light: var(--gray-100) !default;
+$color-default-lighter: var(--gray-50) !default;
 
-$color-primary-darker: $brand-primary-700 !default;
-$color-primary-dark: $brand-primary-650 !default;
-$color-primary-light: $brand-primary-100 !default;
-$color-primary-lighter: $brand-primary-50 !default;
+$color-primary-darker: var(--brand-primary-700) !default;
+$color-primary-dark: var(--brand-primary-600) !default;
+$color-primary-light: var(--brand-primary-100) !default;
+$color-primary-lighter: var(--brand-primary-50) !default;
 
-$color-success-darker: $brand-success-700 !default;
-$color-success-dark: $brand-success-650 !default;
-$color-success-light: $brand-success-100 !default;
-$color-success-lighter: $brand-success-50 !default;
+$color-success-darker: var(--brand-success-700) !default;
+$color-success-dark: var(--brand-success-600) !default;
+$color-success-light: var(--brand-success-100) !default;
+$color-success-lighter: var(--brand-success-50) !default;
 
-$color-warning-darker: $brand-warning-700 !default;
-$color-warning-dark: $brand-warning-650 !default;
-$color-warning-light: $brand-warning-100 !default;
-$color-warning-lighter: $brand-warning-50 !default;
+$color-warning-darker: var(--brand-warning-700) !default;
+$color-warning-dark: var(--brand-warning-600) !default;
+$color-warning-light: var(--brand-warning-100) !default;
+$color-warning-lighter: var(--brand-warning-50) !default;
 
-$color-danger-darker: $brand-danger-700 !default;
-$color-danger-dark: $brand-danger-650 !default;
-$color-danger-light: $brand-danger-100 !default;
-$color-danger-lighter: $brand-danger-50 !default;
+$color-danger-darker: var(--brand-danger-700) !default;
+$color-danger-dark: var(--brand-danger-600) !default;
+$color-danger-light: var(--brand-danger-100) !default;
+$color-danger-lighter: var(--brand-danger-50) !default;
 
 $grid-padding-top: 16px !default;
 $grid-padding-right: 16px !default;

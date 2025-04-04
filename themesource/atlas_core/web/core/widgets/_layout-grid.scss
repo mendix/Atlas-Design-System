@@ -103,11 +103,11 @@
     // Responsiveness
     $breakpoints: (
         "" "" 0 0,
-        "sm" "-sm"$screen-sm 540px,
-        "md" "-md"$screen-md 720px,
-        "lg" "-lg"$screen-lg 960px,
-        "xl" "-xl"$screen-xl 1140px,
-        "xxl" "-xxl"$screen-xxl 1360px
+        "sm" "-sm" $screen-sm 540px,
+        "md" "-md" $screen-md 720px,
+        "lg" "-lg" $screen-lg 960px,
+        "xl" "-xl" $screen-xl 1140px,
+        "xxl" "-xxl" $screen-xxl 1360px
     );
 
 @each $size, $suffix, $value, $max-width in $breakpoints {

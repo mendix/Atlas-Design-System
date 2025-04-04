@@ -35,15 +35,15 @@
                         }
                     }
                     a:hover,
-                    a:focus,
-                    a.active {
+                    a:focus {
                         color: var(--navtopbar-color-hover);
                         background: var(--navtopbar-bg-hover);
                         .caret {
-                            border-top-color: var(--navtopbar-color-active);
-                            border-bottom-color: var(--navtopbar-color-active);
+                            border-top-color: var(--navtopbar-color-hover);
+                            border-bottom-color: var(--navtopbar-color-hover);
                         }
                     }
+                    a:active,
                     a.active {
                         color: var(--navtopbar-color-active);
                         border-left-color: var(--navtopbar-color-active);
@@ -62,11 +62,11 @@
                             background: var(--navtopbar-sub-bg);
                             font-size: var(--navtopbar-sub-font-size);
                             &:hover,
-                            &:focus,
-                            &.active {
+                            &:focus {
                                 color: var(--navtopbar-sub-color-hover);
                                 background: var(--navtopbar-sub-bg-hover);
                             }
+                            &:active,
                             &.active {
                                 color: var(--navtopbar-sub-color-active);
                                 background: var(--navtopbar-sub-bg-active);
@@ -82,6 +82,7 @@
     .region-sidebar {
         .mx-navigationtree {
             .navbar-inner > ul {
+                background: transparent;
                 & > li {
                     & > a {
                         color: var(--navsidebar-color);
@@ -91,6 +92,7 @@
                             border-top-color: var(--navsidebar-color);
                             border-bottom-color: var(--navsidebar-color);
                             margin-left: var(--spacing-small);
+                            transition: transform 0.2s ease-in-out;
                         }
 
                         .glyphicon,
@@ -100,15 +102,15 @@
                         }
                     }
                     a:hover,
-                    a:focus,
-                    a.active {
+                    a:focus {
                         color: var(--navsidebar-color-hover);
                         background: var(--navsidebar-bg-hover);
                         .caret {
-                            border-top-color: var(--navsidebar-color-active);
-                            border-bottom-color: var(--navsidebar-color-active);
+                            border-top-color: var(--navsidebar-color-hover);
+                            border-bottom-color: var(--navsidebar-color-hover);
                         }
                     }
+                    a:active,
                     a.active {
                         color: var(--navsidebar-color-active);
                         border-left-color: var(--navsidebar-color-active);
@@ -121,7 +123,6 @@
             li.mx-navigationtree-has-items {
                 & > ul {
                     position: relative;
-                    background: var(--navsidebar-sub-bg);
                     border-radius: var(--border-radius-default);
                     li {
                         a {
@@ -129,17 +130,33 @@
                             color: var(--navsidebar-sub-color);
                             font-size: var(--navsidebar-sub-font-size);
                             &:hover,
-                            &:focus,
-                            &.active {
+                            &:focus {
                                 color: var(--navsidebar-sub-color-hover);
                                 background: var(--navsidebar-sub-bg-hover);
                             }
+                            &:active,
                             &.active {
                                 color: var(--navsidebar-sub-color-active);
                                 background: var(--navsidebar-sub-bg-active);
                             }
                         }
                     }
+                }
+                &:not(.mx-navigationtree-collapsed){
+                    .caret {
+                        transform: rotate(180deg);
+                        transition: transform 0.2s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+    .mx-scrollcontainer:not(.mx-scrollcontainer-open) {
+        .region-sidebar {
+            .mx-navigationtree {
+                li.mx-navigationtree-has-items > ul {
+                    // sub-menu when sidebar is collapsed needs a non-transparent bg
+                    background: var(--navsidebar-sub-bg-collapsed);
                 }
             }
         }

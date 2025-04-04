@@ -382,11 +382,6 @@
                     "preview": "--gray-100"
                 },
                 {
-                    "name": "150",
-                    "class": "shade-150",
-                    "preview": "--gray-150"
-                },
-                {
                     "name": "200",
                     "class": "shade-200",
                     "oldNames": [
@@ -395,19 +390,9 @@
                     "preview": "--gray-200"
                 },
                 {
-                    "name": "250",
-                    "class": "shade-250",
-                    "preview": "--gray-250"
-                },
-                {
                     "name": "300",
                     "class": "shade-300",
                     "preview": "--gray-300"
-                },
-                {
-                    "name": "350",
-                    "class": "shade-350",
-                    "preview": "--gray-350"
                 },
                 {
                     "name": "400",
@@ -415,19 +400,9 @@
                     "preview": "--gray-400"
                 },
                 {
-                    "name": "450",
-                    "class": "shade-450",
-                    "preview": "--gray-450"
-                },
-                {
                     "name": "500 (medium)",
                     "class": "shade-500",
                     "preview": "--gray-500"
-                },
-                {
-                    "name": "550",
-                    "class": "shade-550",
-                    "preview": "--gray-550"
                 },
                 {
                     "name": "600",
@@ -438,19 +413,9 @@
                     "preview": "--gray-600"
                 },
                 {
-                    "name": "650",
-                    "class": "shade-650",
-                    "preview": "--gray-650"
-                },
-                {
                     "name": "700",
                     "class": "shade-700",
                     "preview": "--gray-700"
-                },
-                {
-                    "name": "750",
-                    "class": "shade-750",
-                    "preview": "--gray-750"
                 },
                 {
                     "name": "800",
@@ -458,19 +423,9 @@
                     "preview": "--gray-800"
                 },
                 {
-                    "name": "850",
-                    "class": "shade-850",
-                    "preview": "--gray-850"
-                },
-                {
-                    "name": "900",
+                    "name": "900 (darkest)",
                     "class": "shade-900",
                     "preview": "--gray-900"
-                },
-                {
-                    "name": "950 (darkest)",
-                    "class": "shade-950",
-                    "preview": "--gray-950"
                 }
             ]
         },
@@ -704,8 +659,51 @@
             ]
         },
         {
-            "name": "Align content",
+            "name": "Flex gap",
+            "type": "ToggleButtonGroup",
+            "property": "gap",
+            "description": "Adjust the space between items inside the flex container.",
+            "options": [
+                {
+                    "name": "None",
+                    "variable": "--none"
+                },
+                {
+                    "name": "Small",
+                    "variable": "--spacing-small"
+                },
+                {
+                    "name": "Medium",
+                    "variable": "--spacing-medium"
+                },
+                {
+                    "name": "Large",
+                    "variable": "--spacing-large"
+                }
+            ]
+        },
+        {
+            "name": "Overflow",
+            "type": "ToggleButtonGroup",
+            "options": [
+                {
+                    "name": "Visible",
+                    "class": "div-overflow-visible"
+                },
+                {
+                    "name": "Hidden",
+                    "class": "div-overflow-hidden"
+                },
+                {
+                    "name": "Auto",
+                    "class": "div-overflow-auto"
+                }
+            ]
+        },
+        {
+            "name": "Align content (deprecated)",
             "type": "Dropdown",
+            "oldNames": ["Align content"],
             "description": "Align content of this element left, right or center it. Align elements inside the container as a row or as a column.",
             "options": [
                 {
@@ -749,48 +747,6 @@
                         "Right align as column"
                     ],
                     "class": "col-right"
-                }
-            ]
-        },
-        {
-            "name": "Flex gap",
-            "type": "ToggleButtonGroup",
-            "property": "gap",
-            "description": "Adjust the space between items inside the flex container.",
-            "options": [
-                {
-                    "name": "None",
-                    "variable": "--none"
-                },
-                {
-                    "name": "Small",
-                    "variable": "--spacing-small"
-                },
-                {
-                    "name": "Medium",
-                    "variable": "--spacing-medium"
-                },
-                {
-                    "name": "Large",
-                    "variable": "--spacing-large"
-                }
-            ]
-        },
-        {
-            "name": "Overflow",
-            "type": "ToggleButtonGroup",
-            "options": [
-                {
-                    "name": "Visible",
-                    "class": "div-overflow-visible"
-                },
-                {
-                    "name": "Hidden",
-                    "class": "div-overflow-hidden"
-                },
-                {
-                    "name": "Auto",
-                    "class": "div-overflow-auto"
                 }
             ]
         }
@@ -1139,11 +1095,6 @@
                     "preview": "--gray-100"
                 },
                 {
-                    "name": "150",
-                    "class": "shade-150",
-                    "preview": "--gray-150"
-                },
-                {
                     "name": "200",
                     "class": "shade-200",
                     "oldNames": [
@@ -1152,19 +1103,9 @@
                     "preview": "--gray-200"
                 },
                 {
-                    "name": "250",
-                    "class": "shade-250",
-                    "preview": "--gray-250"
-                },
-                {
                     "name": "300",
                     "class": "shade-300",
                     "preview": "--gray-300"
-                },
-                {
-                    "name": "350",
-                    "class": "shade-350",
-                    "preview": "--gray-350"
                 },
                 {
                     "name": "400",
@@ -1172,19 +1113,9 @@
                     "preview": "--gray-400"
                 },
                 {
-                    "name": "450",
-                    "class": "shade-450",
-                    "preview": "--gray-450"
-                },
-                {
                     "name": "500 (medium)",
                     "class": "shade-500",
                     "preview": "--gray-500"
-                },
-                {
-                    "name": "550",
-                    "class": "shade-550",
-                    "preview": "--gray-550"
                 },
                 {
                     "name": "600",
@@ -1195,19 +1126,9 @@
                     "preview": "--gray-600"
                 },
                 {
-                    "name": "650",
-                    "class": "shade-650",
-                    "preview": "--gray-650"
-                },
-                {
                     "name": "700",
                     "class": "shade-700",
                     "preview": "--gray-700"
-                },
-                {
-                    "name": "750",
-                    "class": "shade-750",
-                    "preview": "--gray-750"
                 },
                 {
                     "name": "800",
@@ -1215,19 +1136,9 @@
                     "preview": "--gray-800"
                 },
                 {
-                    "name": "850",
-                    "class": "shade-850",
-                    "preview": "--gray-850"
-                },
-                {
-                    "name": "900",
+                    "name": "900 (darkest)",
                     "class": "shade-900",
                     "preview": "--gray-900"
-                },
-                {
-                    "name": "950 (darkest)",
-                    "class": "shade-950",
-                    "preview": "--gray-950"
                 }
             ]
         },

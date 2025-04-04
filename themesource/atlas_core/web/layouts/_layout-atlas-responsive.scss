@@ -42,8 +42,8 @@
                         }
                     }
 
-                    &.mx-navigationtree-collapsed,
-                    &.mx-navigationtree-has-items {
+                    &.mx-navigationtree-has-items,
+                    &.mx-navigationtree-collapsed {
                         ul {
                             display: none;
                         }
@@ -67,8 +67,8 @@
                         }
                     }
 
-                    &.mx-navigationtree-collapsed,
-                    &.mx-navigationtree-has-items {
+                    &.mx-navigationtree-has-items, 
+                    .mx-navigationtree-collapsed {
                         ul {
                             display: none;
                         }
@@ -146,7 +146,7 @@
                     & > a {
                         height: var(--sidebar-icon-height);
                         padding: var(--spacing-small) 0;
-                        margin: var(--spacing-small) 0;
+                        margin: var(--spacing-small) 0 0 0;
                         white-space: nowrap;
                         overflow: hidden;
                         border-radius: var(--border-radius-default);
@@ -166,6 +166,10 @@
                             width: var(--sidebar-icon-width);
                             padding: var(--spacing-small) var(--spacing-medium);
                         }
+                    }
+                    &.mx-navigationtree-has-items:not(.mx-navigationtree-collapsed) > a {
+                        border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+                        background-color: var(--navsidebar-sub-bg-header);
                     }
                 }
             }
@@ -229,7 +233,7 @@
 
     .layout-atlas-responsive-sidebar {
         .sidebar-wrapper {
-            padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-medium) 0;
+            padding: var(--spacing-medium) 0 var(--spacing-medium) 0;
             transition: all 0.25s ease-in-out;
         }
         .toggle-btn-sidebar {
@@ -265,6 +269,7 @@
                 }
                 .sidebar-wrapper {
                     padding-left: var(--spacing-medium);
+                    padding-right: var(--spacing-medium);
                     transition: all 0.25s ease-in-out;
                 }
             }

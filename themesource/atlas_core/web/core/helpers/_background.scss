@@ -23,12 +23,12 @@
     }
 
     .background-primary-darker {
-        background-color: var(--brand-primary-750);
+        background-color: var(--brand-primary-700);
     }
 
     .background-primary.background-dark,
     .background-primary-dark {
-        background-color: var(--brand-primary-700)
+        background-color: var(--brand-primary-600)
     }
 
     .background-primary.background-light,
@@ -68,7 +68,7 @@
 
     .background-success.background-dark,
     .background-success-dark {
-        background-color: var(--brand-success-60) 
+        background-color: var(--brand-success-600) 
     }
 
     .background-success.background-light,
@@ -90,7 +90,7 @@
 
     .background-warning.background-dark,
     .background-warning-dark {
-        background-color: var(--brand-warning-650) 
+        background-color: var(--brand-warning-600) 
     }
 
     .background-warning.background-light,
@@ -112,7 +112,7 @@
 
     .background-danger.background-dark,
     .background-danger-dark {
-        background-color: var(--brand-danger-650) 
+        background-color: var(--brand-danger-600) 
     }
 
     .background-danger.background-light,
@@ -135,7 +135,7 @@
     }
 
     .background-default-dark {
-        background-color: var(--brand-default-650) 
+        background-color: var(--brand-default-600) 
     }
 
     .background-default-light {
@@ -167,15 +167,15 @@
     }
 
     .background-info {
-        background-color: var(--brand-primary-350) 
+        background-color: var(--brand-primary-300) 
     }
 
     .background-info-darker {
-        background-color: var(--brand-primary-700) 
+        background-color: var(--brand-primary-500) 
     }
 
     .background-info-dark {
-        background-color: var(--brand-primary-500) 
+        background-color: var(--brand-primary-400) 
     }
 
     .background-info-light {
