@@ -105,7 +105,7 @@
                         width: 0;
                         height: 0;
                         padding: calc(var(--brand-logo-height / 2)) calc(var(--brand-logo-width / 2));
-                        background-image: url(var(--brand-logo));
+                        background-image: url(var($brand-logo));
                         background-repeat: no-repeat;
                         background-position: left center;
                         background-size: var(--brand-logo-width);

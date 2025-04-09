@@ -166,6 +166,10 @@
         justify-content: center #{$important-helpers-value};
     }
 
+    .shadow-none {
+        box-shadow: none;
+    }
+
     .shadow-small {
         box-shadow: var(--shadow-small) var(--shadow-color);
         margin-bottom: 5px;
@@ -173,6 +177,7 @@
         border-style: solid;
         border-color: var(--shadow-color-border);
     }
+
     .shadow-medium {
         box-shadow: var(--shadow-medium) var(--shadow-color);
         margin-bottom: 15px;

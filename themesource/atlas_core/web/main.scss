@@ -5,10 +5,10 @@
 @import "themes/theme-default";
 @import "color-variants";
 @import "../../../theme/web/custom-variables";
-@import "themes/legacy/variables"; // support for legacy modules using sass variables
+@import "variables"; // support for legacy modules using sass variables
 
 // support for legacy themes using sass variables
-@import "themes/legacy/css-variables-mappings"; 
+@import "css-variables-mappings"; 
 @if not $use-css-variables {
     @include legacy-variables();
 }

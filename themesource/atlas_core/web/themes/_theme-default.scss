@@ -12,7 +12,6 @@
     --brand-default: color-mix(in srgb, var(--brand-primary) 10%, #e7e7e9);
   
     /* Brand Logo */
-    --brand-logo: false;
     --brand-logo-height: 24px;
     --brand-logo-width: 32px;
     --brand-gradient: linear-gradient(to bottom, var(--brand-primary-900), var(--brand-primary-700));
@@ -60,7 +59,6 @@
     --link-hover-color: var(--brand-primary-400);
   
     /* Font Family */
-    --font-family-import: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap";
     --font-family-base: "Poppins", sans-serif;
   
     /* Font Sizes */
@@ -178,8 +176,6 @@
     --shadow-large: 0 8px 10px 0;
 
     /* Form Inputs */
-    --form-input-style: default;
-
     --form-label-color: var(--font-color-default);
     --form-label-size: var(--font-size-default);
     --form-label-weight: var(--font-weight-normal);
@@ -213,7 +209,6 @@
 
       /* Buttons */
     --btn-font-size: var(--font-size-default);
-    --btn-bordered: false;
     --btn-border-radius: var(--border-radius-default);
 
     --btn-default-bg: var(--color-base);
@@ -547,3 +542,43 @@
     --listview-padding-bottom: 16px;
     --listview-padding-left: 16px;
   }
+
+// SASS theme options
+$brand-logo: false !default;
+$font-family-import: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
+$form-input-style: default !default;
+$btn-bordered: false !default; // Default value false, set to true if you want this effect
+
+//== Media queries breakpoints
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+$screen-xs: 480px !default;
+$screen-sm: 576px !default;
+$screen-md: 768px !default;
+$screen-lg: 992px !default;
+$screen-xl: 1200px !default;
+$screen-xxl: 1400px !default;
+
+// So media queries don't overlap when required, provide a maximum (used for max-width)
+$screen-xs-max: (
+    $screen-sm - 1
+) !default;
+$screen-sm-max: (
+    $screen-md - 1
+) !default;
+$screen-md-max: (
+    $screen-lg - 1
+) !default;
+$screen-lg-max: (
+    $screen-xl - 1
+) !default;
+$screen-xl-max: (
+    $screen-xxl - 1
+) !default;
+
+//== Settings
+//## Enable or disable your desired framework features
+// Use of !important
+$important-flex: false !default; // ./base/flex.scss
+$important-spacing: true !default; // ./base/spacing.scss
+$important-helpers: false !default; // ./helpers/helperclasses.scss

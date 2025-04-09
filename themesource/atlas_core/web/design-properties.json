@@ -570,6 +570,10 @@
             "description": "Add a shadow to this element",
             "options": [
                 {
+                    "name": "None",
+                    "class": "shadow-none"
+                },
+                {
                     "name": "Small",
                     "class": "shadow-small"
                 },

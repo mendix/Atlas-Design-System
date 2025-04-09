@@ -27,7 +27,6 @@ Customizing core files will make updating Atlas much more difficult in the futur
     --brand-warning: #{$brand-warning};
     --brand-danger: #{$brand-danger};
 
-    --brand-logo: #{$brand-logo};
     --brand-logo-height: #{$brand-logo-height};
     --brand-logo-width: #{$brand-logo-width};
 
@@ -86,9 +85,6 @@ Customizing core files will make updating Atlas much more difficult in the futur
 
     /*== Typography */
     /*## Change your font family, weight, line-height, headings and more (used in components/typography) */
-
-    /* Font Family Import (Used for google font plugin in theme creater) */
-    --font-family-import: #{$font-family-import};
 
     /* Font Family / False = fallback from Bootstrap (Helvetica Neue) */
     --font-family-base: #{$font-family-base};
@@ -196,9 +192,6 @@ Customizing core files will make updating Atlas much more difficult in the futur
     /*== Form */
     /*## Used in components/inputs */
 
-    /* Values that can be used default | lined */
-    --form-input-style: #{$form-input-style};
-
     /* Form Label */
     --form-label-size: #{$form-label-size};
     --form-label-weight: #{$form-label-weight};
@@ -239,7 +232,6 @@ Customizing core files will make updating Atlas much more difficult in the futur
 
     /* Default button style */
     --btn-font-size: #{$btn-font-size};
-    --btn-bordered: #{$btn-bordered};
     /* Default value false, set to true if you want this effect */
     --btn-border-radius: #{$btn-border-radius};
 
