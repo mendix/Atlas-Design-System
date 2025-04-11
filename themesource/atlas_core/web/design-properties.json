@@ -1,4 +1,29 @@
 {
+    "Page": [
+        {
+            "name": "Screen width",
+            "type": "ToggleButtonGroup",
+            "property": "--max-screen-width",
+            "options": [
+                {
+                    "name": "XXL",
+                    "variable": "--screen-xxl"
+                },{
+                    "name": "XL",
+                    "variable": "--screen-xl"
+                },{
+                    "name": "L",
+                    "variable": "--screen-lg"
+                },{
+                    "name": "M",
+                    "variable": "--screen-md"
+                },{
+                    "name": "S",
+                    "variable": "--screen-sm"
+                }
+            ]
+        }
+    ],
     "Widget": [
         {
             "name": "Spacing",
@@ -299,9 +324,15 @@
     ],
     "DivContainer": [
         {
-            "name": "Stretch horizontally",
+            "name": "Full height",
             "type": "Toggle",
             "class": "div-stretch"
+        },
+        {
+            "name": "Card style",
+            "type": "Toggle",
+            "description": "Render container as card",
+            "class": "card"
         },
         {
             "name": "Background color",
@@ -436,6 +467,10 @@
             "description": "Show a border on specific sides only",
             "options": [
                 {
+                    "name": "None",
+                    "class": "div-border-toggle-none"
+                },
+                {
                     "name": "All",
                     "class": "div-border-toggle-all"
                 },
@@ -462,10 +497,6 @@
             "property": "--div-border-style",
             "type": "ToggleButtonGroup",
             "options": [
-                {
-                    "name": "None",
-                    "variable": "--border-style-none"
-                },
                 {
                     "name": "Solid",
                     "variable": "--border-style-solid"
@@ -506,28 +537,23 @@
             "options": [
                 {
                     "name": "Default",
-                    "variable": "--border-color-default",
-                    "preview": "--brand-color-default"
+                    "variable": "--border-color-default"
                 },
                 {
                     "name": "Primary",
-                    "variable": "--brand-primary",
-                    "preview": "--brand-primary"
+                    "variable": "--brand-primary"
                 },
                 {
                     "name": "Success",
-                    "variable": "--brand-success",
-                    "preview": "--brand-success"
+                    "variable": "--brand-success"
                 },
                 {
                     "name": "Warning",
-                    "variable": "--brand-warning",
-                    "preview": "--brand-warning"
+                    "variable": "--brand-warning"
                 },
                 {
                     "name": "Danger",
-                    "variable": "--brand-danger",
-                    "preview": "--brand-danger"
+                    "variable": "--brand-danger"
                 }
             ]
         },
@@ -556,12 +582,6 @@
             ]
         },
         {
-            "name": "Card",
-            "type": "Toggle",
-            "description": "Render container as card",
-            "class": "card"
-        },
-        {
             "name": "Shadow",
             "oldNames": [
                 "Add shadow"
@@ -588,82 +608,111 @@
             ]
         },
         {
-            "name": "Layout direction",
+            "name": "Flex container",
             "type": "ToggleButtonGroup",
             "description": "Sets the display type of the container to flex to align and distributes child elements within a flexible container.",
             "options": [
                 {
                     "name": "Horizontal",
-                    "oldNames": [
-                        "Row"
-                    ],
                     "class": "flexcontainer flex-row"
                 },
                 {
                     "name": "Vertical",
-                    "oldNames": [
-                        "Column"
-                    ],
                     "class": "flexcontainer flex-column"
                 }
             ]
         },
         {
-            "name": "Align (main)",
+            "name": "Grow/shrink",
             "type": "ToggleButtonGroup",
-            "description": "Distributes space between and around content items along the main axis.",
+            "property": "flex",
+            "description": "Defines whether it grows / shrinks based on available space.",
             "options": [
                 {
-                    "name": "Start",
-                    "class": "flexcontainer justify-start"
+                    "name": "Auto-fill",
+                    "variable": "--flex-auto"
                 },
                 {
-                    "name": "Center",
-                    "class": "flexcontainer justify-center"
+                    "name": "Fit content",
+                    "variable": "--flex-fit-content"
                 },
                 {
-                    "name": "End",
-                    "class": "flexcontainer justify-end"
-                },
-                {
-                    "name": "Space between",
-                    "class": "flexcontainer justify-between"
-                },
-                {
-                    "name": "Space around",
-                    "class": "flexcontainer justify-around"
+                    "name": "None",
+                    "variable": "--none"
                 }
             ]
         },
         {
-            "name": "Align (cross)",
+            "name": "Align X",
             "type": "ToggleButtonGroup",
-            "description": "Align elements on the cross axis.",
+            "description": "Distributes space between and around content items along the X axis.",
             "options": [
                 {
-                    "name": "Start",
-                    "class": "flexcontainer align-content-start"
+                    "name": "Left",
+                    "class": "align-x-left"
                 },
                 {
                     "name": "Center",
-                    "class": "flexcontainer align-content-center"
+                    "class": "align-x-center"
                 },
                 {
-                    "name": "End",
-                    "class": "flexcontainer align-content-end"
-                },
-                {
-                    "name": "Baseline",
-                    "class": "flexcontainer align-content-baseline"
+                    "name": "Right",
+                    "class": "align-x-right"
                 },
                 {
                     "name": "Stretch",
-                    "class": "flexcontainer align-content-stretch"
+                    "class": "align-x-stretch"
+                },
+                {
+                    "name": "Space between (→)",
+                    "class": "align-x-between"
+                },
+                {
+                    "name": "Space around (→)",
+                    "class": "align-x-around"
+                },
+                {
+                    "name": "Space evenly (→)",
+                    "class": "align-x-evenly"
+                }
+            ]
+        },{
+            "name": "Align Y",
+            "type": "ToggleButtonGroup",
+            "description": "Distributes space between and around content items along the Y axis.",
+            "options": [
+                {
+                    "name": "Top",
+                    "class": "align-y-top"
+                },
+                {
+                    "name": "Center",
+                    "class": "align-y-center"
+                },
+                {
+                    "name": "Bottom",
+                    "class": "align-y-bottom"
+                },
+                {
+                    "name": "Stretch",
+                    "class": "align-y-stretch"
+                },
+                {
+                    "name": "Space between (↓)",
+                    "class": "align-y-between"
+                },
+                {
+                    "name": "Space around (↓)",
+                    "class": "align-y-around"
+                },
+                {
+                    "name": "Space evenly (↓)",
+                    "class": "align-y-evenly"
                 }
             ]
         },
         {
-            "name": "Flex gap",
+            "name": "Item gap",
             "type": "ToggleButtonGroup",
             "property": "gap",
             "description": "Adjust the space between items inside the flex container.",
@@ -912,37 +961,30 @@
             "options": [
                 {
                     "name": "Background Primary",
-                    "preview": "--bg-color",
                     "variable": "--bg-color"
                 },
                 {
                     "name": "Background Secondary",
-                    "preview": "--bg-color-secondary",
                     "variable": "--bg-color-secondary"
                 },
                 {
                     "name": "Brand Primary",
-                    "preview": "--brand-primary",
                     "variable": "--brand-primary"
                 },
                 {
                     "name": "Brand Secondary",
-                    "preview": "--brand-default",
                     "variable": "--brand-default"
                 },
                 {
                     "name": "Brand Success",
-                    "preview": "--brand-success",
                     "variable": "--brand-success"
                 },
                 {
                     "name": "Brand Warning",
-                    "preview": "--brand-warning",
                     "variable": "--brand-warning"
                 },
                 {
                     "name": "Brand Danger",
-                    "preview": "--brand-danger",
                     "variable": "--brand-danger"
                 }
             ]
@@ -1160,7 +1202,6 @@
                     "oldNames": [
                         "Background Default"
                     ],
-                    "preview": "--bg-color",
                     "variable": "--bg-color"
                 },
                 {
@@ -1168,7 +1209,6 @@
                     "oldNames": [
                         "Background Dashboard"
                     ],
-                    "preview": "--bg-color-secondary",
                     "variable": "--bg-color-secondary"
                 },
                 {
@@ -1176,7 +1216,6 @@
                     "oldNames": [
                         "Primary"
                     ],
-                    "preview": "--brand-primary",
                     "variable": "--brand-primary"
                 },
                 {
@@ -1185,15 +1224,13 @@
                         "Default",
                         "Brand Default"
                     ],
-                    "class": "background-default",
-                    "preview": "--background-default"
+                    "variable": "--background-default"
                 },
                 {
                     "name": "Brand Success",
                     "oldNames": [
                         "Success"
                     ],
-                    "preview": "--brand-success",
                     "variable": "--brand-success"
                 },
                 {
@@ -1201,7 +1238,6 @@
                     "oldNames": [
                         "Warning"
                     ],
-                    "preview": "--brand-warning",
                     "variable": "--brand-warning"
                 },
                 {
@@ -1209,7 +1245,6 @@
                     "oldNames": [
                         "Danger"
                     ],
-                    "preview": "--brand-danger",
                     "variable": "--bg-danger"
                 }
             ]
@@ -2250,28 +2285,23 @@
             "options": [
                 {
                     "name": "Brand Primary",
-                    "variable": "--brand-primary",
-                    "preview": "--brand-primary"
+                    "variable": "--brand-primary"
                 },
                 {
                     "name": "Brand Success",
-                    "variable": "--brand-success",
-                    "preview": "--brand-success"
+                    "variable": "--brand-success"
                 },
                 {
                     "name": "Brand Warning",
-                    "variable": "--brand-warning",
-                    "preview": "--brand-warning"
+                    "variable": "--brand-warning"
                 },
                 {
                     "name": "Brand Danger",
-                    "variable": "--brand-danger",
-                    "preview": "--brand-danger"
+                    "variable": "--brand-danger"
                 },
                 {
                     "name": "Link color",
-                    "variable": "--link-color",
-                    "preview": "--link-color"
+                    "variable": "--link-color"
                 }
             ]
         }

@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 :root {
     /* Brand Colors */
     --brand-primary: #264ae5;
@@ -499,6 +501,13 @@
     --callout-info-color: var(--brand-primary-300);
     --callout-info-bg: var(--brand-primary-50);
 
+    --screen-xs: #{$screen-xs};
+    --screen-sm: #{$screen-sm};
+    --screen-md: #{$screen-md};
+    --screen-lg: #{$screen-lg};
+    --screen-xl: #{$screen-xl};
+    --screen-xxl: #{$screen-xxl};
+
     /* Legacy variables */
     --gray-lighter: var(--gray-50);
     --gray-light: var(--gray-300);
@@ -548,33 +557,6 @@ $brand-logo: false !default;
 $font-family-import: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
 $form-input-style: default !default;
 $btn-bordered: false !default; // Default value false, set to true if you want this effect
-
-//== Media queries breakpoints
-//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
-
-$screen-xs: 480px !default;
-$screen-sm: 576px !default;
-$screen-md: 768px !default;
-$screen-lg: 992px !default;
-$screen-xl: 1200px !default;
-$screen-xxl: 1400px !default;
-
-// So media queries don't overlap when required, provide a maximum (used for max-width)
-$screen-xs-max: (
-    $screen-sm - 1
-) !default;
-$screen-sm-max: (
-    $screen-md - 1
-) !default;
-$screen-md-max: (
-    $screen-lg - 1
-) !default;
-$screen-lg-max: (
-    $screen-xl - 1
-) !default;
-$screen-xl-max: (
-    $screen-xxl - 1
-) !default;
 
 //== Settings
 //## Enable or disable your desired framework features

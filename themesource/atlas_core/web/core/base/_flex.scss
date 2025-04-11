@@ -10,14 +10,122 @@
    Flex classes
 ========================================================================== */
 @mixin flex() {
+    :root {
+        --flex-fit-content: 0 1 auto;
+        --flex-auto: 1;
+    }
+
     $important-flex-value: if($important-flex, " !important", "");
 
     // Flex layout
     .flexcontainer {
         display: flex #{$important-flex-value};
         overflow: hidden #{$important-flex-value};
-        flex: 1 #{$important-flex-value};
+        flex: var(--flex-fit-content) #{$important-flex-value};
         gap: var(--gutter-size) #{$important-flex-value};
+    }
+
+    // These classes define the order of the children
+    .flex-row {
+        @extend .flexcontainer;
+        @extend .row-alignments;
+        flex-flow: row #{$important-flex-value};
+    }
+
+    .flex-column {
+        @extend .flexcontainer;
+        @extend .column-alignments;
+        flex-direction: column #{$important-flex-value};
+    }
+
+    .flex-row-reverse {
+        @extend .flexcontainer;
+        @extend .row-alignments;
+        flex-direction: row-reverse #{$important-flex-value};
+    }
+
+    .flex-column-reverse {
+        @extend .flexcontainer;
+        @extend .column-alignments;
+        flex-direction: column-reverse #{$important-flex-value};
+    }
+
+    .row-alignments {
+        &.align-x-left {
+            @extend .justify-start;
+        }
+        &.align-x-center {
+            @extend .justify-center;
+        }
+        &.align-x-right {
+            @extend .justify-end;
+        }
+        &.align-x-stretch {
+            @extend .justify-stretch;
+        }
+        &.align-x-between {
+            @extend .justify-between;
+        }
+        &.align-x-around {
+            @extend .justify-around;
+        }
+        &.align-x-evenly {
+            @extend .justify-evenly;
+        }
+        &.align-y-top {
+            @extend .align-children-start;
+        }
+        &.align-y-center {
+            @extend .align-children-center;
+        }
+        &.align-y-bottom {
+            @extend .align-children-end;
+        }
+        &.align-y-stretch {
+            @extend .align-children-stretch;
+        }
+        &.align-y-baseline {
+            @extend .align-children-baseline;
+        }
+    }
+
+    .column-alignments {
+        &.align-x-left {
+            @extend .align-children-start;
+        }
+        &.align-x-center {
+            @extend .align-children-center;
+        }
+        &.align-x-right {
+            @extend .align-children-end;
+        }
+        &.align-x-stretch {
+            @extend .align-children-stretch;
+        }
+        &.align-x-baseline {
+            @extend .align-children-baseline;
+        }
+        &.align-y-top {
+            @extend .justify-start;
+        }
+        &.align-y-center {
+            @extend .justify-center;
+        }
+        &.align-y-bottom {
+            @extend .justify-end;
+        }
+        &.align-y-stretch {
+            @extend .justify-stretch;
+        }
+        &.align-y-between {
+            @extend .justify-between;
+        }
+        &.align-y-around {
+            @extend .justify-around;
+        }
+        &.align-y-evenly {
+            @extend .justify-evenly;
+        }
     }
 
     .flex-align-left {
@@ -33,23 +141,6 @@
     .flex-align-right {
         align-items: center #{$important-flex-value};
         justify-content: flex-start #{$important-flex-value};
-    }
-
-    // These classes define the order of the children
-    .flex-row {
-        flex-flow: row #{$important-flex-value};
-    }
-
-    .flex-column {
-        flex-direction: column #{$important-flex-value};
-    }
-
-    .flex-row-reverse {
-        flex-direction: row-reverse #{$important-flex-value};
-    }
-
-    .flex-column-reverse {
-        flex-direction: column-reverse #{$important-flex-value};
     }
 
     .flex-wrap {

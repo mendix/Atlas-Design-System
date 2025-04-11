@@ -5,6 +5,10 @@
 // To customize any core styling, copy the part you want to customize to styles/web/sass/app/ so the core styling is overwritten.
 //
 @mixin layout-grid() {
+    :root {
+        --max-screen-width: var(--screen-xxl);
+    }
+
     /* ==========================================================================
        Layout grid
 
@@ -63,6 +67,7 @@
         >.row {
             display: flex;
             column-gap: var(--layoutgrid-column-gap);
+            row-gap: var(--layoutgrid-row-gap); // wrapped items
             >.col,
             >[class*="col-"] {
                 background-color: var(--layoutgrid-column-bg);
@@ -103,18 +108,18 @@
     // Responsiveness
     $breakpoints: (
         "" "" 0 0,
-        "sm" "-sm" $screen-sm 540px,
-        "md" "-md" $screen-md 720px,
-        "lg" "-lg" $screen-lg 960px,
-        "xl" "-xl" $screen-xl 1140px,
-        "xxl" "-xxl" $screen-xxl 1360px
+        "sm" "-sm" $screen-sm,
+        "md" "-md" $screen-md,
+        "lg" "-lg" $screen-lg,
+        "xl" "-xl" $screen-xl,
+        "xxl" "-xxl" $screen-xxl
     );
 
-@each $size, $suffix, $value, $max-width in $breakpoints {
-    @media (min-width: #{$value}) {
+@each $size, $suffix, $max-width in $breakpoints {
+    @media (min-width: #{$max-width}) {
         @if $size !="" {
             .mx-layoutgrid-fixed {
-                max-width: #{$max-width};
+                max-width: calc(min(var(--max-screen-width), #{$max-width}) - 40px);
             }
         }
 
@@ -122,11 +127,15 @@
             flex-grow: 1;
             flex-basis: 0;
             max-width: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .col#{$suffix}-auto {
             flex: 0 0 auto;
             width: auto;
             max-width: 100%;
+            display: flex;
+            flex-direction: column;
         }
         @for $i from 1 through 12 {
             .col#{$suffix}-#{$i} {
@@ -134,6 +143,8 @@
                 $width: calc(100% / $col - var(--layoutgrid-column-gap) / $col * ($col - 1));
                 flex: 0 0 $width;
                 max-width: $width;
+                display: flex;
+                flex-direction: column;
             }
         }
 

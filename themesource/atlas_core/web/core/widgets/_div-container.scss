@@ -50,6 +50,9 @@
     .div-border-toggle-bottom {
         border-bottom: var(--div-border-width) var(--div-border-style) var(--div-border-color);
     }
+    .div-border-toggle-none {
+        border: none;
+    }
 
     .div-stretch {
         height: 100%;
