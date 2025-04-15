@@ -9,6 +9,27 @@
         --sidebar-icon-width: 52px;
     }
 
+    .layout-atlas {
+        .mx-scrollcontainer {
+            &:not(.mx-scrollcontainer-open) {
+                .region-sidebar {
+                    .mx-scrollcontainer-wrapper {
+                        transition: padding 0.25s ease-in-out;
+                    }
+                }
+            }            
+            &.mx-scrollcontainer-open {
+                .region-sidebar {
+                    .mx-scrollcontainer-wrapper {
+                        padding-left: var(--spacing-medium);
+                        padding-right: var(--spacing-medium);
+                        transition: padding 0.25s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
     .layout-atlas-responsive,
     .layout-atlas-responsive-default,
     .layout-atlas-responsive-sidebar {
@@ -112,6 +133,8 @@
 
         // Sidebar
         .region-sidebar {
+            scrollbar-color: var(--navigation-scrollbar-color);
+
             .toggle-btn {
                 width: var(--sidebar-icon-width);
                 border-color: transparent;
@@ -149,7 +172,7 @@
                         margin: var(--spacing-small) 0 0 0;
                         white-space: nowrap;
                         overflow: hidden;
-                        border-radius: var(--border-radius-default);
+                        border-radius: var(--navigation-border-radius);
                         // Glyph icon
                         .glyphicon,
                         .mx-icon-lined,
@@ -202,6 +225,17 @@
                 padding: 0 var(--spacing-small);
             }
         }
+
+        .mx-scrollcontainer-slide {
+            &:not(.mx-scrollcontainer-open) > .region-sidebar {
+                overflow: hidden;
+            }
+
+            &.mx-scrollcontainer-open > .region-sidebar {
+                z-index: 100;
+            }
+        }
+
         @if (not $use-modern-client) {
             .mx-scrollcontainer-slide {
                 &:not(.mx-scrollcontainer-open) > .region-sidebar {
@@ -234,7 +268,7 @@
     .layout-atlas-responsive-sidebar {
         .sidebar-wrapper {
             padding: var(--spacing-medium) 0 var(--spacing-medium) 0;
-            transition: all 0.25s ease-in-out;
+            transition: padding 0.25s ease-in-out;
         }
         .toggle-btn-sidebar {
             display: none;
@@ -266,11 +300,6 @@
                         left: calc(var(--sidebar-size, var(--navsidebar-width-open)) - $icon-size / 2);
                         rotate: 180deg;
                     }
-                }
-                .sidebar-wrapper {
-                    padding-left: var(--spacing-medium);
-                    padding-right: var(--spacing-medium);
-                    transition: all 0.25s ease-in-out;
                 }
             }
         }

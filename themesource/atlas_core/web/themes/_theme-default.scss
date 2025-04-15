@@ -97,6 +97,8 @@
     /* Navigation */
     --navigation-item-height: unset;
     --navigation-item-padding: 8px;
+    --navigation-border-radius: var(--border-radius-default);
+    --navigation-scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
 
     --navigation-font-size: var(--font-size-default);
     --navigation-sub-font-size: var(--font-size-small);
