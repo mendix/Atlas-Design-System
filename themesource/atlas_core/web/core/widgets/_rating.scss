@@ -52,7 +52,7 @@
             &:focus-visible {
                 .rating-image,
                 .rating-icon {
-                    outline: 1px solid $brand-primary;
+                    outline: 1px solid var(--brand-primary);
                 }
             }
         }

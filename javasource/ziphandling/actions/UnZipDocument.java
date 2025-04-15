@@ -21,11 +21,12 @@ import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * This Java action will Unzip the file that is used as input parameter. It returns a list of FileDocuments (unzipped), be aware that the unzipped documents are committed. To prevent full disks delete the list after use.
  */
-public class UnZipDocument extends CustomJavaAction<java.util.List<IMendixObject>>
+public class UnZipDocument extends UserAction<java.util.List<IMendixObject>>
 {
 	/** @deprecated use ZipFile.getMendixObject() instead. */
 	@java.lang.Deprecated(forRemoval = true)

@@ -16,8 +16,9 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.webui.CustomJavaAction;
 import communitycommons.proxies.SplitItem;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
-public class StringSplit extends CustomJavaAction<java.util.List<IMendixObject>>
+public class StringSplit extends UserAction<java.util.List<IMendixObject>>
 {
 	private final java.lang.String inputString;
 	private final java.lang.String splitParameter;

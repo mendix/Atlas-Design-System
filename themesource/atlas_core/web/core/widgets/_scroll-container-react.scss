@@ -79,7 +79,7 @@
         // for scroll per region, regions should overflow if they have long content
         .mx-scrollcontainer-left,
         .mx-scrollcontainer-right,
-        .mx-scrollcontainer-center,
+        .mx-scrollcontainer-center,d
         .mx-scrollcontainer-middle {
             overflow: auto;
         }
@@ -132,7 +132,7 @@
     .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable {
         flex-basis: var(--closed-sidebar-width, 0px);
-        overflow: clip;
+        overflow: hidden;
     }
 
     // For open sidebar - full width
@@ -188,8 +188,16 @@
         overflow-x: clip;
     }
 
-    .mx-scrollcontainer-wrapper:not(.mx-scrollcontainer-nested) {
-        -webkit-overflow-scrolling: touch;
+    .mx-scrollcontainer-wrapper {
+        height: 100%;
+
+        &:not(.mx-scrollcontainer-nested) {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        & > .mx-placeholder {
+            height: 100%;
+        }
     }
 
     // for push aside and slide over the main part should be non-interactive if sidebar is open
@@ -202,7 +210,7 @@
         pointer-events: auto;
     }
 
-    .mx-scrollcontainer-center {
+    .mx-scrollcontainer-middle {
         .mx-layoutgrid,
         .mx-layoutgrid-fluid {
             @include layout-spacing($type: padding, $direction: all, $device: responsive);

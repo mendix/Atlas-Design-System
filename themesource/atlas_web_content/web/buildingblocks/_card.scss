@@ -1,21 +1,7 @@
-/* ==========================================================================
-   Cards
-
-========================================================================== */
-.card {
-    border: 0;
-    border-radius: $border-radius-default;
-    background-color: #ffffff;
-    overflow: hidden;
-    position: relative;
-    padding: $spacing-large;
-    margin-bottom: $spacing-large;
-}
-
 //== Card components
 //-------------------------------------------------------------------------------------------------------------------//
 .card-body {
-    padding: $spacing-large;
+    padding: var(--spacing-large);
 }
 
 .card-overlay {
@@ -31,7 +17,7 @@
         rgba(0, 0, 0, 0.99) 121%,
         #000 100%
     );
-    padding: $spacing-large;
+    padding: var(--spacing-large);
 }
 
 .card-title {
@@ -49,7 +35,7 @@
 }
 
 .card-icon {
-    font-size: $font-size-h1;
+    font-size: var(--font-size-h1);
 }
 
 //== Variations

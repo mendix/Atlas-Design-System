@@ -19,3 +19,5 @@ theme-cache/
 /nativemobile/builds/
 **/.DS_Store
 /vendorlib/temp/
+.DS_Store
+/.svn/
