@@ -623,21 +623,21 @@
             ]
         },
         {
-            "name": "Grow/shrink",
+            "name": "Size behavior",
             "type": "ToggleButtonGroup",
             "property": "flex",
             "description": "Defines whether it grows / shrinks based on available space.",
             "options": [
                 {
-                    "name": "Auto-fill",
-                    "variable": "--flex-auto"
-                },
-                {
-                    "name": "Fit content",
+                    "name": "Hug content",
                     "variable": "--flex-fit-content"
                 },
                 {
-                    "name": "None",
+                    "name": "Fill container",
+                    "variable": "--flex-auto"
+                },
+                {
+                    "name": "Fixed",
                     "variable": "--none"
                 }
             ]
