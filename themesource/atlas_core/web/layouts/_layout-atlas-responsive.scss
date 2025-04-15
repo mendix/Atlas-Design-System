@@ -270,35 +270,50 @@
             padding: var(--spacing-medium) 0 var(--spacing-medium) 0;
             transition: padding 0.25s ease-in-out;
         }
+
+        $icon-size: 32px;
         .toggle-btn-sidebar {
-            display: none;
-            &:hover {
-                display: flex;
-            }
+            width: 0;
+            height: 0;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+            display: flex;
+            position: absolute;
+            top: 28px;
+            background: var(--color-base);
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            color: var(--brand-primary-800);
+            left: calc(var(--navsidebar-width-closed) - $icon-size / 2);
+            transition: none;
         }
 
         .mx-scrollcontainer-shrink {
-            $icon-size: 32px;
             .region-sidebar:hover {
                 .toggle-btn-sidebar {
-                    display: flex;
-                    position: absolute;
                     width: $icon-size;
                     height: $icon-size;
-                    left: calc(var(--navsidebar-width-closed) - $icon-size / 2);
-                    top: 28px;
-                    background: var(--color-base);
-                    color: var(--brand-primary-800);
-                    border-radius: 100%;
-                    align-items: center;
-                    justify-content: center;
+                    padding: var(--spacing-small);
                 }
             }
             &.mx-scrollcontainer-open {
-                .region-sidebar:hover {
-                    .toggle-btn-sidebar {
-                        left: calc(var(--sidebar-size, var(--navsidebar-width-open)) - $icon-size / 2);
-                        rotate: 180deg;
+                .toggle-btn-sidebar {
+                    left: calc(var(--sidebar-size, var(--navsidebar-width-open)) - $icon-size / 2);
+                    rotate: 180deg;
+                    transition: rotate left 0.25s ease-in-out;
+                }
+            }
+
+            @media (max-width: $screen-sm-max) {
+                :not(&.mx-scrollcontainer-open) {
+                    .toggle-btn-sidebar-mobile {
+                        // shown only for mobile
+                        display: flex;
+                        color: var(--brand-primary-800);
+                        background: transparent;
+                        border: 0;
                     }
                 }
             }
