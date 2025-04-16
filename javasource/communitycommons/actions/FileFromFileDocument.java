@@ -17,11 +17,12 @@ import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * Reads contents from a FileDocument and stores it in a file on the local (server) storage.
  */
-public class FileFromFileDocument extends CustomJavaAction<java.lang.Boolean>
+public class FileFromFileDocument extends UserAction<java.lang.Boolean>
 {
 	private final java.lang.String targetFile;
 	/** @deprecated use fileDocument.getMendixObject() instead. */

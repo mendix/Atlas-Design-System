@@ -24,11 +24,12 @@ import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * This Java action will zip all files given in the list of documets in one zip file output.zip.
  */
-public class ZipDocuments extends CustomJavaAction<IMendixObject>
+public class ZipDocuments extends UserAction<IMendixObject>
 {
 	/** @deprecated use com.mendix.utils.ListUtils.map(ListOfDocument, com.mendix.systemwideinterfaces.core.IEntityProxy::getMendixObject) instead. */
 	@java.lang.Deprecated(forRemoval = true)
