@@ -23,7 +23,7 @@
         display: flex #{$important-flex-value};
         overflow: hidden #{$important-flex-value};
         flex: var(--flex-fit-content) #{$important-flex-value};
-        gap: var(--default-flex-gap) #{$important-flex-value};
+        column-gap: var(--gutter-size) #{$important-flex-value};
     }
 
     .flex-gap-none {

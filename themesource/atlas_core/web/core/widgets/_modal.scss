@@ -66,6 +66,11 @@
         &.mx-window-view .mx-window-body {
             overflow: hidden; // hide second scrollbar in edit page
             padding: 0;
+            // Dataview in popup
+            > .mx-dataview > .mx-dataview-content,
+            > .mx-placeholder > .mx-dataview > .mx-dataview-content {
+                padding: 20px;
+            }
 
             > .mx-dataview > .mx-dataview-controls,
             > .mx-placeholder > .mx-dataview > .mx-dataview-controls {
@@ -79,11 +84,7 @@
         }
 
         .mx-dataview-controls {
-            border-top: 1px solid var(--modal-header-border-color);
-            background-color: var(--modal-footer-bg);
-            padding: var(--spacing-large);
-            padding-top: var(--spacing-medium);
-            padding-bottom: var(--spacing-medium);
+            padding-bottom: 0;
         }
 
         .mx-layoutgrid {

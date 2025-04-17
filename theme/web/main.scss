@@ -1,6 +1,6 @@
 @import "custom-variables";
 
-.mx-image-viewer {
+.mx-image-viewer:not(.mx-image-background) {
     display: inline;
     width: auto !important;
 }

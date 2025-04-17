@@ -287,7 +287,7 @@
     --modal-header-bg: transparent;
     --modal-header-border-color: var(--border-color-default);
     --modal-header-color: var(--font-color-header);
-    --modal-body-bg: var(--bg-color);
+    --modal-body-bg: var(--bg-color-secondary);
     --modal-footer-bg: var(--bg-color-secondary);
 
     /* Data View */
@@ -460,7 +460,6 @@
     --t-layout-spacing: var(--t-layout-spacing-top) var(--t-layout-spacing-right) var(--t-layout-spacing-bottom) var(--t-layout-spacing-left);
 
     --gutter-size: var(--spacing-medium);
-    --default-flex-gap: var(--spacing-small);
 
     --padding-table-cell-top: 8px;
     --padding-table-cell-bottom: 8px;
