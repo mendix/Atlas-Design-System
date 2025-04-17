@@ -150,6 +150,7 @@
 
     --navsidebar-width-closed: 52px;
     --navsidebar-width-open: 232px;
+    --navsidebar-toggle-size: 32px;
 
     /* Topbar Navigation */
     --navtopbar-font-size: var(--font-size-small);
@@ -459,6 +460,7 @@
     --t-layout-spacing: var(--t-layout-spacing-top) var(--t-layout-spacing-right) var(--t-layout-spacing-bottom) var(--t-layout-spacing-left);
 
     --gutter-size: var(--spacing-medium);
+    --default-flex-gap: var(--spacing-small);
 
     --padding-table-cell-top: 8px;
     --padding-table-cell-bottom: 8px;

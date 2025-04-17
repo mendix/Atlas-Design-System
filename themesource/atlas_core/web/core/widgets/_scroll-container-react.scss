@@ -37,8 +37,6 @@
     // This is a duplication because we need to be able to use that value in calculation on
     // other levels of scroll container while --sidebar-size is available on the region level and not higher
 
-    $sidebar-animation-duration: 250ms;
-
     .mx-page {
         display: flex;
         flex-direction: column;
@@ -122,8 +120,8 @@
     // Animate transitions for toggleable sidebars
     .mx-scrollcontainer-left.mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-right.mx-scrollcontainer-toggleable {
-        transition: flex-basis $sidebar-animation-duration ease-in, margin-right $sidebar-animation-duration ease-in,
-            margin-left $sidebar-animation-duration ease-in;
+        transition: flex-basis var(--sidebar-animation-duration) var(--sidebar-animation-function), margin-right var(--sidebar-animation-duration) var(--sidebar-animation-function),
+            margin-left var(--sidebar-animation-duration) var(--sidebar-animation-function);
         z-index: 1;
     }
 
@@ -168,7 +166,7 @@
 
     // Push content aside animation
     .mx-scrollcontainer-push > :not(.mx-scrollcontainer-toggleable) {
-        transition: transform $sidebar-animation-duration ease-in;
+        transition: transform var(--sidebar-animation-duration) var(--sidebar-animation-function);
     }
 
     .mx-scrollcontainer-push.mx-scrollcontainer-open > :not(.mx-scrollcontainer-toggleable) {

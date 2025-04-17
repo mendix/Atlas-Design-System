@@ -13,6 +13,7 @@
     :root {
         --flex-fit-content: 0 1 auto;
         --flex-auto: 1;
+        --flex-grow: 1 0 auto;
     }
 
     $important-flex-value: if($important-flex, " !important", "");
@@ -22,7 +23,27 @@
         display: flex #{$important-flex-value};
         overflow: hidden #{$important-flex-value};
         flex: var(--flex-fit-content) #{$important-flex-value};
-        gap: var(--gutter-size) #{$important-flex-value};
+        gap: var(--default-flex-gap) #{$important-flex-value};
+    }
+
+    .flex-gap-none {
+        @extend .flexcontainer;
+        gap: var(--none) #{$important-flex-value};
+    }
+
+    .flex-gap-small {
+        @extend .flexcontainer;
+        gap: var(--spacing-small) #{$important-flex-value};
+    }
+
+    .flex-gap-medium {
+        @extend .flexcontainer;
+        gap: var(--spacing-medium) #{$important-flex-value};
+    }
+
+    .flex-gap-large {
+        @extend .flexcontainer;
+        gap: var(--spacing-large) #{$important-flex-value};
     }
 
     // These classes define the order of the children
@@ -264,6 +285,65 @@
 
     .align-self-stretch {
         align-self: stretch #{$important-flex-value};
+    }
+
+    .flex-items-minwidth {
+        > * {
+            flex: 1 1 100%;
+            min-width: 100%;
+        }
+        
+        @media (min-width: $screen-sm) {
+            &.flex-item-small > * {
+                $min-width: calc(#{$screen-sm} / 3 + 1px);
+                flex-basis: $min-width;
+                min-width: $min-width;
+            }
+        }
+    
+        @media (min-width: $screen-md) {
+            &.flex-item-small > * {
+                $min-width: calc(#{$screen-md} / 4 + 1px);
+                flex-basis: $min-width;
+                min-width: $min-width;
+            }
+            &.flex-item-medium > * {
+                $min-width: calc(#{$screen-md} / 3 + 1px);
+                flex-basis: $min-width;
+                min-width: $min-width;
+            }
+        }
+    
+        @media (min-width: $screen-xl) {
+            &.flex-item-small > * {
+                $min-width: calc(#{$screen-xl} / 5 + 1px);
+                flex-basis: $min-width;
+                min-width: $min-width;
+            }
+            &.flex-item-medium > * {
+                $min-width: calc(#{$screen-xl} / 4 + 1px);
+                flex-basis: $min-width;
+                min-width: $min-width;
+            }
+            &.flex-item-large > * {
+                $min-width: calc(#{$screen-xl} / 3 + 1px);
+                flex-basis: $min-width;
+                min-width: $min-width;
+            }
+        }
+    }
+
+    .flex-items-hug-content > * {
+        flex: var(--flex-fit-content);
+    }
+    .flex-items-auto > * {
+        flex: var(--flex-auto);
+    }
+    .flex-items-grow > * {
+        flex: var(--flex-grow);
+    }
+    .flex-items-fixed > * {
+        flex: none;
     }
 
     @include flex-items($number: 12);

@@ -7,6 +7,8 @@
     :root {
         --sidebar-icon-height: 52px;
         --sidebar-icon-width: 52px;
+        --sidebar-animation-duration: 250ms;
+        --sidebar-animation-function: ease-in;
     }
 
     .layout-atlas {
@@ -14,7 +16,7 @@
             &:not(.mx-scrollcontainer-open) {
                 .region-sidebar {
                     .mx-scrollcontainer-wrapper {
-                        transition: padding 0.25s ease-in-out;
+                        transition: padding var(--sidebar-animation-duration) var(--sidebar-animation-function);
                     }
                 }
             }            
@@ -23,7 +25,7 @@
                     .mx-scrollcontainer-wrapper {
                         padding-left: var(--spacing-medium);
                         padding-right: var(--spacing-medium);
-                        transition: padding 0.25s ease-in-out;
+                        transition: padding var(--sidebar-animation-duration) var(--sidebar-animation-function);
                     }
                 }
             }
@@ -268,41 +270,45 @@
     .layout-atlas-responsive-sidebar {
         .sidebar-wrapper {
             padding: var(--spacing-medium) 0 var(--spacing-medium) 0;
-            transition: padding 0.25s ease-in-out;
+            transition: padding var(--sidebar-animation-duration) var(--sidebar-animation-function);
         }
-
-        $icon-size: 32px;
-        .toggle-btn-sidebar {
-            width: 0;
-            height: 0;
-            padding: 0;
-            border: 0;
-            overflow: hidden;
-            display: flex;
-            position: absolute;
-            top: 28px;
-            background: var(--color-base);
-            align-items: center;
-            justify-content: center;
-            border-radius: 100%;
-            color: var(--brand-primary-800);
-            left: calc(var(--navsidebar-width-closed) - $icon-size / 2);
-            transition: none;
-        }
-
+        
         .mx-scrollcontainer-shrink {
-            .region-sidebar:hover {
-                .toggle-btn-sidebar {
-                    width: $icon-size;
-                    height: $icon-size;
-                    padding: var(--spacing-small);
+            .toggle-btn-sidebar {
+                width: var(--navsidebar-toggle-size);
+                height: var(--navsidebar-toggle-size);
+                border: 1px solid var(--border-color-default);
+                opacity: 0;
+                padding: 0;
+                overflow: hidden;
+                position: absolute;
+                background: var(--color-base);
+                border-radius: 100%;
+                transition: all var(--sidebar-animation-duration) var(--sidebar-animation-function);
+                color: var(--font-color-header);
+                left: calc(var(--navsidebar-width-closed) - var(--navsidebar-toggle-size) / 2);
+                .mx-icon-filled,
+                .mx-icon-lined {
+                    line-height: var(--line-height-base);
                 }
             }
+
+            .region-sidebar:hover {
+                .toggle-btn-sidebar {
+                    opacity: 1;
+                    &:hover{
+                        background-color: var(--brand-primary);
+                        color: var(--font-color-contrast);
+                        transform: scale(1.1);
+                        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+
             &.mx-scrollcontainer-open {
                 .toggle-btn-sidebar {
-                    left: calc(var(--sidebar-size, var(--navsidebar-width-open)) - $icon-size / 2);
+                    left: calc(var(--sidebar-size, var(--navsidebar-width-open)) - var(--navsidebar-toggle-size) / 2);
                     rotate: 180deg;
-                    transition: rotate left 0.25s ease-in-out;
                 }
             }
 
@@ -310,7 +316,6 @@
                 :not(&.mx-scrollcontainer-open) {
                     .toggle-btn-sidebar-mobile {
                         // shown only for mobile
-                        display: flex;
                         color: var(--brand-primary-800);
                         background: transparent;
                         border: 0;
