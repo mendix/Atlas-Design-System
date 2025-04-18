@@ -135,7 +135,10 @@
 
         // Sidebar
         .region-sidebar {
-            scrollbar-color: var(--navigation-scrollbar-color);
+            scrollbar-color: transparent transparent;
+            &:hover {
+                scrollbar-color: var(--navigation-scrollbar-color);
+            }
 
             .toggle-btn {
                 width: var(--sidebar-icon-width);

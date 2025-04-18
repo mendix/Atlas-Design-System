@@ -95,6 +95,8 @@
     .mx-scrollcontainer-middle,
     .mx-scrollcontainer-center {
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     // if there is a nested scroll container we always want
@@ -187,14 +189,16 @@
     }
 
     .mx-scrollcontainer-wrapper {
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
 
         &:not(.mx-scrollcontainer-nested) {
             -webkit-overflow-scrolling: touch;
         }
 
         & > .mx-placeholder {
-            height: 100%;
+            flex: 1;
         }
     }
 
