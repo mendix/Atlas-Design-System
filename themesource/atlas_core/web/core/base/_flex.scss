@@ -11,9 +11,12 @@
 ========================================================================== */
 @mixin flex() {
     :root {
-        --flex-fit-content: 0 1 auto;
+        --flex-shrink: 0 1 auto;
         --flex-auto: 1;
         --flex-grow: 1 0 auto;
+        @for $i from 1 through 12 {
+            --flex-#{$i}: #{$i};
+        }
     }
 
     $important-flex-value: if($important-flex, " !important", "");
@@ -22,7 +25,7 @@
     .flexcontainer {
         display: flex #{$important-flex-value};
         overflow: hidden #{$important-flex-value};
-        flex: var(--flex-fit-content) #{$important-flex-value};
+        flex: var(--flex-shrink) #{$important-flex-value};
         column-gap: var(--gutter-size) #{$important-flex-value};
     }
 
@@ -165,14 +168,17 @@
     }
 
     .flex-wrap {
+        @extend .flexcontainer;
         flex-wrap: wrap #{$important-flex-value};
     }
 
     .flex-nowrap {
+        @extend .flexcontainer;
         flex-wrap: nowrap #{$important-flex-value};
     }
 
     .flex-wrap-reverse {
+        @extend .flexcontainer;
         flex-wrap: wrap-reverse #{$important-flex-value};
     }
 
@@ -289,7 +295,6 @@
 
     .flex-items-minwidth {
         > * {
-            flex: 1 1 100%;
             min-width: 100%;
         }
         
@@ -333,8 +338,8 @@
         }
     }
 
-    .flex-items-hug-content > * {
-        flex: var(--flex-fit-content);
+    .flex-items-shrink > * {
+        flex: var(--flex-shrink);
     }
     .flex-items-auto > * {
         flex: var(--flex-auto);

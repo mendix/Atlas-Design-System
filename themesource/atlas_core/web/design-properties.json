@@ -8,16 +8,20 @@
                 {
                     "name": "XXL",
                     "variable": "--screen-xxl"
-                },{
+                },
+                {
                     "name": "XL",
                     "variable": "--screen-xl"
-                },{
+                },
+                {
                     "name": "L",
                     "variable": "--screen-lg"
-                },{
+                },
+                {
                     "name": "M",
                     "variable": "--screen-md"
-                },{
+                },
+                {
                     "name": "S",
                     "variable": "--screen-sm"
                 }
@@ -31,10 +35,12 @@
                 {
                     "name": "S",
                     "variable": "--spacing-small"
-                },{
+                },
+                {
                     "name": "M",
                     "variable": "--spacing-medium"
-                },{
+                },
+                {
                     "name": "L",
                     "variable": "--spacing-large"
                 }
@@ -346,13 +352,19 @@
             "description": "Sets the display type of the container to flex to align and distributes child elements within a flexible container.",
             "options": [
                 {
-                    "name": "Horizontal",
-                    "class": "flexcontainer flex-row",
+                    "name": "Horizontal (row)",
+                    "oldNames": [
+                        "Horizontal"
+                    ],
+                    "class": "flex-row",
                     "icon": "Atlas_Core.Atlas_Controls.direction-horizontal"
                 },
                 {
-                    "name": "Vertical",
-                    "class": "flexcontainer flex-column",
+                    "name": "Vertical (column)",
+                    "oldNames": [
+                        "Vertical"
+                    ],
+                    "class": "flex-column",
                     "icon": "Atlas_Core.Atlas_Controls.direction-vertical"
                 }
             ]
@@ -381,51 +393,10 @@
             ]
         },
         {
-            "name": "Fixed item width",
-            "type": "ToggleButtonGroup",
-            "description": "Sets a responsive minimum width for its flex items.",
-            "options": [
-                {
-                    "name": "Small",
-                    "class": "flex-wrap flex-items-minwidth flex-item-small"
-                },{
-                    "name": "Medium",
-                    "class": "flex-wrap flex-items-minwidth flex-item-medium"
-                },{
-                    "name": "Large",
-                    "class": "flex-wrap flex-items-minwidth flex-item-large"
-                }
-            ]
-        },
-        {
-            "name": "Item size",
-            "type": "ToggleButtonGroup",
-            "description": "Sets a responsive minimum width for its flex items.",
-            "options": [
-                {
-                    "name": "Hug content",
-                    "class": "flex-items-hug-content",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fit"
-                },
-                {
-                    "name": "Fill container",
-                    "class": "flex-items-grow",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fill"
-                },
-                {
-                    "name": "Auto",
-                    "class": "flex-items-auto",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fill"
-                },
-                {
-                    "name": "Fixed",
-                    "class": "flex-items-fixed",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-none-fixed"
-                }
-            ]
-        },
-        {
-            "name": "Align X",
+            "name": "Align items X",
+            "oldNames": [
+                        "Align X"
+                    ],
             "type": "ToggleButtonGroup",
             "description": "Distributes space between and around content items along the X axis.",
             "options": [
@@ -445,23 +416,30 @@
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-right"
                 },
                 {
-                    "name": "Space between (→)",
+                    "name": "Space between (only for horizontal containers)",
+                    "oldNames": ["Space between (→)"],
                     "class": "align-x-between",
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-space-between"
                 },
                 {
-                    "name": "Space around (→)",
+                    "name": "Space around (only for horizontal containers)",
+                    "oldNames": ["Space around (→)"],
                     "class": "align-x-around",
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-space-around"
                 },
                 {
-                    "name": "Space evenly (→)",
+                    "name": "Space evenly (only for horizontal containers)",
+                    "oldNames": ["Space evenly (→)"],
                     "class": "align-x-evenly",
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-space-even"
                 }
             ]
-        },{
-            "name": "Align Y",
+        },
+        {
+            "name": "Align items Y",
+            "oldNames": [
+                        "Align Y"
+                    ],
             "type": "ToggleButtonGroup",
             "description": "Distributes space between and around content items along the Y axis.",
             "options": [
@@ -481,52 +459,159 @@
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-bottom"
                 },
                 {
-                    "name": "Space between (↓)",
+                    "name": "Space between (only for vertical containers)",
                     "class": "align-y-between",
+                    "oldNames": ["Space between (→)"],
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-space-between"
                 },
                 {
-                    "name": "Space around (↓)",
+                    "name": "Space around (only for vertical containers)",
+                    "oldNames": ["Space around (→)"],
                     "class": "align-y-around",
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-space-around"
                 },
                 {
-                    "name": "Space evenly (↓)",
+                    "name": "Space evenly (only for vertical containers)",
                     "class": "align-y-evenly",
+                    "oldNames": ["Space around (→)"],
                     "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-space-even"
                 }
             ]
         },
         {
-            "name": "Full height",
-            "type": "Toggle",
-            "class": "div-stretch"
-        },
-        {
-            "name": "Flex size",
+            "name": "Flex behavior (items)",
             "type": "ToggleButtonGroup",
-            "property": "flex",
-            "description": "Defines whether its items grows / shrinks based on available space.",
+            "description": "Sets a responsive minimum width for its flex items.",
             "options": [
                 {
-                    "name": "Hug content",
-                    "variable": "--flex-fit-content",
+                    "name": "Fill container (only grow)",
+                    "class": "flex-items-grow",
+                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fill"
+                },
+                {
+                    "name": "Hug content (only shrink)",
+                    "class": "flex-items-shrink",
                     "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fit"
                 },
                 {
-                    "name": "Fill container",
+                    "name": "Auto (grow or shrink)",
+                    "class": "flex-items-auto",
+                    "icon": "Atlas_Core.Atlas.text-font"
+                },
+                {
+                    "name": "Fixed (neither shrink nor grow)",
+                    "class": "flex-items-fixed",
+                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-none-fixed"
+                }
+            ]
+        },
+        {
+            "name": "Wrap items",
+            "type": "ToggleButtonGroup",
+            "options": [
+                {
+                    "name": "Wrap",
+                    "class": "flex-wrap"
+                },
+                {
+                    "name": "No wrap",
+                    "class": "flex-nowrap"
+                }
+            ]
+        },
+        {
+            "name": "Flex behavior (self)",
+            "type": "Dropdown",
+            "property": "flex",
+            "description": "Defines whether it grows / shrinks relative to its parent based on available space. Use numbers to set a width relative to its siblings.",
+            "options": [
+                {
+                    "name": "Fill container (only grow)",
+                    "oldNames": ["Fill container"],
                     "variable": "--flex-grow",
                     "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fill"
                 },
                 {
-                    "name": "Auto",
-                    "variable": "--flex-auto",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fill"
+                    "name": "Hug content (only shrink)",
+                    "oldNames": ["Hug content"],
+                    "variable": "--flex-fit-content",
+                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fit"
                 },
                 {
-                    "name": "Fixed",
+                    "name": "Fixed (neither shrink nor grow)",
+                    "oldNames": ["Fixed"],
                     "variable": "--none",
                     "icon": "Atlas_Core.Atlas_Controls.grow-shrink-none-fixed"
+                },
+                {
+                    "name": "1 (auto)",
+                    "variable": "--flex-1"
+                },
+                {
+                    "name": "2",
+                    "variable": "--flex-2"
+                },
+                {
+                    "name": "3",
+                    "variable": "--flex-3"
+                },
+                {
+                    "name": "4",
+                    "variable": "--flex-4"
+                },
+                {
+                    "name": "5",
+                    "variable": "--flex-5"
+                },
+                {
+                    "name": "6",
+                    "variable": "--flex-6"
+                },
+                {
+                    "name": "7",
+                    "variable": "--flex-7"
+                },
+                {
+                    "name": "8",
+                    "variable": "--flex-8"
+                },
+                {
+                    "name": "9",
+                    "variable": "--flex-9"
+                },
+                {
+                    "name": "10",
+                    "variable": "--flex-10"
+                },
+                {
+                    "name": "11",
+                    "variable": "--flex-11"
+                },
+                {
+                    "name": "12",
+                    "variable": "--flex-12"
+                }
+            ]
+        },
+        {
+            "name": "Minimum width (items)",
+            "oldNames": [
+                "Minimum item size"
+            ],
+            "type": "ToggleButtonGroup",
+            "description": "Sets a responsive minimum width for its flex items.",
+            "options": [
+                {
+                    "name": "S",
+                    "class": "flex-items-minwidth flex-item-small"
+                },
+                {
+                    "name": "M",
+                    "class": "flex-items-minwidth flex-item-medium"
+                },
+                {
+                    "name": "L",
+                    "class": "flex-items-minwidth flex-item-large"
                 }
             ]
         },
@@ -846,7 +931,9 @@
         {
             "name": "Align content (deprecated)",
             "type": "Dropdown",
-            "oldNames": ["Align content"],
+            "oldNames": [
+                "Align content"
+            ],
             "description": "Align content of this element left, right or center it. Align elements inside the container as a row or as a column.",
             "options": [
                 {
