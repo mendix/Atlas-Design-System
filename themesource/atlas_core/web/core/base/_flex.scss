@@ -17,6 +17,7 @@
         @for $i from 1 through 12 {
             --flex-#{$i}: #{$i};
         }
+        --flex-gap: var(--gutter-size);
     }
 
     $important-flex-value: if($important-flex, " !important", "");
@@ -26,27 +27,7 @@
         display: flex #{$important-flex-value};
         overflow: hidden #{$important-flex-value};
         flex: var(--flex-shrink) #{$important-flex-value};
-        column-gap: var(--gutter-size) #{$important-flex-value};
-    }
-
-    .flex-gap-none {
-        @extend .flexcontainer;
-        gap: var(--none) #{$important-flex-value};
-    }
-
-    .flex-gap-small {
-        @extend .flexcontainer;
-        gap: var(--spacing-small) #{$important-flex-value};
-    }
-
-    .flex-gap-medium {
-        @extend .flexcontainer;
-        gap: var(--spacing-medium) #{$important-flex-value};
-    }
-
-    .flex-gap-large {
-        @extend .flexcontainer;
-        gap: var(--spacing-large) #{$important-flex-value};
+        gap: var(--flex-gap) #{$important-flex-value};
     }
 
     // These classes define the order of the children
@@ -54,6 +35,7 @@
         @extend .flexcontainer;
         @extend .row-alignments;
         flex-flow: row #{$important-flex-value};
+        flex-wrap: wrap;
     }
 
     .flex-column {
@@ -293,47 +275,114 @@
         align-self: stretch #{$important-flex-value};
     }
 
-    .flex-items-minwidth {
-        > * {
-            min-width: 100%;
+    .flex-width {
+        --flex-gap-parent: var(--flex-gap);
+        $flex-2-columns: calc(50% - var(--flex-gap) / 2);
+        $flex-items-2-columns: calc(50% - var(--flex-gap-parent) / 2);
+        $flex-3-columns: calc(33.33% - 2 * var(--flex-gap) / 3);
+        $flex-items-3-columns: calc(33.33% - 2 * var(--flex-gap-parent) / 3);
+        $flex-4-columns: calc(25% - 3 * var(--flex-gap) / 4);
+        $flex-items-4-columns: calc(25% - 3 * var(--flex-gap-parent) / 4);
+
+        &.flex-small,
+        &.flex-medium,
+        &.flex-large,
+        &.flex-items-small > *,
+        &.flex-items-medium > *,
+        &.flex-items-large > * {
+            flex-basis: 100%;
+            min-width: 0;
         }
-        
+
         @media (min-width: $screen-sm) {
-            &.flex-item-small > * {
-                $min-width: calc(#{$screen-sm} / 3 + 1px);
-                flex-basis: $min-width;
-                min-width: $min-width;
+            &.flex-small > {
+                flex-basis: $flex-2-columns;
+                min-width: 240px;
+            }
+            &.flex-items-small > * {
+                flex-basis: $flex-items-2-columns;
+                min-width: 240px;
             }
         }
     
         @media (min-width: $screen-md) {
-            &.flex-item-small > * {
-                $min-width: calc(#{$screen-md} / 4 + 1px);
-                flex-basis: $min-width;
-                min-width: $min-width;
+            &.flex-small {
+                flex-basis: $flex-2-columns;
+                min-width: 240px;
             }
-            &.flex-item-medium > * {
-                $min-width: calc(#{$screen-md} / 3 + 1px);
-                flex-basis: $min-width;
-                min-width: $min-width;
+            &.flex-medium {
+                flex-basis: $flex-2-columns;
+                min-width: 300px;
+            }
+            &.flex-large {
+                flex-basis: 100%;
+                min-width: 400px;
+            }
+            &.flex-items-small > * {
+                flex-basis: $flex-items-2-columns;
+                min-width: 240px;
+            }
+            &.flex-items-medium > * {
+                flex-basis: $flex-items-2-columns;
+                min-width: 300px;
+            }
+            &.flex-items-large > * {
+                flex-basis: 100%;
+                min-width: 400px;
+            }
+        }
+
+        @media (min-width: $screen-lg) {
+            &.flex-small {
+                flex-basis: $flex-3-columns;
+                min-width: 240px;
+            }
+            &.flex-medium {
+                flex-basis: $flex-2-columns;
+                min-width: 300px;
+            }
+            &.flex-large {
+                flex-basis: 100%;
+                min-width: 400px;
+            }
+            &.flex-items-small > * {
+                flex-basis: $flex-items-4-columns;
+                min-width: 240px;
+            }
+            &.flex-items-medium > * {
+                flex-basis: $flex-items-2-columns;
+                min-width: 300px;
+            }
+            &.flex-items-large > * {
+                flex-basis: 100%;
+                min-width: 400px;
             }
         }
     
         @media (min-width: $screen-xl) {
-            &.flex-item-small > * {
-                $min-width: calc(#{$screen-xl} / 5 + 1px);
-                flex-basis: $min-width;
-                min-width: $min-width;
+            &.flex-small {
+                flex-basis: $flex-4-columns;
+                min-width: 240px;
             }
-            &.flex-item-medium > * {
-                $min-width: calc(#{$screen-xl} / 4 + 1px);
-                flex-basis: $min-width;
-                min-width: $min-width;
+            &.flex-medium {
+                flex-basis: $flex-3-columns;
+                min-width: 300px;
             }
-            &.flex-item-large > * {
-                $min-width: calc(#{$screen-xl} / 3 + 1px);
-                flex-basis: $min-width;
-                min-width: $min-width;
+            &.flex-large {
+                flex-basis: $flex-2-columns;
+                min-width: 400px;
+            }
+            &.flex-items-small > * {
+                flex-basis: $flex-items-4-columns;
+                min-width: 240px;
+            }
+            &.flex-items-medium > * {
+                flex-basis: $flex-items-3-columns;
+                min-width: 300px;
+            }
+            &.flex-items-large > * {
+                flex-basis: $flex-items-2-columns;
+                min-width: 400px;
             }
         }
     }
