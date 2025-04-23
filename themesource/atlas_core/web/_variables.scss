@@ -303,17 +303,20 @@ $dataview-emptymessage-bg: $bg-color !default;
 $dataview-emptymessage-color: $font-color-default !default;
 
 /* Alerts */
-$alert-primary-bg: var(--brand-primary-200) !default;
-$alert-success-bg: var(--brand-success-200) !default;
-$alert-warning-bg: var(--brand-warning-200) !default;
-$alert-danger-bg: var(--brand-danger-200) !default;
+$alert-primary-bg: var(--brand-primary-100) !default;
+$alert-secondary-bg: var(--brand-default-100) !default;
+$alert-success-bg: var(--brand-success-100) !default;
+$alert-warning-bg: var(--brand-warning-100) !default;
+$alert-danger-bg: var(--brand-danger-100) !default;
 
 $alert-primary-color: var(--brand-primary-700) !default;
+$alert-secondary-color: var(--brand-default-700) !default;
 $alert-success-color: var(--brand-success-700) !default;
 $alert-warning-color: var(--brand-warning-700) !default;
 $alert-danger-color: var(--brand-danger-700) !default;
 
 $alert-primary-border-color: var(--brand-primary-700) !default;
+$alert-secondary-border-color: var(--brand-secondary-700) !default;
 $alert-success-border-color: var(--brand-success-700) !default;
 $alert-warning-border-color: var(--brand-warning-700) !default;
 $alert-danger-border-color: var(--brand-danger-700) !default;
