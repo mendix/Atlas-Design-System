@@ -1,0 +1,57 @@
+:root.theme-neutral {
+    --brand-primary: rgb(37, 37, 67);
+    --sidebar-bg: var(--brand-default-100);
+
+    // --brand-primary: rgb(0, 13, 110);
+    --navigation-color: var(--font-color-base);
+    --navigation-color-hover: var(--font-color-base);
+    --navigation-color-active: var(--font-color-base);
+
+    --navigation-sub-color: var(--navigation-color);
+    --navigation-sub-color-hover: var(--navigation-color-hover);
+    --navigation-sub-color-active: var(--navigation-color-active);
+
+    /* Sidebar Navigation */
+    --navigation-bg: var(--topbar-bg);
+    --navigation-bg-hover: rgba(0, 0, 0, 0.1);
+    --navigation-bg-active: rgba(0, 0, 0, 0.1);
+
+    --navigation-sub-bg: rgba(0, 0, 0, 0.1);
+    --navigation-sub-bg-hover: var(--navigation-bg-hover);
+    --navigation-sub-bg-active: var(--navigation-bg-active);
+
+    --navigation-border-color: var(--navigation-bg-hover);
+
+    --navsidebar-bg: var(--sidebar-bg);
+    --navsidebar-bg-hover: var(--navigation-bg-hover);
+    --navsidebar-bg-active: var(--navigation-bg-active);
+
+    --navsidebar-sub-bg: rgba(0, 0, 0, 0.1);
+    --navsidebar-sub-bg-hover: var(--navigation-bg-hover);
+    --navsidebar-sub-bg-active: var(--navigation-bg-active);
+    --navsidebar-sub-bg-header: rgba(0, 0, 0, 0.1);
+    --navsidebar-sub-bg-collapsed: var(--brand-primary-50);
+
+    --navsidebar-border-color: var(--border-color-default);
+    --navsidebar-shadow: 0 0 1px rgb(0 0 0 / 14%), 1px 1px 1px rgba(83, 83, 83, 0.28);
+
+    --navsidebar-font-size: var(--font-size-default);
+    --navsidebar-sub-font-size: var(--font-size-small);
+    --navsidebar-glyph-size: 20px;
+
+    --navsidebar-color: var(--navigation-color);
+    --navsidebar-color-hover: var(--navigation-color-hover);
+    --navsidebar-color-active: var(--navigation-color-active);
+
+    --navsidebar-sub-color: var(--navigation-color);
+    --navsidebar-sub-color-hover: var(--navigation-color-hover);
+    --navsidebar-sub-color-active: var(--navigation-color-active);
+
+    --navsidebar-width-closed: 52px;
+    --navsidebar-width-open: 232px;
+    --navsidebar-toggle-size: 32px;
+
+    --border-radius-s: 0;
+    --border-radius-m: 1px;
+    --border-radius-l: 2px;
+}

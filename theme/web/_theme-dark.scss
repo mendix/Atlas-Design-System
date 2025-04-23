@@ -1,11 +1,4 @@
 :root.theme-dark {
-    --gray-darker: #f8f8f8;
-    --gray-dark: #8B8D92;
-    --gray: #B8BABF;
-    --gray-light: #C1C3C8;
-    --gray-primary: #8B8D92;
-    --gray-lighter: #212225;
-
     --brand-primary: color-mix(in srgb, #264ae5, var(--color-base) 25%);
     --brand-success: color-mix(in srgb, #1AC61A, var(--color-base) 25%);
     --brand-warning: color-mix(in srgb, #f0b000, var(--color-base) 25%);
@@ -16,14 +9,24 @@
 
     --border-color-default: #6c757d;
 
-    --bg-color: brand-primary-800;
-    --bg-color-secondary: brand-primary-850;
+    --bg-color: var(--brand-primary-50);
+    --bg-color-secondary: var(--brand-primary-100);
 
+    --font-color-header: color-mix(in srgb, var(--brand-primary-900), white 80%);
+    --font-color-detail: color-mix(in srgb, var(--brand-primary-900), white 60%);
+
+    --shadow-color: rgb(50, 50, 50);
     --topbar-bg: linear-gradient(to bottom, var(--brand-primary-400), var(--brand-primary-300));
     --sidebar-bg: linear-gradient(to bottom, var(--brand-primary-300), var(--brand-primary-200));
 
-    --link-color: var(--brand-primary-800);
+    --link-color: var(--brand-primary-900);
 
+    --navigation-color: var(--color-contrast);
+    --navigation-color-hover: var(--color-contrast);
+    --navigation-color-active: var(--color-contrast);
+    --navigation-sub-color: var(--color-contrast);
+    --navigation-sub-color-hover: var(--color-contrast);
+    --navigation-sub-color-active: var(--color-contrast);
     --navsidebar-sub-bg: var(--brand-primary-800);
 
     --navtopbar-bg: var(--topbar-bg);
@@ -37,11 +40,18 @@
     --navtopbar-sub-color-hover: var(--navigation-color);
     --navtopbar-sub-color-active: var(--navigation-color);
 
+    --form-input-bg: var(--brand-primary-50);
+    --form-input-bg-hover: var(--brand-primary-50);
+    --form-input-bg-focus: var(--brand-primary-50);
     --form-input-border-focus-color: var(--brand-primary-600);
 
     --btn-default-bg: var(--gray-lighter);
-    --btn-default-color: var(--brand-primary-950);
-    --btn-link-bg-hover: var(--gray-darker);
+    --btn-default-color: var(--font-color-base);
+    --btn-link-bg-hover: var(--brand-default-900);
+    --btn-primary-color: var(--font-color-base);
+    --btn-success-color: var(--font-color-base);
+    --btn-warning-color: var(--font-color-base);
+    --btn-danger-color: var(--font-color-base);
 
     --header-text-color: var(--font-color-default);
     --header-text-color-detail: rgba(255, 255, 255, 0.2);

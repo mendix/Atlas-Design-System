@@ -462,7 +462,7 @@
             ]
         },
         {
-            "name": "Flex behavior (items)",
+            "name": "Grow / shrink items",
             "type": "ToggleButtonGroup",
             "description": "Sets a responsive minimum width for its flex items.",
             "options": [
@@ -489,7 +489,7 @@
             ]
         },
         {
-            "name": "Flex behavior (self)",
+            "name": "Grow / shrink (self)",
             "type": "Dropdown",
             "property": "flex",
             "description": "Defines whether it grows / shrinks relative to its parent based on available space. Use numbers to set a width relative to its siblings.",
@@ -560,9 +560,9 @@
             ]
         },
         {
-            "name": "Preferred size (items)",
+            "name": "Default item size",
             "type": "ToggleButtonGroup",
-            "description": "Sets a responsive minimum width for its flex items.",
+            "description": "Sets a preferred responsive size (flex-basis and minimum width) for its flex items.",
             "options": [
                 {
                     "name": "Small",
@@ -581,7 +581,7 @@
         {
             "name": "Preferred size (self)",
             "type": "ToggleButtonGroup",
-            "description": "Sets a responsive minimum width for itself.",
+            "description": "Sets a preferred responsive size (flex-basis and minimum width) for itself.",
             "options": [
                 {
                     "name": "Small",

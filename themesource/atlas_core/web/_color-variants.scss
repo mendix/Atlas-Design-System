@@ -2,9 +2,9 @@
 // Function to convert to HSL and adjust
 @function adjust-color-lightness($color, $adjustment) {
     @if $adjustment > 0 {
-        @return color-mix(in srgb, $color, white $adjustment);
+        @return color-mix(in srgb, $color, var(--color-base) $adjustment);
     } @else {
-        @return color-mix(in srgb, $color, black calc($adjustment * -1));
+        @return color-mix(in srgb, $color, var(--color-contrast) calc($adjustment * -1));
     }
 }
 
