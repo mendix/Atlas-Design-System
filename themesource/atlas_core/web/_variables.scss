@@ -3,6 +3,7 @@ DISCLAIMER:
 This mapping file provides defaults for sass variables to provide backwards compatibility for modules which are still using SASS variables.
 Do not change this file because it is core styling. Customizing core files will make updating Atlas much more difficult in the future.
 */
+@import "breakpoints";
 
 $use-css-variables: false !default;
 
