@@ -354,12 +354,12 @@
                 {
                     "name": "Horizontal (row)",
                     "class": "flex-row",
-                    "icon": "Atlas_Core.Atlas_Controls.direction-horizontal"
+                    "icon": "Atlas_Core.Atlas_Styling.direction-horizontal"
                 },
                 {
                     "name": "Vertical (column)",
                     "class": "flex-column",
-                    "icon": "Atlas_Core.Atlas_Controls.direction-vertical"
+                    "icon": "Atlas_Core.Atlas_Styling.direction-vertical"
                 }
             ]
         },
@@ -395,32 +395,32 @@
                 {
                     "name": "Left",
                     "class": "align-x-left",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-left"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-horizontal-left"
                 },
                 {
                     "name": "Center",
                     "class": "align-x-center",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-center"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-horizontal-center"
                 },
                 {
                     "name": "Right",
                     "class": "align-x-right",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-right"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-horizontal-right"
                 },
                 {
                     "name": "Space between (only for horizontal containers)",
                     "class": "align-x-between",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-space-between"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-horizontal-space-between"
                 },
                 {
                     "name": "Space around (only for horizontal containers)",
                     "class": "align-x-around",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-space-around"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-horizontal-space-around"
                 },
                 {
                     "name": "Space evenly (only for horizontal containers)",
                     "class": "align-x-evenly",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-horizontal-space-even"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-horizontal-space-even"
                 }
             ]
         },
@@ -432,32 +432,32 @@
                 {
                     "name": "Top",
                     "class": "align-y-top",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-top"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-vertical-top"
                 },
                 {
                     "name": "Center",
                     "class": "align-y-center",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-center"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-vertical-center"
                 },
                 {
                     "name": "Bottom",
                     "class": "align-y-bottom",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-bottom"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-vertical-bottom"
                 },
                 {
                     "name": "Space between (only for vertical containers)",
                     "class": "align-y-between",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-space-between"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-vertical-space-between"
                 },
                 {
                     "name": "Space around (only for vertical containers)",
                     "class": "align-y-around",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-space-around"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-vertical-space-around"
                 },
                 {
                     "name": "Space evenly (only for vertical containers)",
                     "class": "align-y-evenly",
-                    "icon": "Atlas_Core.Atlas_Controls.aligncontent-vertical-space-even"
+                    "icon": "Atlas_Core.Atlas_Styling.aligncontent-vertical-space-even"
                 }
             ]
         },
@@ -469,12 +469,12 @@
                 {
                     "name": "Fill container (only grow)",
                     "class": "flex-items-grow",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fill"
+                    "icon": "Atlas_Core.Atlas_Styling.grow-shrink-auto-fill"
                 },
                 {
                     "name": "Hug content (only shrink)",
                     "class": "flex-items-shrink",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fit"
+                    "icon": "Atlas_Core.Atlas_Styling.grow-shrink-auto-fit"
                 },
                 {
                     "name": "Auto (grow or shrink)",
@@ -484,7 +484,7 @@
                 {
                     "name": "Fixed (neither shrink nor grow)",
                     "class": "flex-items-fixed",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-none-fixed"
+                    "icon": "Atlas_Core.Atlas_Styling.grow-shrink-none-fixed"
                 }
             ]
         },
@@ -497,17 +497,17 @@
                 {
                     "name": "Fill container (only grow)",
                     "variable": "--flex-grow",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fill"
+                    "icon": "Atlas_Core.Atlas_Styling.grow-shrink-auto-fill"
                 },
                 {
                     "name": "Hug content (only shrink)",
                     "variable": "--flex-fit-content",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-auto-fit"
+                    "icon": "Atlas_Core.Atlas_Styling.grow-shrink-auto-fit"
                 },
                 {
                     "name": "Fixed (neither shrink nor grow)",
                     "variable": "--none",
-                    "icon": "Atlas_Core.Atlas_Controls.grow-shrink-none-fixed"
+                    "icon": "Atlas_Core.Atlas_Styling.grow-shrink-none-fixed"
                 },
                 {
                     "name": "1 (auto)",
@@ -743,32 +743,32 @@
                 {
                     "name": "None",
                     "class": "div-border-toggle-none",
-                    "icon": "Atlas_Core.Atlas_Controls.none"
+                    "icon": "Atlas_Core.Atlas_Styling.none"
                 },
                 {
                     "name": "All",
                     "class": "div-border-toggle-all",
-                    "icon": "Atlas_Core.Atlas_Controls.borders-all"
+                    "icon": "Atlas_Core.Atlas_Styling.borders-all"
                 },
                 {
                     "name": "Top",
                     "class": "div-border-toggle-top",
-                    "icon": "Atlas_Core.Atlas_Controls.borders-top"
+                    "icon": "Atlas_Core.Atlas_Styling.borders-top"
                 },
                 {
                     "name": "Right",
                     "class": "div-border-toggle-right",
-                    "icon": "Atlas_Core.Atlas_Controls.borders-right"
+                    "icon": "Atlas_Core.Atlas_Styling.borders-right"
                 },
                 {
                     "name": "Left",
                     "class": "div-border-toggle-left",
-                    "icon": "Atlas_Core.Atlas_Controls.borders-left"
+                    "icon": "Atlas_Core.Atlas_Styling.borders-left"
                 },
                 {
                     "name": "Bottom",
                     "class": "div-border-toggle-bottom",
-                    "icon": "Atlas_Core.Atlas_Controls.borders-bottom"
+                    "icon": "Atlas_Core.Atlas_Styling.borders-bottom"
                 }
             ]
         },
@@ -780,17 +780,17 @@
                 {
                     "name": "Solid",
                     "variable": "--border-style-solid",
-                    "icon": "Atlas_Core.Atlas_Controls.border-style-solid"
+                    "icon": "Atlas_Core.Atlas_Styling.border-style-solid"
                 },
                 {
                     "name": "Dashed",
                     "variable": "--border-style-dashed",
-                    "icon": "Atlas_Core.Atlas_Controls.border-style-dashed"
+                    "icon": "Atlas_Core.Atlas_Styling.border-style-dashed"
                 },
                 {
                     "name": "Dotted",
                     "variable": "--border-style-dotted",
-                    "icon": "Atlas_Core.Atlas_Controls.border-style-dotted"
+                    "icon": "Atlas_Core.Atlas_Styling.border-style-dotted"
                 }
             ]
         },
@@ -802,17 +802,17 @@
                 {
                     "name": "Thin",
                     "variable": "--border-width-thin",
-                    "icon": "Atlas_Core.Atlas_Controls.border-width-thin"
+                    "icon": "Atlas_Core.Atlas_Styling.border-width-thin"
                 },
                 {
                     "name": "Medium",
                     "variable": "--border-width-medium",
-                    "icon": "Atlas_Core.Atlas_Controls.border-width-medium"
+                    "icon": "Atlas_Core.Atlas_Styling.border-width-medium"
                 },
                 {
                     "name": "Thick",
                     "variable": "--border-width-thick",
-                    "icon": "Atlas_Core.Atlas_Controls.border-width-thick"
+                    "icon": "Atlas_Core.Atlas_Styling.border-width-thick"
                 }
             ]
         },
@@ -852,22 +852,22 @@
                 {
                     "name": "None",
                     "variable": "--none",
-                    "icon": "Atlas_Core.Atlas_Controls.none"
+                    "icon": "Atlas_Core.Atlas_Styling.none"
                 },
                 {
                     "name": "Small",
                     "variable": "--border-radius-s",
-                    "icon": "Atlas_Core.Atlas_Controls.border-radius-small"
+                    "icon": "Atlas_Core.Atlas_Styling.border-radius-small"
                 },
                 {
                     "name": "Medium",
                     "variable": "--border-radius-m",
-                    "icon": "Atlas_Core.Atlas_Controls.border-radius-medium"
+                    "icon": "Atlas_Core.Atlas_Styling.border-radius-medium"
                 },
                 {
                     "name": "Large",
                     "variable": "--border-radius-l",
-                    "icon": "Atlas_Core.Atlas_Controls.border-radius-large"
+                    "icon": "Atlas_Core.Atlas_Styling.border-radius-large"
                 }
             ]
         },
