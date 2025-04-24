@@ -127,15 +127,11 @@
             flex-grow: 1;
             flex-basis: 0;
             max-width: 100%;
-            display: flex;
-            flex-direction: column;
         }
         .col#{$suffix}-auto {
             flex: 0 0 auto;
             width: auto;
             max-width: 100%;
-            display: flex;
-            flex-direction: column;
         }
         @for $i from 1 through 12 {
             .col#{$suffix}-#{$i} {
@@ -143,8 +139,6 @@
                 $width: calc(100% / $col - var(--layoutgrid-column-gap) / $col * ($col - 1));
                 flex: 0 0 $width;
                 max-width: $width;
-                display: flex;
-                flex-direction: column;
             }
         }
 

@@ -28,7 +28,7 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --border-radius-s: 4px;
     // --border-radius-m: 8px;
     // --border-radius-l: 12px;
-    // --border-radius-default: var(--border-radius-m);
+    // --border-radius-default: var(--border-radius-s);
     // --border-width-thin: 1px;
     // --border-width-medium: 2px;
     // --border-width-thick: 3px;
@@ -175,7 +175,7 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
 
     //  /* Shadows */
     // --shadow-color-border: var(--border-color-default);
-    // --shadow-color: var(--gray-200);
+    // --shadow-color: var(--brand-default-300);
     // --shadow-small: 0 2px 4px 0;
     // --shadow-medium: 0 4px 6px 0;
     // --shadow-large: 0 8px 10px 0;
@@ -297,6 +297,13 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
 
     // --dataview-emptymessage-bg: var(--bg-color);
     // --dataview-emptymessage-color: var(--font-color-default);
+
+    // /* Cards */
+    // --shadow-card: var(--shadow-small) var(--shadow-color);
+    // --border-card: var(--border-default);
+    // --border-radius-card: var(--border-radius-m);
+    // --spacing-card: var(--spacing-large);
+    // --margin-bottom-card: var(--spacing-smaller);
 
     /* Alerts */
     // --alert-primary-bg: var(--brand-primary-50);
