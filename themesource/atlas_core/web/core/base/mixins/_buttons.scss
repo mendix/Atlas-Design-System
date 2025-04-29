@@ -38,10 +38,26 @@
                 background-color: $background;
             }
         }
+        &.btn-style-icon {
+            @if $color != var(--btn-default-color) {
+                color: $border;
+                background: color-mix(in srgb, white, $border 15%);
+            }
+
+            &:hover,
+            &:focus,
+            &:active,
+            &.active,
+            .open > &.dropdown-toggle {
+                color: $color;
+                border-color: $border;
+                background-color: $border;
+            }
+        }
         // Button bordered
         &.btn-bordered {
             background-color: transparent;
-            @if $color != $btn-default-color {
+            @if $color != var(--btn-default-color) {
                 color: $border;
             }
 
@@ -60,13 +76,13 @@
             text-decoration: none;
             border-color: transparent;
             background-color: transparent;
-            @if $color != $btn-default-color {
+            @if $color != var(--btn-default-color) {
                 color: $background;
             }
 
             &:hover {
-                border-color: $btn-link-bg-hover;
-                background-color: $btn-link-bg-hover;
+                border-color: var(--btn-link-bg-hover);
+                background-color: var(--btn-link-bg-hover);
             }
         }
     }

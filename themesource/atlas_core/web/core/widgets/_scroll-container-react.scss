@@ -37,8 +37,6 @@
     // This is a duplication because we need to be able to use that value in calculation on
     // other levels of scroll container while --sidebar-size is available on the region level and not higher
 
-    $sidebar-animation-duration: 250ms;
-
     .mx-page {
         display: flex;
         flex-direction: column;
@@ -79,7 +77,7 @@
         // for scroll per region, regions should overflow if they have long content
         .mx-scrollcontainer-left,
         .mx-scrollcontainer-right,
-        .mx-scrollcontainer-center,
+        .mx-scrollcontainer-center,d
         .mx-scrollcontainer-middle {
             overflow: auto;
         }
@@ -97,6 +95,8 @@
     .mx-scrollcontainer-middle,
     .mx-scrollcontainer-center {
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     // if there is a nested scroll container we always want
@@ -122,8 +122,8 @@
     // Animate transitions for toggleable sidebars
     .mx-scrollcontainer-left.mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-right.mx-scrollcontainer-toggleable {
-        transition: flex-basis $sidebar-animation-duration ease-in, margin-right $sidebar-animation-duration ease-in,
-            margin-left $sidebar-animation-duration ease-in;
+        transition: flex-basis var(--sidebar-animation-duration) var(--sidebar-animation-function), margin-right var(--sidebar-animation-duration) var(--sidebar-animation-function),
+            margin-left var(--sidebar-animation-duration) var(--sidebar-animation-function);
         z-index: 1;
     }
 
@@ -132,7 +132,7 @@
     .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable {
         flex-basis: var(--closed-sidebar-width, 0px);
-        overflow: clip;
+        overflow: hidden;
     }
 
     // For open sidebar - full width
@@ -168,7 +168,7 @@
 
     // Push content aside animation
     .mx-scrollcontainer-push > :not(.mx-scrollcontainer-toggleable) {
-        transition: transform $sidebar-animation-duration ease-in;
+        transition: transform var(--sidebar-animation-duration) var(--sidebar-animation-function);
     }
 
     .mx-scrollcontainer-push.mx-scrollcontainer-open > :not(.mx-scrollcontainer-toggleable) {
@@ -188,8 +188,18 @@
         overflow-x: clip;
     }
 
-    .mx-scrollcontainer-wrapper:not(.mx-scrollcontainer-nested) {
-        -webkit-overflow-scrolling: touch;
+    .mx-scrollcontainer-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        &:not(.mx-scrollcontainer-nested) {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        & > .mx-placeholder {
+            flex: 1;
+        }
     }
 
     // for push aside and slide over the main part should be non-interactive if sidebar is open
@@ -202,7 +212,8 @@
         pointer-events: auto;
     }
 
-    .mx-scrollcontainer-center {
+    .mx-scrollcontainer-center,
+    .mx-scrollcontainer-middle {
         .mx-layoutgrid,
         .mx-layoutgrid-fluid {
             @include layout-spacing($type: padding, $direction: all, $device: responsive);
