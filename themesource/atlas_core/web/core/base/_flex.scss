@@ -26,7 +26,6 @@
     .flexcontainer {
         display: flex #{$important-flex-value};
         overflow: hidden #{$important-flex-value};
-        flex: var(--flex-shrink) #{$important-flex-value};
         gap: var(--flex-gap) #{$important-flex-value};
     }
 
