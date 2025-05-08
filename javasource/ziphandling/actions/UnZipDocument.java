@@ -19,7 +19,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.systemwideinterfaces.core.UserAction;
 

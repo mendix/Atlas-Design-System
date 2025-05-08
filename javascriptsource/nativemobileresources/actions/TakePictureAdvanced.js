@@ -15,8 +15,8 @@ import { getLocales } from 'react-native-localize';
 
 /**
  * @param {MxObject} picture - This field is required.
- * @param {"NativeMobileResources.PictureSource.camera"|"NativeMobileResources.PictureSource.imageLibrary"} pictureSource - Select a picture from the library or the camera. The default is to let the user decide.
- * @param {"NativeMobileResources.PictureQuality.original"|"NativeMobileResources.PictureQuality.low"|"NativeMobileResources.PictureQuality.medium"|"NativeMobileResources.PictureQuality.high"|"NativeMobileResources.PictureQuality.custom"} pictureQuality - Set to empty to use default value 'medium'.
+ * @param {undefined|"camera"|"imageLibrary"} pictureSource - Select a picture from the library or the camera. The default is to let the user decide.
+ * @param {undefined|"original"|"low"|"medium"|"high"|"custom"} pictureQuality - Set to empty to use default value 'medium'.
  * @param {Big} maximumWidth - The picture will be scaled to this maximum pixel width, while maintaing the aspect ratio.
  * @param {Big} maximumHeight - The picture will be scaled to this maximum pixel height, while maintaing the aspect ratio.
  * @returns {Promise.<MxObject>}

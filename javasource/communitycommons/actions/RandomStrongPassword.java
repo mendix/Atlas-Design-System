@@ -10,7 +10,6 @@
 package communitycommons.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import communitycommons.StringUtils;
 import com.mendix.systemwideinterfaces.core.UserAction;
 
@@ -48,7 +47,14 @@ public class RandomStrongPassword extends UserAction<java.lang.String>
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return StringUtils.randomStrongPassword(safeLongToInt(this.MinLength), safeLongToInt(this.MaxLength), safeLongToInt(this.NrOfCapitalizedCharacters), safeLongToInt(NrOfDigits), safeLongToInt(NrOfSpecialCharacters));
+		return StringUtils.randomStrongPassword(
+			safeLongToInt(MinLength),
+			safeLongToInt(MaxLength),
+			safeLongToInt(NrOfCapitalizedCharacters),
+			0,
+			safeLongToInt(NrOfDigits),
+			safeLongToInt(NrOfSpecialCharacters)
+		);
 		// END USER CODE
 	}
 
@@ -63,11 +69,12 @@ public class RandomStrongPassword extends UserAction<java.lang.String>
 	}
 
 	// BEGIN EXTRA CODE
-	public static int safeLongToInt(long l) {
+	public static int safeLongToInt(Long l) {
+		if (l == null) return 0;
 		if (l < Integer.MIN_VALUE || l > Integer.MAX_VALUE) {
 			throw new IllegalArgumentException(l + " cannot be cast to int without changing its value.");
 		}
-		return (int) l;
+		return l.intValue();
 	}
 	// END EXTRA CODE
 }
