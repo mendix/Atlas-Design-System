@@ -123,10 +123,10 @@
             li.mx-navigationtree-has-items {
                 & > ul {
                     position: relative;
-                    border-radius: var(--border-radius-default);
+                    border-radius: var(--navsidebar-border-radius);
                     li {
                         a {
-                            border-radius: var(--border-radius-default);
+                            border-radius: var(--navsidebar-border-radius);
                             color: var(--navsidebar-sub-color);
                             font-size: var(--navsidebar-sub-font-size);
                             &:hover,

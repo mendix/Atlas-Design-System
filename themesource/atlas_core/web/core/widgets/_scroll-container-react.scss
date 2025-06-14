@@ -122,8 +122,8 @@
     // Animate transitions for toggleable sidebars
     .mx-scrollcontainer-left.mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-right.mx-scrollcontainer-toggleable {
-        transition: flex-basis var(--sidebar-animation-duration) var(--sidebar-animation-function), margin-right var(--sidebar-animation-duration) var(--sidebar-animation-function),
-            margin-left var(--sidebar-animation-duration) var(--sidebar-animation-function);
+        transition: flex-basis var(--navsidebar-animation-duration) var(--navsidebar-animation-function), margin-right var(--navsidebar-animation-duration) var(--navsidebar-animation-function),
+            margin-left var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
         z-index: 1;
     }
 
@@ -168,7 +168,7 @@
 
     // Push content aside animation
     .mx-scrollcontainer-push > :not(.mx-scrollcontainer-toggleable) {
-        transition: transform var(--sidebar-animation-duration) var(--sidebar-animation-function);
+        transition: transform var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
     }
 
     .mx-scrollcontainer-push.mx-scrollcontainer-open > :not(.mx-scrollcontainer-toggleable) {

@@ -27,6 +27,12 @@ Customizing core files will make updating Atlas much more difficult in the futur
     --brand-warning: #{$brand-warning};
     --brand-danger: #{$brand-danger};
 
+    --brand-default-hover: #{$color-default-light};
+    --brand-primary-hover: #{$color-primary-darker};
+    --brand-success-hover: #{$color-success-darker};
+    --brand-warning-hover: #{$color-warning-darker};
+    --brand-danger-hover: #{$color-danger-darker};
+
     --brand-logo-height: #{$brand-logo-height};
     --brand-logo-width: #{$brand-logo-width};
 

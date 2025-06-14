@@ -35,6 +35,7 @@
             --card-border-radius: var(--layoutgrid-column-border-radius);
 
             >.row {
+
                 >.col,
                 >[class*="col-"] {
                     @extend .card;
@@ -44,6 +45,7 @@
 
         &.layoutgrid-align-stretch {
             height: 100%;
+
             >.row {
                 height: 100%;
             }
@@ -68,9 +70,27 @@
             display: flex;
             column-gap: var(--layoutgrid-column-gap);
             row-gap: var(--layoutgrid-row-gap); // wrapped items
+
             >.col,
             >[class*="col-"] {
+                --column-gap: var(--layoutgrid-column-gap);
                 background-color: var(--layoutgrid-column-bg);
+                &.card {
+                    --layoutgrid-column-bg: var(--card-bg);
+                }
+
+                >* {
+                    // ensure column gap is scoped to layout grid columns
+                    --column-gap: 0px;
+                }
+            }
+
+            &.cards {
+                >.col,
+                >[class*="col-"] {
+                    @extend .card;
+                    background-color: var(--layoutgrid-column-bg);
+                }
             }
         }
     }
@@ -104,15 +124,15 @@
         position: relative;
         width: 100%;
     }
-    
+
     // Responsiveness
     $breakpoints: (
         "" "" 0 0,
-        "sm" "-sm" $screen-sm,
-        "md" "-md" $screen-md,
-        "lg" "-lg" $screen-lg,
-        "xl" "-xl" $screen-xl,
-        "xxl" "-xxl" $screen-xxl
+        "sm" "-sm"$screen-sm,
+        "md" "-md"$screen-md,
+        "lg" "-lg"$screen-lg,
+        "xl" "-xl"$screen-xl,
+        "xxl" "-xxl"$screen-xxl
     );
 
 @each $size, $suffix, $max-width in $breakpoints {
@@ -128,15 +148,17 @@
             flex-basis: 0;
             max-width: 100%;
         }
+
         .col#{$suffix}-auto {
             flex: 0 0 auto;
             width: auto;
             max-width: 100%;
         }
+
         @for $i from 1 through 12 {
             .col#{$suffix}-#{$i} {
                 $col: calc(12 / #{$i});
-                $width: calc(100% / $col - var(--layoutgrid-column-gap) / $col * ($col - 1));
+                $width: calc(100% / $col - var(--column-gap) / $col * ($col - 1));
                 flex: 0 0 $width;
                 max-width: $width;
             }
@@ -145,6 +167,7 @@
         .order#{$suffix}-first {
             order: -1;
         }
+
         .order#{$suffix}-last {
             order: 13;
         }

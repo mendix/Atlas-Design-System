@@ -3,8 +3,8 @@
 :root {
   /* Brand Colors */
   --brand-primary: #264ae5;
-  --brand-success: #1AC61A;
-  --brand-warning: #f0b000;
+  --brand-success: #16aa16;
+  --brand-warning: #cd8501;
   --brand-danger: #EA3337;
   --brand-default: color-mix(in srgb, var(--brand-primary) 10%, #e7e7e9);
   --gray: #B8BABF;
@@ -12,6 +12,13 @@
   /* Base and contrast colors (default white and black for light theme) */
   --color-base: #fff;
   --color-contrast: #000;
+
+  /* Hover Color Variants */
+  --brand-default-hover: var(--brand-default-300);
+  --brand-primary-hover: var(--brand-primary-700);
+  --brand-success-hover: var(--brand-success-700);
+  --brand-warning-hover: var(--brand-warning-700);
+  --brand-danger-hover: var(--brand-danger-700);
 
   /* Brand Logo */
   --brand-logo-height: 24px;
@@ -24,7 +31,7 @@
   --font-color-contrast: var(--color-base);
 
   /* Global Border */
-  --border-color-default: var(--gray-300);
+  --border-color-default: var(--brand-default-300);
   --border-radius-s: 4px;
   --border-radius-m: 8px;
   --border-radius-l: 12px;
@@ -96,8 +103,8 @@
 
   /* Navigation */
   --navigation-item-height: unset;
-  --navigation-item-padding: 8px;
-  --navigation-border-radius: var(--border-radius-default);
+  --navigation-item-padding: var(--spacing-medium);
+  --navigation-border-radius: var(--border-radius-m);
   --navigation-scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
 
   --navigation-font-size: var(--font-size-default);
@@ -134,6 +141,7 @@
   --navsidebar-sub-bg-collapsed: var(--brand-primary-700);
 
   --navsidebar-border-color: var(--border-color-default);
+  --navsidebar-border-radius: var(--navigation-border-radius);
   --navsidebar-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
 
   --navsidebar-font-size: var(--font-size-default);
@@ -148,9 +156,14 @@
   --navsidebar-sub-color-hover: var(--navigation-color-hover);
   --navsidebar-sub-color-active: var(--navigation-color-active);
 
-  --navsidebar-width-closed: 52px;
+  --navsidebar-width-closed: 48px;
   --navsidebar-width-open: 232px;
   --navsidebar-toggle-size: 32px;
+
+  --navsidebar-icon-height: 48px;
+  --navsidebar-icon-width: 48px;
+  --navsidebar-animation-duration: 250ms;
+  --navsidebar-animation-function: ease-in;
 
   /* Topbar Navigation */
   --navtopbar-font-size: var(--font-size-small);
@@ -172,6 +185,7 @@
   --navtopbar-sub-color-active: var(--navigation-color-active);
 
   --navtopbar-border-color: var(--topbar-border-color);
+  --navtopbar-border-radius: var(--navigation-border-radius);
 
     /* Shadows */
   --shadow-color-border: var(--border-color-default);
@@ -197,13 +211,13 @@
 
   --form-input-bg: var(--color-base);
   --form-input-bg-focus: var(--color-base);
-  --form-input-bg-hover: var(--gray-200);
+  --form-input-bg-hover: var(--color-base);
   --form-input-bg-disabled: var(--bg-color);
   --form-input-color: var(--font-color-default);
   --form-input-focus-color: var(--form-input-color);
   --form-input-disabled-color: var(--gray-700);
   --form-input-placeholder-color: var(--gray-600);
-  --form-input-border-color: var(--gray-200);
+  --form-input-border-color: var(--brand-default);
   --form-input-border-focus-color: var(--brand-primary);
   --form-input-border-hover-color: color-mix(in srgb, var(--form-input-border-color), var(--form-input-border-focus-color) 50%);
 
@@ -217,16 +231,16 @@
   --btn-border-radius: var(--border-radius-default);
 
   --btn-default-bg: var(--color-base);
-  --btn-primary-bg: var(--brand-primary);
-  --btn-success-bg: var(--brand-success);
-  --btn-warning-bg: var(--brand-warning);
-  --btn-danger-bg: var(--brand-danger);
+  --btn-primary-bg: var(--brand-primary-600);
+  --btn-success-bg: var(--brand-success-600);
+  --btn-warning-bg: var(--brand-warning-600);
+  --btn-danger-bg: var(--brand-danger-600);
 
-  --btn-default-border-color: var(--gray-200);
-  --btn-primary-border-color: var(--brand-primary);
-  --btn-success-border-color: var(--brand-success);
-  --btn-warning-border-color: var(--brand-warning);
-  --btn-danger-border-color: var(--brand-danger);
+  --btn-default-border-color: var(--brand-default);
+  --btn-primary-border-color: var(--brand-primary-600);
+  --btn-success-border-color: var(--brand-success-600);
+  --btn-warning-border-color: var(--brand-warning-600);
+  --btn-danger-border-color: var(--brand-danger-600);
 
   --btn-default-color: var(--brand-primary);
   --btn-primary-color: var(--font-color-contrast);
@@ -236,12 +250,12 @@
 
   --btn-default-icon-color: var(--gray);
 
-  --btn-default-bg-hover: var(--gray-200);
-  --btn-primary-bg-hover: var(--brand-primary-600);
-  --btn-success-bg-hover: var(--brand-success-600);
-  --btn-warning-bg-hover: var(--brand-warning-600);
-  --btn-danger-bg-hover: var(--brand-danger-600);
-  --btn-link-bg-hover: var(--gray-50);
+  --btn-default-bg-hover: var(--brand-default-hover);
+  --btn-primary-bg-hover: var(--brand-primary-hover);
+  --btn-success-bg-hover: var(--brand-success-hover);
+  --btn-warning-bg-hover: var(--brand-warning-hover);
+  --btn-danger-bg-hover: var(--brand-danger-hover);
+  --btn-link-bg-hover: var(--brand-default-hover);
 
   /* Header */
   --header-min-height: 240px;
@@ -255,11 +269,11 @@
 
   --grid-bg: transparent;
   --grid-bg-header: transparent;
-  --grid-bg-hover: var(--gray-100);
-  --grid-bg-selected: var(--gray-200);
-  --grid-bg-selected-hover: var(--gray-300);
-  --grid-bg-striped: var(--gray-50);
-  --grid-footer-bg: var(--gray-200);
+  --grid-bg-hover: var(--brand-default-hover);
+  --grid-bg-selected: var(--brand-default);
+  --grid-bg-selected-hover: var(--brand-default-600);
+  --grid-bg-striped: var(--brand-default-50);
+  --grid-footer-bg: var(--brand-default);
 
   --grid-selected-color: var(--font-color-default);
 
@@ -271,17 +285,17 @@
   --grid-paging-color-hover: var(--brand-primary);
 
   /* Tabs */
-  --tabs-color: var(--font-color-detail);
-  --tabs-color-active: var(--font-color-default);
-  --tabs-lined-color-active: var(--font-color-default);
+  --tabs-color: var(--font-color-default);
+  --tabs-color-active: var(--font-color-detail);
+  --tabs-lined-color-active: var(--font-color-detail);
 
   --tabs-lined-border-width: 3px;
   --tabs-border-color: var(--border-color-default);
   --tabs-lined-border-color: var(--brand-primary);
   --tabs-bg: transparent;
-  --tabs-bg-pills: var(--gray-100);
-  --tabs-bg-hover: var(--gray-200);
-  --tabs-bg-active: var(--brand-primary);
+  --tabs-bg-pills: var(--brand-default-200);
+  --tabs-bg-hover: var(--brand-default-300);
+  --tabs-bg-active: var(--brand-primary-600);
 
   /* Modal */
   --modal-header-bg: transparent;
@@ -299,11 +313,12 @@
   --dataview-emptymessage-color: var(--font-color-default);
 
   /* Cards */
-  --shadow-card: var(--shadow-small) var(--shadow-color);
-  --border-card: var(--border-default);
-  --border-radius-card: var(--border-radius-m);
-  --spacing-card: var(--spacing-large);
-  --margin-bottom-card: var(--spacing-smaller);
+  --card-shadow: var(--shadow-small) var(--shadow-color);
+  --card-border: var(--border-default);
+  --card-border-radius: var(--border-radius-m);
+  --card-padding: var(--spacing-large);
+  --card-margin-bottom: var(--spacing-smaller);
+  --card-bg: var(--bg-color-secondary);
 
   /* Alerts */
   --alert-primary-bg: var(--brand-primary-50);
@@ -343,16 +358,16 @@
 
   /* Labels */
   --label-default-bg: var(--brand-default);
-  --label-primary-bg: var(--brand-primary);
-  --label-success-bg: var(--brand-success);
-  --label-warning-bg: var(--brand-warning);
-  --label-danger-bg: var(--brand-danger);
+  --label-primary-bg: var(--brand-primary-600);
+  --label-success-bg: var(--brand-success-600);
+  --label-warning-bg: var(--brand-warning-600);
+  --label-danger-bg: var(--brand-danger-600);
 
-  --label-default-border-color: var(--brand-default);
-  --label-primary-border-color: var(--brand-primary);
-  --label-success-border-color: var(--brand-success);
-  --label-warning-border-color: var(--brand-warning);
-  --label-danger-border-color: var(--brand-danger);
+  --label-default-border-color: var(--brand-default-600);
+  --label-primary-border-color: var(--brand-primary-600);
+  --label-success-border-color: var(--brand-success-600);
+  --label-warning-border-color: var(--brand-warning-600);
+  --label-danger-border-color: var(--brand-danger-600);
 
   --label-default-color: var(--font-color-default);
   --label-primary-color: var(--color-base);
@@ -361,32 +376,32 @@
   --label-danger-color: var(--color-base);
 
   /* Groupbox */
-  --groupbox-default-bg: var(--gray-200);
-  --groupbox-primary-bg: var(--brand-primary);
-  --groupbox-success-bg: var(--brand-success);
-  --groupbox-warning-bg: var(--brand-warning);
-  --groupbox-danger-bg: var(--brand-danger);
-  --groupbox-white-bg: var(--color-base);
+  --groupbox-default-bg: var(--brand-default);
+  --groupbox-primary-bg: var(--brand-primary-600);
+  --groupbox-success-bg: var(--brand-success-600);
+  --groupbox-warning-bg: var(--brand-warning-600);
+  --groupbox-danger-bg: var(--brand-danger-600);
+  --groupbox-white-bg: var(--color-base-600);
 
   --groupbox-default-color: var(--font-color-default);
-  --groupbox-primary-color: var(--color-base);
-  --groupbox-success-color: var(--color-base);
-  --groupbox-warning-color: var(--color-base);
-  --groupbox-danger-color: var(--color-base);
+  --groupbox-primary-color: var(--font-color-contrast);
+  --groupbox-success-color: var(--font-color-contrast);
+  --groupbox-warning-color: var(--font-color-contrast);
+  --groupbox-danger-color: var(--font-color-contrast);
   --groupbox-white-color: var(--font-color-default);
 
   /* Callouts */
-  --callout-primary-color: var(--brand-primary);
+  --callout-primary-color: var(--brand-primary-600);
   --callout-default-color: var(--font-color-default);
-  --callout-success-color: var(--brand-success);
-  --callout-warning-color: var(--brand-warning);
-  --callout-danger-color: var(--brand-danger);
+  --callout-success-color: var(--brand-success-700);
+  --callout-warning-color: var(--brand-warning-700);
+  --callout-danger-color: var(--brand-danger-600);
 
-  --callout-primary-bg: var(--brand-primary-200);
+  --callout-primary-bg: var(--brand-primary-100);
   --callout-default-bg: var(--gray-50);
-  --callout-success-bg: var(--brand-success-200);
-  --callout-warning-bg: var(--brand-warning-200);
-  --callout-danger-bg: var(--brand-danger-200);
+  --callout-success-bg: var(--brand-success-100);
+  --callout-warning-bg: var(--brand-warning-100);
+  --callout-danger-bg: var(--brand-danger-100);
 
   /* Timeline */
   --timeline-icon-color: var(--brand-primary);
@@ -400,23 +415,23 @@
 
   /* Accordion */
   --accordion-header-default-bg: var(--bg-color-secondary);
-  --accordion-header-default-bg-hover: var(--bg-color);
+  --accordion-header-default-bg-hover: var(--brand-default-hover);
   --accordion-header-default-color: var(--font-color-header);
   --accordion-default-border-color: var(--border-color-default);
-  --accordion-bg-striped: var(--grid-bg-striped);
-  --accordion-bg-striped-hover: var(--grid-bg-selected);
+  --accordion-bg-striped: var(--brand-default-200);
+  --accordion-bg-striped-hover: var(--brand-default-hover);
 
-  --accordion-header-primary-bg: var(--brand-primary);
+  --accordion-header-primary-bg: var(--brand-primary-600);
   --accordion-header-secondary-bg: var(--bg-color-secondary);
-  --accordion-header-success-bg: var(--brand-success);
-  --accordion-header-warning-bg: var(--brand-warning);
-  --accordion-header-danger-bg: var(--brand-danger);
+  --accordion-header-success-bg: var(--brand-success-600);
+  --accordion-header-warning-bg: var(--brand-warning-600);
+  --accordion-header-danger-bg: var(--brand-danger-600);
 
-  --accordion-header-primary-bg-hover: var(--brand-primary-600);
-  --accordion-header-secondary-bg-hover: var(--gray-50);
-  --accordion-header-success-bg-hover: var(--brand-success-600);
-  --accordion-header-warning-bg-hover: var(--brand-warning-600);
-  --accordion-header-danger-bg-hover: var(--brand-danger-600);
+  --accordion-header-primary-bg-hover: var(--brand-primary-hover);
+  --accordion-header-secondary-bg-hover: var(---brand-default-hover);
+  --accordion-header-success-bg-hover: var(--brand-success-hover);
+  --accordion-header-warning-bg-hover: var(--brand-warning-hover);
+  --accordion-header-danger-bg-hover: var(--brand-danger-hover);
 
   --accordion-header-primary-color: var(--font-color-contrast);
   --accordion-header-secondary-color: var(--brand-primary);
@@ -564,7 +579,7 @@
 
 // SASS theme options
 $brand-logo: false !default;
-$font-family-import: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
+$font-family-import: false; // "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
 $form-input-style: default !default;
 $btn-bordered: false !default; // Default value false, set to true if you want this effect
 

@@ -4,19 +4,12 @@
    Extra styling for responsive layouts
 ========================================================================== */
 @mixin layout-atlas-responsive() {
-    :root {
-        --sidebar-icon-height: 52px;
-        --sidebar-icon-width: 52px;
-        --sidebar-animation-duration: 250ms;
-        --sidebar-animation-function: ease-in;
-    }
-
     .layout-atlas {
         .mx-scrollcontainer {
             &:not(.mx-scrollcontainer-open) {
                 .region-sidebar {
                     .mx-scrollcontainer-wrapper {
-                        transition: padding var(--sidebar-animation-duration) var(--sidebar-animation-function);
+                        transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
                     }
                 }
             }            
@@ -25,7 +18,7 @@
                     .mx-scrollcontainer-wrapper {
                         padding-left: var(--spacing-medium);
                         padding-right: var(--spacing-medium);
-                        transition: padding var(--sidebar-animation-duration) var(--sidebar-animation-function);
+                        transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
                     }
                 }
             }
@@ -54,7 +47,7 @@
                         z-index: 100;
                         top: var(--topbar-minimalheight);
                         bottom: 0;
-                        left: var(--sidebar-icon-width);
+                        left: var(--navsidebar-icon-width);
                         display: block;
                         min-width: auto;
                         padding: var(--spacing-small) 0;
@@ -82,7 +75,7 @@
                             z-index: 100;
                             top: 0;
                             bottom: 0;
-                            left: var(--sidebar-icon-width);
+                            left: var(--navsidebar-icon-width);
                             display: block;
                             overflow-y: auto;
                             min-width: auto;
@@ -141,7 +134,7 @@
             }
 
             .toggle-btn {
-                width: var(--sidebar-icon-width);
+                width: var(--navsidebar-icon-width);
                 border-color: transparent;
                 border-radius: 0;
                 background: transparent;
@@ -172,12 +165,12 @@
 
                 .mx-navigationtree .navbar-inner > ul > li {
                     & > a {
-                        height: var(--sidebar-icon-height);
+                        height: var(--navsidebar-icon-height);
                         padding: var(--spacing-small) 0;
                         margin: var(--spacing-small) 0 0 0;
                         white-space: nowrap;
                         overflow: hidden;
-                        border-radius: var(--navigation-border-radius);
+                        border-radius: var(--navsidebar-border-radius);
                         // Glyph icon
                         .glyphicon,
                         .mx-icon-lined,
@@ -185,18 +178,18 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            width: var(--sidebar-icon-width);
-                            height: var(--sidebar-icon-height);
+                            width: var(--navsidebar-icon-width);
+                            height: var(--navsidebar-icon-height);
                             padding: var(--spacing-small) var(--spacing-medium);
-                            border-radius: var(--border-radius-default);
+                            border-radius: var(--navsidebar-border-radius);
                         }
                         img {
-                            width: var(--sidebar-icon-width);
+                            width: var(--navsidebar-icon-width);
                             padding: var(--spacing-small) var(--spacing-medium);
                         }
                     }
                     &.mx-navigationtree-has-items:not(.mx-navigationtree-collapsed) > a {
-                        border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+                        border-radius: var(--navsidebar-border-radius) var(--navigation-border-radius) 0 0;
                         background-color: var(--navsidebar-sub-bg-header);
                     }
                 }
@@ -273,7 +266,7 @@
     .layout-atlas-responsive-sidebar {
         .sidebar-wrapper {
             padding: var(--spacing-medium) 0 var(--spacing-medium) 0;
-            transition: padding var(--sidebar-animation-duration) var(--sidebar-animation-function);
+            transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
         }
         
         .mx-scrollcontainer-shrink {
@@ -287,7 +280,7 @@
                 position: absolute;
                 background: var(--color-base);
                 border-radius: 100%;
-                transition: all var(--sidebar-animation-duration) var(--sidebar-animation-function);
+                transition: all var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
                 color: var(--font-color-header);
                 left: calc(var(--navsidebar-width-closed) - var(--navsidebar-toggle-size) / 2);
                 .mx-icon-filled,

@@ -46,6 +46,10 @@
             background-color: var(--form-input-bg-focus);
             box-shadow: none;
         }
+        &:hover:not(:focus):not([disabled]) {
+            border-color: var(--form-input-border-hover-color);
+            background-color: var(--form-input-bg-hover);
+        }
     }
 
     .form-control[disabled],
@@ -155,10 +159,11 @@
             display: flex;
             flex-wrap: wrap;
         }
-
+    
         & > [class*="col-"] {
-            padding-right: var(--form-group-gutter);
-            padding-left: var(--form-group-gutter);
+            :not(:first-child) {
+                padding-left: var(--form-group-gutter);
+            }
         }
 
         // Alignment content
@@ -185,6 +190,41 @@
 
         &.no-columns:not(.label-after) {
             flex-direction: column;
+        }
+    }
+
+    .page-form-vertical {
+        @extend .form-vertical;
+        .form-group:not(.label-after) {
+            flex-direction: column;
+        }
+    }
+
+    .page-form-horizontal {
+        @extend .form-horizontal;
+        @media not screen and (max-width: $screen-sm-max) {
+            .form-group.no-columns:not(.label-after){
+                // overwrite default no-columns behavior when
+                // page form orientation is set to horizontal
+                flex-direction: row;
+            }
+        }
+
+        $label-breakpoints: sm, md, lg, xl, xxl;
+        @each $bp in $label-breakpoints {
+            &:not([class*="form-label-width-"]){
+                // default label width 3 if none specified
+                .form-group > label {
+                    @extend .col-#{$bp}-3;
+                }
+            }
+            @for $i from 1 through 11 {
+                &.form-label-width-#{$i} {
+                    .form-group > label {
+                        @extend .col-#{$bp}-#{$i};
+                    }
+                }
+            }
         }
     }
 

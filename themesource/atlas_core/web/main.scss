@@ -17,6 +17,7 @@
 @if $font-family-import != false {
     @import url($font-family-import);
 }
+@import "./poppins";
 
 //=============================== Bootstrap ================================\\
 

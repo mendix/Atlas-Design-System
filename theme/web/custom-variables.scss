@@ -1,30 +1,37 @@
 // Theme options
 $brand-logo: false;
-$font-family-import: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap";
+$font-family-import: false;
 $form-input-style: default;
 $btn-bordered: false; // Default value false, set to true if you want this effect
 
 :root {
-    /* Brand Colors */
+  /* Brand Colors */
     --brand-primary: #264ae5;
-    --brand-success: #1AC61A;
-    --brand-warning: #f0b000;
+    --brand-success: #16aa16;
+    --brand-warning: #cd8501;
     --brand-danger: #EA3337;
     --brand-default: color-mix(in srgb, var(--brand-primary) 10%, #e7e7e9);
     --gray: #B8BABF;
 
-    /* Brand Logo */
+  /* Hover Color Variants */
+    // --brand-default-hover: var(--brand-default-300);
+    // --brand-primary-hover: var(--brand-primary-700);
+    // --brand-success-hover: var(--brand-success-700);
+    // --brand-warning-hover: var(--brand-warning-700);
+    // --brand-danger-hover: var(--brand-danger-700);
+
+  /* Brand Logo */
     // --brand-logo-height: 24px;
     // --brand-logo-width: 32px;
     // --brand-gradient: linear-gradient(to bottom, var(--brand-primary-900), var(--brand-primary-700));
 
-    /* Default Font Size & Color */
+  /* Default Font Size & Color */
     // --font-size-default: 14px;
     // --font-color-default: var(--gray-900);
     // --font-color-contrast: var(--color-base);
 
-    /* Global Border */
-    // --border-color-default: var(--gray-300);
+  /* Global Border */
+    // --border-color-default: var(--brand-default-300);
     // --border-radius-s: 4px;
     // --border-radius-m: 8px;
     // --border-radius-l: 12px;
@@ -35,45 +42,45 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --border-width-default: var(--border-width-thin);
     // --border-default: var(--border-width-default) solid var(--border-color-default);
 
-    /* Topbar */
+  /* Topbar */
     // --topbar-bg: linear-gradient(to bottom, var(--brand-primary-500), var(--brand-primary-600));
     // --topbar-minimalheight: 48px;
     // --topbar-border-color: var(--border-color-default);
 
-    /* Sidebar */
+  /* Sidebar */
     // --sidebar-bg: linear-gradient(to bottom, var(--brand-primary-600), var(--brand-primary-700));
 
-    /* Topbar mobile */
+  /* Topbar mobile */
     // --m-header-height: 45px;
     // --m-header-bg: var(--topbar-bg);
     // --m-header-color: var(--font-color-contrast);
     // --m-header-title-size: 16px;
 
-    /* Navbar Brand Name */
+  /* Navbar Brand Name */
     // --navbar-brand-name: var(--font-color-default);
 
-    /* Background Colors */
+  /* Background Colors */
     // --bg-color: var(--brand-default-100);
     // --bg-color-secondary: var(--color-base);
 
-    /* Default Link Color */
+  /* Default Link Color */
     // --link-color: var(--brand-primary);
     // --link-hover-color: var(--brand-primary-400);
 
-    /* Font Family */
+  /* Font Family */
     // --font-family-base: "Poppins", sans-serif;
 
-    /* Font Sizes */
+  /* Font Sizes */
     // --font-size-large: 18px;
     // --font-size-small: 12px;
 
-    /* Font Weights */
+  /* Font Weights */
     // --font-weight-light: 300;
     // --font-weight-normal: 400;
     // --font-weight-semibold: 600;
     // --font-weight-bold: 700;
 
-    /* Header Font Sizes */
+  /* Header Font Sizes */
     // --font-size-h1: 34px;
     // --font-size-h2: 26px;
     // --font-size-h3: 24px;
@@ -81,23 +88,23 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --font-size-h5: var(--font-size-default);
     // --font-size-h6: 12px;
 
-    /* Header Font Weight */
+  /* Header Font Weight */
     // --font-weight-header: var(--font-weight-semibold);
 
-    /* Line Height */
+  /* Line Height */
     // --line-height-base: 1.428571429;
 
-    /* Header Margin */
+  /* Header Margin */
     // --font-header-margin: 0 0 8px 0;
 
-    /* Font Colors */
+  /* Font Colors */
     // --font-color-detail: var(--brand-primary-700);
     // --font-color-header: var(--brand-primary-800);
 
-    /* Navigation */
+  /* Navigation */
     // --navigation-item-height: unset;
-    // --navigation-item-padding: 8px;
-    // --navigation-border-radius: var(--border-radius-default);
+    // --navigation-item-padding: var(--spacing-medium);
+    // --navigation-border-radius: var(--border-radius-m);
     // --navigation-scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
 
     // --navigation-font-size: var(--font-size-default);
@@ -112,7 +119,7 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --navigation-sub-color-hover: var(--navigation-color-hover);
     // --navigation-sub-color-active: var(--navigation-color-active);
 
-    /* Sidebar Navigation */
+  /* Sidebar Navigation */
     // --navigation-bg: var(--topbar-bg);
     // --navigation-bg-hover: rgba(0, 0, 0, 0.2);
     // --navigation-bg-active: rgba(0, 0, 0, 0.3);
@@ -134,6 +141,7 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --navsidebar-sub-bg-collapsed: var(--brand-primary-700);
 
     // --navsidebar-border-color: var(--border-color-default);
+    // --navsidebar-border-radius: var(--navigation-border-radius);
     // --navsidebar-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
 
     // --navsidebar-font-size: var(--font-size-default);
@@ -148,11 +156,16 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --navsidebar-sub-color-hover: var(--navigation-color-hover);
     // --navsidebar-sub-color-active: var(--navigation-color-active);
 
-    // --navsidebar-width-closed: 52px;
+    // --navsidebar-width-closed: 48px;
     // --navsidebar-width-open: 232px;
     // --navsidebar-toggle-size: 32px;
 
-    /* Topbar Navigation */
+    // --navsidebar-icon-height: 48px;
+    // --navsidebar-icon-width: 48px;
+    // --navsidebar-animation-duration: 250ms;
+    // --navsidebar-animation-function: ease-in;
+
+  /* Topbar Navigation */
     // --navtopbar-font-size: var(--font-size-small);
     // --navtopbar-sub-font-size: var(--font-size-small);
     // --navtopbar-glyph-size: 1.2em;
@@ -172,15 +185,16 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --navtopbar-sub-color-active: var(--navigation-color-active);
 
     // --navtopbar-border-color: var(--topbar-border-color);
+    // --navtopbar-border-radius: var(--navigation-border-radius);
 
-    //  /* Shadows */
+    /* Shadows */
     // --shadow-color-border: var(--border-color-default);
     // --shadow-color: var(--brand-default-300);
     // --shadow-small: 0 2px 4px 0;
     // --shadow-medium: 0 4px 6px 0;
     // --shadow-large: 0 8px 10px 0;
 
-    /* Form Inputs */
+  /* Form Inputs */
     // --form-label-color: var(--font-color-default);
     // --form-label-size: var(--font-size-default);
     // --form-label-weight: var(--font-weight-normal);
@@ -197,13 +211,13 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
 
     // --form-input-bg: var(--color-base);
     // --form-input-bg-focus: var(--color-base);
-    // --form-input-bg-hover: var(--gray-200);
+    // --form-input-bg-hover: var(--color-base);
     // --form-input-bg-disabled: var(--bg-color);
     // --form-input-color: var(--font-color-default);
     // --form-input-focus-color: var(--form-input-color);
     // --form-input-disabled-color: var(--gray-700);
     // --form-input-placeholder-color: var(--gray-600);
-    // --form-input-border-color: var(--gray-200);
+    // --form-input-border-color: var(--brand-default);
     // --form-input-border-focus-color: var(--brand-primary);
     // --form-input-border-hover-color: color-mix(in srgb, var(--form-input-border-color), var(--form-input-border-focus-color) 50%);
 
@@ -212,21 +226,21 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --form-group-margin-bottom: 16px;
     // --form-group-gutter: 16px;
 
-    //   /* Buttons */
+    /* Buttons */
     // --btn-font-size: var(--font-size-default);
     // --btn-border-radius: var(--border-radius-default);
 
     // --btn-default-bg: var(--color-base);
-    // --btn-primary-bg: var(--brand-primary);
-    // --btn-success-bg: var(--brand-success);
-    // --btn-warning-bg: var(--brand-warning);
-    // --btn-danger-bg: var(--brand-danger);
+    // --btn-primary-bg: var(--brand-primary-600);
+    // --btn-success-bg: var(--brand-success-600);
+    // --btn-warning-bg: var(--brand-warning-600);
+    // --btn-danger-bg: var(--brand-danger-600);
 
-    // --btn-default-border-color: var(--gray-200);
-    // --btn-primary-border-color: var(--brand-primary);
-    // --btn-success-border-color: var(--brand-success);
-    // --btn-warning-border-color: var(--brand-warning);
-    // --btn-danger-border-color: var(--brand-danger);
+    // --btn-default-border-color: var(--brand-default);
+    // --btn-primary-border-color: var(--brand-primary-600);
+    // --btn-success-border-color: var(--brand-success-600);
+    // --btn-warning-border-color: var(--brand-warning-600);
+    // --btn-danger-border-color: var(--brand-danger-600);
 
     // --btn-default-color: var(--brand-primary);
     // --btn-primary-color: var(--font-color-contrast);
@@ -236,30 +250,30 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
 
     // --btn-default-icon-color: var(--gray);
 
-    // --btn-default-bg-hover: var(--gray-200);
-    // --btn-primary-bg-hover: var(--brand-primary-600);
-    // --btn-success-bg-hover: var(--brand-success-600);
-    // --btn-warning-bg-hover: var(--brand-warning-600);
-    // --btn-danger-bg-hover: var(--brand-danger-600);
-    // --btn-link-bg-hover: var(--gray-50);
+    // --btn-default-bg-hover: var(--brand-default-hover);
+    // --btn-primary-bg-hover: var(--brand-primary-hover);
+    // --btn-success-bg-hover: var(--brand-success-hover);
+    // --btn-warning-bg-hover: var(--brand-warning-hover);
+    // --btn-danger-bg-hover: var(--brand-danger-hover);
+    // --btn-link-bg-hover: var(--brand-default-hover);
 
-    /* Header */
+  /* Header */
     // --header-min-height: 240px;
     // --header-bg-color: var(--brand-primary);
     // --header-bgimage-filter: brightness(60%);
     // --header-text-color: var(--color-base);
     // --header-text-color-detail: rgba(0, 0, 0, 0.2);
 
-    /* Grid */
+  /* Grid */
     // --grid-border-color: var(--border-color-default);
 
     // --grid-bg: transparent;
     // --grid-bg-header: transparent;
-    // --grid-bg-hover: var(--gray-100);
-    // --grid-bg-selected: var(--gray-200);
-    // --grid-bg-selected-hover: var(--gray-300);
-    // --grid-bg-striped: var(--gray-50);
-    // --grid-footer-bg: var(--gray-200);
+    // --grid-bg-hover: var(--brand-default-hover);
+    // --grid-bg-selected: var(--brand-default);
+    // --grid-bg-selected-hover: var(--brand-default-600);
+    // --grid-bg-striped: var(--brand-default-50);
+    // --grid-footer-bg: var(--brand-default);
 
     // --grid-selected-color: var(--font-color-default);
 
@@ -270,27 +284,27 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --grid-paging-color: var(--gray-300);
     // --grid-paging-color-hover: var(--brand-primary);
 
-    /* Tabs */
-    // --tabs-color: var(--font-color-detail);
-    // --tabs-color-active: var(--font-color-default);
-    // --tabs-lined-color-active: var(--font-color-default);
+  /* Tabs */
+    // --tabs-color: var(--font-color-default);
+    // --tabs-color-active: var(--font-color-detail);
+    // --tabs-lined-color-active: var(--font-color-detail);
 
     // --tabs-lined-border-width: 3px;
     // --tabs-border-color: var(--border-color-default);
     // --tabs-lined-border-color: var(--brand-primary);
     // --tabs-bg: transparent;
-    // --tabs-bg-pills: var(--gray-100);
-    // --tabs-bg-hover: var(--gray-200);
-    // --tabs-bg-active: var(--brand-primary);
+    // --tabs-bg-pills: var(--brand-default-200);
+    // --tabs-bg-hover: var(--brand-default-300);
+    // --tabs-bg-active: var(--brand-primary-600);
 
-    /* Modal */
+  /* Modal */
     // --modal-header-bg: transparent;
     // --modal-header-border-color: var(--border-color-default);
     // --modal-header-color: var(--font-color-header);
     // --modal-body-bg: var(--bg-color-secondary);
     // --modal-footer-bg: var(--bg-color-secondary);
 
-    /* Data View */
+  /* Data View */
     // --dataview-controls-bg: inherit;
     // --dataview-controls-border-color: var(--border-color-default);
     // --dataview-controls-alignment: left;
@@ -298,14 +312,15 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --dataview-emptymessage-bg: var(--bg-color);
     // --dataview-emptymessage-color: var(--font-color-default);
 
-    // /* Cards */
-    // --shadow-card: var(--shadow-small) var(--shadow-color);
-    // --border-card: var(--border-default);
-    // --border-radius-card: var(--border-radius-m);
-    // --spacing-card: var(--spacing-large);
-    // --margin-bottom-card: var(--spacing-smaller);
+  /* Cards */
+    // --card-shadow: var(--shadow-small) var(--shadow-color);
+    // --card-border: var(--border-default);
+    // --card-border-radius: var(--border-radius-m);
+    // --card-padding: var(--spacing-large);
+    // --card-margin-bottom: var(--spacing-smaller);
+    // --card-bg: var(--bg-color-secondary);
 
-    /* Alerts */
+  /* Alerts */
     // --alert-primary-bg: var(--brand-primary-50);
     // --alert-success-bg: var(--brand-success-50);
     // --alert-warning-bg: var(--brand-warning-50);
@@ -321,7 +336,7 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --alert-warning-border-color: var(--brand-warning-600);
     // --alert-danger-border-color: var(--brand-danger-600);
 
-    /* Wizard */
+  /* Wizard */
     // --wizard-step-height: 48px;
     // --wizard-step-number-size: 64px;
     // --wizard-step-number-font-size: var(--font-size-h3);
@@ -341,18 +356,18 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --wizard-visited-step-color: var(--brand-success-700);
     // --wizard-visited-border-color: var(--brand-success-700);
 
-    /* Labels */
+  /* Labels */
     // --label-default-bg: var(--brand-default);
-    // --label-primary-bg: var(--brand-primary);
-    // --label-success-bg: var(--brand-success);
-    // --label-warning-bg: var(--brand-warning);
-    // --label-danger-bg: var(--brand-danger);
+    // --label-primary-bg: var(--brand-primary-600);
+    // --label-success-bg: var(--brand-success-600);
+    // --label-warning-bg: var(--brand-warning-600);
+    // --label-danger-bg: var(--brand-danger-600);
 
-    // --label-default-border-color: var(--brand-default);
-    // --label-primary-border-color: var(--brand-primary);
-    // --label-success-border-color: var(--brand-success);
-    // --label-warning-border-color: var(--brand-warning);
-    // --label-danger-border-color: var(--brand-danger);
+    // --label-default-border-color: var(--brand-default-600);
+    // --label-primary-border-color: var(--brand-primary-600);
+    // --label-success-border-color: var(--brand-success-600);
+    // --label-warning-border-color: var(--brand-warning-600);
+    // --label-danger-border-color: var(--brand-danger-600);
 
     // --label-default-color: var(--font-color-default);
     // --label-primary-color: var(--color-base);
@@ -360,35 +375,35 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --label-warning-color: var(--color-base);
     // --label-danger-color: var(--color-base);
 
-    /* Groupbox */
-    // --groupbox-default-bg: var(--gray-200);
-    // --groupbox-primary-bg: var(--brand-primary);
-    // --groupbox-success-bg: var(--brand-success);
-    // --groupbox-warning-bg: var(--brand-warning);
-    // --groupbox-danger-bg: var(--brand-danger);
-    // --groupbox-white-bg: var(--color-base);
+  /* Groupbox */
+    // --groupbox-default-bg: var(--brand-default);
+    // --groupbox-primary-bg: var(--brand-primary-600);
+    // --groupbox-success-bg: var(--brand-success-600);
+    // --groupbox-warning-bg: var(--brand-warning-600);
+    // --groupbox-danger-bg: var(--brand-danger-600);
+    // --groupbox-white-bg: var(--color-base-600);
 
     // --groupbox-default-color: var(--font-color-default);
-    // --groupbox-primary-color: var(--color-base);
-    // --groupbox-success-color: var(--color-base);
-    // --groupbox-warning-color: var(--color-base);
-    // --groupbox-danger-color: var(--color-base);
+    // --groupbox-primary-color: var(--font-color-contrast);
+    // --groupbox-success-color: var(--font-color-contrast);
+    // --groupbox-warning-color: var(--font-color-contrast);
+    // --groupbox-danger-color: var(--font-color-contrast);
     // --groupbox-white-color: var(--font-color-default);
 
-    /* Callouts */
-    // --callout-primary-color: var(--brand-primary);
+  /* Callouts */
+    // --callout-primary-color: var(--brand-primary-600);
     // --callout-default-color: var(--font-color-default);
-    // --callout-success-color: var(--brand-success);
-    // --callout-warning-color: var(--brand-warning);
-    // --callout-danger-color: var(--brand-danger);
+    // --callout-success-color: var(--brand-success-700);
+    // --callout-warning-color: var(--brand-warning-700);
+    // --callout-danger-color: var(--brand-danger-600);
 
-    // --callout-primary-bg: var(--brand-primary-200);
+    // --callout-primary-bg: var(--brand-primary-100);
     // --callout-default-bg: var(--gray-50);
-    // --callout-success-bg: var(--brand-success-200);
-    // --callout-warning-bg: var(--brand-warning-200);
-    // --callout-danger-bg: var(--brand-danger-200);
+    // --callout-success-bg: var(--brand-success-100);
+    // --callout-warning-bg: var(--brand-warning-100);
+    // --callout-danger-bg: var(--brand-danger-100);
 
-    /* Timeline */
+  /* Timeline */
     // --timeline-icon-color: var(--brand-primary);
     // --timeline-border-color: var(--border-color-default);
     // --timeline-event-time-color: var(--brand-primary);
@@ -398,25 +413,25 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --timeline-grouping-border-radius: 30px;
     // --timeline-grouping-border-color: var(--timeline-border-color);
 
-    /* Accordion */
+  /* Accordion */
     // --accordion-header-default-bg: var(--bg-color-secondary);
-    // --accordion-header-default-bg-hover: var(--bg-color);
+    // --accordion-header-default-bg-hover: var(--brand-default-hover);
     // --accordion-header-default-color: var(--font-color-header);
     // --accordion-default-border-color: var(--border-color-default);
-    // --accordion-bg-striped: var(--grid-bg-striped);
-    // --accordion-bg-striped-hover: var(--grid-bg-selected);
+    // --accordion-bg-striped: var(--brand-default-200);
+    // --accordion-bg-striped-hover: var(--brand-default-hover);
 
-    // --accordion-header-primary-bg: var(--brand-primary);
+    // --accordion-header-primary-bg: var(--brand-primary-600);
     // --accordion-header-secondary-bg: var(--bg-color-secondary);
-    // --accordion-header-success-bg: var(--brand-success);
-    // --accordion-header-warning-bg: var(--brand-warning);
-    // --accordion-header-danger-bg: var(--brand-danger);
+    // --accordion-header-success-bg: var(--brand-success-600);
+    // --accordion-header-warning-bg: var(--brand-warning-600);
+    // --accordion-header-danger-bg: var(--brand-danger-600);
 
-    // --accordion-header-primary-bg-hover: var(--brand-primary-600);
-    // --accordion-header-secondary-bg-hover: var(--gray-50);
-    // --accordion-header-success-bg-hover: var(--brand-success-600);
-    // --accordion-header-warning-bg-hover: var(--brand-warning-600);
-    // --accordion-header-danger-bg-hover: var(--brand-danger-600);
+    // --accordion-header-primary-bg-hover: var(--brand-primary-hover);
+    // --accordion-header-secondary-bg-hover: var(---brand-default-hover);
+    // --accordion-header-success-bg-hover: var(--brand-success-hover);
+    // --accordion-header-warning-bg-hover: var(--brand-warning-hover);
+    // --accordion-header-danger-bg-hover: var(--brand-danger-hover);
 
     // --accordion-header-primary-color: var(--font-color-contrast);
     // --accordion-header-secondary-color: var(--brand-primary);
@@ -430,7 +445,7 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --accordion-warning-border-color: var(--brand-warning);
     // --accordion-danger-border-color: var(--brand-danger);
 
-    /* Spacing */
+  /* Spacing */
     // --spacing-none: 0px;
     // --spacing-smallest: 2px;
     // --spacing-smaller: 4px;
@@ -473,7 +488,7 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --padding-table-cell-left: 8px;
     // --padding-table-cell-right: 8px;
 
-    /* Brand Variants */
+  /* Brand Variants */
     // --btn-inverse-bg: var(--brand-primary-400);
     // --btn-info-bg: var(--brand-primary-300);
     // --btn-inverse-border-color: var(--brand-primary-400);
@@ -485,12 +500,12 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --btn-inverse-bg-hover: var(--brand-primary-300);
     // --btn-info-bg-hover: var(--brand-primary-300);
 
-    /* Alerts */
+  /* Alerts */
     // --alert-info-bg: var(--brand-primary-50);
     // --alert-info-color: var(--brand-primary-600);
     // --alert-info-border-color: var(--brand-primary);
 
-    /* Labels */
+  /* Labels */
     // --label-info-bg: var(--brand-primary-300);
     // --label-inverse-bg: var(--brand-primary-600);
 
@@ -500,14 +515,14 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --label-info-color: var(--color-base);
     // --label-inverse-color: var(--color-base);
 
-    /* Groupbox */
+  /* Groupbox */
     // --groupbox-inverse-bg: var(--brand-primary-600);
     // --groupbox-info-bg: var(--brand-primary-300);
 
     // --groupbox-inverse-color: var(--color-base);
     // --groupbox-info-color: var(--color-base);
 
-    /* Callouts */
+  /* Callouts */
     // --callout-info-color: var(--brand-primary-300);
     // --callout-info-bg: var(--brand-primary-50);
 
@@ -518,14 +533,14 @@ $btn-bordered: false; // Default value false, set to true if you want this effec
     // --screen-xl: #{$screen-xl};
     // --screen-xxl: #{$screen-xxl};
 
-    /* Legacy variables */
+  /* Legacy variables */
     // --gray-lighter: var(--gray-50);
     // --gray-light: var(--gray-300);
     // --gray-primary: var(--gray-200);
     // --gray-dark: var(--gray-700);
     // --gray-darker: var(--gray-800);
 
-    /* Color variations */
+  /* Color variations */
     // --color-default-darker: var(--gray-700);
     // --color-default-dark: var(--gray-600);
     // --color-default-light: var(--gray-100);

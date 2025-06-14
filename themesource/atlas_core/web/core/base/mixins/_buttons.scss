@@ -5,7 +5,7 @@
 // To customize any core styling, copy the part you want to customize to styles/web/sass/app/ so the core styling is overwritten.
 //
 
-@mixin button-variant($color, $background, $border, $hover) {
+@mixin button-variant($color, $background, $border, $hover, $accent) {
     @if not $exclude-button {
         color: $color;
         border-color: $border;
@@ -40,8 +40,8 @@
         }
         &.btn-style-icon {
             @if $color != var(--btn-default-color) {
-                color: $border;
-                background: color-mix(in srgb, white, $border 15%);
+                color: $accent;
+                background: color-mix(in srgb, white, $background 15%);
             }
 
             &:hover,
