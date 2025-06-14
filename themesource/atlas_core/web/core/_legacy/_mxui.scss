@@ -2352,11 +2352,6 @@ Main class hierarchy:
         display: inline-block;
     }
 
-    .form-horizontal .form-group.no-columns {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
     .mx-radiobuttons.inline .radio {
         display: inline-block;
         margin-right: 20px;
@@ -2379,19 +2374,6 @@ Main class hierarchy:
         margin-bottom: 10px;
         white-space: pre-line;
     }
-
-    //.mx-compound-control {
-    //    display: flex;
-    //}
-
-    //.mx-compound-control button {
-    //    margin-left: 5px;
-    //}
-    //
-    //[dir="rtl"] .mx-compound-control button {
-    //    margin-left: 0;
-    //    margin-right: 5px;
-    //}
 
     .mx-tooltip {
         margin: 10px;
@@ -2617,9 +2599,6 @@ Main class hierarchy:
     .mx-datagrid tbody tr:first-child td {
         border-top: none;
     }
-    //.mx-datagrid tbody tr:nth-child(2n+1) td {
-    //    background-color: #f9f9f9;
-    //}
     .mx-datagrid tbody .selected td {
         background-color: #eee;
     }
@@ -2708,12 +2687,6 @@ Main class hierarchy:
     .mx-navigationtree ul {
         list-style: none;
     }
-    //.mx-navigationtree ul li {
-    //    border-bottom: 1px solid #dfe6ea;
-    //}
-    //.mx-navigationtree li:last-child {
-    //    border-style: none;
-    //}
     .mx-navigationtree a {
         display: block;
         padding: 5px 10px;
@@ -2733,9 +2706,6 @@ Main class hierarchy:
         margin: 0;
         padding: 0;
     }
-    //.mx-navigationtree ul li {
-    //    padding: 5px 0;
-    //}
     .mx-navigationtree ul li ul {
         padding: 0;
         margin-left: 10px;
@@ -2954,31 +2924,6 @@ Main class hierarchy:
     .mx-listview > ul {
         padding: 0px;
         list-style: none;
-    }
-    // .mx-listview > ul > li {
-    //     padding: 5px 10px 10px;
-    //     border: 1px #ddd;
-    //     border-style: solid solid none;
-    //     background-color: #fff;
-    //     outline: none;
-    // }
-    // .mx-listview > ul > li:first-child {
-    //     border-top-left-radius: 4px;
-    //     border-top-right-radius: 4px;
-    // }
-    // .mx-listview > ul > li:last-child {
-    //     border-bottom-style: solid;
-    //     border-bottom-left-radius: 4px;
-    //     border-bottom-right-radius: 4px;
-    // }
-    //.mx-listview li:nth-child(2n+1) {
-    //    background: #f9f9f9;
-    //}
-    //.mx-listview li:nth-child(2n+1):hover {
-    //    background: #f5f5f5;
-    //}
-    .mx-listview > ul > li.selected {
-        //    background: #eee;
     }
     .mx-listview-clickable > ul > li {
         cursor: pointer;

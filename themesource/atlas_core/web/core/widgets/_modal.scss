@@ -24,7 +24,7 @@
                 border-radius: 0; // Because of the class .mx-window-active in mxui.css
                 background-color: var(--modal-header-bg);
 
-                h4 {
+                h2, h4 {
                     margin: 0;
                     color: var(--modal-header-color);
                     font-size: 16px;
@@ -127,7 +127,7 @@
             font-size: 16px;
         }
 
-        h4 {
+        h2, h4 {
             color: #aaaaaa;
             font-size: 20px;
             font-weight: var(--font-weight-bold);

@@ -86,7 +86,7 @@
                     border: 0;
 
                     a {
-                        padding: var(--spacing-medium);
+                        padding: var(--navigation-item-padding);
                         text-decoration: none;
                         color: var(--navigation-sub-color);
                         border: 0;
@@ -115,7 +115,7 @@
             }
 
             &:not(.mx-navigationtree-collapsed) {
-                border-radius: var(--border-radius-default);
+                border-radius: var(--navigation-border-radius);
                 background-color: var(--navigation-sub-bg);
             }
         }
