@@ -66,6 +66,10 @@
 @if not $exclude-card {
     @include card();
 }
+@import "core/base/focus-ring";
+@if not $exclude-focus-ring {
+    @include focus-ring();
+}
 
 // Widgets
 @import "core/widgets/input";

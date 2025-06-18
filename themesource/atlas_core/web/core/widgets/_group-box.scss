@@ -29,6 +29,9 @@
             .mx-groupbox-collapse-icon {
                 margin-top: 0.1em;
             }
+            &:focus-visible {
+                @extend .focus-ring !optional;
+            }
         }
 
         // Header options

@@ -100,10 +100,11 @@
                         }
 
                         &:hover,
-                        &:focus,
                         &.active {
                             color: var(--navigation-sub-color-hover);
-                            outline: 0;
+                        }
+                        &:focus-visible {
+                            @extend .focus-ring !optional;
                         }
 
                         &.active {
@@ -120,9 +121,8 @@
             }
         }
 
-        /* remove focus */
-        &:focus {
-            outline: 0;
+        &:focus-visible {
+            @extend .focus-ring !optional;
         }
     }
 }

@@ -67,6 +67,11 @@
             pointer-events: none;
             background-color: var(--form-input-border-focus-color);
         }
+        
+        &:focus-visible {
+            border-radius: 100%;
+            @extend .focus-ring !optional;
+        }
 
         &:not(:checked):after {
             transform: translate(-50%, -50%) scale(0);

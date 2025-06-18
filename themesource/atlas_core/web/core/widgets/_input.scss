@@ -41,10 +41,9 @@
     .form-control:not([readonly]) {
         &:focus,
         &:focus-within {
-            border-color: var(--form-input-border-focus-color);
-            outline: 0;
             background-color: var(--form-input-bg-focus);
             box-shadow: none;
+            @extend .focus-ring !optional;
         }
         &:hover:not(:focus):not([disabled]) {
             border-color: var(--form-input-border-hover-color);

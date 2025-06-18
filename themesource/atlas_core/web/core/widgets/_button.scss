@@ -34,12 +34,17 @@
         font-size: var(--btn-font-size);
         line-height: var(--line-height-base);
 
-        &:hover,
-        &:focus,
-        &:active,
-        &:active:focus {
+        &:hover {
+            // border-color: var(--form-input-border-hover-color);
             outline: none;
             box-shadow: none;
+        }
+        &:active {
+            outline: none;
+            box-shadow: none;
+        }
+        &:focus-visible {
+            @extend .focus-ring !optional;
         }
 
         &[aria-disabled] {
@@ -62,6 +67,9 @@
             cursor: not-allowed;
             pointer-events: none;
             opacity: 0.65;
+        }
+        &:focus-visible {
+            @extend .focus-ring !optional;
         }
     }
 

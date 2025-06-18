@@ -14,7 +14,7 @@
   --color-contrast: #000;
 
   /* Hover Color Variants */
-  --brand-default-hover: var(--brand-default-300);
+  --brand-default-hover: var(--brand-default-100);
   --brand-primary-hover: var(--brand-primary-700);
   --brand-success-hover: var(--brand-success-700);
   --brand-warning-hover: var(--brand-warning-700);
@@ -41,6 +41,10 @@
   --border-width-thick: 3px;
   --border-width-default: var(--border-width-thin);
   --border-default: var(--border-width-default) solid var(--border-color-default);
+
+  /* Focus indicators for accessibility */
+  --focus-outline: 2px solid var(--form-input-border-focus-color);
+  --focus-outline-offset: 2px;
 
   /* Topbar */
   --topbar-bg: linear-gradient(to bottom, var(--brand-primary-500), var(--brand-primary-600));
@@ -208,7 +212,7 @@
   --form-input-font-size: var(--form-label-size);
   --form-input-line-height: var(--line-height-base);
   --form-input-border-radius: 6px;
-
+  
   --form-input-bg: var(--color-base);
   --form-input-bg-focus: var(--color-base);
   --form-input-bg-hover: var(--color-base);
@@ -256,6 +260,13 @@
   --btn-warning-bg-hover: var(--brand-warning-hover);
   --btn-danger-bg-hover: var(--brand-danger-hover);
   --btn-link-bg-hover: var(--brand-default-hover);
+
+  --btn-default-bg-active: var(--brand-default-300);
+  --btn-primary-bg-active: var(--brand-primary-500);
+  --btn-success-bg-active: var(--brand-success-500);
+  --btn-warning-bg-active: var(--brand-warning-500);
+  --btn-danger-bg-active: var(--brand-danger-500);
+  --btn-link-bg-active: var(--brand-default-500);
 
   /* Header */
   --header-min-height: 240px;
@@ -579,7 +590,7 @@
 
 // SASS theme options
 $brand-logo: false !default;
-$font-family-import: false; // "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
+$font-family-import: false !default; // "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
 $form-input-style: default !default;
 $btn-bordered: false !default; // Default value false, set to true if you want this effect
 

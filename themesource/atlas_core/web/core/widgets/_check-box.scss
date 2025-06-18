@@ -95,5 +95,10 @@
         & + .control-label {
             margin-left: var(--form-label-gutter);
         }
+
+        &:focus-visible {
+            border-radius: var(--form-input-border-radius);
+            @extend .focus-ring !optional;
+        }
     }
 }

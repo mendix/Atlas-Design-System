@@ -27,6 +27,7 @@
     a {
         transition: 0.25s;
         color: var(--link-color);
+        text-decoration: none;
         -webkit-backface-visibility: hidden;
     }
 
@@ -37,7 +38,12 @@
 
     // Address `outline` inconsistency between Chrome and other browsers.
     a:focus {
-        outline: thin dotted;
+        outline: 0;
+    }
+
+    // Improve accessibility when navigating using the keyboard
+    a:focus-visible {
+        @extend .focus-ring !optional;
     }
 
     // Improve readability when focused and also mouse hovered in all browsers

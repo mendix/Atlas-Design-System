@@ -143,8 +143,8 @@ $default-ios-color: rgb(100, 189, 99);
 
 @mixin switch() {
     .widget-switch-btn-wrapper {
-        &:focus {
-            outline: 1px solid var(--brand-primary);
+        &:focus-visible {
+            @extend .focus-ring !optional;
         }
     }
 

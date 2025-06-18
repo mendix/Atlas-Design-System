@@ -51,7 +51,8 @@
 
 .has-focus{
     input, textarea, select{
-        border-color: var(--form-input-border-focus-color);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-outline-offset);
     }
 }
 .demo-grid{
