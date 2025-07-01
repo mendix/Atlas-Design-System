@@ -84,7 +84,7 @@
 
         &:checked:disabled:before {
             border-color: transparent;
-            background-color: rgba(var(--form-input-border-focus-color), 0.4);
+            background-color: color-mix(in srgb, var(--form-input-border-focus-color) 40%, transparent);
         }
 
         &:disabled:after,

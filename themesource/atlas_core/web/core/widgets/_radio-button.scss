@@ -99,11 +99,11 @@
         }
 
         &:checked:disabled:before {
-            border-color: rgba(var(--form-input-border-focus-color), 0.4);
+            border-color: color-mix(in srgb, var(--form-input-border-focus-color) 40%, transparent);
         }
 
         &:checked:disabled:after {
-            background-color: rgba(var(--form-input-border-focus-color), 0.4);
+            background-color: color-mix(in srgb, var(--form-input-border-focus-color) 40%, transparent);
         }
 
         & + label {

@@ -158,12 +158,6 @@
             display: flex;
             flex-wrap: wrap;
         }
-    
-        & > [class*="col-"] {
-            :not(:first-child) {
-                padding-left: var(--form-group-gutter);
-            }
-        }
 
         // Alignment content
         div[class*="textBox"] > .control-label,

@@ -168,7 +168,7 @@
             height: 100%;
             animation: makePointer 1s ease-out both;
             background: left / cover no-repeat
-                    linear-gradient(to right, rgba(var(--brand-primary), 0.9) 0%, rgba(var(--brand-primary), 0.6) 100%),
+                    linear-gradient(to right, color-mix(in srgb, var(--brand-primary) 90%, transparent) 0%, color-mix(in srgb, var(--brand-primary) 60%, transparent) 100%),
                 left / cover no-repeat url("./resources/work-do-more.jpeg");
             -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
             clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
