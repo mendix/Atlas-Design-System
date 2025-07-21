@@ -77,8 +77,8 @@
         // for scroll per region, regions should overflow if they have long content
         .mx-scrollcontainer-left,
         .mx-scrollcontainer-right,
-        .mx-scrollcontainer-center,d
-        .mx-scrollcontainer-middle {
+        .mx-scrollcontainer-center,
+        d .mx-scrollcontainer-middle {
             overflow: auto;
         }
     }
@@ -189,16 +189,8 @@
     }
 
     .mx-scrollcontainer-wrapper {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-
         &:not(.mx-scrollcontainer-nested) {
             -webkit-overflow-scrolling: touch;
-        }
-
-        & > .mx-placeholder {
-            flex: 1;
         }
     }
 
@@ -221,6 +213,32 @@
             .mx-layoutgrid,
             .mx-layoutgrid-fluid {
                 padding: 0;
+            }
+        }
+    }
+
+
+    // make the first child of the MAIN part of the scroll container to grow full height
+    .region-content {
+        display: flex;
+        flex-direction: column;
+
+        & > .mx-scrollcontainer-wrapper{
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            & > .mx-placeholder{
+                height: 100%;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                & > *:only-child{
+                    height: 100%;
+                    flex-grow: 1;
+                }
             }
         }
     }

@@ -26,17 +26,17 @@ $lightness-steps: (
     600: -20%,
     700: -40%,
     800: -50%,
-    900: -60%,
+    900: -60%
 );
 
 // generate corresponding CSS variables
 :root {
     @each $name, $bg-class, $text-class, $base-color in $brand-colors {
         @each $shade, $adjustment in $lightness-steps {
-            --#{$name}-#{$shade} : #{adjust-color-lightness($base-color, $adjustment)};    
+            --#{$name}-#{$shade}: #{adjust-color-lightness($base-color, $adjustment)};
         }
 
-        @if ($bg-class != '') {
+        @if ($bg-class != "") {
             .#{$bg-class} {
                 @each $shade, $adjustment in $lightness-steps {
                     &.shade-#{$shade} {
@@ -46,7 +46,7 @@ $lightness-steps: (
             }
         }
 
-        @if ($text-class != '') {
+        @if ($text-class != "") {
             .#{$text-class} {
                 @each $shade, $adjustment in $lightness-steps {
                     &.shade-#{$shade} {

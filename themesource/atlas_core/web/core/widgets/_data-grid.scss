@@ -25,7 +25,8 @@
                 border-bottom-width: 1px;
                 border-left: 0;
                 background-color: var(--grid-bg-header);
-                padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom) var(--grid-padding-left);
+                padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom)
+                    var(--grid-padding-left);
                 vertical-align: middle;
 
                 .mx-datagrid-head-caption {
@@ -37,7 +38,8 @@
             tbody tr {
                 td {
                     @include transition();
-                    padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom) var(--grid-padding-left);
+                    padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom)
+                        var(--grid-padding-left);
                     vertical-align: middle;
                     border-width: 0;
                     border-color: var(--grid-border-color);
@@ -65,13 +67,15 @@
             /* Table Footer */
             tfoot {
                 > tr > th {
-                    padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom) var(--grid-padding-left);
+                    padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom)
+                        var(--grid-padding-left);
                     border-width: 0;
                     background-color: var(--grid-footer-bg);
                 }
 
                 > tr > td {
-                    padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom) var(--grid-padding-left);
+                    padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom)
+                        var(--grid-padding-left);
                     border-width: 0;
                     background-color: var(--grid-bg);
                     font-weight: var(--font-weight-bold);

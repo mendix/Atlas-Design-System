@@ -95,14 +95,14 @@
     .datagrid-lg.mx-datagrid {
         table {
             th {
-                padding: calc(var(--grid-padding-top) * 2) calc(var(--grid-padding-right) * 2) calc(var(--grid-padding-bottom) * 2)
-                    calc(var(--grid-padding-left) * 2);
+                padding: calc(var(--grid-padding-top) * 2) calc(var(--grid-padding-right) * 2)
+                    calc(var(--grid-padding-bottom) * 2) calc(var(--grid-padding-left) * 2);
             }
 
             tbody tr {
                 td {
-                    padding: calc(var(--grid-padding-top) * 2) calc(var(--grid-padding-right) * 2) calc(var(--grid-padding-bottom) * 2)
-                        calc(var(--grid-padding-left) * 2);
+                    padding: calc(var(--grid-padding-top) * 2) calc(var(--grid-padding-right) * 2)
+                        calc(var(--grid-padding-bottom) * 2) calc(var(--grid-padding-left) * 2);
                 }
             }
         }
@@ -111,14 +111,14 @@
     .datagrid-sm.mx-datagrid {
         table {
             th {
-                padding: calc(var(--grid-padding-top) / 2) calc(var(--grid-padding-right) / 2) calc(var(--grid-padding-bottom) / 2)
-                    calc(var(--grid-padding-left) / 2);
+                padding: calc(var(--grid-padding-top) / 2) calc(var(--grid-padding-right) / 2)
+                    calc(var(--grid-padding-bottom) / 2) calc(var(--grid-padding-left) / 2);
             }
 
             tbody tr {
                 td {
-                    padding: calc(var(--grid-padding-top) / 2) calc(var(--grid-padding-right) / 2) calc(var(--grid-padding-bottom) / 2)
-                        calc(var(--grid-padding-left)/ 2);
+                    padding: calc(var(--grid-padding-top) / 2) calc(var(--grid-padding-right) / 2)
+                        calc(var(--grid-padding-bottom) / 2) calc(var(--grid-padding-left) / 2);
                 }
             }
         }

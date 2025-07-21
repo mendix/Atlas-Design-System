@@ -92,13 +92,15 @@
     // Templategrid Row Sizes
     .templategrid-lg.mx-templategrid {
         .mx-templategrid-item {
-            padding: calc(var(--grid-padding-top) * 2) calc(var(--grid-padding-right) * 2) calc(var(--grid-padding-bottom) * 2) calc(var(--grid-padding-left) * 2);
+            padding: calc(var(--grid-padding-top) * 2) calc(var(--grid-padding-right) * 2)
+                calc(var(--grid-padding-bottom) * 2) calc(var(--grid-padding-left) * 2);
         }
     }
 
     .templategrid-sm.mx-templategrid {
         .mx-templategrid-item {
-            padding: (var(--grid-padding-top) / 2) (var(--grid-padding-right) / 2) (var(--grid-padding-bottom) / 2) (var(--grid-padding-left) / 2);
+            padding: (var(--grid-padding-top) / 2) (var(--grid-padding-right) / 2) (var(--grid-padding-bottom) / 2)
+                (var(--grid-padding-left) / 2);
         }
     }
 

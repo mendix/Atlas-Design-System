@@ -9,12 +9,12 @@ $use-css-variables: false !default;
 
 /* Brand Colors */
 $brand-primary: #264ae5 !default;
-$brand-success: #1AC61A !default;
+$brand-success: #1ac61a !default;
 $brand-warning: #f0b000 !default;
-$brand-danger: #EA3337 !default;
+$brand-danger: #ea3337 !default;
 
 /* Gray Shades */
-$gray: #B8BABF !default;
+$gray: #b8babf !default;
 $color-base: #fff !default;
 $color-contrast: #000 !default;
 $brand-default: mix($brand-primary, #e7e7e9, 10%) !default;
@@ -209,7 +209,11 @@ $form-input-disabled-color: var(--gray-700) !default;
 $form-input-placeholder-color: var(--gray-600) !default;
 $form-input-border-color: var(--gray-200) !default;
 $form-input-border-focus-color: $brand-primary !default;
-$form-input-border-hover-color: color-mix(in srgb, $form-input-border-color, $form-input-border-focus-color 50%) !default;
+$form-input-border-hover-color: color-mix(
+    in srgb,
+    $form-input-border-color,
+    $form-input-border-focus-color 50%
+) !default;
 
 $form-input-static-border-color: var(--gray-200) !default;
 

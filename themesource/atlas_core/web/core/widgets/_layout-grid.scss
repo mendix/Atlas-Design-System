@@ -34,10 +34,9 @@
             --card-bg-color: var(--layoutgrid-column-bg);
             --card-border-radius: var(--layoutgrid-column-border-radius);
 
-            >.row {
-
-                >.col,
-                >[class*="col-"] {
+            > .row {
+                > .col,
+                > [class*="col-"] {
                     @extend .card;
                 }
             }
@@ -45,8 +44,7 @@
 
         &.layoutgrid-align-stretch {
             height: 100%;
-
-            >.row {
+            > .row {
                 height: 100%;
             }
         }
@@ -66,13 +64,12 @@
             justify-content: flex-end;
         }
 
-        >.row {
+        > .row {
             display: flex;
             column-gap: var(--layoutgrid-column-gap);
             row-gap: var(--layoutgrid-row-gap); // wrapped items
-
-            >.col,
-            >[class*="col-"] {
+            > .col,
+            > [class*="col-"] {
                 --column-gap: var(--layoutgrid-column-gap);
                 background-color: var(--layoutgrid-column-bg);
                 &.card {
@@ -112,8 +109,8 @@
         --layoutgrid-column-gap: 0px;
     }
 
-    .no-gutters>.col,
-    .no-gutters>[class*="col-"] {
+    .no-gutters > .col,
+    .no-gutters > [class*="col-"] {
         padding-right: 0;
         padding-left: 0;
     }
@@ -128,63 +125,61 @@
     // Responsiveness
     $breakpoints: (
         "" "" 0 0,
-        "sm" "-sm"$screen-sm,
-        "md" "-md"$screen-md,
-        "lg" "-lg"$screen-lg,
-        "xl" "-xl"$screen-xl,
-        "xxl" "-xxl"$screen-xxl
+        "sm" "-sm" $screen-sm,
+        "md" "-md" $screen-md,
+        "lg" "-lg" $screen-lg,
+        "xl" "-xl" $screen-xl,
+        "xxl" "-xxl" $screen-xxl
     );
 
-@each $size, $suffix, $max-width in $breakpoints {
-    @media (min-width: #{$max-width}) {
-        @if $size !="" {
-            .mx-layoutgrid-fixed {
-                max-width: calc(min(var(--max-screen-width), #{$max-width}) - 40px);
+    @each $size, $suffix, $max-width in $breakpoints {
+        @media (min-width: #{$max-width}) {
+            @if $size != "" {
+                .mx-layoutgrid-fixed {
+                    max-width: calc(min(var(--max-screen-width), #{$max-width}) - 40px);
+                }
             }
-        }
 
-        .col#{$suffix} {
-            flex-grow: 1;
-            flex-basis: 0;
-            max-width: 100%;
-        }
+            .col#{$suffix} {
+                flex-grow: 1;
+                flex-basis: 0;
+                max-width: 100%;
+            }
 
-        .col#{$suffix}-auto {
-            flex: 0 0 auto;
-            width: auto;
-            max-width: 100%;
-        }
+            .col#{$suffix}-auto {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: 100%;
+            }
 
-        @for $i from 1 through 12 {
-            .col#{$suffix}-#{$i} {
-                $col: calc(12 / #{$i});
+            @for $i from 1 through 12 {
+                .col#{$suffix}-#{$i} {
+                    $col: calc(12 / #{$i});
                 $width: calc(100% / $col - var(--column-gap) / $col * ($col - 1));
-                flex: 0 0 $width;
-                max-width: $width;
+                    flex: 0 0 $width;
+                    max-width: $width;
+                }
             }
-        }
 
-        .order#{$suffix}-first {
-            order: -1;
-        }
-
-        .order#{$suffix}-last {
-            order: 13;
-        }
-
-        @for $i from 0 through 12 {
-            .order#{$suffix}-#{$i} {
-                order: #{$i};
+            .order#{$suffix}-first {
+                order: -1;
             }
-        }
+            .order#{$suffix}-last {
+                order: 13;
+            }
 
-        @for $i from 0 through 11 {
+            @for $i from 0 through 12 {
+                .order#{$suffix}-#{$i} {
+                    order: #{$i};
+                }
+            }
 
-            .offset#{$suffix}-#{$i},
-            .col#{$suffix}-offset-#{$i} {
-                margin-left: calc(100% * #{$i} / 12);
+            @for $i from 0 through 11 {
+                .offset#{$suffix}-#{$i},
+                .col#{$suffix}-offset-#{$i} {
+                    margin-left: calc(100% * #{$i} / 12);
+                }
             }
         }
     }
-}
 }

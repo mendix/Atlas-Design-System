@@ -8,7 +8,7 @@
 @import "variables"; // support for legacy modules using sass variables
 
 // support for legacy themes using sass variables
-@import "css-variables-mappings"; 
+@import "css-variables-mappings";
 @if not $use-css-variables {
     @include legacy-variables();
 }

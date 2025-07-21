@@ -18,7 +18,8 @@
         }
 
         .mx-templategrid-item {
-            padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom) var(--grid-padding-left);
+            padding: var(--grid-padding-top) var(--grid-padding-right) var(--grid-padding-bottom)
+                var(--grid-padding-left);
             cursor: default;
             background-color: var(--grid-bg);
 

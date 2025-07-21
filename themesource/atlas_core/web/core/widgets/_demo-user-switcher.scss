@@ -10,7 +10,6 @@
        Demo user switcher widget
     ========================================================================== */
 
-
     .mx-demouserswitcher {
         position: fixed;
         top: 0;
@@ -88,7 +87,7 @@
         border-bottom-left-radius: 3px;
         box-shadow: -1px 0 5px rgba(28, 59, 86, 0.2);
         background: url(resources/switcher-toggle.png) center center no-repeat var(--brand-primary);
-        
+
         &:hover {
             background-color: var(--brand-primary-600);
         }

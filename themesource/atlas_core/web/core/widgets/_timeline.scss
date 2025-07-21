@@ -27,7 +27,7 @@
     .widget-timeline-events-wrapper {
         display: flex;
         flex: 1;
-        margin-left: calc(var(--timeline-grouping-size)/2);
+        margin-left: calc(var(--timeline-grouping-size) / 2);
         padding: var(--spacing-large) 0 0 0;
         border-left: 1px solid var(--timeline-border-color);
 

@@ -302,7 +302,7 @@
                 min-width: 240px;
             }
         }
-    
+
         @media (min-width: $screen-md) {
             &.flex-small {
                 flex-basis: $flex-2-columns;
@@ -356,7 +356,7 @@
                 min-width: 400px;
             }
         }
-    
+
         @media (min-width: $screen-xl) {
             &.flex-small {
                 flex-basis: $flex-4-columns;

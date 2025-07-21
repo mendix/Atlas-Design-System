@@ -31,8 +31,8 @@
             > tr {
                 /* Table header */
                 > th {
-                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right) 
-                             var(--padding-table-cell-bottom) var(--padding-table-cell-left);
+                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right)
+                        var(--padding-table-cell-bottom) var(--padding-table-cell-left);
 
                     s * {
                         color: var(--form-label-color);
@@ -48,8 +48,8 @@
 
                 /* Table cells */
                 > td {
-                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right) 
-                             var(--padding-table-cell-bottom) var(--padding-table-cell-left);
+                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right)
+                        var(--padding-table-cell-bottom) var(--padding-table-cell-left);
 
                     > div > label,
                     .mx-referenceselector-input-wrapper label {
@@ -67,8 +67,8 @@
             > tr {
                 > th,
                 > td {
-                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right) var(--padding-table-cell-bottom)
-                        var(--padding-table-cell-left);
+                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right)
+                        var(--padding-table-cell-bottom) var(--padding-table-cell-left);
                 }
             }
         }
@@ -80,8 +80,8 @@
             > tr {
                 > th,
                 > td {
-                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right) var(--padding-table-cell-bottom)
-                        var(--padding-table-cell-left);
+                    padding: var(--padding-table-cell-top) var(--padding-table-cell-right)
+                        var(--padding-table-cell-bottom) var(--padding-table-cell-left);
                 }
             }
         }
