@@ -3225,5 +3225,48 @@
                 }
             ]
         }
+    ], 
+    "com.mendix.widget.web.checkboxradioselection.CheckboxRadioSelection": [
+        {
+            "category": "Flex",
+            "name": "Orientation",
+            "description": "Determines the orientation of item list on the page.",
+            "type": "ToggleButtonGroup",
+            "options": [
+                {
+                    "name": "Vertical",
+                    "class": "list-vertical"
+                },
+                {
+                    "name": "Horizontal",
+                    "class": "list-horizontal"
+                }
+            ]
+        },
+        {
+            "category": "Flex",
+            "name": "Item gap",
+            "property": "--checkboxradio-gap",
+            "type": "ToggleButtonGroup",
+            "description": "Adjust the space between items inside the flex container.",
+            "options": [
+                {
+                    "name": "None",
+                    "variable": "--none"
+                },
+                {
+                    "name": "Small",
+                    "variable": "--spacing-small"
+                },
+                {
+                    "name": "Medium",
+                    "variable": "--spacing-medium"
+                },
+                {
+                    "name": "Large",
+                    "variable": "--spacing-large"
+                }
+            ]
+        }
     ]
 }
