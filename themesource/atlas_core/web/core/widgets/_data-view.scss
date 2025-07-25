@@ -18,7 +18,11 @@
         /* Dataview-content gives problems for nested layout grid containers */
         > .mx-dataview-content {
             flex-grow: 1;
-            overflow-y: auto;
+            
+            .mx-placeholder > &{
+                overflow-y: auto;
+            }
+
             > .mx-container-nested {
                 > .row {
                     margin-right: 0;
