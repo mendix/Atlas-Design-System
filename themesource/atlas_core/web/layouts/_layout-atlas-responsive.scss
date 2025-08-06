@@ -292,7 +292,7 @@
             .region-sidebar:hover {
                 .toggle-btn-sidebar {
                     opacity: 1;
-                    &:hover{
+                    &:hover {
                         background-color: var(--brand-primary);
                         color: var(--font-color-contrast);
                         transform: scale(1.1);
@@ -309,9 +309,6 @@
             }
 
             @media (max-width: $screen-sm-max) {
-                &.mx-scrollcontainer-open {
-                    margin-right: calc(var(--closed-sidebar-width, 0px) - var(--sidebar-size));
-                }
                 :not(&.mx-scrollcontainer-open) {
                     .toggle-btn-sidebar-mobile {
                         // shown only for mobile
