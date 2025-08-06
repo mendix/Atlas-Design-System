@@ -15,15 +15,14 @@ import { getLocales } from 'react-native-localize';
 
 /**
  * @param {MxObject} picture - This field is required.
- * @param {"NativeMobileResources.PictureSource.camera"|"NativeMobileResources.PictureSource.imageLibrary"} pictureSource - Select a picture from the library or the camera. The default is to let the user decide.
- * @param {"NativeMobileResources.PictureQuality.original"|"NativeMobileResources.PictureQuality.low"|"NativeMobileResources.PictureQuality.medium"|"NativeMobileResources.PictureQuality.high"|"NativeMobileResources.PictureQuality.custom"} pictureQuality - Set to empty to use default value 'medium'.
+ * @param {undefined|"camera"|"imageLibrary"} pictureSource - Select a picture from the library or the camera. The default is to let the user decide.
+ * @param {undefined|"original"|"low"|"medium"|"high"|"custom"} pictureQuality - Set to empty to use default value 'medium'.
  * @param {Big} maximumWidth - The picture will be scaled to this maximum pixel width, while maintaing the aspect ratio.
  * @param {Big} maximumHeight - The picture will be scaled to this maximum pixel height, while maintaing the aspect ratio.
  * @returns {Promise.<MxObject>}
  */
 export async function TakePictureAdvanced(picture, pictureSource, pictureQuality, maximumWidth, maximumHeight) {
 	// BEGIN USER CODE
-    var _a;
     if (!picture) {
         return Promise.reject(new Error("Input parameter 'Picture' is required"));
     }
@@ -34,7 +33,7 @@ export async function TakePictureAdvanced(picture, pictureSource, pictureQuality
         return Promise.reject(new Error("Picture quality is set to 'Custom', but no maximum width or height was provided"));
     }
     // V3 dropped the feature of providing an action sheet so users can decide on which action to take, camera or library.
-    const nativeVersionMajor = ((_a = NativeModules === null || NativeModules === void 0 ? void 0 : NativeModules.ImagePickerManager) === null || _a === void 0 ? void 0 : _a.showImagePicker) ? 2 : 4;
+    const nativeVersionMajor = NativeModules.ImagePickerManager.showImagePicker ? 2 : 4;
     const RNPermissions = nativeVersionMajor === 4 ? (await import('react-native-permissions')).default : null;
     const resultObject = await createMxObject("NativeMobileResources.ImageMetaData");
     try {

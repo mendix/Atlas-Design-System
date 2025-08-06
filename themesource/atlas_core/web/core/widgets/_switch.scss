@@ -15,7 +15,7 @@ $default-ios-color: rgb(100, 189, 99);
 }
 
 @mixin bootstrap-style-android($brand-style) {
-    background-color: lighten($brand-style, 10%);
+    background-color: color-mix(in srgb, $brand-style, white 10%);
 }
 
 @mixin style($brand-key, $brand-variable) {
@@ -52,27 +52,27 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-success {
-                @include bootstrap-style-ios($brand-success);
+                @include bootstrap-style-ios(var(--brand-success));
             }
 
             &.widget-switch-btn-wrapper-info {
-                @include bootstrap-style-ios($brand-info);
+                @include bootstrap-style-ios(var(--brand-primary-300));
             }
 
             &.widget-switch-btn-wrapper-primary {
-                @include bootstrap-style-ios($brand-primary);
+                @include bootstrap-style-ios(var(--brand-primary));
             }
 
             &.widget-switch-btn-wrapper-warning {
-                @include bootstrap-style-ios($brand-warning);
+                @include bootstrap-style-ios(var(--brand-warning));
             }
 
             &.widget-switch-btn-wrapper-danger {
-                @include bootstrap-style-ios($brand-danger);
+                @include bootstrap-style-ios(var(--brand-danger));
             }
 
             &.widget-switch-btn-wrapper-inverse {
-                @include bootstrap-style-ios($brand-inverse);
+                @include bootstrap-style-ios(var(--brand-primary-600));
             }
         }
     }
@@ -91,50 +91,50 @@ $default-ios-color: rgb(100, 189, 99);
             }
 
             &.widget-switch-btn-wrapper-success {
-                @include bootstrap-style-android($brand-success);
+                @include bootstrap-style-android(var(--brand-success));
 
                 .widget-switch-btn {
-                    background: $brand-success;
+                    background: var(--brand-success);
                 }
             }
 
             &.widget-switch-btn-wrapper-info {
-                @include bootstrap-style-android($brand-info);
+                @include bootstrap-style-android(var(--brand-primary-300));
 
                 .widget-switch-btn {
-                    background: $brand-info;
+                    background: var(--brand-primary-300);
                 }
             }
 
             &.widget-switch-btn-wrapper-primary {
-                @include bootstrap-style-android($brand-primary);
+                @include bootstrap-style-android(var(--brand-primary));
 
                 .widget-switch-btn {
-                    background: $brand-primary;
+                    background: var(--brand-primary);
                 }
             }
 
             &.widget-switch-btn-wrapper-warning {
-                @include bootstrap-style-android($brand-warning);
+                @include bootstrap-style-android(var(--brand-warning));
 
                 .widget-switch-btn {
-                    background: $brand-warning;
+                    background: var(--brand-warning);
                 }
             }
 
             &.widget-switch-btn-wrapper-danger {
-                @include bootstrap-style-android($brand-danger);
+                @include bootstrap-style-android(var(--brand-danger));
 
                 .widget-switch-btn {
-                    background: $brand-danger;
+                    background: var(--brand-danger);
                 }
             }
 
             &.widget-switch-btn-wrapper-inverse {
-                @include bootstrap-style-android($brand-inverse);
+                @include bootstrap-style-android(var(--brand-primary-600));
 
                 .widget-switch-btn {
-                    background: $brand-inverse;
+                    background: var(--brand-primary-600);
                 }
             }
         }
@@ -143,16 +143,16 @@ $default-ios-color: rgb(100, 189, 99);
 
 @mixin switch() {
     .widget-switch-btn-wrapper {
-        &:focus {
-            outline: 1px solid $brand-primary;
+        &:focus-visible {
+            @extend .focus-ring !optional;
         }
     }
 
-    @include style("primary", $brand-primary);
-    @include style("secondary", $brand-default);
-    @include style("success", $brand-success);
-    @include style("warning", $brand-warning);
-    @include style("danger", $brand-danger);
+    @include style("primary", var(--brand-primary));
+    @include style("secondary", var(--brand-default));
+    @include style("success", var(--brand-success));
+    @include style("warning", var(--brand-warning));
+    @include style("danger", var(--brand-danger));
 
     // below is maintained for backwards compatibility prior to Switch 3.0.0.
     div {

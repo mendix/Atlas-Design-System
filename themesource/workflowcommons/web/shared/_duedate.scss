@@ -1,0 +1,10 @@
+.mxwc-duedate {
+    &.mxwc-duedate-almost-due {
+		color: $brand-warning;
+	}
+
+	&.mxwc-duedate-overdue {
+		color: $brand-danger;
+	}
+
+}

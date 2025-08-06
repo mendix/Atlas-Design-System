@@ -37,8 +37,6 @@
     // This is a duplication because we need to be able to use that value in calculation on
     // other levels of scroll container while --sidebar-size is available on the region level and not higher
 
-    $sidebar-animation-duration: 250ms;
-
     .mx-page {
         display: flex;
         flex-direction: column;
@@ -80,7 +78,7 @@
         .mx-scrollcontainer-left,
         .mx-scrollcontainer-right,
         .mx-scrollcontainer-center,
-        .mx-scrollcontainer-middle {
+        d .mx-scrollcontainer-middle {
             overflow: auto;
         }
     }
@@ -97,6 +95,8 @@
     .mx-scrollcontainer-middle,
     .mx-scrollcontainer-center {
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     // if there is a nested scroll container we always want
@@ -122,8 +122,8 @@
     // Animate transitions for toggleable sidebars
     .mx-scrollcontainer-left.mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-right.mx-scrollcontainer-toggleable {
-        transition: flex-basis $sidebar-animation-duration ease-in, margin-right $sidebar-animation-duration ease-in,
-            margin-left $sidebar-animation-duration ease-in;
+        transition: flex-basis var(--navsidebar-animation-duration) var(--navsidebar-animation-function), margin-right var(--navsidebar-animation-duration) var(--navsidebar-animation-function),
+            margin-left var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
         z-index: 1;
     }
 
@@ -132,7 +132,7 @@
     .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable,
     .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .mx-scrollcontainer-toggleable {
         flex-basis: var(--closed-sidebar-width, 0px);
-        overflow: clip;
+        overflow: hidden;
     }
 
     // For open sidebar - full width
@@ -168,7 +168,7 @@
 
     // Push content aside animation
     .mx-scrollcontainer-push > :not(.mx-scrollcontainer-toggleable) {
-        transition: transform $sidebar-animation-duration ease-in;
+        transition: transform var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
     }
 
     .mx-scrollcontainer-push.mx-scrollcontainer-open > :not(.mx-scrollcontainer-toggleable) {
@@ -188,8 +188,10 @@
         overflow-x: clip;
     }
 
-    .mx-scrollcontainer-wrapper:not(.mx-scrollcontainer-nested) {
-        -webkit-overflow-scrolling: touch;
+    .mx-scrollcontainer-wrapper {
+        &:not(.mx-scrollcontainer-nested) {
+            -webkit-overflow-scrolling: touch;
+        }
     }
 
     // for push aside and slide over the main part should be non-interactive if sidebar is open
@@ -202,7 +204,8 @@
         pointer-events: auto;
     }
 
-    .mx-scrollcontainer-center {
+    .mx-scrollcontainer-center,
+    .mx-scrollcontainer-middle {
         .mx-layoutgrid,
         .mx-layoutgrid-fluid {
             @include layout-spacing($type: padding, $direction: all, $device: responsive);
@@ -210,6 +213,32 @@
             .mx-layoutgrid,
             .mx-layoutgrid-fluid {
                 padding: 0;
+            }
+        }
+    }
+
+
+    // make the first child of the MAIN part of the scroll container to grow full height
+    .region-content {
+        display: flex;
+        flex-direction: column;
+
+        & > .mx-scrollcontainer-wrapper{
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            & > .mx-placeholder{
+                height: 100%;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                & > *:only-child{
+                    height: 100%;
+                    flex-grow: 1;
+                }
             }
         }
     }

@@ -1,0 +1,31 @@
+.mxwc-state-badge {
+	border-radius: 16px;
+	min-width: 18px;
+	min-height: 18px;
+	padding: 4px 8px 4px 8px;
+	color: white;
+	white-space: nowrap;
+	display: block;
+    width: fit-content;
+
+	&.mxwc-state-badge-success {
+		background: $brand-success;
+	}
+
+	&.mxwc-state-badge-primary {
+		background: $brand-primary;
+	}
+
+	&.mxwc-state-badge-warning {
+		background: $brand-warning;
+	}
+
+	&.mxwc-state-badge-danger {
+		background: $brand-danger;
+	}
+
+	&.mxwc-state-badge-default {
+		color: $font-color-default;
+		background: $brand-default;
+	}
+}

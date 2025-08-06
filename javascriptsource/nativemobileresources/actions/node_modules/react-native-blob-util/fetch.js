@@ -1,17 +1,15 @@
-import {ReactNativeBlobUtilConfig} from './types';
-import URIUtil from './utils/uri';
-import fs from './fs';
-import getUUID from './utils/uuid';
-import {NativeEventEmitter} from 'react-native';
-import {FetchBlobResponse} from './class/ReactNativeBlobUtilBlobResponse';
-import CanceledFetchError from './class/ReactNativeBlobUtilCanceledFetchError';
-import ReactNativeBlobUtil from './codegenSpecs/NativeBlobUtils';
+import {ReactNativeBlobUtilConfig} from "./types";
+import URIUtil from "./utils/uri";
+import fs from "./fs";
+import getUUID from "./utils/uuid";
+import {DeviceEventEmitter, NativeModules} from "react-native";
+import {FetchBlobResponse} from "./class/ReactNativeBlobUtilBlobResponse";
 
-const eventEmitter = new NativeEventEmitter(ReactNativeBlobUtil);
+const emitter = DeviceEventEmitter;
+const ReactNativeBlobUtil = NativeModules.ReactNativeBlobUtil;
 
 // register message channel event handler.
-eventEmitter.addListener('ReactNativeBlobUtilMessage', (e) => {
-    if (typeof e === 'string') e = JSON.parse(e);
+emitter.addListener("ReactNativeBlobUtilMessage", (e) => {
 
     if (e.event === 'warn') {
         console.warn(e.detail);
@@ -20,7 +18,7 @@ eventEmitter.addListener('ReactNativeBlobUtilMessage', (e) => {
         throw e.detail;
     }
     else {
-        console.log('ReactNativeBlobUtil native message', e.detail);
+        console.log("ReactNativeBlobUtil native message", e.detail);
     }
 });
 
@@ -106,7 +104,7 @@ function fetchFile(options = {}, method, url, headers = {}, body): Promise {
                 .then((stream) => new Promise((resolve, reject) => {
                     stream.open();
                     info = {
-                        state: '2',
+                        state: "2",
                         headers: {'source': 'system-fs'},
                         status: 200,
                         respType: 'text',
@@ -163,7 +161,7 @@ export function fetch(...args: any): Promise {
     let taskId = getUUID();
     let options = this || {};
     let subscription, subscriptionUpload, stateEvent, partEvent;
-    let respInfo = {'uninit': true};
+    let respInfo = {};
     let [method, url, headers, body] = [...args];
 
     // # 241 normalize null or undefined headers, in case nil or null string
@@ -189,36 +187,31 @@ export function fetch(...args: any): Promise {
         let nativeMethodName = Array.isArray(body) ? 'fetchBlobForm' : 'fetchBlob';
 
         // on progress event listener
-        subscription = eventEmitter.addListener('ReactNativeBlobUtilProgress', (e) => {
-            if (typeof e === 'string') e = JSON.parse(e);
+        subscription = emitter.addListener('ReactNativeBlobUtilProgress', (e) => {
             if (e.taskId === taskId && promise.onProgress) {
                 promise.onProgress(e.written, e.total, e.chunk);
             }
         });
 
-        subscriptionUpload = eventEmitter.addListener('ReactNativeBlobUtilProgress-upload', (e) => {
-            if (typeof e === 'string') e = JSON.parse(e);
+        subscriptionUpload = emitter.addListener('ReactNativeBlobUtilProgress-upload', (e) => {
             if (e.taskId === taskId && promise.onUploadProgress) {
                 promise.onUploadProgress(e.written, e.total);
             }
         });
 
-        stateEvent = eventEmitter.addListener('ReactNativeBlobUtilState', (e) => {
-            if (typeof e === 'string') e = JSON.parse(e);
+        stateEvent = emitter.addListener('ReactNativeBlobUtilState', (e) => {
             if (e.taskId === taskId)
                 respInfo = e;
             promise.onStateChange && promise.onStateChange(e);
         });
 
-        subscription = eventEmitter.addListener('ReactNativeBlobUtilExpire', (e) => {
-            if (typeof e === 'string') e = JSON.parse(e);
+        subscription = emitter.addListener('ReactNativeBlobUtilExpire', (e) => {
             if (e.taskId === taskId && promise.onExpire) {
                 promise.onExpire(e);
             }
         });
 
-        partEvent = eventEmitter.addListener('ReactNativeBlobUtilServerPush', (e) => {
-            if (typeof e === 'string') e = JSON.parse(e);
+        partEvent = emitter.addListener('ReactNativeBlobUtilServerPush', (e) => {
             if (e.taskId === taskId && promise.onPartData) {
                 promise.onPartData(e.chunk);
             }
@@ -242,25 +235,22 @@ export function fetch(...args: any): Promise {
          *                  in JS context, and this parameter indicates which one
          *                  dose the response data presents.
          * @param data {string} Response data or its reference.
-         * @param responseInfo {Object.<>}
          */
-        req(options, taskId, method, url, headers || {}, body, (err, rawType, data, responseInfo) => {
+        req(options, taskId, method, url, headers || {}, body, (err, rawType, data) => {
 
             // task done, remove event listeners
             subscription.remove();
             subscriptionUpload.remove();
             stateEvent.remove();
             partEvent.remove();
-            delete promise.progress;
-            delete promise.uploadProgress;
-            delete promise.stateChange;
-            delete promise.part;
-            delete promise.cancel;
+            delete promise['progress'];
+            delete promise['uploadProgress'];
+            delete promise['stateChange'];
+            delete promise['part'];
+            delete promise['cancel'];
             // delete promise['expire']
             promise.cancel = () => {
             };
-
-            if(!responseInfo) responseInfo = {}; // should not be null / undefined
 
             if (err)
                 reject(new Error(err, respInfo));
@@ -271,9 +261,6 @@ export function fetch(...args: any): Promise {
                     if (options.session)
                         fs.session(options.session).add(data);
                 }
-                if ('uninit' in respInfo && respInfo.uninit) // event didn't fire yet so we override it here
-                    respInfo = responseInfo;
-
                 respInfo.rnfbEncode = rawType;
                 resolve(new FetchBlobResponse(taskId, respInfo, data));
             }
@@ -341,7 +328,7 @@ export function fetch(...args: any): Promise {
         subscriptionUpload.remove();
         stateEvent.remove();
         ReactNativeBlobUtil.cancelRequest(taskId, fn);
-        promiseReject(new CanceledFetchError('canceled'));
+        promiseReject(new Error("canceled"));
     };
     promise.taskId = taskId;
 

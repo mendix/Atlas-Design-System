@@ -1,0 +1,13 @@
+// Default variables
+@import "../../atlas_core/web/variables";
+@import "../../../theme/web/custom-variables";
+
+// Page templates
+
+// Shared
+@import "shared/badges";
+@import "shared/duedate";
+@import "shared/timeline";
+@import "shared/truncating-groupbox";
+@import "shared/listview-fix";
+@import "shared/misc";

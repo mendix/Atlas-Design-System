@@ -1,0 +1,95 @@
+@import "../../../atlas_core/web/_variables.scss";
+.mxwc-timeline-dot {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+
+
+	&.mxwc-timeline-dot-success {
+		background: $brand-success;
+	}
+
+	&.mxwc-timeline-dot-primary {
+		background: $brand-primary;
+	}
+
+	&.mxwc-timeline-dot-warning {
+		background: $brand-warning;
+	}
+
+	&.mxwc-timeline-dot-danger {
+		background: $brand-danger;
+	}
+
+	&.mxwc-timeline-dot-default {
+		background: $brand-default;
+	}
+}
+
+// New activity timeline (10.6)
+
+.mxwc-activity-timeline {
+    .widget-timeline-events-wrapper {
+        padding-top: 0;
+        margin-left: calc($spacing-large * 2);
+    }
+
+    .widget-timeline-icon-wrapper {
+        padding-top: calc($spacing-medium + 16px);
+
+        .widget-timeline-icon-circle {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    ul>li.widget-timeline-event {
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        .mxwc-activity-icon {
+            margin: 0 $spacing-smaller;
+            width: 32px;
+            height: auto;
+        }
+
+        .widget-accordion.widget-accordion-striped>.widget-accordion-group {
+            border-radius: 0;
+        }
+
+        .widget-accordion.widget-accordion-striped>.widget-accordion-group>.widget-accordion-group-header>.widget-accordion-group-header-button {
+            background-color: unset;
+            border-radius: 0;
+        }
+
+        .widget-accordion.widget-accordion-striped>.widget-accordion-group>.widget-accordion-group-content-wrapper>.widget-accordion-group-content {
+            padding: $spacing-small $spacing-medium $spacing-medium $spacing-medium;
+        }
+
+        .mxwc-basic-activity-container {
+            padding: $spacing-medium;
+            border-bottom: 1px $accordion-default-border-color solid;
+        }
+    }
+
+    .mxwc-activity-detail {
+        padding-left: calc(32px + $spacing-medium + 2 * $spacing-smaller); 
+    }
+
+    .mxwc-duration-container {
+        min-width: 150px;
+    }
+
+    .mx-link.mxwc-remove-link {
+        color: $font-color-detail;
+
+        &:hover, &:active, &:focus {
+            text-decoration: none;
+            cursor: default;
+        }
+
+        &.mxwc-overdue {
+            color: $brand-danger;
+        }
+}
+}

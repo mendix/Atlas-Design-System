@@ -1,5 +1,7 @@
-import type {ReactNativeBlobUtilNative, filedescriptor} from "./types";
-import ReactNativeBlobUtil from "./codegenSpecs/NativeBlobUtils";
+import {NativeModules} from 'react-native';
+import type {ReactNativeBlobUtilNative, filedescriptor} from "types";
+
+const ReactNativeBlobUtil: ReactNativeBlobUtilNative = NativeModules.ReactNativeBlobUtil;
 
 function createMediafile(fd: filedescriptor, mediatype: string): Promise {
     if ((!'parentFolder' in fd)) fd['parentFolder'] = '';

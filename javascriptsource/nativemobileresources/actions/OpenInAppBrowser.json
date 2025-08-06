@@ -1,5 +1,5 @@
 {
   "nativeDependencies": {
-    "@swan-io/react-native-browser": "0.4.1"
+    "react-native-inappbrowser-reborn": "3.4.0"
   }
 }

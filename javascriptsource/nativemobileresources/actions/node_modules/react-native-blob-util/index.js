@@ -2,7 +2,7 @@
 // Use of this source code is governed by a MIT-style license that can be
 // found in the LICENSE file.
 
-import ReactNativeBlobUtil from './codegenSpecs/NativeBlobUtils';
+import {AppState, DeviceEventEmitter, NativeModules, Platform,} from 'react-native';
 
 //import StatefulPromise from './class/StatefulPromise.js'
 import fs from './fs';
@@ -13,8 +13,7 @@ import android from './android';
 import ios from './ios';
 import JSONStream from './json-stream';
 import {config, fetch} from './fetch';
-import URIUtil from './utils/uri';
-import CanceledFetchError from './class/ReactNativeBlobUtilCanceledFetchError';
+import URIUtil from "./utils/uri";
 
 const {
     ReactNativeBlobUtilSession,
@@ -33,7 +32,19 @@ const {
 } = fs;
 
 const Blob = polyfill.Blob;
+const emitter = DeviceEventEmitter;
+const ReactNativeBlobUtil = NativeModules.ReactNativeBlobUtil;
 const wrap = URIUtil.wrap;
+
+// when app resumes, check if there's any expired network task and trigger
+// their .expire event
+if (Platform.OS === 'ios') {
+    AppState.addEventListener('change', (e) => {
+        if (e === 'active')
+            ReactNativeBlobUtil.emitExpiredEvent(() => {
+            });
+    });
+}
 
 // Show warning if native module not detected
 if (!ReactNativeBlobUtil || !ReactNativeBlobUtil.fetchBlobForm || !ReactNativeBlobUtil.fetchBlob) {
@@ -59,6 +70,5 @@ export default {
     wrap,
     polyfill,
     JSONStream,
-    MediaCollection,
-    CanceledFetchError
+    MediaCollection
 };

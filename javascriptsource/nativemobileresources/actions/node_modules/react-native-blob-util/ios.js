@@ -2,8 +2,9 @@
 // Use of this source code is governed by a MIT-style license that can be
 // found in the LICENSE file.
 
-import { Platform } from "react-native";
-import ReactNativeBlobUtil from "./codegenSpecs/NativeBlobUtils";
+import { NativeModules, Platform } from "react-native";
+
+const ReactNativeBlobUtil: ReactNativeBlobUtilNative = NativeModules.ReactNativeBlobUtil;
 
 /**
  * Displays an options menu using UIDocumentInteractionController.presentOptionsMenu

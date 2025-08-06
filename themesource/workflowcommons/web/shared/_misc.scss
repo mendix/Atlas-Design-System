@@ -1,0 +1,97 @@
+.mxwc-dv-footer-remove-border > .mx-dataview-controls {
+    border-top: 0;
+}
+
+.mxwc-jump-to-popup {
+    min-width: 800px;
+
+    .mx-image {
+        max-width: 32px;
+    }
+
+    .mxwc-img-activity-placeholder {
+        opacity: 0.3;
+    }
+}
+
+.mxwc-jump-to-activity-selector select {
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mxwc-lv-attachments {
+    .mx-listview-empty {
+        display: none;
+    }
+}
+
+.mxwc-lv-assignees {
+    &.mx-listview > ul {
+        margin: 0;
+    }
+
+    .mx-listview-empty {
+        display: none;
+    }
+
+    .mx-button.mx-listview-loadMore {
+        text-align: left;
+        width: auto;
+        margin: 8px 0 0 0;
+    }
+}
+
+.mxwc-outcome-header .mx-text {
+    display: block;
+    padding-top: $grid-padding-top;
+    padding-bottom: $grid-padding-bottom;
+}
+
+.mxwc-custom-text-filter-container {
+    button {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+    }
+    .mx-textbox {
+        margin-bottom: 0;
+        width: 100%;
+        input[type=text] {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+.mxwc-admin-icon.mx-link {
+    color: $font-color-default;
+    display: inline;
+    margin-left: $spacing-small;
+
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+        cursor: default;
+    }
+}
+
+.mxwc-admin-badge.mx-link {
+    color: $font-color-default;
+    padding: 4px 8px 4px 8px;
+    display: inline-block;
+    margin-left: $spacing-small;
+    font-weight: bold;
+
+    &.align-pageheader {
+        vertical-align: middle;
+        margin-bottom: $spacing-small;
+    }
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+        cursor: default;
+    }
+}
+
+.mxwc-account-inactive.mx-link {
+    color: $brand-danger;
+}

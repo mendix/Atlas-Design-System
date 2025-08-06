@@ -2,16 +2,16 @@
 export type ReactNativeBlobUtilConfig = {
   Progress: any,
   UploadProgress: any,
-  fileCache : boolean,
+  fileCache : bool,
   transformFile: boolean;
   path : string,
   appendExt : string,
   session : string,
   addAndroidDownloads : any,
-  indicator : boolean,
-  followRedirect : boolean,
-  trusty : boolean,
-  wifiOnly : boolean
+  indicator : bool,
+  followRedirect : bool,
+  trusty : bool,
+  wifiOnly : bool
 };
 
 export type ReactNativeBlobUtilNative = {

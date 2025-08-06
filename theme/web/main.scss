@@ -1,5 +1,8 @@
 @import "custom-variables";
+@import "theme-dark";
+@import "theme-neutral";
 
-.widget-slider{
-    width: 100%;
+.mx-image-viewer:not(.mx-image-background) {
+    display: inline;
+    width: auto !important;
 }

@@ -14,7 +14,6 @@ import javax.imageio.ImageIO;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
-import com.mendix.webui.CustomJavaAction;
 import communitycommons.proxies.ImageDimensions;
 import java.io.InputStream;
 import com.mendix.systemwideinterfaces.core.UserAction;
@@ -43,8 +42,10 @@ public class GetImageDimensions extends UserAction<IMendixObject>
 		ImageDimensions imageDimensions = new ImageDimensions(getContext());
 		try (InputStream inputStream = Core.getImage(getContext(), this.ImageParameter.getMendixObject(), false)) {
 			BufferedImage bimg = ImageIO.read(inputStream);
-			imageDimensions.setHeight(bimg.getHeight());
-			imageDimensions.setWidth(bimg.getWidth());
+			if (bimg != null) {
+				imageDimensions.setHeight(bimg.getHeight());
+				imageDimensions.setWidth(bimg.getWidth());
+			}
 		}
 
 		return imageDimensions.getMendixObject();
