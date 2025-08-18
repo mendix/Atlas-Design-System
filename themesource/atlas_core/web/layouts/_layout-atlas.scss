@@ -112,9 +112,8 @@
                 }
 
                 a {
-                    margin-left: var(--spacing-small);
                     color: var(--navbar-brand-name);
-                    font-size: 20px;
+                    font-size: var(--navtopbar-font-size);
 
                     &:hover,
                     &:focus {
@@ -124,7 +123,6 @@
             }
 
             .mx-navbar {
-                display: inline-flex;
                 vertical-align: middle;
                 background: transparent;
                 justify-content: center;
