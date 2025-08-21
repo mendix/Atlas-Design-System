@@ -3225,5 +3225,51 @@
                 }
             ]
         }
+    ],
+    "com.mendix.widget.web.combobox.Combobox": [
+        {
+            "name": "Hide background",
+            "type": "Toggle",
+            "class": "hide-bg"
+        },
+        {
+            "name": "Color",
+            "type": "ColorPicker",
+            "property": "--cb-text-color",
+            "options": [
+                {
+                    "name": "Header color",
+                    "variable": "--font-color-header"
+                },
+                {
+                    "name": "Detail color",
+                    "variable": "--font-color-detail"
+                },
+                {
+                    "name": "Brand Primary",
+                    "variable": "--brand-primary"
+                },
+                {
+                    "name": "Default",
+                    "variable": "--font-color-default"
+                },
+                {
+                    "name": "Brand Success",
+                    "variable": "--brand-success"
+                },
+                {
+                    "name": "Brand Warning",
+                    "variable": "--brand-warning"
+                },
+                {
+                    "name": "Brand Danger",
+                    "variable": "--brand-danger"
+                },
+                {
+                    "name": "Contrast",
+                    "variable": "--font-color-contrast"
+                }
+            ]
+        }
     ]
 }
