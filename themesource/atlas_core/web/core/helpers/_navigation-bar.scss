@@ -18,6 +18,10 @@
             background: var(--navtopbar-bg);
             min-height: auto;
             ul.nav {
+                display: flex;
+                flex-flow: nowrap;
+                align-items: center;
+                
                 > .mx-navbar-item {
                     margin-left: var(--spacing-small);
                 }
