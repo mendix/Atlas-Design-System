@@ -29,13 +29,12 @@
 
     .layout-atlas-responsive,
     .layout-atlas-responsive-default,
-    .layout-atlas-responsive-sidebar {
-        --closed-sidebar-width: var(--navsidebar-width-closed);
-    }
-    .layout-atlas-responsive,
-    .layout-atlas-responsive-default,
     .layout-atlas-responsive-sidebar,
     .layout-atlas-responsive-topbar {
+        &:not(.layout-atlas-responsive-topbar) {
+            // hidden when closed for topbar layout
+            --closed-sidebar-width: var(--navsidebar-width-closed);
+        }
         @media (min-width: $screen-md) {
             .mx-scrollcontainer-shrink:not(.mx-scrollcontainer-open) > .region-sidebar,
             .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .region-sidebar,
