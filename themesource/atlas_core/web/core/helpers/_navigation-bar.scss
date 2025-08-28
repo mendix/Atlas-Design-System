@@ -19,7 +19,7 @@
             min-height: auto;
             ul.nav {
                 display: flex;
-                flex-flow: nowrap;
+                flex-flow: wrap;
                 align-items: center;
                 
                 > .mx-navbar-item {

@@ -1072,10 +1072,21 @@
     "LayoutGrid": [
         {
             "category": "Column style",
-            "name": "Cards style",
-            "type": "Toggle",
+            "name": "Card style",
+            "type": "ToggleButtonGroup",
             "description": "Makes the columns appear as cards.",
-            "class": "cards"
+            "multiSelect": true,
+            "options": [
+                {
+                    "name": "Single",
+                    "class": "card-grid"
+                },
+                {
+                    "name": "Multi",
+                    "oldNames": ["Cards style"],
+                    "class": "cards"
+                }
+            ]
         },
         {
             "category": "Column style",
