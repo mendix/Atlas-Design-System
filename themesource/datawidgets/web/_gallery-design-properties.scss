@@ -4,6 +4,10 @@
 //== Design Properties
 //## Helper classes to change the look and feel of the component
 ========================================================================== */
+
+@import '../../atlas_core/web/core/base/card';
+@include card();
+
 // All borders
 .widget-gallery-bordered-all {
     .widget-gallery-item {
@@ -101,4 +105,10 @@
 .widget-gallery-disable-selected-items-highlight {
     // placeholder
     // this class in needed to disable standard styles of highlighted items
+}
+
+.widget-gallery-cards {
+    .widget-gallery-item {
+        @extend .card;
+    }
 }

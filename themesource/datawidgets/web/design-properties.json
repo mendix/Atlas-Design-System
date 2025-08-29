@@ -117,6 +117,13 @@
             "type": "Toggle",
             "description": "Disable standard styles for highlighting of selected items.",
             "class": "widget-gallery-disable-selected-items-highlight"
+        },
+        {
+            "category": "Appearance",
+            "name": "Card style",
+            "type": "Toggle",
+            "class": "widget-gallery-cards",
+            "description": "Makes the items appear as cards."
         }
     ],
     "com.mendix.widget.web.treenode.TreeNode": [

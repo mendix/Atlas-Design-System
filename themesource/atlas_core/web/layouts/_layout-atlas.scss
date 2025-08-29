@@ -64,6 +64,7 @@
         // Topbar
         .region-topbar {
             position: relative;
+            align-content: center;
             z-index: 60; // Show dropshadow
             min-height: var(--topbar-minimalheight);
             background: var(--navtopbar-bg);
@@ -78,7 +79,6 @@
             // Toggle btn
             .toggle-btn {
                 padding: 0;
-                margin-right: var(--spacing-medium);
                 border-color: transparent;
                 border-radius: 0;
                 background: transparent;
