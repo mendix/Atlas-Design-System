@@ -192,6 +192,7 @@
         &:not(.mx-scrollcontainer-nested) {
             -webkit-overflow-scrolling: touch;
         }
+        isolation: isolate;
     }
 
     // for push aside and slide over the main part should be non-interactive if sidebar is open
