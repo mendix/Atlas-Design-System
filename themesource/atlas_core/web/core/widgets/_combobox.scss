@@ -1,10 +1,24 @@
-.hide-bg.form-group .widget-combobox {
-    .widget-combobox {
-        &-input-container {
-            background-color: transparent;
-            border: unset;
-            input {
+//
+// DISCLAIMER:
+// Do not change this file because it is core styling.
+// Customizing core files will make updating Atlas much more difficult in the future.
+// To customize any core styling, copy the part you want to customize to styles/web/sass/app/ so the core styling is overwritten.
+//
+
+@mixin combobox() {
+    /* ==========================================================================
+       Combobox
+       
+       Combobox input field inside form-group with hide-bg class
+    ========================================================================== */
+    .hide-bg.form-group .widget-combobox {
+        .widget-combobox {
+            &-input-container {
                 background-color: transparent;
+                border: unset;
+                input {
+                    background-color: transparent;
+                }
             }
         }
     }
