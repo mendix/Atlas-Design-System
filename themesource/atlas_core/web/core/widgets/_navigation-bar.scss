@@ -89,6 +89,7 @@
 
             & > .mx-navbar-item.active a {
                 color: var(--navigation-color-active);
+                background-color: var(--navigation-bg-active);
             }
 
             /* When hovering or the dropdown is open */

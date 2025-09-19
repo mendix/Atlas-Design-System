@@ -4,6 +4,10 @@
    Extra styling for responsive layouts
 ========================================================================== */
 @mixin layout-atlas-responsive() {
+    :root {
+        --closed-sidebar-width: 0px;
+    }
+    
     .layout-atlas {
         .mx-scrollcontainer {
             &:not(.mx-scrollcontainer-open) {
@@ -184,7 +188,7 @@
                     & > a {
                         height: var(--navsidebar-icon-height);
                         padding: var(--spacing-small) 0;
-                        margin: var(--spacing-small) 0 0 0;
+                        margin: var(--spacing-smaller) 0 0 0;
                         white-space: nowrap;
                         overflow: hidden;
                         border-radius: var(--navsidebar-border-radius);

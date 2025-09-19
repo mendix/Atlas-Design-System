@@ -35,6 +35,7 @@
                 z-index: 101;
             }
             box-shadow: var(--navsidebar-shadow);
+            border-right: var(--navsidebar-border-right);
 
             .mx-scrollcontainer-wrapper {
                 display: flex;
@@ -68,6 +69,7 @@
             z-index: 60; // Show dropshadow
             min-height: var(--topbar-minimalheight);
             background: var(--navtopbar-bg);
+            border-bottom: var(--navtopbar-border-bottom);
 
             // Topbar Content
             .topbar-content {
