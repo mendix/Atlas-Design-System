@@ -16,9 +16,23 @@
             &-input-container {
                 background-color: transparent;
                 border: unset;
+                outline: transparent;
                 input {
                     background-color: transparent;
                 }
+            }
+        }
+
+        .form-control{
+            &:hover:not(:focus):not([disabled]) {
+                border-color: transparent;
+                background-color: transparent;
+            }
+        }
+
+        .widget-combobox-icon-container{
+            svg{
+                fill: var(--cb-text-color);
             }
         }
     }
