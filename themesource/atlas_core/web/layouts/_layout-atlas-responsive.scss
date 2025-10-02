@@ -249,6 +249,11 @@
             @media (max-width: $screen-sm-max) {
                 padding: 0 var(--spacing-small);
             }
+            .topbar-wrapper {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+            }
         }
 
         .mx-scrollcontainer-slide {
