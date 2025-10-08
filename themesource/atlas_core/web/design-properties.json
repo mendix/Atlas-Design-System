@@ -126,124 +126,76 @@
                     "name": "None",
                     "top": {
                         "class": "spacing-outer-top-none",
-                        "oldNames": [
-                            "Spacing top::None",
-                            "Spacing top::Outer none"
-                        ]
+                        "oldNames": ["Spacing top::None", "Spacing top::Outer none"]
                     },
                     "right": {
                         "class": "spacing-outer-right-none",
-                        "oldNames": [
-                            "Spacing right::None",
-                            "Spacing right::Outer none"
-                        ]
+                        "oldNames": ["Spacing right::None", "Spacing right::Outer none"]
                     },
                     "bottom": {
                         "class": "spacing-outer-bottom-none",
-                        "oldNames": [
-                            "Spacing bottom::None",
-                            "Spacing bottom::Outer none"
-                        ]
+                        "oldNames": ["Spacing bottom::None", "Spacing bottom::Outer none"]
                     },
                     "left": {
                         "class": "spacing-outer-left-none",
-                        "oldNames": [
-                            "Spacing left::None",
-                            "Spacing left::Outer none"
-                        ]
+                        "oldNames": ["Spacing left::None", "Spacing left::Outer none"]
                     }
                 },
                 {
                     "name": "S",
                     "top": {
                         "class": "spacing-outer-top",
-                        "oldNames": [
-                            "Spacing top::Small",
-                            "Spacing top::Outer small"
-                        ]
+                        "oldNames": ["Spacing top::Small", "Spacing top::Outer small"]
                     },
                     "right": {
                         "class": "spacing-outer-right",
-                        "oldNames": [
-                            "Spacing right::Small",
-                            "Spacing right::Outer small"
-                        ]
+                        "oldNames": ["Spacing right::Small", "Spacing right::Outer small"]
                     },
                     "bottom": {
                         "class": "spacing-outer-bottom",
-                        "oldNames": [
-                            "Spacing bottom::Small",
-                            "Spacing bottom::Outer small"
-                        ]
+                        "oldNames": ["Spacing bottom::Small", "Spacing bottom::Outer small"]
                     },
                     "left": {
                         "class": "spacing-outer-left",
-                        "oldNames": [
-                            "Spacing left::Small",
-                            "Spacing left::Outer small"
-                        ]
+                        "oldNames": ["Spacing left::Small", "Spacing left::Outer small"]
                     }
                 },
                 {
                     "name": "M",
                     "top": {
                         "class": "spacing-outer-top-medium",
-                        "oldNames": [
-                            "Spacing top::Medium",
-                            "Spacing top::Outer medium"
-                        ]
+                        "oldNames": ["Spacing top::Medium", "Spacing top::Outer medium"]
                     },
                     "right": {
                         "class": "spacing-outer-right-medium",
-                        "oldNames": [
-                            "Spacing right::Medium",
-                            "Spacing right::Outer medium"
-                        ]
+                        "oldNames": ["Spacing right::Medium", "Spacing right::Outer medium"]
                     },
                     "bottom": {
                         "class": "spacing-outer-bottom-medium",
-                        "oldNames": [
-                            "Spacing bottom::Medium",
-                            "Spacing bottom::Outer medium"
-                        ]
+                        "oldNames": ["Spacing bottom::Medium", "Spacing bottom::Outer medium"]
                     },
                     "left": {
                         "class": "spacing-outer-left-medium",
-                        "oldNames": [
-                            "Spacing left::Medium",
-                            "Spacing left::Outer medium"
-                        ]
+                        "oldNames": ["Spacing left::Medium", "Spacing left::Outer medium"]
                     }
                 },
                 {
                     "name": "L",
                     "top": {
                         "class": "spacing-outer-top-large",
-                        "oldNames": [
-                            "Spacing top::Large",
-                            "Spacing top::Outer large"
-                        ]
+                        "oldNames": ["Spacing top::Large", "Spacing top::Outer large"]
                     },
                     "right": {
                         "class": "spacing-outer-right-large",
-                        "oldNames": [
-                            "Spacing right::Large",
-                            "Spacing right::Outer large"
-                        ]
+                        "oldNames": ["Spacing right::Large", "Spacing right::Outer large"]
                     },
                     "bottom": {
                         "class": "spacing-outer-bottom-large",
-                        "oldNames": [
-                            "Spacing bottom::Large",
-                            "Spacing bottom::Outer large"
-                        ]
+                        "oldNames": ["Spacing bottom::Large", "Spacing bottom::Outer large"]
                     },
                     "left": {
                         "class": "spacing-outer-left-large",
-                        "oldNames": [
-                            "Spacing left::Large",
-                            "Spacing left::Outer large"
-                        ]
+                        "oldNames": ["Spacing left::Large", "Spacing left::Outer large"]
                     }
                 }
             ],
@@ -252,117 +204,83 @@
                     "name": "None",
                     "top": {
                         "class": "spacing-inner-top-none",
-                        "oldNames": [
-                            "Spacing top::Inner none"
-                        ]
+                        "oldNames": ["Spacing top::Inner none"]
                     },
                     "right": {
                         "class": "spacing-inner-right-none",
-                        "oldNames": [
-                            "Spacing right::Inner none"
-                        ]
+                        "oldNames": ["Spacing right::Inner none"]
                     },
                     "bottom": {
                         "class": "spacing-inner-bottom-none",
-                        "oldNames": [
-                            "Spacing bottom::Inner none"
-                        ]
+                        "oldNames": ["Spacing bottom::Inner none"]
                     },
                     "left": {
                         "class": "spacing-inner-left-none",
-                        "oldNames": [
-                            "Spacing left::Inner none"
-                        ]
+                        "oldNames": ["Spacing left::Inner none"]
                     }
                 },
                 {
                     "name": "S",
                     "top": {
                         "class": "spacing-inner-top",
-                        "oldNames": [
-                            "Spacing top::Inner small"
-                        ]
+                        "oldNames": ["Spacing top::Inner small"]
                     },
                     "right": {
                         "class": "spacing-inner-right",
-                        "oldNames": [
-                            "Spacing right::Inner small"
-                        ]
+                        "oldNames": ["Spacing right::Inner small"]
                     },
                     "bottom": {
                         "class": "spacing-inner-bottom",
-                        "oldNames": [
-                            "Spacing bottom::Inner small"
-                        ]
+                        "oldNames": ["Spacing bottom::Inner small"]
                     },
                     "left": {
                         "class": "spacing-inner-left",
-                        "oldNames": [
-                            "Spacing left::Inner small"
-                        ]
+                        "oldNames": ["Spacing left::Inner small"]
                     }
                 },
                 {
                     "name": "M",
                     "top": {
                         "class": "spacing-inner-top-medium",
-                        "oldNames": [
-                            "Spacing top::Inner medium"
-                        ]
+                        "oldNames": ["Spacing top::Inner medium"]
                     },
                     "right": {
                         "class": "spacing-inner-right-medium",
-                        "oldNames": [
-                            "Spacing right::Inner medium"
-                        ]
+                        "oldNames": ["Spacing right::Inner medium"]
                     },
                     "bottom": {
                         "class": "spacing-inner-bottom-medium",
-                        "oldNames": [
-                            "Spacing bottom::Inner medium"
-                        ]
+                        "oldNames": ["Spacing bottom::Inner medium"]
                     },
                     "left": {
                         "class": "spacing-inner-left-medium",
-                        "oldNames": [
-                            "Spacing left::Inner medium"
-                        ]
+                        "oldNames": ["Spacing left::Inner medium"]
                     }
                 },
                 {
                     "name": "L",
                     "top": {
                         "class": "spacing-inner-top-large",
-                        "oldNames": [
-                            "Spacing top::Inner large"
-                        ]
+                        "oldNames": ["Spacing top::Inner large"]
                     },
                     "right": {
                         "class": "spacing-inner-right-large",
-                        "oldNames": [
-                            "Spacing right::Inner large"
-                        ]
+                        "oldNames": ["Spacing right::Inner large"]
                     },
                     "bottom": {
                         "class": "spacing-inner-bottom-large",
-                        "oldNames": [
-                            "Spacing bottom::Inner large"
-                        ]
+                        "oldNames": ["Spacing bottom::Inner large"]
                     },
                     "left": {
                         "class": "spacing-inner-left-large",
-                        "oldNames": [
-                            "Spacing left::Inner large"
-                        ]
+                        "oldNames": ["Spacing left::Inner large"]
                     }
                 }
             ]
         },
         {
             "name": "Align self",
-            "oldNames": [
-                "Align Self"
-            ],
+            "oldNames": ["Align Self"],
             "type": "ToggleButtonGroup",
             "description": "Float the element to the left or to the right.",
             "options": [
@@ -388,28 +306,19 @@
                     "name": "Phone",
                     "icon": "Atlas_Core.Atlas.mobile-phone",
                     "class": "hide-phone",
-                    "oldNames": [
-                        "Hide on phone",
-                        "Hide On Phone"
-                    ]
+                    "oldNames": ["Hide on phone", "Hide On Phone"]
                 },
                 {
                     "name": "Tablet",
                     "icon": "Atlas_Core.Atlas.tablet",
                     "class": "hide-tablet",
-                    "oldNames": [
-                        "Hide on tablet",
-                        "Hide On Tablet"
-                    ]
+                    "oldNames": ["Hide on tablet", "Hide On Tablet"]
                 },
                 {
                     "name": "Desktop",
                     "icon": "Atlas_Core.Atlas.desktop",
                     "class": "hide-desktop",
-                    "oldNames": [
-                        "Hide on desktop",
-                        "Hide On Desktop"
-                    ]
+                    "oldNames": ["Hide on desktop", "Hide On Desktop"]
                 }
             ]
         }
@@ -695,58 +604,43 @@
             "options": [
                 {
                     "name": "Background Primary",
-                    "oldNames": [
-                        "Background Default"
-                    ],
+                    "oldNames": ["Background Default"],
                     "preview": "--bg-color",
                     "class": "background-main"
                 },
                 {
                     "name": "Background Secondary",
-                    "oldNames": [
-                        "Background Dashboard"
-                    ],
+                    "oldNames": ["Background Dashboard"],
                     "preview": "--bg-color-secondary",
                     "class": "background-secondary"
                 },
                 {
                     "name": "Brand Primary",
-                    "oldNames": [
-                        "Primary"
-                    ],
+                    "oldNames": ["Primary"],
                     "preview": "--brand-primary",
                     "class": "background-primary"
                 },
                 {
                     "name": "Brand Secondary",
-                    "oldNames": [
-                        "Default",
-                        "Brand Default"
-                    ],
+                    "oldNames": ["Default", "Brand Default"],
                     "class": "background-default",
                     "preview": "--brand-default"
                 },
                 {
                     "name": "Brand Success",
-                    "oldNames": [
-                        "Success"
-                    ],
+                    "oldNames": ["Success"],
                     "preview": "--brand-success",
                     "class": "background-success"
                 },
                 {
                     "name": "Brand Warning",
-                    "oldNames": [
-                        "Warning"
-                    ],
+                    "oldNames": ["Warning"],
                     "preview": "--brand-warning",
                     "class": "background-warning"
                 },
                 {
                     "name": "Brand Danger",
-                    "oldNames": [
-                        "Danger"
-                    ],
+                    "oldNames": ["Danger"],
                     "preview": "--brand-danger",
                     "class": "background-danger"
                 }
@@ -770,9 +664,7 @@
                 {
                     "name": "200",
                     "class": "shade-200",
-                    "oldNames": [
-                        "Light"
-                    ],
+                    "oldNames": ["Light"],
                     "preview": "--gray-200"
                 },
                 {
@@ -793,9 +685,7 @@
                 {
                     "name": "600",
                     "class": "shade-600",
-                    "oldNames": [
-                        "Dark"
-                    ],
+                    "oldNames": ["Dark"],
                     "preview": "--gray-600"
                 },
                 {
@@ -960,9 +850,7 @@
         {
             "category": "Appearance",
             "name": "Shadow",
-            "oldNames": [
-                "Add shadow"
-            ],
+            "oldNames": ["Add shadow"],
             "type": "ToggleButtonGroup",
             "description": "Add a shadow to this element",
             "options": [
@@ -1005,51 +893,37 @@
         {
             "name": "Align content (deprecated)",
             "type": "Dropdown",
-            "oldNames": [
-                "Align content"
-            ],
+            "oldNames": ["Align content"],
             "description": "Align content of this element left, right or center it. Align elements inside the container as a row or as a column.",
             "options": [
                 {
                     "name": "Left align as a row",
-                    "oldNames": [
-                        "Left align as row"
-                    ],
+                    "oldNames": ["Left align as row"],
                     "class": "row-left"
                 },
                 {
                     "name": "Center align as a row",
-                    "oldNames": [
-                        "Center align as row"
-                    ],
+                    "oldNames": ["Center align as row"],
                     "class": "row-center"
                 },
                 {
                     "name": "Right align as a row",
-                    "oldNames": [
-                        "Right align as row"
-                    ],
+                    "oldNames": ["Right align as row"],
                     "class": "row-right"
                 },
                 {
                     "name": "Left align as a column",
-                    "oldNames": [
-                        "Left align as column"
-                    ],
+                    "oldNames": ["Left align as column"],
                     "class": "col-left"
                 },
                 {
                     "name": "Center align as a column",
-                    "oldNames": [
-                        "Center align as column"
-                    ],
+                    "oldNames": ["Center align as column"],
                     "class": "col-center"
                 },
                 {
                     "name": "Right align as a column",
-                    "oldNames": [
-                        "Right align as column"
-                    ],
+                    "oldNames": ["Right align as column"],
                     "class": "col-right"
                 }
             ]
@@ -1077,9 +951,7 @@
         {
             "category": "Appearance",
             "name": "Weight",
-            "oldNames": [
-                "Font Weight"
-            ],
+            "oldNames": ["Font Weight"],
             "type": "ToggleButtonGroup",
             "description": "Emphasize the text with a heavier or lighter font weight",
             "options": [
@@ -1141,9 +1013,7 @@
         {
             "category": "Appearance",
             "name": "Border",
-            "oldNames": [
-                "Bordered"
-            ],
+            "oldNames": ["Bordered"],
             "type": "Toggle",
             "description": "Style the button with a transparent background, a colored border, and colored text.",
             "class": "btn-bordered"
@@ -1169,9 +1039,7 @@
                 },
                 {
                     "name": "No styling",
-                    "oldNames": [
-                        "No Styling"
-                    ],
+                    "oldNames": ["No Styling"],
                     "class": "listview-stylingless"
                 }
             ]
@@ -1184,9 +1052,7 @@
         },
         {
             "name": "Row size",
-            "oldNames": [
-                "Row Size"
-            ],
+            "oldNames": ["Row Size"],
             "type": "ToggleButtonGroup",
             "description": "Change the row spacing of the list view.",
             "options": [
@@ -1217,9 +1083,7 @@
                 },
                 {
                     "name": "Multi",
-                    "oldNames": [
-                        "Cards style"
-                    ],
+                    "oldNames": ["Cards style"],
                     "class": "cards"
                 }
             ]
@@ -2104,58 +1968,43 @@
             "options": [
                 {
                     "name": "Background Primary",
-                    "oldNames": [
-                        "Background Default"
-                    ],
+                    "oldNames": ["Background Default"],
                     "preview": "--bg-color",
                     "class": "background-main"
                 },
                 {
                     "name": "Background Secondary",
-                    "oldNames": [
-                        "Background Dashboard"
-                    ],
+                    "oldNames": ["Background Dashboard"],
                     "preview": "--bg-color-secondary",
                     "class": "background-secondary"
                 },
                 {
                     "name": "Brand Primary",
-                    "oldNames": [
-                        "Primary"
-                    ],
+                    "oldNames": ["Primary"],
                     "preview": "--brand-primary",
                     "class": "background-primary"
                 },
                 {
                     "name": "Brand Secondary",
-                    "oldNames": [
-                        "Default",
-                        "Brand Default"
-                    ],
+                    "oldNames": ["Default", "Brand Default"],
                     "class": "background-default",
                     "preview": "--brand-default"
                 },
                 {
                     "name": "Brand Success",
-                    "oldNames": [
-                        "Success"
-                    ],
+                    "oldNames": ["Success"],
                     "preview": "--brand-success",
                     "class": "background-success"
                 },
                 {
                     "name": "Brand Warning",
-                    "oldNames": [
-                        "Warning"
-                    ],
+                    "oldNames": ["Warning"],
                     "preview": "--brand-warning",
                     "class": "background-warning"
                 },
                 {
                     "name": "Brand Danger",
-                    "oldNames": [
-                        "Danger"
-                    ],
+                    "oldNames": ["Danger"],
                     "preview": "--brand-danger",
                     "class": "background-danger"
                 }
@@ -2179,9 +2028,7 @@
                 {
                     "name": "200",
                     "class": "shade-200",
-                    "oldNames": [
-                        "Light"
-                    ],
+                    "oldNames": ["Light"],
                     "preview": "--gray-200"
                 },
                 {
@@ -2202,9 +2049,7 @@
                 {
                     "name": "600",
                     "class": "shade-600",
-                    "oldNames": [
-                        "Dark"
-                    ],
+                    "oldNames": ["Dark"],
                     "preview": "--gray-600"
                 },
                 {
@@ -2228,60 +2073,43 @@
             "category": "Appearance",
             "name": "Background footer",
             "type": "ColorPicker",
-            "oldNames": [
-                "Background color footer"
-            ],
+            "oldNames": ["Background color footer"],
             "property": "--dataview-controls-bg",
             "description": "Change the background color of the footer.",
             "options": [
                 {
                     "name": "Background Primary",
-                    "oldNames": [
-                        "Background Default"
-                    ],
+                    "oldNames": ["Background Default"],
                     "variable": "--bg-color"
                 },
                 {
                     "name": "Background Secondary",
-                    "oldNames": [
-                        "Background Dashboard"
-                    ],
+                    "oldNames": ["Background Dashboard"],
                     "variable": "--bg-color-secondary"
                 },
                 {
                     "name": "Brand Primary",
-                    "oldNames": [
-                        "Primary"
-                    ],
+                    "oldNames": ["Primary"],
                     "variable": "--brand-primary"
                 },
                 {
                     "name": "Brand Secondary",
-                    "oldNames": [
-                        "Default",
-                        "Brand Default"
-                    ],
+                    "oldNames": ["Default", "Brand Default"],
                     "variable": "--background-default"
                 },
                 {
                     "name": "Brand Success",
-                    "oldNames": [
-                        "Success"
-                    ],
+                    "oldNames": ["Success"],
                     "variable": "--brand-success"
                 },
                 {
                     "name": "Brand Warning",
-                    "oldNames": [
-                        "Warning"
-                    ],
+                    "oldNames": ["Warning"],
                     "variable": "--brand-warning"
                 },
                 {
                     "name": "Brand Danger",
-                    "oldNames": [
-                        "Danger"
-                    ],
+                    "oldNames": ["Danger"],
                     "variable": "--bg-danger"
                 }
             ]
@@ -2376,42 +2204,31 @@
             "options": [
                 {
                     "name": "Brand Primary",
-                    "oldNames": [
-                        "Primary"
-                    ],
+                    "oldNames": ["Primary"],
                     "class": "groupbox-primary",
                     "preview": "--groupbox-primary-bg"
                 },
                 {
                     "name": "Brand Secondary",
-                    "oldNames": [
-                        "Default",
-                        "Brand Default"
-                    ],
+                    "oldNames": ["Default", "Brand Default"],
                     "class": "groupbox-secondary",
                     "preview": "--groupbox-default-bg"
                 },
                 {
                     "name": "Brand Success",
-                    "oldNames": [
-                        "Success"
-                    ],
+                    "oldNames": ["Success"],
                     "class": "groupbox-success",
                     "preview": "--groupbox-success-bg"
                 },
                 {
                     "name": "Brand Warning",
-                    "oldNames": [
-                        "Warning"
-                    ],
+                    "oldNames": ["Warning"],
                     "class": "groupbox-warning",
                     "preview": "--groupbox-warning-bg"
                 },
                 {
                     "name": "Brand Danger",
-                    "oldNames": [
-                        "Danger"
-                    ],
+                    "oldNames": ["Danger"],
                     "class": "groupbox-danger",
                     "preview": "--groupbox-danger-bg"
                 },
@@ -2545,42 +2362,31 @@
             "options": [
                 {
                     "name": "Brand Primary",
-                    "oldNames": [
-                        "Primary"
-                    ],
+                    "oldNames": ["Primary"],
                     "class": "label-primary",
                     "preview": "--label-primary-bg"
                 },
                 {
                     "name": "Brand Secondary",
-                    "oldNames": [
-                        "Default",
-                        "Brand Default"
-                    ],
+                    "oldNames": ["Default", "Brand Default"],
                     "class": "label-secondary",
                     "preview": "--label-default-bg"
                 },
                 {
                     "name": "Brand Success",
-                    "oldNames": [
-                        "Success"
-                    ],
+                    "oldNames": ["Success"],
                     "class": "label-success",
                     "preview": "--label-success-bg"
                 },
                 {
                     "name": "Brand Warning",
-                    "oldNames": [
-                        "Warning"
-                    ],
+                    "oldNames": ["Warning"],
                     "class": "label-warning",
                     "preview": "--label-warning-bg"
                 },
                 {
                     "name": "Brand Danger",
-                    "oldNames": [
-                        "Danger"
-                    ],
+                    "oldNames": ["Danger"],
                     "class": "label-danger",
                     "preview": "--label-danger-bg"
                 }
@@ -2615,9 +2421,7 @@
         {
             "category": "Appearance",
             "name": "Tab position",
-            "oldNames": [
-                "Tab Position"
-            ],
+            "oldNames": ["Tab Position"],
             "type": "ToggleButtonGroup",
             "description": "Change the position of the tabs",
             "options": [
@@ -2668,9 +2472,7 @@
         {
             "category": "Typography",
             "name": "Weight",
-            "oldNames": [
-                "Font Weight"
-            ],
+            "oldNames": ["Font Weight"],
             "type": "ToggleButtonGroup",
             "description": "Emphasize the text with a heavier or lighter font weight",
             "options": [
@@ -2710,43 +2512,31 @@
                 },
                 {
                     "name": "Brand Primary",
-                    "oldNames": [
-                        "Primary"
-                    ],
+                    "oldNames": ["Primary"],
                     "class": "text-primary",
                     "preview": "--brand-primary"
                 },
                 {
                     "name": "Default",
-                    "oldNames": [
-                        "Default",
-                        "Brand Default",
-                        "Brand Secondary"
-                    ],
+                    "oldNames": ["Default", "Brand Default", "Brand Secondary"],
                     "class": "text-default",
                     "preview": "--font-color-default"
                 },
                 {
                     "name": "Brand Success",
-                    "oldNames": [
-                        "Success"
-                    ],
+                    "oldNames": ["Success"],
                     "class": "text-success",
                     "preview": "--brand-success"
                 },
                 {
                     "name": "Brand Warning",
-                    "oldNames": [
-                        "Warning"
-                    ],
+                    "oldNames": ["Warning"],
                     "class": "text-warning",
                     "preview": "--brand-warning"
                 },
                 {
                     "name": "Brand Danger",
-                    "oldNames": [
-                        "Danger"
-                    ],
+                    "oldNames": ["Danger"],
                     "class": "text-danger",
                     "preview": "--brand-danger"
                 },
@@ -2754,9 +2544,7 @@
                     "name": "Contrast",
                     "class": "text-white",
                     "preview": "--font-color-contrast",
-                    "oldNames": [
-                        "White"
-                    ]
+                    "oldNames": ["White"]
                 }
             ]
         },
@@ -2839,24 +2627,18 @@
         {
             "category": "Typography",
             "name": "Letter case",
-            "oldNames": [
-                "Transform"
-            ],
+            "oldNames": ["Transform"],
             "type": "ToggleButtonGroup",
             "description": "Change the letter case of the text.",
             "options": [
                 {
                     "name": "lower",
-                    "oldNames": [
-                        "Lowercase"
-                    ],
+                    "oldNames": ["Lowercase"],
                     "class": "text-lowercase"
                 },
                 {
                     "name": "UPPER",
-                    "oldNames": [
-                        "Uppercase"
-                    ],
+                    "oldNames": ["Uppercase"],
                     "class": "text-uppercase"
                 },
                 {
@@ -2878,9 +2660,7 @@
                 {
                     "name": "No wrap",
                     "class": "text-nowrap",
-                    "oldNames": [
-                        "No Wrap"
-                    ]
+                    "oldNames": ["No Wrap"]
                 }
             ]
         }
@@ -3064,9 +2844,7 @@
         {
             "category": "Appearance",
             "name": "Border",
-            "oldNames": [
-                "Bordered"
-            ],
+            "oldNames": ["Bordered"],
             "type": "Toggle",
             "description": "Style the button with a transparent background, a colored border, and colored text.",
             "class": "btn-bordered"
