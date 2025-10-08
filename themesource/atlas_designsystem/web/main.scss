@@ -1,4 +1,6 @@
 @import "../../datawidgets/web/datagrid.scss";
+@import "../../atlas_core/web/core/base/card";
+@include card();
 
 .card-preview{
     > .card-body{
@@ -12,14 +14,21 @@
 }
 
 .grid-variation{
+    @extend .card;
+    --layoutgrid-row-gap: 0px;
+    --layoutgrid-column-gap: 0px;
     > .row{
         margin-left: 0;
         margin-right: 0;
         > [class*="col-"]{
-            border: 0.5px solid var(--bg-color) ;
+            &:not(:last-child){
+                border-right: 0.5px solid var(--border-color-default);
+            }
             padding-left: 0;
             padding-right: 0;
-            background: var(--bg-color-secondary) ;
+        }
+        &:not(:last-child){
+            border-bottom: 0.5px solid var(--border-color-default);
         }
     }
 }
@@ -59,11 +68,6 @@
     > .row > .col{
         padding: var(--spacing-large);
         background-color: var(--brand-danger-200);
-        border-top: var(--spacing-small) solid #fff;
-        border-bottom: var(--spacing-small) solid #fff;
-        border-right: var(--spacing-small) solid #fff;
-        &:first-child{
-            border-left: var(--spacing-small) solid #fff;
-        }
+        border-radius: var(--border-radius-default);
     }
 }

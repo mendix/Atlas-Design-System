@@ -21,8 +21,8 @@
   --brand-danger-hover: var(--brand-danger-700);
 
   /* Brand Logo */
-  --brand-logo-height: 24px;
-  --brand-logo-width: 32px;
+  --brand-logo-height: 36px;
+  --brand-logo-width: 36px;
   --brand-gradient: linear-gradient(to bottom, var(--brand-primary-900), var(--brand-primary-700));
 
   /* Default Font Size & Color */
@@ -107,7 +107,7 @@
 
   /* Navigation */
   --navigation-item-height: unset;
-  --navigation-item-padding: var(--spacing-medium);
+  --navigation-item-padding: 12px;
   --navigation-border-radius: var(--border-radius-m);
   --navigation-scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
 
@@ -147,6 +147,7 @@
   --navsidebar-border-color: var(--border-color-default);
   --navsidebar-border-radius: var(--navigation-border-radius);
   --navsidebar-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
+  --navsidebar-border-right: none;
 
   --navsidebar-font-size: var(--font-size-default);
   --navsidebar-sub-font-size: var(--font-size-small);
@@ -160,17 +161,17 @@
   --navsidebar-sub-color-hover: var(--navigation-color-hover);
   --navsidebar-sub-color-active: var(--navigation-color-active);
 
-  --navsidebar-width-closed: 48px;
+  --navsidebar-width-closed: 52px;
   --navsidebar-width-open: 232px;
   --navsidebar-toggle-size: 32px;
 
-  --navsidebar-icon-height: 48px;
-  --navsidebar-icon-width: 48px;
+  --navsidebar-icon-height: 44px;
+  --navsidebar-icon-width: 52px;
   --navsidebar-animation-duration: 250ms;
   --navsidebar-animation-function: ease-in;
 
   /* Topbar Navigation */
-  --navtopbar-font-size: var(--font-size-small);
+  --navtopbar-font-size: var(--font-size-default);
   --navtopbar-sub-font-size: var(--font-size-small);
   --navtopbar-glyph-size: 1.2em;
 
@@ -190,6 +191,7 @@
 
   --navtopbar-border-color: var(--topbar-border-color);
   --navtopbar-border-radius: var(--navigation-border-radius);
+  --navtopbar-border-bottom: none;
 
     /* Shadows */
   --shadow-color-border: var(--border-color-default);
@@ -599,4 +601,4 @@ $btn-bordered: false !default; // Default value false, set to true if you want t
 // Use of !important
 $important-flex: false !default; // ./base/flex.scss
 $important-spacing: true !default; // ./base/spacing.scss
-$important-helpers: false !default; // ./helpers/helperclasses.scss
+$important-helpers: true !default; // ./helpers/helperclasses.scss

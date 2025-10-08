@@ -312,6 +312,11 @@
     @include progress();
 }
 
+@import "core/widgets/combobox";
+@if not $exclude-combobox {
+    @include combobox();
+}
+
 @import "core/widgets/progress-bar";
 @if not $exclude-progress-bar {
     @include progress-bar();

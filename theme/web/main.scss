@@ -2,7 +2,14 @@
 @import "theme-dark";
 @import "theme-neutral";
 
-.mx-image-viewer:not(.mx-image-background) {
-    display: inline;
-    width: auto !important;
+.navtopbar-submenu {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.2) 90%, rgba(0,0,0,0) 100%);
+}
+
+.topbar-dynamic-center {
+    flex: var(--flex-auto);
+    > .mx-dataview-content {
+        display: flex;
+        align-items: center;
+    }
 }

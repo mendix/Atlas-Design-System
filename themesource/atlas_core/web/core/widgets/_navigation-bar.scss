@@ -22,8 +22,10 @@
             /* Navigation item */
             & > li.mx-navbar-item > a {
                 display: flex;
+                column-gap: var(--spacing-small);
                 align-items: center;
                 padding: var(--navigation-item-padding);
+                margin: var(--spacing-smaller);
                 vertical-align: middle;
                 color: var(--navigation-color);
                 border-radius: 0;
@@ -74,14 +76,12 @@
                 img {
                     width: 20px; // Default size (so it looks good)
                     height: auto;
-                    margin-right: 0.5em;
                 }
 
                 .glyphicon,
                 .mx-icon-lined,
                 .mx-icon-filled {
                     top: 0;
-                    margin-right: 0.5em;
                     vertical-align: middle;
                     font-size: var(--navigation-glyph-size);
                 }
@@ -89,6 +89,7 @@
 
             & > .mx-navbar-item.active a {
                 color: var(--navigation-color-active);
+                background-color: var(--navigation-bg-active);
             }
 
             /* When hovering or the dropdown is open */

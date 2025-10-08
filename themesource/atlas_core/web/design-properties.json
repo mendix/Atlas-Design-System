@@ -485,7 +485,7 @@
                 },
                 {
                     "name": "Hug content (only shrink)",
-                    "variable": "--flex-fit-content",
+                    "variable": "--flex-shrink",
                     "icon": "Atlas_Core.Atlas_Styling.grow-shrink-auto-fit"
                 },
                 {
@@ -1072,10 +1072,21 @@
     "LayoutGrid": [
         {
             "category": "Column style",
-            "name": "Cards style",
-            "type": "Toggle",
+            "name": "Card style",
+            "type": "ToggleButtonGroup",
             "description": "Makes the columns appear as cards.",
-            "class": "cards"
+            "multiSelect": true,
+            "options": [
+                {
+                    "name": "Single",
+                    "class": "card-grid"
+                },
+                {
+                    "name": "Multi",
+                    "oldNames": ["Cards style"],
+                    "class": "cards"
+                }
+            ]
         },
         {
             "category": "Column style",
@@ -3222,6 +3233,52 @@
                     "name": "Brand Danger",
                     "class": "widget-range-slider-danger",
                     "preview": "--brand-danger"
+                }
+            ]
+        }
+    ],
+    "com.mendix.widget.web.combobox.Combobox": [
+        {
+            "name": "Hide background",
+            "type": "Toggle",
+            "class": "hide-bg"
+        },
+        {
+            "name": "Color",
+            "type": "ColorPicker",
+            "property": "--cb-text-color",
+            "options": [
+                {
+                    "name": "Header color",
+                    "variable": "--font-color-header"
+                },
+                {
+                    "name": "Detail color",
+                    "variable": "--font-color-detail"
+                },
+                {
+                    "name": "Brand Primary",
+                    "variable": "--brand-primary"
+                },
+                {
+                    "name": "Default",
+                    "variable": "--font-color-default"
+                },
+                {
+                    "name": "Brand Success",
+                    "variable": "--brand-success"
+                },
+                {
+                    "name": "Brand Warning",
+                    "variable": "--brand-warning"
+                },
+                {
+                    "name": "Brand Danger",
+                    "variable": "--brand-danger"
+                },
+                {
+                    "name": "Contrast",
+                    "variable": "--font-color-contrast"
                 }
             ]
         }

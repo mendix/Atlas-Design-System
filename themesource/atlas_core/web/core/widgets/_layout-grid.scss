@@ -28,8 +28,8 @@
 
         &.cards {
             // default column & row gap for card style
-            --layoutgrid-row-gap: var(--gutter-size); //var(--spacing-medium);
-            --layoutgrid-column-gap: var(--gutter-size); //var(--spacing-medium);
+            --layoutgrid-row-gap: var(--gutter-size);
+            --layoutgrid-column-gap: var(--gutter-size);
             --layoutgrid-column-bg: var(--bg-color-secondary);
             --card-bg-color: var(--layoutgrid-column-bg);
             --card-border-radius: var(--layoutgrid-column-border-radius);
@@ -38,6 +38,27 @@
                 > .col,
                 > [class*="col-"] {
                     @extend .card;
+                }
+            }
+        }
+
+        &.card-grid {
+            @extend .card;
+            --layoutgrid-row-gap: 0px;
+            --layoutgrid-column-gap: 0px;
+            --card-bg-color: var(--layoutgrid-column-bg);
+            --card-border-radius: var(--layoutgrid-column-border-radius);
+            padding: 0;
+
+            > .row{
+                margin-left: 0;
+                margin-right: 0;
+                > [class*="col-"]{
+                    border: 0.5px solid var(--border-color-default);
+                    padding: var(--card-padding);
+                }
+                &:not(:last-child){
+                    border-bottom: 0.5px solid var(--border-color-default);
                 }
             }
         }

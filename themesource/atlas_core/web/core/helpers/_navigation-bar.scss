@@ -18,6 +18,11 @@
             background: var(--navtopbar-bg);
             min-height: auto;
             ul.nav {
+                display: flex;
+                flex-flow: wrap;
+                align-items: center;
+                justify-content: center;
+                
                 > .mx-navbar-item {
                     margin-left: var(--spacing-small);
                 }
@@ -77,15 +82,14 @@
                 & > .mx-navbar-item.open .dropdown-menu {
                     border-radius: var(--navtopbar-border-radius);
                     background: var(--navtopbar-sub-bg);
-                    padding: var(--spacing-small) var(--spacing-small) 0;
+                    padding: 0;
                     margin: 0;
                     border: 0;
                     box-shadow: 0px 2px 2px rgba(194, 196, 201, 0.30354);
                     & > li.mx-navbar-subitem a {
-                        padding: var(--spacing-small);
+                        padding: var(--spacing-medium);
                         color: var(--navtopbar-color);
                         border-radius: var(--navtopbar-border-radius);
-                        margin-bottom: var(--spacing-small);
                         line-height: 1.2;
                         &:hover,
                         &:focus {
@@ -95,7 +99,7 @@
                     }
                 }
                 & > .mx-navbar-item.open .dropdown-menu > li.mx-navbar-subitem.active a {
-                    color: var(--navtopbar-sub-color-activ);
+                    color: var(--navtopbar-sub-color-active);
                     background: var(--navtopbar-sub-bg-active);
                     .caret {
                         border-top-color: var(--navtopbar-sub-color-active);
