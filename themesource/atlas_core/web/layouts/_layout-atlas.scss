@@ -71,6 +71,11 @@
             background: var(--navtopbar-bg);
             border-bottom: var(--navtopbar-border-bottom);
 
+            // allow secondary color for different type of navbar
+            &.topbar-secondary{
+                background: var(--navtopbar-bg-secondary, --navtopbar-bg);
+            }
+
             // Topbar Content
             .topbar-content {
                 display: flex;

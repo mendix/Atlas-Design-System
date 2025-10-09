@@ -214,7 +214,7 @@
     }
 
     @media (min-width: $screen-lg) {
-        .hide-desktop {
+        .profile-desktop .hide-desktop {
             display: none #{$important-helpers-value};
         }
     }
