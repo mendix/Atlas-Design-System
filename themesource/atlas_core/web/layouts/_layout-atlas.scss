@@ -72,7 +72,7 @@
             border-bottom: var(--navtopbar-border-bottom);
 
             // allow secondary color for different type of navbar
-            &.topbar-secondary{
+            &.topbar-secondary {
                 background: var(--navtopbar-bg-secondary, --navtopbar-bg);
             }
 
@@ -107,8 +107,9 @@
                     @if $brand-logo !=false {
                         width: 0;
                         height: 0;
-                        padding: calc(var(--brand-logo-height / 2)) calc(var(--brand-logo-width / 2));
-                        background-image: url(var($brand-logo));
+                        padding: calc(var(--brand-logo-height, $brand-logo-height) / 2)
+                            calc(var(--brand-logo-width, $brand-logo-width) / 2);
+                        background-image: url(#{$brand-logo});
                         background-repeat: no-repeat;
                         background-position: left center;
                         background-size: var(--brand-logo-width);

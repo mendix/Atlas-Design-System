@@ -1,0 +1,21 @@
+@mixin mxui-core() {
+
+    /* Client defaults and helpers */
+    .mx-dataview-content,
+    .mx-tabcontainer-content,
+    .mx-grid-content {
+        -webkit-overflow-scrolling: touch;
+    }
+    html,
+    body,
+    #content,
+    #root {
+        height: 100%;
+        margin: 0;
+    }
+    #content > .mx-page,
+    #root > .mx-page {
+        width: 100%;
+        min-height: 100%;
+    }
+}

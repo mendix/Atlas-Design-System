@@ -25,14 +25,15 @@
     }
 
     .radio {
-        display: flex !important; // Remove after mxui merge
+        display: flex;
         align-items: center;
         margin-top: 0;
     }
 
     input[type="radio"] {
-        position: relative !important; // Remove after mxui merge
+        position: relative !important;
         width: 16px;
+        flex: 0 0 16px;
         height: 16px;
         margin: 0;
         cursor: pointer;
@@ -67,7 +68,7 @@
             pointer-events: none;
             background-color: var(--form-input-border-focus-color);
         }
-        
+
         &:focus-visible {
             border-radius: 100%;
             @extend .focus-ring !optional;
@@ -107,7 +108,7 @@
         }
 
         & + label {
-            margin-left: var(--form-label-gutter);
+            margin-inline-start: var(--form-label-gutter);
         }
     }
 }

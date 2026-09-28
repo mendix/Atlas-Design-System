@@ -85,7 +85,7 @@
         line-height: var(--form-input-line-height);
 
         & + .control-label {
-            margin-left: var(--form-label-gutter);
+            margin-inline-start: var(--form-label-gutter);
         }
     }
 
@@ -105,6 +105,11 @@
         align-items: center;
         flex-direction: row-reverse;
         justify-content: space-between;
+    }
+
+    // Text box widget should stay in the middle horizontally
+    .form-group.mx-textbox:not(.no-columns) .form-control {
+        align-self: center;
     }
 
     // Not editable textarea, textarea will be rendered as a label
@@ -164,14 +169,14 @@
         div[class*="textBox"] > .control-label,
         div[class*="textArea"] > .control-label,
         div[class*="datePicker"] > .control-label {
-            @extend .form-control-static;
+            @extend .form-control-static !optional;
         }
 
         // Label
         .control-label {
             overflow: hidden;
             margin-bottom: 4px;
-            text-align: left;
+            text-align: start;
             text-overflow: ellipsis;
             color: var(--form-label-color);
             font-size: var(--form-label-size);
@@ -188,16 +193,16 @@
     }
 
     .page-form-vertical {
-        @extend .form-vertical;
+        @extend .form-vertical !optional;
         .form-group:not(.label-after) {
             flex-direction: column;
         }
     }
 
     .page-form-horizontal {
-        @extend .form-horizontal;
+        @extend .form-horizontal !optional;
         @media not screen and (max-width: $screen-sm-max) {
-            .form-group.no-columns:not(.label-after){
+            .form-group.no-columns:not(.label-after) {
                 // overwrite default no-columns behavior when
                 // page form orientation is set to horizontal
                 flex-direction: row;
@@ -206,7 +211,7 @@
 
         $label-breakpoints: sm, md, lg, xl, xxl;
         @each $bp in $label-breakpoints {
-            &:not([class*="form-label-width-"]){
+            &:not([class*="form-label-width-"]) {
                 // default label width 3 if none specified
                 .form-group > label {
                     @extend .col-#{$bp}-3;
@@ -240,10 +245,10 @@
 
     // Targets only webkit iOS devices
     .dj_webkit.dj_ios .form-control {
-        transform: translate3d(0,0,0);
-        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
 
-        &.widget-dropdown-filter{
+        &.widget-dropdown-filter {
             transform: inherit;
             -webkit-transform: inherit;
         }
@@ -255,7 +260,7 @@
                 margin-bottom: 0;
                 padding-top: var(--form-input-padding-y);
                 padding-bottom: var(--form-input-padding-y);
-                padding-right: var(--form-label-gutter);
+                padding-inline-end: var(--form-label-gutter);
                 line-height: var(--form-input-line-height);
             }
         }

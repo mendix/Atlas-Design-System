@@ -16,6 +16,7 @@
         flex-wrap: wrap;
 
         .control-label {
+            flex: 1;
             display: flex;
             align-items: center;
             padding: 0;
@@ -23,6 +24,8 @@
     }
 
     input[type="checkbox"] {
+        flex: 0 0 auto;
+        align-self: center;
         position: relative !important; //Remove after mxui merge
         width: 16px;
         height: 16px;
@@ -93,7 +96,7 @@
         }
 
         & + .control-label {
-            margin-left: var(--form-label-gutter);
+            margin-inline-start: var(--form-label-gutter);
         }
 
         &:focus-visible {

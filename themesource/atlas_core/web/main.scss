@@ -29,8 +29,12 @@
     @include bootstrap-rtl();
 }
 @import "core/_legacy/mxui";
+@import "core/_legacy/mxui-core";
 @if not $exclude-mxui {
     @include mxui();
+} 
+@else {
+    @include mxui-core();
 }
 
 //================================== CORE ==================================\\

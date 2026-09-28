@@ -4,6 +4,7 @@ This mapping file provides defaults for sass variables to provide backwards comp
 Do not change this file because it is core styling. Customizing core files will make updating Atlas much more difficult in the future.
 */
 @import "breakpoints";
+@import "color-variants-defaults";
 
 $use-css-variables: false !default;
 
@@ -19,18 +20,59 @@ $color-base: #fff !default;
 $color-contrast: #000 !default;
 $brand-default: mix($brand-primary, #e7e7e9, 10%) !default;
 
+// Color value map for helper functions
+$color-value-map: (
+    "brand-primary": $brand-primary,
+    "brand-success": $brand-success,
+    "brand-warning": $brand-warning,
+    "brand-danger": $brand-danger,
+    "brand-default": $brand-default,
+    "gray": $gray
+);
+
+/// Get a color value or shade, conditionally returning CSS variables or computed values
+/// @param {string} $color-name - Base color name ("brand-primary", "gray", etc.)
+/// @param {number} $shade - Optional shade (50, 100, 200, ..., 900)
+/// @return {color|string} - Computed color or CSS variable reference
+@function get-color-value($color-name, $shade: null) {
+    $base-color: map-get($color-value-map, $color-name);
+
+    @if $base-color == null {
+        @error "Color '#{$color-name}' not found in $color-value-map. Available colors: brand-primary, brand-success, brand-warning, brand-danger, brand-default, gray";
+    }
+
+    @if $shade != null {
+        @if $use-css-variables {
+            @return var(--#{$color-name}-#{$shade});
+        } @else {
+            // Get the adjustment percentage from $lightness-steps (imported from _color-variants-defaults.scss)
+            $adjustment: map-get($lightness-steps, $shade);
+            @if $adjustment == null {
+                @error "Shade '#{$shade}' not found in $lightness-steps. Available shades: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900";
+            }
+            @return adjust-color-lightness($base-color, $adjustment);
+        }
+    } @else {
+        @return $base-color;
+    }
+}
+
 $brand-logo: false !default;
 $brand-logo-height: 24px !default;
 $brand-logo-width: 32px !default;
-$brand-gradient: linear-gradient(to bottom, var(--brand-primary-900), var(--brand-primary-700)) !default;
+$brand-gradient: linear-gradient(
+    to bottom,
+    get-color-value("brand-primary", 900),
+    get-color-value("brand-primary", 700)
+) !default;
 
 /* Default Font Size & Color */
 $font-size-default: 14px !default;
-$font-color-default: var(--gray-900) !default;
+$font-color-default: get-color-value("gray", 900) !default;
 $font-color-contrast: $color-base !default;
 
 /* Global Border */
-$border-color-default: var(--gray-300) !default;
+$border-color-default: get-color-value("gray", 300) !default;
 $border-radius-s: 4px !default;
 $border-radius-m: 8px !default;
 $border-radius-l: 12px !default;
@@ -42,12 +84,20 @@ $border-width-default: $border-width-thin !default;
 $border-default: $border-width-default solid $border-color-default !default;
 
 /* Topbar */
-$topbar-bg: linear-gradient(to bottom, var(--brand-primary-500), var(--brand-primary-600)) !default;
+$topbar-bg: linear-gradient(
+    to bottom,
+    get-color-value("brand-primary", 500),
+    get-color-value("brand-primary", 600)
+) !default;
 $topbar-minimalheight: 48px !default;
 $topbar-border-color: $border-color-default !default;
 
 /* Sidebar */
-$sidebar-bg: linear-gradient(to bottom, var(--brand-primary-600), var(--brand-primary-700)) !default;
+$sidebar-bg: linear-gradient(
+    to bottom,
+    get-color-value("brand-primary", 600),
+    get-color-value("brand-primary", 700)
+) !default;
 
 /* Topbar mobile */
 $m-header-height: 45px !default;
@@ -59,12 +109,12 @@ $m-header-title-size: 16px !default;
 $navbar-brand-name: $font-color-default !default;
 
 /* Background Colors */
-$bg-color: var(--brand-default-100) !default;
+$bg-color: get-color-value("brand-default", 100) !default;
 $bg-color-secondary: $color-base !default;
 
 /* Default Link Color */
 $link-color: $brand-primary !default;
-$link-hover-color: var(--brand-primary-400) !default;
+$link-hover-color: get-color-value("brand-primary", 400) !default;
 
 /* Font Family */
 $font-family-import: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" !default;
@@ -98,8 +148,8 @@ $line-height-base: 1.428571429 !default;
 $font-header-margin: 0 0 8px 0 !default;
 
 /* Font Colors */
-$font-color-detail: var(--brand-primary-700) !default;
-$font-color-header: var(--brand-primary-800) !default;
+$font-color-detail: get-color-value("brand-primary", 700) !default;
+$font-color-header: get-color-value("brand-primary", 800) !default;
 
 /* Navigation */
 $navigation-item-height: unset !default;
@@ -132,7 +182,7 @@ $navsidebar-bg: $sidebar-bg !default;
 $navsidebar-bg-hover: $navigation-bg-hover !default;
 $navsidebar-bg-active: $navigation-bg-active !default;
 
-$navsidebar-sub-bg: var(--brand-primary-800) !default;
+$navsidebar-sub-bg: get-color-value("brand-primary", 800) !default;
 $navsidebar-sub-bg-hover: $navigation-bg-hover !default;
 $navsidebar-sub-bg-active: $navigation-bg-active !default;
 
@@ -177,7 +227,7 @@ $navtopbar-border-color: $topbar-border-color !default;
 
 /* Shadows */
 $shadow-color-border: $border-color-default !default;
-$shadow-color: var(--gray-200) !default;
+$shadow-color: get-color-value("gray", 200) !default;
 $shadow-small: 0 2px 4px 0 !default;
 $shadow-medium: 0 4px 6px 0 !default;
 $shadow-large: 0 8px 10px 0 !default;
@@ -201,13 +251,13 @@ $form-input-border-radius: 6px !default;
 
 $form-input-bg: $color-base !default;
 $form-input-bg-focus: $color-base !default;
-$form-input-bg-hover: var(--gray-200) !default;
+$form-input-bg-hover: get-color-value("gray", 200) !default;
 $form-input-bg-disabled: $bg-color !default;
 $form-input-color: $font-color-default !default;
 $form-input-focus-color: $form-input-color !default;
-$form-input-disabled-color: var(--gray-700) !default;
-$form-input-placeholder-color: var(--gray-600) !default;
-$form-input-border-color: var(--gray-200) !default;
+$form-input-disabled-color: get-color-value("gray", 700) !default;
+$form-input-placeholder-color: get-color-value("gray", 600) !default;
+$form-input-border-color: get-color-value("gray", 200) !default;
 $form-input-border-focus-color: $brand-primary !default;
 $form-input-border-hover-color: color-mix(
     in srgb,
@@ -215,7 +265,7 @@ $form-input-border-hover-color: color-mix(
     $form-input-border-focus-color 50%
 ) !default;
 
-$form-input-static-border-color: var(--gray-200) !default;
+$form-input-static-border-color: get-color-value("gray", 200) !default;
 
 $form-group-margin-bottom: 16px !default;
 $form-group-gutter: 16px !default;
@@ -231,7 +281,7 @@ $btn-success-bg: $brand-success !default;
 $btn-warning-bg: $brand-warning !default;
 $btn-danger-bg: $brand-danger !default;
 
-$btn-default-border-color: var(--gray-200) !default;
+$btn-default-border-color: get-color-value("gray", 200) !default;
 $btn-primary-border-color: $brand-primary !default;
 $btn-success-border-color: $brand-success !default;
 $btn-warning-border-color: $brand-warning !default;
@@ -245,12 +295,12 @@ $btn-danger-color: $font-color-contrast !default;
 
 $btn-default-icon-color: $gray !default;
 
-$btn-default-bg-hover: var(--gray-200) !default;
-$btn-primary-bg-hover: var(--brand-primary-600) !default;
-$btn-success-bg-hover: var(--brand-success-600) !default;
-$btn-warning-bg-hover: var(--brand-warning-600) !default;
-$btn-danger-bg-hover: var(--brand-danger-600) !default;
-$btn-link-bg-hover: var(--gray-50) !default;
+$btn-default-bg-hover: get-color-value("gray", 200) !default;
+$btn-primary-bg-hover: get-color-value("brand-primary", 600) !default;
+$btn-success-bg-hover: get-color-value("brand-success", 600) !default;
+$btn-warning-bg-hover: get-color-value("brand-warning", 600) !default;
+$btn-danger-bg-hover: get-color-value("brand-danger", 600) !default;
+$btn-link-bg-hover: get-color-value("gray", 50) !default;
 
 /* Header */
 $header-min-height: 240px !default;
@@ -264,11 +314,11 @@ $grid-border-color: $border-color-default !default;
 
 $grid-bg: transparent !default;
 $grid-bg-header: transparent !default;
-$grid-bg-hover: var(--gray-100) !default;
-$grid-bg-selected: var(--gray-200) !default;
-$grid-bg-selected-hover: var(--gray-300) !default;
-$grid-bg-striped: var(--gray-50) !default;
-$grid-footer-bg: var(--gray-200) !default;
+$grid-bg-hover: get-color-value("gray", 100) !default;
+$grid-bg-selected: get-color-value("gray", 200) !default;
+$grid-bg-selected-hover: get-color-value("gray", 300) !default;
+$grid-bg-striped: get-color-value("gray", 50) !default;
+$grid-footer-bg: get-color-value("gray", 200) !default;
 
 $grid-selected-color: $font-color-default !default;
 
@@ -276,7 +326,7 @@ $grid-paging-bg: transparent !default;
 $grid-paging-bg-hover: transparent !default;
 $grid-paging-border-color: transparent !default;
 $grid-paging-border-color-hover: transparent !default;
-$grid-paging-color: var(--gray-300) !default;
+$grid-paging-color: get-color-value("gray", 300) !default;
 $grid-paging-color-hover: $brand-primary !default;
 
 /* Tabs */
@@ -288,8 +338,8 @@ $tabs-lined-border-width: 3px !default;
 $tabs-border-color: $border-color-default !default;
 $tabs-lined-border-color: $brand-primary !default;
 $tabs-bg: transparent !default;
-$tabs-bg-pills: var(--gray-100) !default;
-$tabs-bg-hover: var(--gray-200) !default;
+$tabs-bg-pills: get-color-value("gray", 100) !default;
+$tabs-bg-hover: get-color-value("gray", 200) !default;
 $tabs-bg-active: $brand-primary !default;
 
 /* Modal */
@@ -308,23 +358,23 @@ $dataview-emptymessage-bg: $bg-color !default;
 $dataview-emptymessage-color: $font-color-default !default;
 
 /* Alerts */
-$alert-primary-bg: var(--brand-primary-100) !default;
-$alert-secondary-bg: var(--brand-default-100) !default;
-$alert-success-bg: var(--brand-success-100) !default;
-$alert-warning-bg: var(--brand-warning-100) !default;
-$alert-danger-bg: var(--brand-danger-100) !default;
+$alert-primary-bg: get-color-value("brand-primary", 100) !default;
+$alert-secondary-bg: get-color-value("brand-default", 100) !default;
+$alert-success-bg: get-color-value("brand-success", 100) !default;
+$alert-warning-bg: get-color-value("brand-warning", 100) !default;
+$alert-danger-bg: get-color-value("brand-danger", 100) !default;
 
-$alert-primary-color: var(--brand-primary-700) !default;
-$alert-secondary-color: var(--brand-default-700) !default;
-$alert-success-color: var(--brand-success-700) !default;
-$alert-warning-color: var(--brand-warning-700) !default;
-$alert-danger-color: var(--brand-danger-700) !default;
+$alert-primary-color: get-color-value("brand-primary", 700) !default;
+$alert-secondary-color: get-color-value("brand-default", 700) !default;
+$alert-success-color: get-color-value("brand-success", 700) !default;
+$alert-warning-color: get-color-value("brand-warning", 700) !default;
+$alert-danger-color: get-color-value("brand-danger", 700) !default;
 
-$alert-primary-border-color: var(--brand-primary-700) !default;
-$alert-secondary-border-color: var(--brand-secondary-700) !default;
-$alert-success-border-color: var(--brand-success-700) !default;
-$alert-warning-border-color: var(--brand-warning-700) !default;
-$alert-danger-border-color: var(--brand-danger-700) !default;
+$alert-primary-border-color: get-color-value("brand-primary", 700) !default;
+$alert-secondary-border-color: get-color-value("brand-default", 700) !default;
+$alert-success-border-color: get-color-value("brand-success", 700) !default;
+$alert-warning-border-color: get-color-value("brand-warning", 700) !default;
+$alert-danger-border-color: get-color-value("brand-danger", 700) !default;
 
 /* Wizard */
 $wizard-step-height: 48px !default;
@@ -336,15 +386,15 @@ $wizard-default-color: $color-base !default;
 $wizard-default-step-color: $font-color-default !default;
 $wizard-default-border-color: $border-color-default !default;
 
-$wizard-active-bg: var(--brand-primary-200) !default;
-$wizard-active-color: var(--brand-primary-700) !default;
-$wizard-active-step-color: var(--brand-primary-700) !default;
-$wizard-active-border-color: var(--brand-primary-700) !default;
+$wizard-active-bg: get-color-value("brand-primary", 200) !default;
+$wizard-active-color: get-color-value("brand-primary", 700) !default;
+$wizard-active-step-color: get-color-value("brand-primary", 700) !default;
+$wizard-active-border-color: get-color-value("brand-primary", 700) !default;
 
-$wizard-visited-bg: var(--brand-success-200) !default;
-$wizard-visited-color: var(--brand-success-700) !default;
-$wizard-visited-step-color: var(--brand-success-700) !default;
-$wizard-visited-border-color: var(--brand-success-700) !default;
+$wizard-visited-bg: get-color-value("brand-success", 200) !default;
+$wizard-visited-color: get-color-value("brand-success", 700) !default;
+$wizard-visited-step-color: get-color-value("brand-success", 700) !default;
+$wizard-visited-border-color: get-color-value("brand-success", 700) !default;
 
 /* Labels */
 $label-default-bg: $brand-default !default;
@@ -366,7 +416,7 @@ $label-warning-color: $color-base !default;
 $label-danger-color: $color-base !default;
 
 /* Groupbox */
-$groupbox-default-bg: var(--gray-200) !default;
+$groupbox-default-bg: get-color-value("gray", 200) !default;
 $groupbox-primary-bg: $brand-primary !default;
 $groupbox-success-bg: $brand-success !default;
 $groupbox-warning-bg: $brand-warning !default;
@@ -387,11 +437,11 @@ $callout-success-color: $brand-success !default;
 $callout-warning-color: $brand-warning !default;
 $callout-danger-color: $brand-danger !default;
 
-$callout-primary-bg: var(--brand-primary-200) !default;
-$callout-default-bg: var(--gray-50) !default;
-$callout-success-bg: var(--brand-success-200) !default;
-$callout-warning-bg: var(--brand-warning-200) !default;
-$callout-danger-bg: var(--brand-danger-200) !default;
+$callout-primary-bg: get-color-value("brand-primary", 200) !default;
+$callout-default-bg: get-color-value("gray", 50) !default;
+$callout-success-bg: get-color-value("brand-success", 200) !default;
+$callout-warning-bg: get-color-value("brand-warning", 200) !default;
+$callout-danger-bg: get-color-value("brand-danger", 200) !default;
 
 /* Timeline */
 $timeline-icon-color: $brand-primary !default;
@@ -417,11 +467,11 @@ $accordion-header-success-bg: $brand-success !default;
 $accordion-header-warning-bg: $brand-warning !default;
 $accordion-header-danger-bg: $brand-danger !default;
 
-$accordion-header-primary-bg-hover: var(--brand-primary-600) !default;
-$accordion-header-secondary-bg-hover: var(--gray-50) !default;
-$accordion-header-success-bg-hover: var(--brand-success-600) !default;
-$accordion-header-warning-bg-hover: var(--brand-warning-600) !default;
-$accordion-header-danger-bg-hover: var(--brand-danger-600) !default;
+$accordion-header-primary-bg-hover: get-color-value("brand-primary", 600) !default;
+$accordion-header-secondary-bg-hover: get-color-value("gray", 50) !default;
+$accordion-header-success-bg-hover: get-color-value("brand-success", 600) !default;
+$accordion-header-warning-bg-hover: get-color-value("brand-warning", 600) !default;
+$accordion-header-danger-bg-hover: get-color-value("brand-danger", 600) !default;
 
 $accordion-header-primary-color: $font-color-contrast !default;
 $accordion-header-secondary-color: $brand-primary !default;
@@ -430,7 +480,7 @@ $accordion-header-warning-color: $font-color-contrast !default;
 $accordion-header-danger-color: $font-color-contrast !default;
 
 $accordion-primary-border-color: $brand-primary !default;
-$accordion-secondary-border-color: var(--gray-200) !default;
+$accordion-secondary-border-color: get-color-value("gray", 200) !default;
 $accordion-success-border-color: $brand-success !default;
 $accordion-warning-border-color: $brand-warning !default;
 $accordion-danger-border-color: $brand-danger !default;
@@ -479,75 +529,75 @@ $padding-table-cell-left: 8px !default;
 $padding-table-cell-right: 8px !default;
 
 /* Brand Variants */
-$btn-inverse-bg: var(--brand-primary-400) !default;
-$btn-info-bg: var(--brand-primary-300) !default;
-$btn-inverse-border-color: var(--brand-primary-400) !default;
-$btn-info-border-color: var(--brand-primary-300) !default;
+$btn-inverse-bg: get-color-value("brand-primary", 400) !default;
+$btn-info-bg: get-color-value("brand-primary", 300) !default;
+$btn-inverse-border-color: get-color-value("brand-primary", 400) !default;
+$btn-info-border-color: get-color-value("brand-primary", 300) !default;
 
 $btn-inverse-color: $color-base !default;
 $btn-info-color: $color-base !default;
 
-$btn-inverse-bg-hover: var(--brand-primary-300) !default;
-$btn-info-bg-hover: var(--brand-primary-300) !default;
+$btn-inverse-bg-hover: get-color-value("brand-primary", 300) !default;
+$btn-info-bg-hover: get-color-value("brand-primary", 300) !default;
 
 /* Alerts */
-$alert-info-bg: var(--brand-primary-50) !default;
-$alert-info-color: var(--brand-primary-600) !default;
+$alert-info-bg: get-color-value("brand-primary", 50) !default;
+$alert-info-color: get-color-value("brand-primary", 600) !default;
 $alert-info-border-color: $brand-primary !default;
 
 /* Labels */
-$label-info-bg: var(--brand-primary-300) !default;
-$label-inverse-bg: var(--brand-primary-600) !default;
+$label-info-bg: get-color-value("brand-primary", 300) !default;
+$label-inverse-bg: get-color-value("brand-primary", 600) !default;
 
-$label-info-border-color: var(--brand-primary-300) !default;
-$label-inverse-border-color: var(--brand-primary-600) !default;
+$label-info-border-color: get-color-value("brand-primary", 300) !default;
+$label-inverse-border-color: get-color-value("brand-primary", 600) !default;
 
 $label-info-color: $color-base !default;
 $label-inverse-color: $color-base !default;
 
 /* Groupbox */
-$groupbox-inverse-bg: var(--brand-primary-600) !default;
-$groupbox-info-bg: var(--brand-primary-300) !default;
+$groupbox-inverse-bg: get-color-value("brand-primary", 600) !default;
+$groupbox-info-bg: get-color-value("brand-primary", 300) !default;
 
 $groupbox-inverse-color: $color-base !default;
 $groupbox-info-color: $color-base !default;
 
 /* Callouts */
-$callout-info-color: var(--brand-primary-300) !default;
-$callout-info-bg: var(--brand-primary-50) !default;
+$callout-info-color: get-color-value("brand-primary", 300) !default;
+$callout-info-bg: get-color-value("brand-primary", 50) !default;
 
 //== Legacy variables
-$gray-lighter: var(--gray-50);
-$gray-light: var(--gray-300);
-$gray-primary: var(--gray-200);
-$gray-dark: var(--gray-700);
-$gray-darker: var(--gray-800);
+$gray-lighter: get-color-value("gray", 50);
+$gray-light: get-color-value("gray", 300);
+$gray-primary: get-color-value("gray", 200);
+$gray-dark: get-color-value("gray", 700);
+$gray-darker: get-color-value("gray", 800);
 
 // Color variations
-$color-default-darker: var(--gray-700) !default;
-$color-default-dark: var(--gray-600) !default;
-$color-default-light: var(--gray-100) !default;
-$color-default-lighter: var(--gray-50) !default;
+$color-default-darker: get-color-value("gray", 700) !default;
+$color-default-dark: get-color-value("gray", 600) !default;
+$color-default-light: get-color-value("gray", 100) !default;
+$color-default-lighter: get-color-value("gray", 50) !default;
 
-$color-primary-darker: var(--brand-primary-700) !default;
-$color-primary-dark: var(--brand-primary-600) !default;
-$color-primary-light: var(--brand-primary-100) !default;
-$color-primary-lighter: var(--brand-primary-50) !default;
+$color-primary-darker: get-color-value("brand-primary", 700) !default;
+$color-primary-dark: get-color-value("brand-primary", 600) !default;
+$color-primary-light: get-color-value("brand-primary", 100) !default;
+$color-primary-lighter: get-color-value("brand-primary", 50) !default;
 
-$color-success-darker: var(--brand-success-700) !default;
-$color-success-dark: var(--brand-success-600) !default;
-$color-success-light: var(--brand-success-100) !default;
-$color-success-lighter: var(--brand-success-50) !default;
+$color-success-darker: get-color-value("brand-success", 700) !default;
+$color-success-dark: get-color-value("brand-success", 600) !default;
+$color-success-light: get-color-value("brand-success", 100) !default;
+$color-success-lighter: get-color-value("brand-success", 50) !default;
 
-$color-warning-darker: var(--brand-warning-700) !default;
-$color-warning-dark: var(--brand-warning-600) !default;
-$color-warning-light: var(--brand-warning-100) !default;
-$color-warning-lighter: var(--brand-warning-50) !default;
+$color-warning-darker: get-color-value("brand-warning", 700) !default;
+$color-warning-dark: get-color-value("brand-warning", 600) !default;
+$color-warning-light: get-color-value("brand-warning", 100) !default;
+$color-warning-lighter: get-color-value("brand-warning", 50) !default;
 
-$color-danger-darker: var(--brand-danger-700) !default;
-$color-danger-dark: var(--brand-danger-600) !default;
-$color-danger-light: var(--brand-danger-100) !default;
-$color-danger-lighter: var(--brand-danger-50) !default;
+$color-danger-darker: get-color-value("brand-danger", 700) !default;
+$color-danger-dark: get-color-value("brand-danger", 600) !default;
+$color-danger-light: get-color-value("brand-danger", 100) !default;
+$color-danger-lighter: get-color-value("brand-danger", 50) !default;
 
 $grid-padding-top: 16px !default;
 $grid-padding-right: 16px !default;

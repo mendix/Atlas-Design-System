@@ -209,11 +209,15 @@
             display: none #{$important-helpers-value};
         }
     }
+
+    // force hide everything that should be hidden only on mid-size screen
+    // to be also hidden on tablet with big screen width.
     .profile-tablet .hide-tablet {
         display: none #{$important-helpers-value};
     }
 
     @media (min-width: $screen-lg) {
+        // due to force hidden, this is needed to only be hidden on desktop with profile-desktop.
         .profile-desktop .hide-desktop {
             display: none #{$important-helpers-value};
         }
