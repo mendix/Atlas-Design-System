@@ -1,12 +1,8 @@
-$dg-hover-color: #f8f8f8;
-$dg-background-color: #fff;
-$dg-selected-color: #dadcde;
-$dg-border-color: #ced0d3;
-$dg-spacing-small: 8px;
-$arrow: "resources/dropdown-arrow.svg";
-$dg-item-min-height: 32px;
-
 @import "date-picker";
+
+$filter-box-shadow:
+    0 2px 20px 1px rgba(5, 15, 129, 0.05),
+    0 2px 16px 0 rgba(33, 43, 54, 0.08) !default;
 
 @font-face {
     font-family: "datagrid-filters";
@@ -27,13 +23,15 @@ $dg-item-min-height: 32px;
     flex-grow: 1;
     position: relative;
 
+    overflow: hidden;
+
     .filter-input {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        border-start-start-radius: 0;
+        border-end-start-radius: 0;
     }
 
     .btn-calendar {
-        margin-left: 5px; //Review in atlas, the current date picker is also 5px
+        margin-inline-start: 5px; //Review in atlas, the current date picker is also 5px
         .button-icon {
             width: 18px;
             height: 18px;
@@ -51,16 +49,16 @@ $dg-item-min-height: 32px;
 
         .filter-selector-button {
             padding: 8px;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            border-right: none;
+            border-start-end-radius: 0;
+            border-end-end-radius: 0;
+            border-inline-end: none;
             height: 100%;
 
             &:before {
                 justify-content: center;
                 width: 20px;
                 height: 20px;
-                padding-left: 4px; /* The font has spaces in the right side, so to align in the middle we need this */
+                padding-inline-start: 4px; /* The font has spaces in the right side, so to align in the middle we need this */
             }
         }
     }
@@ -72,13 +70,11 @@ $dg-item-min-height: 32px;
     left: 0;
     padding: 0;
     margin: 0;
-    background: var(--bg-color-secondary, $dg-background-color);
+    background: var(--bg-color-secondary, $bg-color-secondary);
     z-index: 51;
     border-radius: 8px;
     list-style-type: none;
-    box-shadow:
-        0 2px 20px 1px rgba(5, 15, 129, 0.05),
-        0 2px 16px 0 rgba(33, 43, 54, 0.08);
+    box-shadow: var(--wdf-filter-box-shadow, $filter-box-shadow);
     overflow: hidden;
 
     .filter-listitem,
@@ -94,13 +90,13 @@ $dg-item-min-height: 32px;
         }
 
         &.filter-selected {
-            background-color: var(--gray-lighter, $dg-hover-color);
-            color: var(--brand-primary, $dg-brand-primary);
+            background-color: var(--gray-lighter, $gray-lighter);
+            color: var(--brand-primary, $brand-primary);
         }
 
         &:hover,
         &.filter-highlighted {
-            background-color: var(--gray-lighter, $dg-hover-color);
+            background-color: var(--gray-lighter, $gray-lighter);
         }
     }
 }
@@ -114,9 +110,9 @@ $dg-item-min-height: 32px;
         display: flex;
         align-items: center;
         font-weight: normal;
-        min-height: var(--spacing-larger, $dg-item-min-height);
+        min-height: var(--spacing-larger, $spacing-larger);
         cursor: pointer;
-        padding: 0 var(--spacing-small, $dg-spacing-small);
+        padding: 0 var(--spacing-small, $spacing-small);
 
         .filter-label {
             overflow: hidden;
@@ -125,13 +121,13 @@ $dg-item-min-height: 32px;
         }
 
         &.filter-selected {
-            background-color: var(--gray-lighter, $dg-hover-color);
-            color: var(--brand-primary, $dg-brand-primary);
+            background-color: var(--gray-lighter, $gray-lighter);
+            color: var(--brand-primary, $brand-primary);
         }
 
         &:hover,
         &:focus {
-            background-color: var(--gray-lighter, $dg-hover-color);
+            background-color: var(--gray-lighter, $gray-lighter);
         }
 
         label {
@@ -146,21 +142,17 @@ $dg-item-min-height: 32px;
 }
 
 :not(.dropdown-content) > .dropdown-list {
-    background: var(--bg-color-secondary, $dg-background-color);
+    background: var(--bg-color-secondary, $bg-color-secondary);
     border-radius: 8px;
-    box-shadow:
-        0 2px 20px 1px rgba(5, 15, 129, 0.05),
-        0 2px 16px 0 rgba(33, 43, 54, 0.08);
+    box-shadow: var(--wdf-filter-box-shadow, $filter-box-shadow);
     max-height: 40vh;
     z-index: 102;
 }
 
 .dropdown-content {
-    background: var(--bg-color-secondary, $dg-background-color);
+    background: var(--bg-color-secondary, $bg-color-secondary);
     border-radius: 8px;
-    box-shadow:
-        0 2px 20px 1px rgba(5, 15, 129, 0.05),
-        0 2px 16px 0 rgba(33, 43, 54, 0.08);
+    box-shadow: var(--wdf-filter-box-shadow, $filter-box-shadow);
     max-height: 40vh;
     z-index: 140;
 }
@@ -176,7 +168,7 @@ $dg-item-min-height: 32px;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    padding: 0 var(--spacing-small, $dg-spacing-small);
+    padding: 0 var(--spacing-small, $spacing-small);
     min-height: 40px;
 }
 
@@ -205,15 +197,13 @@ $dg-item-min-height: 32px;
 
     .dropdown-list {
         left: 0;
-        margin: 0 var(--spacing-small, $dg-spacing-small);
+        margin: 0 var(--spacing-small, $spacing-small);
         padding: 0;
-        background: var(--bg-color-secondary, $dg-background-color);
+        background: var(--bg-color-secondary, $bg-color-secondary);
         z-index: 102;
         border-radius: 8px;
         list-style-type: none;
-        box-shadow:
-            0 2px 20px 1px rgba(5, 15, 129, 0.05),
-            0 2px 16px 0 rgba(33, 43, 54, 0.08);
+        box-shadow: var(--wdf-filter-box-shadow, $filter-box-shadow);
         overflow-x: hidden;
         max-height: 40vh;
 
@@ -221,9 +211,9 @@ $dg-item-min-height: 32px;
             display: flex;
             align-items: center;
             font-weight: normal;
-            min-height: var(--spacing-larger, $dg-item-min-height);
+            min-height: var(--spacing-larger, $spacing-larger);
             cursor: pointer;
-            padding: 0 var(--spacing-small, $dg-spacing-small);
+            padding: 0 var(--spacing-small, $spacing-small);
 
             .filter-label {
                 overflow: hidden;
@@ -232,13 +222,13 @@ $dg-item-min-height: 32px;
             }
 
             &.filter-selected {
-                background-color: var(--gray-lighter, $dg-hover-color);
-                color: var(--brand-primary, $dg-brand-primary);
+                background-color: var(--gray-lighter, $gray-lighter);
+                color: var(--brand-primary, $brand-primary);
             }
 
             &:hover,
             &:focus {
-                background-color: var(--gray-lighter, $dg-hover-color);
+                background-color: var(--gray-lighter, $gray-lighter);
             }
 
             label {

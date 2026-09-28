@@ -83,7 +83,7 @@ export async function JS_GetFeedbackStorageObject(key, entity) {
                         .filter(attribute => attribute !== "guid")
                         .forEach(attributeName => {
                         const attributeValue = value[attributeName];
-                        mxObject.set(attributeName, attributeValue);
+                        mxObject.set(attributeName, attributeValue === "" ? null : attributeValue ?? null);
                     });
                     resolve(mxObject);
                 },

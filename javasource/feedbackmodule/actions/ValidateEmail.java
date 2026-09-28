@@ -30,7 +30,7 @@ public class ValidateEmail extends UserAction<java.lang.Boolean>
 	{
 		// BEGIN USER CODE
 
-		// The regex used in this code is the same used in App Insights. If you want to apply more restricted rule, you can change it here.
+		// The Regex used in this code is the same used in App Insights. If you want to apply more restricted rule, you can change it here.
 		String emailPattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(emailPattern);
         java.util.regex.Matcher m = p.matcher(EmailAddress);

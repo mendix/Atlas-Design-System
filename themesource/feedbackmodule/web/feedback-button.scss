@@ -50,5 +50,9 @@ Do not render = "none"
         &:hover {
             background-color: $btn-primary-bg-hover;
         }
+        &:focus-visible {
+            outline: 2px solid $btn-primary-bg;
+            outline-offset: 2px;
+        }
     }
 }

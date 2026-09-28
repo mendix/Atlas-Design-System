@@ -84,8 +84,8 @@ export async function JS_PopulateFeedbackMetadata(feedback) {
         feedback.set("PageName", pagePath || "");
         feedback.set("EnvironmentURL", window.location.href || "");
         feedback.set("Browser", navigator.userAgent || "");
-        feedback.set("ScreenWidth", window.screen.width || "");
-        feedback.set("ScreenHeight", window.screen.height || "");
+        feedback.set("ScreenWidth", window.innerWidth || null);
+        feedback.set("ScreenHeight", window.innerHeight || null);
         return feedback;
     } catch (error) {
         console.error("Feedback Module cannot correctly set meta data.", error);
