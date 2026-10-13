@@ -3,6 +3,22 @@
 
    The core stucture of all atlas layouts
 ========================================================================== */
+// Bar roles. Each layout has one primary bar, which runs the full length of the screen and carries the app's
+// identity, and at most one secondary bar inside it. The theme sets the look of each role (--bar-primary-*,
+// --bar-secondary-*); the layouts decide which region plays which role.
+@mixin bar-role($role) {
+    --bar-bg: var(--bar-#{$role}-bg);
+    --bar-bg-hover: var(--bar-#{$role}-bg-hover);
+    --bar-bg-active: var(--bar-#{$role}-bg-active);
+    --bar-color: var(--bar-#{$role}-color);
+    --bar-color-hover: var(--bar-#{$role}-color-hover);
+    --bar-color-active: var(--bar-#{$role}-color-active);
+    --bar-sub-color: var(--bar-#{$role}-sub-color);
+    --bar-title-color: var(--bar-#{$role}-title-color);
+    --bar-border-color: var(--bar-#{$role}-border-color);
+    --bar-edge: var(--bar-#{$role}-edge);
+}
+
 @mixin layout-atlas() {
     .layout-atlas {
         // Toggle button
@@ -30,12 +46,13 @@
 
         // Sidebar
         .region-sidebar {
-            background: var(--navsidebar-bg);
+            @include bar-role(primary);
+            background: var(--navsidebar-bg, var(--sidebar-bg, var(--bar-bg)));
             @if not $use-modern-client {
                 z-index: 101;
             }
             box-shadow: var(--navsidebar-shadow);
-            border-right: var(--navsidebar-border-right);
+            border-right: var(--navsidebar-border-right, var(--bar-edge));
 
             .mx-scrollcontainer-wrapper {
                 display: flex;
@@ -62,18 +79,29 @@
             }
         }
 
+        // App logo (AppInfo snippet), in the sidebar and the top bar: the theme's --brand-logo-* sets its size, which
+        // also centres it in the collapsed sidebar
+        .sidebar-brand-logo img {
+            width: var(--brand-logo-width);
+            height: var(--brand-logo-height);
+            object-fit: contain;
+        }
+
         // Topbar
         .region-topbar {
+            @include bar-role(primary);
+            color: var(--topbar-color, var(--bar-color));
             position: relative;
             align-content: center;
             z-index: 60; // Show dropshadow
             min-height: var(--topbar-minimalheight);
-            background: var(--navtopbar-bg);
-            border-bottom: var(--navtopbar-border-bottom);
+            background: var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg)));
+            border-bottom: var(--navtopbar-border-bottom, var(--bar-edge));
 
             // allow secondary color for different type of navbar
             &.topbar-secondary {
-                background: var(--navtopbar-bg-secondary, --navtopbar-bg);
+                // the fallback needs its own var(); `var(--a, --b)` falls back to the literal text "--b"
+                background: var(--navtopbar-bg-secondary, var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg))));
             }
 
             // Topbar Content
@@ -91,6 +119,21 @@
                 background: transparent;
             }
 
+            // App name (AppInfo snippet) anywhere in a top bar, also in app layouts without a .navbar-brand
+            // wrapper: it follows the bar it sits in
+            .sidebar-brand-name {
+                &,
+                .mx-text,
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    color: var(--navbar-brand-name, var(--bar-title-color));
+                }
+            }
+
             // For your company, product, or project name
             .navbar-brand {
                 display: inline-block;
@@ -100,6 +143,19 @@
                 line-height: inherit;
                 font-size: 16px;
                 margin-right: var(--spacing-small);
+                // App name (AppInfo snippet): the name follows the bar it sits in, whatever widget renders it
+                color: var(--navbar-brand-name, var(--bar-title-color));
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6,
+                .mx-text,
+                .sidebar-brand-name {
+                    color: inherit;
+                }
 
                 img {
                     display: inline-block;
@@ -120,7 +176,7 @@
                 }
 
                 a {
-                    color: var(--navbar-brand-name);
+                    color: var(--navbar-brand-name, var(--bar-title-color));
                     font-size: var(--navtopbar-font-size);
 
                     &:hover,

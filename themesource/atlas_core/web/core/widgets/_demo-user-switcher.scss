@@ -26,7 +26,7 @@
         color: var(--font-color-contrast);
         font-size: var(--font-size-default);
         overflow: auto;
-        background: var(--sidebar-bg);
+        background: var(--sidebar-bg, var(--bar-primary-bg));
     }
 
     .mx-demouserswitcher ul {
@@ -40,7 +40,7 @@
         padding: 10px 0;
         color: var(--font-color-contrast);
         &:hover {
-            background: var(--navsidebar-bg-hover);
+            background: var(--navsidebar-bg-hover, var(--navigation-bg-hover, var(--bar-primary-bg-hover)));
             text-decoration: none;
         }
     }
@@ -63,7 +63,7 @@
 
     .mx-demouserswitcher .active {
         border-left: 4px solid rgba(255, 255, 255, 0.8);
-        background: var(--navsidebar-bg-active);
+        background: var(--navsidebar-bg-active, var(--navigation-bg-active, var(--bar-primary-bg-active)));
     }
 
     .mx-demouserswitcher p {
@@ -71,7 +71,7 @@
         margin-bottom: 0;
         font-size: var(--font-size-small);
         .active {
-            background: var(--navsidebar-bg-active);
+            background: var(--navsidebar-bg-active, var(--navigation-bg-active, var(--bar-primary-bg-active)));
         }
     }
 

@@ -10,20 +10,19 @@
     
     .layout-atlas {
         .mx-scrollcontainer {
-            &:not(.mx-scrollcontainer-open) {
-                .region-sidebar {
-                    .mx-scrollcontainer-wrapper {
-                        transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
-                        --navsidebar-sub-bg-header: transparent;
-                        --navigation-sub-bg: transparent;
-                    }
+            // Direct child: the outer (topbar) scroll container is never "open"
+            &:not(.mx-scrollcontainer-open) > .region-sidebar {
+                .mx-scrollcontainer-wrapper {
+                    transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
+                    --navsidebar-sub-bg-header: transparent;
+                    --navigation-sub-bg: transparent;
                 }
             }
             &.mx-scrollcontainer-open {
                 .region-sidebar {
                     .mx-scrollcontainer-wrapper {
-                        padding-left: var(--spacing-medium);
-                        padding-right: var(--spacing-medium);
+                        padding-left: var(--navsidebar-spacing);
+                        padding-right: var(--navsidebar-spacing);
                         transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
                     }
                 }
@@ -43,6 +42,12 @@
             .mx-scrollcontainer-shrink:not(.mx-scrollcontainer-open) > .region-sidebar,
             .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .region-sidebar,
             .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .region-sidebar {
+                // Collapsed: top-level labels fade out (the text is a bare node, so the link colour carries the fade),
+                // icons and carets keep their state colours
+                .mx-scrollcontainer-wrapper .mx-navigationtree .navbar-inner > ul > li > a {
+                    color: transparent;
+                    transition: color var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
+                }
                 @if (not $use-modern-client) {
                     width: var(--closed-sidebar-width) !important;
                 }
@@ -167,7 +172,7 @@
                     padding: var(--spacing-small);
                     align-items: center;
                     min-height: calc(var(--topbar-minimalheight) + 4px);
-                    background: var(--navsidebar-sub-bg);
+                    background: var(--navsidebar-sub-bg, transparent);
                 }
 
                 .toggle-btn {
@@ -188,7 +193,25 @@
                     & > a {
                         height: var(--navsidebar-icon-height);
                         padding: var(--spacing-small) 0;
-                        margin: var(--spacing-smaller) 0 0 0;
+                        // labels fade out when the sidebar collapses (transition lives in the collapsed state, so
+                        // hover stays instant here); icons carry their own state colours and never fade
+                        transition: none;
+                        .glyphicon,
+                        .mx-icon-lined,
+                        .mx-icon-filled {
+                            color: var(--navsidebar-color, var(--navigation-color, var(--bar-color)));
+                        }
+                        &:hover .glyphicon,
+                        &:hover .mx-icon-lined,
+                        &:hover .mx-icon-filled {
+                            color: var(--navsidebar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                        }
+                        &.active .glyphicon,
+                        &.active .mx-icon-lined,
+                        &.active .mx-icon-filled {
+                            color: var(--navsidebar-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                        }
+                        //margin: var(--spacing-smaller) 0 0 0;
                         white-space: nowrap;
                         overflow: hidden;
                         border-radius: var(--navsidebar-border-radius);
@@ -210,14 +233,36 @@
                             width: var(--navsidebar-icon-width);
                             padding: var(--spacing-small) var(--spacing-medium);
                         }
+                        // No icon: keep the label in the same column as the other items
+                        &:not(:has(.glyphicon, .mx-icon-lined, .mx-icon-filled, img)) {
+                            padding-left: var(--navsidebar-label-indent);
+                        }
                     }
                     &.mx-navigationtree-has-items:not(.mx-navigationtree-collapsed) > a {
                         border-radius: var(--navsidebar-border-radius) var(--navigation-border-radius) 0 0;
-                        background-color: var(--navsidebar-sub-bg-header);
+                        background-color: var(--navsidebar-sub-bg-header, transparent);
                     }
                 }
             }
         }
+    }
+
+    // Bar roles: Atlas_SideBar has the sidebar as its primary bar, with the top bar inside it as the secondary
+    // one. Atlas_Default and Atlas_TopBar have the top bar as their primary bar; in Atlas_Default the sidebar
+    // below it is the secondary one. (Atlas_TopBar's sidebar is the mobile menu, which keeps the primary role.)
+    .layout-atlas.layout-atlas-responsive-sidebar .region-topbar,
+    .layout-atlas.layout-atlas-responsive-default .region-sidebar {
+        @include bar-role(secondary);
+    }
+
+    // Language selector snippet: its text takes the bar's text colour in a bar (a theme's --topbar-color pins it in
+    // the top bar), the page text elsewhere. Its "Contrast" colour sits on the wrapper, so this rule on the combobox
+    // wins over it. (Not currentColor: in a custom property that resolves at the inner input, which is dark.)
+    .language-selector .widget-combobox {
+        --cb-text-color: var(--bar-color, var(--font-color-default));
+    }
+    .region-topbar .language-selector .widget-combobox {
+        --cb-text-color: var(--topbar-color, var(--bar-color, var(--font-color-default)));
     }
 
     .layout-atlas-responsive,
@@ -226,9 +271,11 @@
         // Topbar
         .region-topbar {
             padding: 0 var(--spacing-small);
+            color: var(--topbar-color, var(--bar-color));
 
             .toggle-btn {
                 padding: 0;
+                color: var(--topbar-color, var(--bar-color));
                 border-color: transparent;
                 border-radius: 0;
                 background: transparent;
@@ -275,7 +322,7 @@
                 &.mx-scrollcontainer-open > .region-sidebar {
                     & > .mx-scrollcontainer-wrapper {
                         position: relative;
-                        background: var(--sidebar-bg);
+                        background: var(--sidebar-bg, var(--bar-bg));
                         width: var(--navsidebar-width-open);
                         z-index: 100;
                     }
@@ -314,7 +361,10 @@
                 position: absolute;
                 background: var(--color-base);
                 border-radius: 100%;
-                transition: all var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
+                // animate only the movement with the sidebar; hover colour, scale and shadow react instantly
+                transition: left var(--navsidebar-animation-duration) var(--navsidebar-animation-function),
+                    rotate var(--navsidebar-animation-duration) var(--navsidebar-animation-function),
+                    opacity var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
                 color: var(--font-color-header);
                 top: 26px;
                 left: calc(var(--closed-sidebar-width) - var(--navsidebar-toggle-size) / 2);
@@ -348,11 +398,58 @@
                     padding: 0 var(--spacing-small);
                     transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
                 }
+                // App name next to the logo. The class goes on the element that holds only the name (the text
+                // widget, or a data view around the text alone), never on a wrapper that also holds the logo,
+                // because the collapsed state hides the whole element.
+                .sidebar-brand-name {
+                    display: block;
+                    flex: 1 1 auto;
+                    min-width: 0; // lets the flex item shrink below its content width
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    // the app name takes the title colour of the bar it sits in, the same in the sidebar and the top bar
+                    // (a light name on a dark sidebar, a dark one on a light sidebar)
+                    color: var(--navbar-brand-name, var(--bar-title-color));
+                    opacity: 1;
+                    // room left of the name: sidebar minus the icon column and the sidebar padding
+                    max-width: calc(var(--navsidebar-width-open) - var(--navsidebar-width-closed) - 2 * var(--navsidebar-spacing));
+                    // opening: width is back at once, the text fades in with the sidebar
+                    transition: opacity var(--navsidebar-animation-duration) var(--navsidebar-animation-function), max-width 0s;
+                    // long names end in an ellipsis instead of pushing the header apart
+                    .mx-dataview-content,
+                    .mx-text {
+                        display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .mx-text {
+                        color: var(--navbar-brand-name, var(--bar-title-color));
+                    }
+                }
             }
             &:not(.mx-scrollcontainer-open) {
                 .sidebar-brand-logo {
                     padding: 0 calc((var(--closed-sidebar-width) - var(--brand-logo-width)) / 2);
                     transition: padding var(--navsidebar-animation-duration) var(--navsidebar-animation-function);
+                }
+                // Header row (logo and name) never wraps: at the collapsed width a wrapping row pushes the
+                // logo and the menu down
+                .sidebar-wrapper .flex-row {
+                    flex-wrap: nowrap;
+                }
+                // Collapsed: fade the name out with the sidebar, then give its space back. It stays on one line,
+                // or at zero width it wraps into a tall column that pushes the logo down.
+                .sidebar-brand-name {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    color: var(--navbar-brand-name, var(--bar-title-color));
+                    max-width: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                    // the width only goes once the fade is done (auto cannot be delayed, a pixel max-width can)
+                    transition: opacity var(--navsidebar-animation-duration) var(--navsidebar-animation-function), max-width 0s linear var(--navsidebar-animation-duration);
                 }
             }
 
@@ -370,10 +467,10 @@
 
         .widget-language-selector {
             .current-language-text {
-                color: var(--font-color-header);
+                color: var(--topbar-color, var(--bar-color));
             }
             .language-arrow {
-                color: var(--font-color-header);
+                color: var(--topbar-color, var(--bar-color));
                 .arrow-image {
                     filter: none;
                 }

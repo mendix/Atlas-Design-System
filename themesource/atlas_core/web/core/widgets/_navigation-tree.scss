@@ -16,7 +16,7 @@
         .navbar-inner > ul {
             margin: 0;
             padding-left: 0;
-            background: var(--navigation-bg);
+            background: var(--navigation-bg, var(--bar-secondary-bg));
 
             & > li {
                 padding: 0;
@@ -27,14 +27,14 @@
                     align-items: center;
                     height: var(--navigation-item-height);
                     padding: var(--navigation-item-padding);
-                    color: var(--navigation-color);
+                    color: var(--navigation-color, var(--font-color-default));
                     text-shadow: none;
                     font-size: var(--navigation-font-size);
                     font-weight: var(--font-weight-normal);
 
                     .caret {
-                        border-top-color: var(--navigation-color);
-                        border-bottom-color: var(--navigation-color);
+                        border-top-color: var(--navigation-color, var(--font-color-default));
+                        border-bottom-color: var(--navigation-color, var(--font-color-default));
                     }
 
                     img {
@@ -56,19 +56,19 @@
                 a:hover,
                 a.active {
                     text-decoration: none;
-                    color: var(--navigation-color-hover);
-                    background: var(--navigation-bg-hover);
+                    color: var(--navigation-color-hover, var(--font-color-default));
+                    background: var(--navigation-bg-hover, var(--brand-default-100));
 
                     .caret {
-                        border-top-color: var(--navigation-color-active);
-                        border-bottom-color: var(--navigation-color-active);
+                        border-top-color: var(--navigation-color-active, var(--brand-primary-900));
+                        border-bottom-color: var(--navigation-color-active, var(--brand-primary-900));
                     }
                 }
 
                 a.active {
-                    color: var(--navigation-color-active);
-                    border-left-color: var(--navigation-color-active);
-                    background: var(--navigation-bg-active);
+                    color: var(--navigation-color-active, var(--brand-primary-900));
+                    border-left-color: var(--navigation-color-active, var(--brand-primary-900));
+                    background: var(--navigation-bg-active, var(--brand-primary-50));
                 }
             }
         }
@@ -85,9 +85,11 @@
                     border: 0;
 
                     a {
-                        padding: var(--navigation-item-padding);
+                        // Sub items get their own padding so their label can line up with the
+                        // parent label (past the parent icon); falls back to the item padding.
+                        padding: var(--navigation-sub-item-padding, var(--navigation-item-padding));
                         text-decoration: none;
-                        color: var(--navigation-sub-color);
+                        color: var(--navigation-sub-color, var(--navigation-color, var(--font-color-default)));
                         border: 0;
                         text-shadow: none;
                         font-size: var(--navigation-sub-font-size);
@@ -100,14 +102,14 @@
 
                         &:hover,
                         &.active {
-                            color: var(--navigation-sub-color-hover);
+                            color: var(--navigation-sub-color-hover, var(--navigation-color-hover, var(--font-color-default)));
                         }
                         &:focus-visible {
                             @extend .focus-ring !optional;
                         }
 
                         &.active {
-                            color: var(--navigation-sub-color-active);
+                            color: var(--navigation-sub-color-active, var(--navigation-color-active, var(--brand-primary-900)));
                             border: 0;
                         }
                     }
@@ -116,7 +118,7 @@
 
             &:not(.mx-navigationtree-collapsed) {
                 border-radius: var(--navigation-border-radius);
-                background-color: var(--navigation-sub-bg);
+                background-color: var(--navigation-sub-bg, transparent);
             }
         }
 

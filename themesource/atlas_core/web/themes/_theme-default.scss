@@ -2,11 +2,11 @@
 
 :root {
   /* Brand Colors */
-  --brand-primary: #264ae5;
-  --brand-success: #16aa16;
-  --brand-warning: #cd8501;
-  --brand-danger: #EA3337;
-  --brand-default: color-mix(in srgb, var(--brand-primary) 10%, #e7e7e9);
+  --brand-primary: #243b53; /* Atlas Neutral: navy */
+  --brand-success: #2f6b4a;
+  --brand-warning: #8a5a00;
+  --brand-danger: #a8322d;
+  --brand-default: color-mix(in srgb, var(--brand-primary) 5%, #e7e7e9);
   --gray: #B8BABF;
 
   /* Base and contrast colors (default white and black for light theme) */
@@ -15,14 +15,14 @@
 
   /* Hover Color Variants */
   --brand-default-hover: var(--brand-default-100);
-  --brand-primary-hover: var(--brand-primary-700);
+  --brand-primary-hover: #3b5673;
   --brand-success-hover: var(--brand-success-700);
   --brand-warning-hover: var(--brand-warning-700);
   --brand-danger-hover: var(--brand-danger-700);
 
-  /* Brand Logo */
-  --brand-logo-height: 36px;
-  --brand-logo-width: 36px;
+  /* Brand Logo: the size of the app logo in the sidebar and top bar header */
+  --brand-logo-height: 32px;
+  --brand-logo-width: 32px;
   --brand-gradient: linear-gradient(to bottom, var(--brand-primary-900), var(--brand-primary-700));
 
   /* Default Font Size & Color */
@@ -31,11 +31,11 @@
   --font-color-contrast: var(--color-base);
 
   /* Global Border */
-  --border-color-default: var(--brand-default-300);
-  --border-radius-s: 4px;
-  --border-radius-m: 8px;
-  --border-radius-l: 12px;
-  --border-radius-default: var(--border-radius-s);
+  --border-color-default: #e1e5ea;
+  --border-radius-s: 2px;
+  --border-radius-m: 4px;
+  --border-radius-l: 8px;
+  --border-radius-default: var(--border-radius-m);
   --border-width-thin: 1px;
   --border-width-medium: 2px;
   --border-width-thick: 3px;
@@ -44,35 +44,62 @@
 
   /* Focus indicators for accessibility */
   --focus-outline: 2px solid var(--form-input-border-focus-color);
-  --focus-outline-offset: 2px;
+  --focus-outline-offset: -2px;
+
+  /* Navigation bars. Each layout has one primary bar, which runs the full length of the screen and carries the
+     app's identity, and at most one secondary bar inside it:
+     - Atlas_SideBar: the sidebar is primary, the top bar beside it secondary
+     - Atlas_Default: the top bar is primary, the sidebar below it secondary
+     - Atlas_TopBar, phone and tablet layouts: the top bar is primary
+     Set these to restyle the bars in every layout. The region variables (--topbar-bg, --topbar-color,
+     --sidebar-bg, --navsidebar-*, --navtopbar-*, --navbar-brand-name) are not set here: a theme sets one only to
+     pin that region to a value in every layout, and then sets the region's text colours as well. */
+  --bar-primary-bg: #161c24; /* Atlas Neutral: one dark bar per layout */
+  --bar-primary-bg-hover: #1f2732;
+  --bar-primary-bg-active: #232c38;
+  --bar-primary-color: #c9d1da;
+  --bar-primary-color-hover: #ffffff;
+  --bar-primary-color-active: #ffffff;
+  --bar-primary-sub-color: #7d8896; /* section labels, sub items */
+  --bar-primary-title-color: #ffffff; /* app name */
+  --bar-primary-border-color: rgba(255, 255, 255, 0.12);
+  --bar-primary-edge: none; /* the dark bar has its own edge */
+
+  --bar-secondary-bg: var(--color-base); /* white bar with a hairline, off-white content canvas */
+  --bar-secondary-bg-hover: var(--brand-default-100);
+  --bar-secondary-bg-active: var(--brand-primary-50);
+  --bar-secondary-color: var(--font-color-default);
+  --bar-secondary-color-hover: var(--font-color-default);
+  --bar-secondary-color-active: var(--brand-primary-900);
+  --bar-secondary-sub-color: var(--font-color-detail);
+  --bar-secondary-title-color: var(--font-color-header); /* app name */
+  --bar-secondary-border-color: var(--border-color-default);
+  --bar-secondary-edge: 1px solid var(--border-color-default);
 
   /* Topbar */
-  --topbar-bg: linear-gradient(to bottom, var(--brand-primary-500), var(--brand-primary-600));
   --topbar-minimalheight: 48px;
-  --topbar-border-color: var(--border-color-default);
 
-  /* Sidebar */
-  --sidebar-bg: linear-gradient(to bottom, var(--brand-primary-600), var(--brand-primary-700));
+  /* App identity in the sidebar or top bar header (AppInfo snippet). The logo is the app's own logo.svg
+     (theme/web, or a theme module's public folder), otherwise the navigation profile's App icon; Atlas Core
+     ships a default public/logo.svg for the login page. The name is the navigation profile's Application title.
+     A theme pins the name colour with --navbar-brand-name (by default it is the bar's title colour). */
 
   /* Topbar mobile */
   --m-header-height: 45px;
-  --m-header-bg: var(--topbar-bg);
-  --m-header-color: var(--font-color-contrast);
+  --m-header-bg: var(--topbar-bg, var(--bar-primary-bg));
+  --m-header-color: var(--topbar-color, var(--bar-primary-color-hover));
   --m-header-title-size: 16px;
 
-  /* Navbar Brand Name */
-  --navbar-brand-name: var(--font-color-default);
-
   /* Background Colors */
-  --bg-color: var(--brand-default-100);
-  --bg-color-secondary: var(--color-base);
+  --bg-color: #eef1f4; /* page */
+  --bg-color-secondary: #ffffff; /* surface: cards, top bar */
 
   /* Default Link Color */
   --link-color: var(--brand-primary);
   --link-hover-color: var(--brand-primary-400);
 
   /* Font Family */
-  --font-family-base: "Poppins", sans-serif;
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* Font Sizes */
   --font-size-large: 18px;
@@ -102,71 +129,49 @@
   --font-header-margin: 0 0 8px 0;
 
   /* Font Colors */
-  --font-color-detail: var(--brand-primary-700);
-  --font-color-header: var(--brand-primary-800);
+  --font-color-detail: #5b6573;
+  --font-color-header: #1b2330; /* decoupled from the brand */
 
   /* Navigation */
   --navigation-item-height: unset;
   --navigation-item-padding: 12px;
-  --navigation-border-radius: var(--border-radius-m);
-  --navigation-scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+  --navigation-border-radius: var(--border-radius-default);
+  --navigation-scrollbar-color: var(--gray-300) transparent;
 
   --navigation-font-size: var(--font-size-default);
   --navigation-sub-font-size: var(--font-size-small);
   --navigation-glyph-size: 20px;
+  /* Sub item padding; the sidebar overrides the left side (see --navsidebar-sub-item-padding-left) */
+  --navigation-sub-item-padding: var(--navigation-item-padding);
 
-  --navigation-color: var(--font-color-contrast);
-  --navigation-color-hover: var(--font-color-contrast);
-  --navigation-color-active: var(--font-color-contrast);
 
-  --navigation-sub-color: var(--navigation-color);
-  --navigation-sub-color-hover: var(--navigation-color-hover);
-  --navigation-sub-color-active: var(--navigation-color-active);
 
+  /* Navigation colours (--navigation-color, -color-hover, -color-active, --navigation-sub-color-*, --navigation-bg,
+     -bg-hover, -bg-active, --navigation-sub-bg-*, --navigation-border-color) are not set here: a theme that sets one
+     colours both bars with it, as in earlier versions. Unset, the bars follow their roles above. */
   /* Sidebar Navigation */
-  --navigation-bg: var(--topbar-bg);
-  --navigation-bg-hover: rgba(0, 0, 0, 0.2);
-  --navigation-bg-active: rgba(0, 0, 0, 0.3);
 
-  --navigation-sub-bg: rgba(0, 0, 0, 0.2);
-  --navigation-sub-bg-hover: var(--navigation-bg-hover);
-  --navigation-sub-bg-active: var(--navigation-bg-active);
 
-  --navigation-border-color: var(--navigation-bg-hover);
 
-  --navsidebar-bg: var(--sidebar-bg);
-  --navsidebar-bg-hover: var(--navigation-bg-hover);
-  --navsidebar-bg-active: var(--navigation-bg-active);
+  --navsidebar-spacing: 0; /* full-width items */
+  /* All labels start in one column: after the icon column (as wide as the closed sidebar) and the gap.
+     Items without an icon are padded to the same offset, sub item icons sit in the same column. */
+  --navsidebar-label-indent: calc(var(--navsidebar-width-closed) + var(--spacing-small));
+  --navsidebar-sub-glyph-size: 16px;
 
-  --navsidebar-sub-bg: rgba(0, 0, 0, 0.2);
-  --navsidebar-sub-bg-hover: var(--navigation-bg-hover);
-  --navsidebar-sub-bg-active: var(--navigation-bg-active);
-  --navsidebar-sub-bg-header: rgba(0, 0, 0, 0.2);
-  --navsidebar-sub-bg-collapsed: var(--brand-primary-700);
-
-  --navsidebar-border-color: var(--border-color-default);
-  --navsidebar-border-radius: var(--navigation-border-radius);
-  --navsidebar-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
-  --navsidebar-border-right: none;
+  --navsidebar-border-radius: 0;
+  --navsidebar-shadow: none;
 
   --navsidebar-font-size: var(--font-size-default);
   --navsidebar-sub-font-size: var(--font-size-small);
   --navsidebar-glyph-size: 20px;
 
-  --navsidebar-color: var(--navigation-color);
-  --navsidebar-color-hover: var(--navigation-color-hover);
-  --navsidebar-color-active: var(--navigation-color-active);
-
-  --navsidebar-sub-color: var(--navigation-color);
-  --navsidebar-sub-color-hover: var(--navigation-color-hover);
-  --navsidebar-sub-color-active: var(--navigation-color-active);
-
   --navsidebar-width-closed: 52px;
   --navsidebar-width-open: 232px;
   --navsidebar-toggle-size: 32px;
 
-  --navsidebar-icon-height: 44px;
-  --navsidebar-icon-width: 52px;
+  --navsidebar-icon-height: 40px;
+  --navsidebar-icon-width: 40px;
   --navsidebar-animation-duration: 250ms;
   --navsidebar-animation-function: ease-in;
 
@@ -175,24 +180,9 @@
   --navtopbar-sub-font-size: var(--font-size-small);
   --navtopbar-glyph-size: 1.2em;
 
-  --navtopbar-bg: var(--topbar-bg);
-  --navtopbar-bg-secondary: transparent;
-  --navtopbar-bg-hover: var(--navigation-bg-hover);
-  --navtopbar-bg-active: var(--navigation-bg-active);
-  --navtopbar-color: var(--navigation-color);
-  --navtopbar-color-hover: var(--navigation-color-hover);
-  --navtopbar-color-active: var(--navigation-color-active);
+  --navtopbar-bg-secondary: transparent; /* Atlas_SideBar: the top bar shows the content canvas */
 
-  --navtopbar-sub-bg: var(--navtopbar-bg);
-  --navtopbar-sub-bg-hover: var(--navtopbar-bg-hover);
-  --navtopbar-sub-bg-active: var(--navtopbar-bg-active);
-  --navtopbar-sub-color: var(--navigation-color);
-  --navtopbar-sub-color-hover: var(--navigation-color-hover);
-  --navtopbar-sub-color-active: var(--navigation-color-active);
-
-  --navtopbar-border-color: var(--topbar-border-color);
   --navtopbar-border-radius: var(--navigation-border-radius);
-  --navtopbar-border-bottom: none;
 
     /* Shadows */
   --shadow-color-border: var(--border-color-default);
@@ -223,10 +213,10 @@
   --form-input-color: var(--font-color-default);
   --form-input-focus-color: var(--form-input-color);
   --form-input-disabled-color: var(--gray-700);
-  --form-input-placeholder-color: var(--gray-600);
+  --form-input-placeholder-color: #8a94a2; /* text/muted: placeholders, disabled */
   --form-input-border-color: var(--brand-default);
   --form-input-border-focus-color: var(--brand-primary);
-  --form-input-border-hover-color: color-mix(in srgb, var(--form-input-border-color), var(--form-input-border-focus-color) 50%);
+  --form-input-border-hover-color: #c5ccd5; /* border/strong */
 
   --form-input-static-border-color: var(--gray-200);
 
@@ -238,7 +228,7 @@
   --btn-border-radius: var(--border-radius-default);
 
   --btn-default-bg: var(--color-base);
-  --btn-primary-bg: var(--brand-primary-600);
+  --btn-primary-bg: var(--brand-primary);
   --btn-success-bg: var(--brand-success-600);
   --btn-warning-bg: var(--brand-warning-600);
   --btn-danger-bg: var(--brand-danger-600);
@@ -249,13 +239,13 @@
   --btn-warning-border-color: var(--brand-warning-600);
   --btn-danger-border-color: var(--brand-danger-600);
 
-  --btn-default-color: var(--brand-primary);
+  --btn-default-color: var(--font-color-default);
   --btn-primary-color: var(--font-color-contrast);
   --btn-success-color: var(--font-color-contrast);
   --btn-warning-color: var(--font-color-contrast);
   --btn-danger-color: var(--font-color-contrast);
 
-  --btn-default-icon-color: var(--gray);
+  --btn-default-icon-color: var(--gray-600);
 
   --btn-default-bg-hover: var(--brand-default-hover);
   --btn-primary-bg-hover: var(--brand-primary-hover);
@@ -283,9 +273,9 @@
 
   --grid-bg: transparent;
   --grid-bg-header: transparent;
-  --grid-bg-hover: var(--brand-default-hover);
-  --grid-bg-selected: var(--brand-default);
-  --grid-bg-selected-hover: var(--brand-default-600);
+  --grid-bg-hover: #f6f7f9; /* bg/subtle: table header and row hover */
+  --grid-bg-selected: var(--brand-primary-50);
+  --grid-bg-selected-hover: var(--brand-primary-100);
   --grid-bg-striped: var(--brand-default-50);
   --grid-footer-bg: var(--brand-default);
 
@@ -327,12 +317,15 @@
   --dataview-emptymessage-color: var(--font-color-default);
 
   /* Cards */
-  --card-shadow: var(--shadow-small) var(--shadow-color);
+  --card-shadow: none;
   --card-border: var(--border-default);
   --card-border-radius: var(--border-radius-m);
-  --card-padding: var(--spacing-large);
+  --card-padding: var(--spacing-medium);
   --card-margin-bottom: var(--spacing-smaller);
   --card-bg: var(--bg-color-secondary);
+  /* Hover of a clickable card (one with an on-click action) */
+  --card-border-color-hover: color-mix(in srgb, var(--brand-primary) 45%, var(--border-color-default));
+  --card-shadow-hover: 0 6px 16px rgba(27, 35, 48, 0.1);
 
   /* Alerts */
   --alert-primary-bg: var(--brand-primary-50);
@@ -370,24 +363,24 @@
   --wizard-visited-step-color: var(--brand-success-700);
   --wizard-visited-border-color: var(--brand-success-700);
 
-  /* Labels */
-  --label-default-bg: var(--brand-default);
-  --label-primary-bg: var(--brand-primary-600);
-  --label-success-bg: var(--brand-success-600);
-  --label-warning-bg: var(--brand-warning-600);
-  --label-danger-bg: var(--brand-danger-600);
+  /* Labels and badges: soft, a light tint of the color with a dark shade of it as text (Atlas Neutral) */
+  --label-default-bg: var(--bg-color);
+  --label-primary-bg: var(--brand-primary-100);
+  --label-success-bg: var(--brand-success-100);
+  --label-warning-bg: var(--brand-warning-100);
+  --label-danger-bg: var(--brand-danger-100);
 
-  --label-default-border-color: var(--brand-default-600);
-  --label-primary-border-color: var(--brand-primary-600);
-  --label-success-border-color: var(--brand-success-600);
-  --label-warning-border-color: var(--brand-warning-600);
-  --label-danger-border-color: var(--brand-danger-600);
+  --label-default-border-color: var(--label-default-bg);
+  --label-primary-border-color: var(--label-primary-bg);
+  --label-success-border-color: var(--label-success-bg);
+  --label-warning-border-color: var(--label-warning-bg);
+  --label-danger-border-color: var(--label-danger-bg);
 
-  --label-default-color: var(--font-color-default);
-  --label-primary-color: var(--color-base);
-  --label-success-color: var(--color-base);
-  --label-warning-color: var(--color-base);
-  --label-danger-color: var(--color-base);
+  --label-default-color: var(--font-color-detail);
+  --label-primary-color: var(--brand-primary-700);
+  --label-success-color: var(--brand-success-700);
+  --label-warning-color: var(--brand-warning-700);
+  --label-danger-color: var(--brand-danger-700);
 
   /* Groupbox */
   --groupbox-default-bg: var(--brand-default);

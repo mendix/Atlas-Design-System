@@ -15,7 +15,7 @@
         margin: 0;
         border-style: none;
         border-radius: 0;
-        background: var(--navigation-bg);
+        background: var(--navigation-bg, var(--bar-secondary-bg));
 
         ul.nav {
             margin: 0; // weird -margin if screen gets small (bootstrap)
@@ -27,7 +27,7 @@
                 padding: var(--navigation-item-padding);
                 margin: var(--spacing-smaller);
                 vertical-align: middle;
-                color: var(--navigation-color);
+                color: var(--navigation-color, var(--font-color-default));
                 border-radius: 0;
                 font-size: var(--navigation-font-size);
                 font-weight: var(--font-weight-normal);
@@ -35,26 +35,26 @@
 
                 /* Dropdown arrow */
                 .caret {
-                    border-top-color: var(--navigation-color);
-                    border-bottom-color: var(--navigation-color);
+                    border-top-color: var(--navigation-color, var(--font-color-default));
+                    border-bottom-color: var(--navigation-color, var(--font-color-default));
                 }
 
                 &:hover,
                 &:focus,
                 &.active {
                     text-decoration: none;
-                    color: var(--navigation-color-hover);
-                    background: var(--navigation-bg-hover);
+                    color: var(--navigation-color-hover, var(--font-color-default));
+                    background: var(--navigation-bg-hover, var(--brand-default-100));
 
                     .caret {
-                        border-top-color: var(--navigation-color-active);
-                        border-bottom-color: var(--navigation-color-active);
+                        border-top-color: var(--navigation-color-active, var(--brand-primary-900));
+                        border-bottom-color: var(--navigation-color-active, var(--brand-primary-900));
                     }
                 }
 
                 &.active {
-                    color: var(--navigation-color-active);
-                    background: var(--navigation-bg-active);
+                    color: var(--navigation-color-active, var(--brand-primary-900));
+                    background: var(--navigation-bg-active, var(--brand-primary-50));
                     opacity: 1;
                 }
 
@@ -69,7 +69,7 @@
                     transform: rotate(360deg);
                     border-width: 0 9px 9px 9px;
                     border-style: solid;
-                    border-color: transparent transparent var(--navigation-border-color) transparent;
+                    border-color: transparent transparent var(--navigation-border-color, var(--border-color-default)) transparent;
                 }
 
                 // Image
@@ -88,8 +88,8 @@
             }
 
             & > .mx-navbar-item.active a {
-                color: var(--navigation-color-active);
-                background-color: var(--navigation-bg-active);
+                color: var(--navigation-color-active, var(--brand-primary-900));
+                background-color: var(--navigation-bg-active, var(--brand-primary-50));
             }
 
             /* When hovering or the dropdown is open */
@@ -99,22 +99,22 @@
             & > .mx-navbar-item.open > a:hover,
             & > .mx-navbar-item.open > a:focus {
                 text-decoration: none;
-                color: var(--navigation-color-hover);
-                background: var(--navigation-bg-hover);
+                color: var(--navigation-color-hover, var(--font-color-default));
+                background: var(--navigation-bg-hover, var(--brand-default-100));
 
                 .caret {
-                    border-top-color: var(--navigation-color-hover);
-                    border-bottom-color: var(--navigation-color-hover);
+                    border-top-color: var(--navigation-color-hover, var(--font-color-default));
+                    border-bottom-color: var(--navigation-color-hover, var(--font-color-default));
                 }
             }
 
             & > .mx-navbar-item.open .dropdown-menu > li.mx-navbar-subitem.active a {
-                color: var(--navigation-sub-color-active);
-                background: var(--navigation-sub-bg-active);
+                color: var(--navigation-sub-color-active, var(--navigation-color-active, var(--brand-primary-900)));
+                background: var(--navigation-sub-bg-active, var(--navigation-bg-active, var(--brand-primary-50)));
 
                 .caret {
-                    border-top-color: var(--navigation-sub-color-active);
-                    border-bottom-color: var(--navigation-sub-color-active);
+                    border-top-color: var(--navigation-sub-color-active, var(--navigation-color-active, var(--brand-primary-900)));
+                    border-bottom-color: var(--navigation-sub-color-active, var(--navigation-color-active, var(--brand-primary-900)));
                 }
             }
         }
@@ -125,24 +125,24 @@
             .mx-navbar-item.open .dropdown-menu {
                 padding: 0;
                 border-radius: 0;
-                background: var(--navigation-sub-bg);
+                background: var(--navigation-sub-bg, transparent);
 
                 & > li.mx-navbar-subitem > a {
                     padding: 10px 24px;
-                    color: var(--navigation-sub-color);
+                    color: var(--navigation-sub-color, var(--navigation-color, var(--font-color-default)));
                     border-radius: 0;
                     font-size: var(--navigation-sub-font-size);
                     font-weight: var(--font-weight-normal);
 
                     &:hover,
                     &:focus {
-                        color: var(--navigation-sub-color-hover);
-                        background: var(--navigation-sub-bg-hover);
+                        color: var(--navigation-sub-color-hover, var(--navigation-color-hover, var(--font-color-default)));
+                        background: var(--navigation-sub-bg-hover, var(--brand-default-400));
                     }
 
                     &.active {
-                        color: var(--navigation-sub-color-active);
-                        background: var(--navigation-sub-bg-active);
+                        color: var(--navigation-sub-color-active, var(--navigation-color-active, var(--brand-primary-900)));
+                        background: var(--navigation-sub-bg-active, var(--navigation-bg-active, var(--brand-primary-50)));
                     }
                 }
             }
