@@ -273,6 +273,31 @@
         align-self: stretch #{$important-flex-value};
     }
 
+    /// These classes add alignment for individual items in the inline axis
+    .justify-self-auto {
+        justify-self: auto #{$important-flex-value};
+    }
+
+    .justify-self-start {
+        justify-self: flex-start #{$important-flex-value};
+    }
+
+    .justify-self-end {
+        justify-self: flex-end #{$important-flex-value};
+    }
+
+    .justify-self-center {
+        justify-self: center #{$important-flex-value};
+    }
+
+    .justify-self-baseline {
+        justify-self: baseline #{$important-flex-value};
+    }
+
+    .justify-self-stretch {
+        justify-self: stretch #{$important-flex-value};
+    }
+
     .flex-width {
         --flex-gap-parent: var(--flex-gap);
         $flex-2-columns: calc(50% - var(--flex-gap) / 2);
