@@ -19,4 +19,21 @@
         box-shadow: var(--card-shadow);
         margin-bottom: var(--card-margin-bottom);
     }
+
+    /* A card with an on-click action is rendered with role="button": show on hover that it can be clicked.
+       Keyboard focus already gets the focus ring. */
+    .card[role="button"] {
+        transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease;
+
+        &:hover {
+            border-color: var(--card-border-color-hover);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+    }
 }
