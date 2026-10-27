@@ -12,7 +12,7 @@
     ========================================================================== */
     .mx-menubar {
         padding: 0;
-        background: var(--navigation-bg);
+        background: var(--navigation-bg, var(--bar-secondary-bg));
 
         ul.mx-menubar-list {
             display: flex;
@@ -30,7 +30,7 @@
                     height: 100%;
                     padding: var(--navigation-item-padding);
                     white-space: nowrap;
-                    color: var(--navigation-color);
+                    color: var(--navigation-color, var(--font-color-default));
                     border-radius: 0;
                     font-size: var(--navigation-font-size);
                     font-weight: var(--font-weight-normal);
@@ -55,13 +55,13 @@
                 &:focus a,
                 &.active a {
                     text-decoration: none;
-                    color: var(--navigation-color-hover);
-                    background: var(--navigation-bg-hover);
+                    color: var(--navigation-color-hover, var(--font-color-default));
+                    background: var(--navigation-bg-hover, var(--brand-default-100));
                 }
 
                 &.active a {
-                    color: var(--navigation-color-active);
-                    background: var(--navigation-bg-active);
+                    color: var(--navigation-color-active, var(--brand-primary-900));
+                    background: var(--navigation-bg-active, var(--brand-primary-50));
                 }
             }
         }
@@ -74,7 +74,7 @@
 
     // Vertical variation specifics
     .mx-menubar-vertical {
-        background: var(--navigation-bg);
+        background: var(--navigation-bg, var(--bar-secondary-bg));
 
         ul.mx-menubar-list {
             display: flex;
@@ -84,7 +84,7 @@
                 display: block;
 
                 a {
-                    border-bottom: 1px solid var(--navigation-border-color);
+                    border-bottom: 1px solid var(--navigation-border-color, var(--border-color-default));
                 }
             }
         }
@@ -131,12 +131,12 @@
     // When used in topbar
     .region-topbar {
         .mx-menubar {
-            background: var(--navtopbar-bg);
+            background: var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg)));
 
             ul.mx-menubar-list {
                 li.mx-menubar-item {
                     a {
-                        color: var(--navtopbar-color);
+                        color: var(--navtopbar-color, var(--navigation-color, var(--bar-color)));
                         font-size: var(--navtopbar-font-size);
 
                         .glyphicon,
@@ -151,13 +151,13 @@
                     &:hover a,
                     &:focus a,
                     &.active a {
-                        color: var(--navtopbar-color-hover);
-                        background: var(--navtopbar-bg-hover);
+                        color: var(--navtopbar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                        background: var(--navtopbar-bg-hover, var(--navigation-bg-hover, var(--bar-bg-hover)));
                     }
 
                     &.active a {
-                        color: var(--navtopbar-color-active);
-                        background: var(--navtopbar-bg-active);
+                        color: var(--navtopbar-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                        background: var(--navtopbar-bg-active, var(--navigation-bg-active, var(--bar-bg-active)));
                     }
                 }
             }
@@ -165,13 +165,13 @@
 
         // Vertical variation specifics
         .mx-menubar-vertical {
-            background: var(--navtopbar-bg);
+            background: var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg)));
 
             ul.mx-menubar-list {
                 li.mx-menubar-item {
                     a {
                         height: var(--navigation-item-height);
-                        border-color: var(--navtopbar-border-color);
+                        border-color: var(--navtopbar-border-color, var(--topbar-border-color, var(--bar-border-color)));
                     }
                 }
             }
@@ -181,12 +181,12 @@
     // When used in sidebar
     .region-sidebar {
         .mx-menubar {
-            background: var(--navsidebar-bg);
+            background: var(--navsidebar-bg, var(--sidebar-bg, var(--bar-bg)));
 
             ul.mx-menubar-list {
                 li.mx-menubar-item {
                     a {
-                        color: var(--navsidebar-color);
+                        color: var(--navsidebar-color, var(--navigation-color, var(--bar-color)));
                         font-size: var(--navsidebar-font-size);
 
                         .glyphicon,
@@ -201,13 +201,13 @@
                     &:hover a,
                     &:focus a,
                     &.active a {
-                        color: var(--navsidebar-color-hover);
-                        background: var(--navsidebar-bg-hover);
+                        color: var(--navsidebar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                        background: var(--navsidebar-bg-hover, var(--navigation-bg-hover, var(--bar-bg-hover)));
                     }
 
                     &.active a {
-                        color: var(--navsidebar-color-active);
-                        background: var(--navsidebar-bg-active);
+                        color: var(--navsidebar-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                        background: var(--navsidebar-bg-active, var(--navigation-bg-active, var(--bar-bg-active)));
                     }
                 }
             }
@@ -215,12 +215,12 @@
 
         // Vertical variation specifics
         .mx-menubar-vertical {
-            background: var(--navsidebar-bg);
+            background: var(--navsidebar-bg, var(--sidebar-bg, var(--bar-bg)));
 
             ul.mx-menubar-list {
                 li.mx-menubar-item {
                     a {
-                        border-color: var(--navsidebar-border-color);
+                        border-color: var(--navsidebar-border-color, var(--bar-border-color));
                     }
                 }
             }

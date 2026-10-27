@@ -15,17 +15,17 @@
     // When used in topbar
     .region-topbar {
         .mx-navigationtree {
-            background: var(--navtopbar-bg);
+            background: var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg)));
             .navbar-inner > ul {
                 & > li {
                     & > a {
-                        color: var(--navtopbar-color);
-                        border-color: var(--navtopbar-border-color);
-                        background: var(--navtopbar-bg);
+                        color: var(--navtopbar-color, var(--navigation-color, var(--bar-color)));
+                        border-color: var(--navtopbar-border-color, var(--topbar-border-color, var(--bar-border-color)));
+                        background: var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg)));
                         font-size: var(--navtopbar-font-size);
                         .caret {
-                            border-top-color: var(--navtopbar-color);
-                            border-bottom-color: var(--navtopbar-color);
+                            border-top-color: var(--navtopbar-color, var(--navigation-color, var(--bar-color)));
+                            border-bottom-color: var(--navtopbar-color, var(--navigation-color, var(--bar-color)));
                         }
 
                         .glyphicon,
@@ -37,18 +37,20 @@
                         li:focus-within > &,
                         li:hover > &,
                         &:hover {
-                            color: var(--navtopbar-color-hover);
-                            background: var(--navtopbar-bg-hover);
+                            color: var(--navtopbar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                            background: var(--navtopbar-bg-hover, var(--navigation-bg-hover, var(--bar-bg-hover)));
                             .caret {
-                                border-top-color: var(--navtopbar-color-hover);
-                                border-bottom-color: var(--navtopbar-color-hover);
+                                border-top-color: var(--navtopbar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                                border-bottom-color: var(--navtopbar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
                             }
                         }
-                        a:active,
-                        a.active {
-                            color: var(--navtopbar-color-active);
-                            border-left-color: var(--navtopbar-color-active);
-                            background: var(--navtopbar-bg-active);
+                        // was `a:active, a.active`: nested inside the link selector these matched a link inside
+                        // a link, which never exists, so the active top bar item was never highlighted
+                        &:active,
+                        &.active {
+                            color: var(--navtopbar-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                            border-left-color: var(--navtopbar-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                            background: var(--navtopbar-bg-active, var(--navigation-bg-active, var(--bar-bg-active)));
                         }
                     }
                 }
@@ -57,22 +59,22 @@
             /* Sub navigation item specific */
             li.mx-navigationtree-has-items {
                 & > ul {
-                    background: var(--navtopbar-sub-bg);
+                    background: var(--navtopbar-sub-bg, var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg))));
                     li {
                         a {
-                            color: var(--navtopbar-sub-color);
-                            background: var(--navtopbar-sub-bg);
+                            color: var(--navtopbar-sub-color, var(--navigation-color, var(--bar-color)));
+                            background: var(--navtopbar-sub-bg, var(--navtopbar-bg, var(--topbar-bg, var(--bar-bg))));
                             font-size: var(--navtopbar-sub-font-size);
                             &:hover,
                             li:hover > &,
                             li:focus-within > & {
-                                color: var(--navtopbar-sub-color-hover);
-                                background: var(--navtopbar-sub-bg-hover);
+                                color: var(--navtopbar-sub-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                                background: var(--navtopbar-sub-bg-hover, var(--navigation-bg-hover, var(--bar-bg-hover)));
                             }
                             &:active,
                             &.active {
-                                color: var(--navtopbar-sub-color-active);
-                                background: var(--navtopbar-sub-bg-active);
+                                color: var(--navtopbar-sub-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                                background: var(--navtopbar-sub-bg-active, var(--navigation-bg-active, var(--bar-bg-active)));
                             }
                         }
                     }
@@ -87,12 +89,12 @@
             .navbar-inner > ul {
                 background: transparent;
                 & > li > a {
-                    color: var(--navsidebar-color);
-                    border-color: var(--navsidebar-border-color);
+                    color: var(--navsidebar-color, var(--navigation-color, var(--bar-color)));
+                    border-color: var(--navsidebar-border-color, var(--bar-border-color));
                     font-size: var(--navsidebar-font-size);
                     .caret {
-                        border-top-color: var(--navsidebar-color);
-                        border-bottom-color: var(--navsidebar-color);
+                        border-top-color: var(--navsidebar-color, var(--navigation-color, var(--bar-color)));
+                        border-bottom-color: var(--navsidebar-color, var(--navigation-color, var(--bar-color)));
                         margin-left: var(--spacing-small);
                         transition: transform 0.2s ease-in-out;
                     }
@@ -102,21 +104,25 @@
                     .mx-icon-filled {
                         font-size: var(--navsidebar-glyph-size);
                     }
-                    a:hover,
-                    li:hover > &,
-                    li:focus-within > & {
-                        color: var(--navsidebar-color-hover);
-                        background: var(--navsidebar-bg-hover);
+                    // was `a:hover, li:hover > &, li:focus-within > &`: nested inside the link selector these
+                    // compile to selectors that never match, so the generic --navigation-bg-hover won
+                    &:hover,
+                    &:focus-visible {
+                        color: var(--navsidebar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                        background: var(--navsidebar-bg-hover, var(--navigation-bg-hover, var(--bar-bg-hover)));
                         .caret {
-                            border-top-color: var(--navsidebar-color-hover);
-                            border-bottom-color: var(--navsidebar-color-hover);
+                            border-top-color: var(--navsidebar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                            border-bottom-color: var(--navsidebar-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
                         }
                     }
                     &:active,
                     &.active {
-                        color: var(--navsidebar-color-active);
-                        border-left-color: var(--navsidebar-color-active);
-                        background: var(--navsidebar-bg-active);
+                        color: var(--navsidebar-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                        background: var(--navsidebar-bg-active, var(--navigation-bg-active, var(--bar-bg-active)));
+                    }
+                    // the bar marks the current page only, not a press (a group that only expands never gets it)
+                    &.active {
+                        box-shadow: var(--navsidebar-box-shadow-active, inset 2px 0 0 var(--bar-color-active));
                     }
                 }
             }
@@ -127,19 +133,46 @@
                     position: relative;
                     border-radius: var(--navsidebar-border-radius);
                     li > a {
+                        display: flex;
+                        align-items: center;
                         border-radius: var(--navsidebar-border-radius);
-                        color: var(--navsidebar-sub-color);
+                        color: var(--navsidebar-sub-color, var(--navigation-color, var(--bar-sub-color)));
                         font-size: var(--navsidebar-sub-font-size);
+                        // Label in the same column as the parent label
+                        padding-left: var(--navsidebar-label-indent, var(--navigation-item-padding));
+                        &:has(.glyphicon, .mx-icon-lined, .mx-icon-filled, img) {
+                            padding-left: 0;
+                        }
+                        // Sub item icon centred in the same column as the parent icon
+                        .glyphicon,
+                        .mx-icon-lined,
+                        .mx-icon-filled {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex: 0 0 var(--navsidebar-width-closed);
+                            margin-right: var(--spacing-small);
+                            font-size: var(--navsidebar-sub-glyph-size);
+                        }
+                        img {
+                            box-sizing: border-box;
+                            width: var(--navsidebar-width-closed);
+                            padding: 0 var(--spacing-medium);
+                            margin-right: var(--spacing-small);
+                        }
                         &:hover,
                         li:hover > &,
                         li:focus-within > & {
-                            color: var(--navsidebar-sub-color-hover);
-                            background: var(--navsidebar-sub-bg-hover);
+                            color: var(--navsidebar-sub-color-hover, var(--navigation-color-hover, var(--bar-color-hover)));
+                            background: var(--navsidebar-sub-bg-hover, var(--navigation-bg-hover, var(--bar-bg-hover)));
                         }
                         &:active,
                         &.active {
-                            color: var(--navsidebar-sub-color-active);
-                            background: var(--navsidebar-sub-bg-active);
+                            color: var(--navsidebar-sub-color-active, var(--navigation-color-active, var(--bar-color-active)));
+                            background: var(--navsidebar-sub-bg-active, var(--navigation-bg-active, var(--bar-bg-active)));
+                        }
+                        &.active {
+                            box-shadow: var(--navsidebar-box-shadow-active, inset 2px 0 0 var(--bar-color-active));
                         }
                     }
                 }
@@ -160,7 +193,7 @@
                 }
                 li.mx-navigationtree-has-items > ul {
                     // sub-menu when sidebar is collapsed needs a non-transparent bg
-                    background: var(--navsidebar-sub-bg-collapsed);
+                    background: var(--navsidebar-sub-bg-collapsed, var(--sidebar-bg, var(--bar-bg)));
                 }
             }
         }
@@ -189,6 +222,26 @@
         .navbar-inner ul {
             a {
                 justify-content: center;
+            }
+        }
+    }
+
+    // Fly-out of a collapsed sidebar: no parent label to line up with. Direct child of the
+    // scroll container, because the outer (topbar) scroll container is never "open".
+    .mx-scrollcontainer:not(.mx-scrollcontainer-open) > .region-sidebar {
+        .mx-navigationtree li.mx-navigationtree-has-items > ul li > a {
+            padding-left: var(--navigation-item-padding);
+            &:has(.glyphicon, .mx-icon-lined, .mx-icon-filled, img) {
+                padding-left: var(--navigation-item-padding);
+            }
+            .glyphicon,
+            .mx-icon-lined,
+            .mx-icon-filled {
+                flex-basis: auto;
+            }
+            img {
+                width: auto;
+                padding: 0;
             }
         }
     }
